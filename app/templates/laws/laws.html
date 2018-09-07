@@ -1,0 +1,37 @@
+<div class="patients default-container">
+    <div class="default-header">
+        <h1>Laws: <span>{{vm.amount_patient}}</span></h1>
+        <div class="search-control">
+            <input class="form-control" type="search" placeholder="Search a patient" ng-model="name">
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <tr>
+                <th>№</th>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+            <tbody>
+            <tr ui-sref="app.patient_detail({id: patient.id})" class="pointer"
+                ng-repeat="patient in vm.patients | filter : name track by $index">
+                <td>{{$index + 1}}</td>
+                <td>{{patient.name}}</td>
+                <td>{{patient.lastname}}</td>
+                <td>{{patient.phone}}</td>
+                <td>{{patient.email}}</td>
+                <td class="btn-td">
+                    <button class="btn btn-danger" ng-click="vm.deleteUser(patient);  $event.stopPropagation()">Delete
+                    </button>
+                </td>
+            </tr>
+            <tr ng-if="(!vm.patients || !vm.patients.length || (name && name.length && !(vm.patients | filter : name).length))">
+                <td colspan="6" class="text-center">List is empty</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<div class="dentist-detail default-container">
+    <div class="default-header"> <h2>Dentist detail</h2> </div>
+    <div class="table-responsive">
+        <table class="table table-bordered detail">
+            <tr>
+                <td>Name</td>
+                <td>{{vm.user.name}}</td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td>{{vm.user.lastname}}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{vm.user.email}}</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>{{vm.user.phone}}</td>
+            </tr>
+            <tr>
+                <td>User id</td>
+                <td>{{vm.user.id}}</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>{{vm.user.country}}</td>
+            </tr>
+            <tr>
+                <td>Emergency Counter</td>
+                <td>{{vm.user.emergency_count}}</td>
+            </tr>
+            <tr>
+                <td>Home patient</td>
+                <td>{{vm.user.owner_patient}}</td>
+            </tr>
+        </table>
+    </div>
+    <h3>Clinic</h3>
+    <div  class="form-block">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>№</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                </tr>
+                <tr ui-sref="app.clinic_detail({id: vm.user.clinic.id})" class="pointer">
+                    <td>{{$index + 1}}</td>
+                    <td>{{vm.user.clinic.name}}</td>
+                    <td>{{vm.user.clinic.phone}}</td>
+                    <td>{{vm.user.clinic.address}}
+                        <a href="https://www.google.com/maps/search/?api=1&query={{vm.clinic.latitude}},{{vm.clinic.longitude}}"  target="_blank">
+                        Navigate</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="list">
+        <h3>Patients</h3>
+        <div ng-if="vm.user.patients && vm.user.patients.length">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>№</th>
+                        <th>Name</th>
+                        <th>Lastname</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                    </tr>
+                    <tr ui-sref="app.patient_detail({id: patient.id})" class="pointer"
+                        ng-repeat="patient in vm.user.patients | filter : name track by $index">
+                        <td>{{$index + 1}}</td>
+                        <td>{{patient.name}}</td>
+                        <td>{{patient.lastname}}</td>
+                        <td>{{patient.phone}}</td>
+                        <td>{{patient.email}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div ng-if="!vm.user.patients.length">
+            <span>Does not have a patient</span>
+        </div>
+    </div>
+</div>

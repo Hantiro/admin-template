@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Admin For App</title>
+    <meta name="description" content="Admin for app">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!--<link rel="shortcut icon" href="./content/images/cropped-dot-32x32.png" type="image/x-icon">-->
+    <!--<link rel="icon" href="./content/images/cropped-dot-32x32.png" type="image/x-icon">-->
+
+    <!-- inject-vendor:css -->
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" media='all'/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css" />
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="content/css/app.css"/>
+    <!-- endinject -->
+
+    <!--<link rel="manifest" href="/manifest.json">-->
+</head>
+
+<body>
+<!--<div ui-view></div>-->
+
+<div ng-include="'layout/shell/shell.html'"
+     style="height: 100%; min-height: 100%; max-width: 100%;">
+</div>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>-->
+
+<!-- inject-vendor:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/ngstorage/ngStorage.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<!-- endinject -->
+
+<!-- inject:js -->
+<!-- Core modules -->
+<script src="app.js"></script>
+<script src="core/core.config.modules.js"></script>
+<script src="core/core.config.route.js"></script>
+<script src="core/core.module.js"></script>
+<script src="core/request.js"></script>
+<script src="core/url.js"></script>
+<script src="core/blocks/services/services.module.js"></script>
+<script src="core/blocks/factory/factory.module.js"></script>
+<script src="core/blocks/directives/directives.module.js"></script>
+<script src="core/blocks/filters/filters.module.js"></script>
+<!--Factory-->
+
+<!-- Services -->
+<script src="services/utils.svc.js"></script>
+<script src="services/user.svc.js"></script>
+<script src="services/auth.svc.js"></script>
+<script src="services/modal.svc.js"></script>
+<script src="services/text.svc.js"></script>
+<script src="services/message.svc.js"></script>
+<script src="services/dentist.svc.js"></script>
+<script src="services/patient.svc.js"></script>
+<script src="services/clinics.svc.js"></script>
+<script src="services/spec.svc.js"></script>
+<script src="services/purchase.svc.js"></script>
+
+<!-- Filters -->
+<script src="filters/tooltips/tooltips.filter.js"></script>
+<!-- Components Controllers -->
+<script src="components/confirm/confirm.ctrl.js"></script>
+<script src="components/purchase_create/purchase_create.ctrl.js"></script>
+<script src="components/specialty-create/specialty-create.ctrl.js"></script>
+<!-- Controllers -->
+<script src="templates/app/app.ctrl.js"></script>
+<script src="templates/login/login.ctrl.js"></script>
+<script src="templates/users/users.ctrl.js"></script>
+<script src="templates/laws/laws.ctrl.js"></script>
+<script src="templates/terms/terms.ctrl.js"></script>
+<script src="templates/feedback-msg/feedback-msg.ctrl.js"></script>
+<script src="templates/text/text.ctrl.js"></script>
+<script src="templates/dentist-detail/dentist-detail.ctrl.js"></script>
+<script src="templates/patient-detail/patient-detail.ctrl.js"></script>
+<script src="templates/clinic-detail/clinic-detail.ctrl.js"></script>
+<script src="templates/purchase/purchase.ctrl.js"></script>
+<script src="templates/start-page/start-page.ctrl.js"></script>
+<!--Directives controllers-->
+
+<!-- Directives -->
+
+<!-- endinject -->
+
+<!-- inject-templates:js -->
+<!-- endinject -->
+</body>
+</html>

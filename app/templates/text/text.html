@@ -1,0 +1,44 @@
+<div class="text default-container">
+    <uib-tabset type="pills" class="pills">
+
+        <uib-tab heading="About" classes="btn-sm" ng-click="vm.goAbout()">
+            <h2>To change the text About, click on the text</h2>
+            <textarea type="text" ng-model="vm.about.description"></textarea>
+            <button type="button" ng-click="vm.update(vm.about)" class="btn btn-primary">Update</button>
+        </uib-tab>
+
+        <uib-tab heading="Share" classes="btn-sm" ng-click="vm.goShare()">
+            <h2>To change the text Share, click on the text</h2>
+            <textarea type="text" ng-model="vm.share.description"></textarea>
+            <button type="button" ng-click="vm.update(vm.share)" class="btn btn-primary">Update</button>
+        </uib-tab>
+
+        <uib-tab heading="Start Page" classes="btn-sm" ng-click="vm.goStartPage()">
+            <h2>To change the text Start page, click on the text</h2>
+            <textarea type="text" ng-model="vm.start_page.description"></textarea>
+            <button type="button" ng-click="vm.update(vm.start_page)" class="btn btn-primary">Update</button>
+        </uib-tab>
+
+        <uib-tab heading="Privacy" classes="btn-sm" ng-click="vm.goPrivacy()">
+            <h2>To change the text Privacy, click on the text</h2>
+            <textarea type="text" ng-model="vm.privacy.description"></textarea>
+            <button type="button" ng-click="vm.update(vm.privacy)" class="btn btn-primary">Update</button>
+        </uib-tab>
+
+        <uib-tab heading="Terms of use" classes="btn-sm" ng-click="vm.goTermsOfUse()">
+            <h2>To change the text Terms of use, click on the text</h2>
+            <textarea type="text" ng-model="vm.terms.description"></textarea>
+            <button type="button" ng-click="vm.update(vm.terms)" class="btn btn-primary">Update</button>
+        </uib-tab>
+
+        <uib-tab heading="Review Question" classes="btn-sm" ng-click="vm.goQuestion()">
+            <h2>To change the text Rewiev Question, click on the text</h2>
+            <div class="form-block" ng-repeat="quest in vm.questions track by $index ">
+                <input class="form-control" type="text" ng-model="quest.name">
+                <button class="btn btn-success" ng-click="vm.updateQuest(quest)">Update</button>
+            </div>
+        </uib-tab>
+
+    </uib-tabset>
+
+</div>

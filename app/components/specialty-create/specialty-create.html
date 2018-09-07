@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Add Specialty</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="create-block">
+        <div class="form-group">
+            <label>Specialty name</label>
+            <input  class="form-control" type="text" placeholder="Enter specialty name" ng-model="vm.model.name">
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok()">{{vm.config.ok}}</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">{{vm.config.cancel}}</button>
+</div>

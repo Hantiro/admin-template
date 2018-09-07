@@ -1,0 +1,41 @@
+<div class="app-body">
+
+    <div class="header">
+        <button class="header__menu-btn header__item" ng-click="vm.toggleMenu()">
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+        </button>
+        
+        <div class="header__logo header__item">
+            <img src="content/img/logo.png" alt="">
+            <p>Mahsevon Theara</p>
+        </div>
+
+        <div class="header__logout pull-right header__item">
+            <i ng-click="vm.logout()" class="fas fa-sign-out-alt"></i>
+        </div>
+    </div>
+
+    <aside class="sidebar" ng-class="{'sidebar--hide' : !vm.menuOpen }">
+        <div class="sidebar__container">
+            <ul>
+                <li ui-sref="app.users"
+                    ui-sref-active="sidebar--active">Users</li>
+                <li ui-sref="app.laws"
+                    ui-sref-active="sidebar--active">Laws</li>
+                <li ui-sref="app.terms"
+                    ui-sref-active="sidebar--active">Terms</li>
+                <li ui-sref="app.feedback-msg"
+                    ui-sref-active="sidebar--active">Feedback messages</li>
+                <!--<li ui-sref="app.purchase"-->
+                    <!--ui-sref-active="sidebar&#45;&#45;active">Purchase</li>-->
+                <!--<li ui-sref="app.text"-->
+                    <!--ui-sref-active="sidebar&#45;&#45;active">Text descriptions</li>-->
+            </ul>
+        </div>
+    </aside>
+
+    <div class="main"  ng-class="{'main--full-width' : !vm.menuOpen }">
+            <div ui-view style="height: 100%; min-height: 100%; max-width: 100%;"></div>
+    </div>
+
+</div>

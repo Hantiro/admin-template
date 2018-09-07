@@ -1,0 +1,20 @@
+<div class="purchase default-container">
+    <div class="default-header">
+        <h1>Purchase  <button ng-click="vm.newPurchase()" type="button" class="btn btn-primary">New</button></h1>
+
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <tr>
+                <th>№</th>
+                <th>Product id</th>
+                <th>Period</th>
+            </tr>
+            <tr ng-repeat="purchase in vm.purchases track by $index ">
+                <td>{{$index + 1}}</td>
+                <td>{{purchase.productId}}</td>
+                <td>{{purchase.period}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

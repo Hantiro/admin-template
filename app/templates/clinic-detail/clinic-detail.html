@@ -1,0 +1,50 @@
+<div class="clinic-detail default-container">
+    <div class="default-header"><h2>Clinic detail</h2></div>
+    <div class="table-responsive">
+        <table class="table table-bordered detail">
+            <tr>
+                <td>Name</td>
+                <td>{{vm.clinic.name}}</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>{{vm.clinic.phone}}</td>
+            </tr>
+            <tr>
+                <td>Clinic id</td>
+                <td>{{vm.clinic.id}}</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>{{vm.clinic.address}}
+                    <a href="https://www.google.com/maps/search/?api=1&query={{vm.clinic.latitude}},{{vm.clinic.longitude}}"  target="_blank">
+                    Navigate</a></td>
+            </tr>
+        </table>
+    </div>
+    <h3>Users</h3>
+    <div class="form-block">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>№</th>
+                    <th>Name</th>
+                    <th>Lastname</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                </tr>
+                <tr ui-sref="app.dentist_detail({id: user.id})" class="pointer"
+                    ng-repeat="user in vm.clinic.users | filter : name track by $index">
+                    <td>{{$index + 1}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.lastname}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.email}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div ng-if="!vm.clinic.users.length">
+        <span>Does not have a user</span>
+    </div>
+</div>

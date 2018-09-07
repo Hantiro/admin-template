@@ -1,0 +1,63 @@
+<div class="patient-detail default-container">
+    <div class="default-header"><h2>Patient detail</h2></div>
+    <div class="table-responsive">
+        <table class="table table-bordered detail">
+            <tr>
+                <td>Name</td>
+                <td>{{vm.user.name}}</td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td>{{vm.user.lastname}}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{vm.user.email}}</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>{{vm.user.phone}}</td>
+            </tr>
+            <tr>
+                <td>User id</td>
+                <td>{{vm.user.id}}</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>{{vm.user.country}}</td>
+            </tr>
+            <tr>
+                <td>Emergency Counter</td>
+                <td>{{vm.user.emergency_count}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="list">
+        <h3>Dentist</h3>
+        <div ng-if="vm.user.dentists && vm.user.dentists.length" class="form-block">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>№</th>
+                        <th>Name</th>
+                        <th>Lastname</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                    </tr>
+                    <tr ui-sref="app.dentist_detail({id: dentist.id})" class="pointer"
+                        ng-repeat="dentist in vm.user.dentists | filter : name track by $index">
+                        <td>{{$index + 1}}</td>
+                        <td>{{dentist.name}}</td>
+                        <td>{{dentist.lastname}}</td>
+                        <td>{{dentist.phone}}</td>
+                        <td>{{dentist.email}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div ng-if="!vm.user.dentists.length">
+            <span>Does not have a dentist</span>
+        </div>
+    </div>
+</div>
