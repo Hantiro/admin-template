@@ -16,6 +16,15 @@
 @import "../templates/start-page/start-page.scss";
 
 //directive style
+@import '../directives/header/header';
+@import '../directives/footer/footer';
+@import '../directives/calendar/calendar';
+@import '../directives/legend/legend';
+@import '../directives/tradition-item/tradition-item';
+@import '../directives/info-block/info-block';
+@import '../directives/pill/pill';
+@import '../directives/notification/notification';
+@import '../directives/history/history';
 
 //components styles
 @import "../components/confirm/confirm.scss";
