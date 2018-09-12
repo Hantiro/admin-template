@@ -11,7 +11,6 @@
             replace: true,
             scope: {
                 ibType: '@' //'default' - only with text, 'pregnancy' - with pregnancy image and date
-
             },
             controller: 'InfoBlockCtrl',
             controllerAs: 'vm',
