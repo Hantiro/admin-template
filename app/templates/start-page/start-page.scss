@@ -215,7 +215,16 @@
   }
 }
 
-@media screen and(max-width: 1600px) {
+
+
+@media screen and(max-width: 1230px) {
+  .start-page {
+    &__right-side {
+      width: auto;
+    }
+  }
+}
+@media screen and(max-width: 1125px) {
   .start-page {
     &__about {
       .text {
@@ -226,15 +235,6 @@
     }
   }
 }
-
-@media screen and(max-width: 1230px) {
-  .start-page {
-    &__right-side {
-      width: auto;
-    }
-  }
-}
-
 @media screen and (max-width: 680px) {
   .start-page {
     &__right-side {
