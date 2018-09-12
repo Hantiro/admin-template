@@ -1,4 +1,22 @@
 <div class="footer">
 
+    <div ng-if="!fIsAuth">
+        <button>
+            Register
+        </button>
+        <button>
+            Login
+        </button>
+    </div>
+
+    <div ng-if="fIsAuth">
+        <button>
+            Logout
+        </button>
+    </div>
+    <div>
+        en
+    </div>
+
 </div>
 

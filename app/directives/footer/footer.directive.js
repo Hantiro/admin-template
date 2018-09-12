@@ -9,6 +9,11 @@
             restrict: 'E',
             templateUrl: 'directives/footer/footer.html',
             replace: true,
+            scope: {
+                fLang: '@',
+                fIsAuth: '=',
+
+            },
             controller: 'FooterCtrl',
             controllerAs: 'vm',
         };

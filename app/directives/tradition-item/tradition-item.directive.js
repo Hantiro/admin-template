@@ -9,6 +9,10 @@
             restrict: 'E',
             templateUrl: 'directives/tradition-item/tradition-item.html',
             replace: true,
+            scope: {
+                tTitle: '@',
+                tDesc: '@'
+            },
             controller: 'TraditionItemCtrl',
             controllerAs: 'vm',
         };

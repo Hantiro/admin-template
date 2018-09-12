@@ -9,6 +9,11 @@
             restrict: 'E',
             templateUrl: 'directives/header/header.html',
             replace: true,
+            scope: {
+                hLang: '@',
+                hUser: '@',
+                hIsAuth: '=' //'true - is autorized'
+            },
             controller: 'HeaderCtrl',
             controllerAs: 'vm',
         };
