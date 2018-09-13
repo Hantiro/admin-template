@@ -118,10 +118,10 @@ gulp.task('fonts', function () {
 });
 
 /**
- * @desc Copy fonts
+ * @desc Copy img
  */
 gulp.task('img', function () {
-    var dest = pkg.paths.build + 'content/images';
+    var dest = pkg.paths.build + 'content/img';
     log('Copying images');
     return gulp
         .src(pkg.paths.images)
@@ -144,7 +144,7 @@ gulp.task('locale', function () {
  * @return {Stream}
  */
 gulp.task('images', function () {
-    var dest = pkg.paths.build + 'content/images';
+    var dest = pkg.paths.build + 'content/img';
     log('Compressing, caching, and copying images');
     return gulp
         .src(pkg.paths.images)

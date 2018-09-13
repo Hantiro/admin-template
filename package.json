@@ -60,10 +60,12 @@
       "./app/bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg",
       "./app/bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf",
       "./app/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff",
-      "./app/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff2"
+      "./app/bower_components/bootstrap/fonts/AnotherDayInParadise.ttf",
+      "./app/bower_components/bootstrap/fonts/ArimoItalic.ttf",
+      "./app/bower_components/bootstrap/fonts/AssistantExtraBold.ttf",
+      "./app/bower_components/bootstrap/fonts/AssistantRegular.ttf"
     ],
     "images": [
-      "./app/content/images/**/*",
       "./app/content/img/**/*"
     ],
     "vendorjs": [

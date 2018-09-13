@@ -8,6 +8,6 @@
     FooterCtrl.$inject = ['$scope'];
 
     function FooterCtrl($scope) {
-        let vm = this;
+        var vm = this;
     }
 })();

@@ -8,6 +8,6 @@
     InfoBlockCtrl.$inject = ['$scope'];
 
     function InfoBlockCtrl($scope) {
-        let vm = this;
+        var vm = this;
     }
 })();

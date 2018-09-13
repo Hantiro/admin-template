@@ -8,6 +8,6 @@
     PillCtrl.$inject = ['$scope'];
 
     function PillCtrl($scope) {
-        let vm = this;
+        var vm = this;
     }
 })();

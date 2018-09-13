@@ -8,6 +8,6 @@
     CalendarCtrl.$inject = ['$scope'];
 
     function CalendarCtrl($scope) {
-        let vm = this;
+        var vm = this;
     }
 })();

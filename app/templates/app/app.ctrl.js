@@ -10,7 +10,7 @@
         vm.toggleMenu = toggleMenu;
         vm.menuOpen = true;
 
-        function toggleMenu(){
+        function toggleMenu() {
             vm.menuOpen = !vm.menuOpen;
         }
     }

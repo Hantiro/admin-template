@@ -8,6 +8,6 @@
     TraditionItemCtrl.$inject = ['$scope'];
 
     function TraditionItemCtrl($scope) {
-        let vm = this;
+        var vm = this;
     }
 })();

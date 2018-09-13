@@ -8,6 +8,6 @@
     HeaderCtrl.$inject = ['$scope'];
 
     function HeaderCtrl($scope) {
-        let vm = this;
+        var vm = this;
     }
 })();

@@ -8,13 +8,15 @@
         ]).run(runBlock);
 
     /* @ngInject */
-    function runBlock($timeout, authSvc, $rootScope) {
-        $timeout(function(){
-            authSvc.processAutoLogin();
-        });
+    function runBlock($timeout, authSvc, $rootScope, $state) {
 
-        $rootScope.$on('$stateChangeStart', function (event, toState) {
-            authSvc.checkLogin();
-        });
+        $state.go('start-page');
+        // $timeout(function(){
+        //     authSvc.processAutoLogin();
+        // });
+        //
+        // $rootScope.$on('$stateChangeStart', function (event, toState) {
+        //     authSvc.checkLogin();
+        // });
     }
 })();

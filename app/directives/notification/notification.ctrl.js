@@ -8,6 +8,6 @@
     NotificationCtrl.$inject = ['$scope'];
 
     function NotificationCtrl($scope) {
-        let vm = this;
+        var vm = this;
     }
 })();

@@ -8,6 +8,6 @@
     LegendCtrl.$inject = ['$scope'];
 
     function LegendCtrl($scope) {
-        let vm = this;
+        var vm = this;
     }
 })();
