@@ -1,20 +1,47 @@
-<div class="header">
+<div class="main-header">
 
-    <div class="header__logo">
+    <!--<div class="header__logo">-->
 
-    </div>
-    <div ng-if="hIsAuth">
-        fdkvfdv
-        fdvjdfnvdf
-        dfvndfjvdf
-        vdfvdfv
-    </div>
+    <!--</div>-->
+    <!--<div ng-if="hIsAuth">-->
+        <!--fdkvfdv-->
+        <!--fdvjdfnvdf-->
+        <!--dfvndfjvdf-->
+        <!--vdfvdfv-->
+    <!--</div>-->
 
-    <div ng-if="!hIsAuth">
-        dfgd
-        fdgdfgdf
-        gdfgdf
-        gdfgdfg
+    <!--<div ng-if="!hIsAuth">-->
+        <!--dfgd-->
+        <!--fdgdfgdf-->
+        <!--gdfgdf-->
+        <!--gdfgdfg-->
+    <!--</div>-->
+
+    <div class="main-header__menu">
+        <div class="main-header__content">
+            <div class="main-header__logo">
+                <img src="../content/img/logo.png">
+                <p dir="rtl">מחשבון טהרה</p>
+            </div>
+            <div class="main-header__right-side">
+                <ul>
+                    <li>contact us</li>
+                    <li>mikvahs</li>
+                    <li>tradition</li>
+                </ul>
+                <div class="main-header__authorization" ng-if="hIsAuth">
+                    <p>register</p>
+                    <span class="main-header__button-login">login</span>
+                    <p class="main-header__lang">en</p>
+                </div>
+                <div class="main-header__authorization" ng-if="!hIsAuth">
+                    <p>Hi! Mirra Gutman</p>
+                    <i class="fa fa-user"></i>
+                    <p class="main-header__lang">en</p>
+                </div>
+            </div>
+            <i class="fas fa-bars fa-lg"></i>
+        </div>
     </div>
 </div>
 

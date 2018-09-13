@@ -1,15 +1,13 @@
 .start-page {
-  .fa-bars {
-    display: none;
-  }
+
   iframe {
     width: 100%;
   }
   h1 {
     margin: 0;
   }
-  padding-top: 10px;
-  background-color: #f5b8c7;
+
+
   &__main-block {
     background: url(../../content/img/bgnew.jpg) center/cover no-repeat;
     height: 60vmin;
@@ -31,74 +29,7 @@
   p {
     margin: 0;
   }
-  &__menu {
-    margin-top: 20px;
-    padding: 5px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background-color: #daa4b1;
-  }
-  &__logo {
-    font-size: 20px;
-    font-family: AssistantExtraBold;
-    display: flex;
-    align-items: flex-end;
-    color: #ffffff;
-    img {
-      position: absolute;
-      transform: scale(-1, 1);
-      height: 40px;
-    }
-    p {
-      margin-left: 50px;
-    }
-  }
-  &__right-side {
-    width: 40%;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    &--bottom {
-      padding: 0 5%;
-      margin-left: auto;
-    }
-    ul {
-      margin-bottom: 0;
-      display: flex;
-      list-style-type: none;
-      font-family: AssistantExtraBold;
-      color: #ffffff;
-      li {
-        margin-right: 15px;
-      }
-    }
-  }
-  &__authorization {
-    align-items: center;
-    font-family: AssistantRegular;
-    display: flex;
-    color: #4b0049;
-  }
-  &__button-login {
-    margin: 0 15px;
-    padding: 5px 15px;
-    color: #ffffff;
-    background-color: #4b0049;
-  }
-  &__lang {
-    position: relative;
-    &:after {
-      top: 50%;
-      left: 20px;
-      position: absolute;
-      content: '';
-      border: 5px solid transparent;
-      border-top: 5px solid #4b0049;
-    }
-  }
+
   &__title {
     margin-top: 20px;
     color: #c697a2;
