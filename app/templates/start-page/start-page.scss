@@ -1,5 +1,18 @@
 .start-page {
+  .row {
+    width: 100%;
+    display: flex;
 
+  }
+  &__footer-menu {
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__footer-auth {
+    display: flex;
+    justify-content: flex-end;
+  }
   iframe {
     width: 100%;
   }
@@ -8,8 +21,6 @@
   }
 
   &__right-side {
-    width: 40%;
-    justify-content: space-between;
     display: flex;
     align-items: center;
     text-transform: uppercase;
@@ -24,7 +35,7 @@
       font-family: AssistantExtraBold;
       color: #ffffff;
       li {
-        margin-right: 15px;
+        margin-right: 0px;
       }
     }
   }
@@ -72,6 +83,10 @@
       font-size: 16px;
     }
   }
+
+  &__sm-icon {
+    display: none;
+  }
   &__htc {
     position: absolute;
     width: 17%;
@@ -112,7 +127,7 @@
     p {
       text-transform: uppercase;
     }
-    i{
+    i {
       margin: 0 10px 5px;
     }
   }
@@ -182,13 +197,17 @@
     overflow: auto;
   }
   &__down-footer {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
     padding: 30px 5%;
     background-color: #e9e5df;
+    .col-sm-0 {
+      display: none;
+    }
   }
   &__down-footer-menu {
     display: flex;
+    justify-content: space-between;
     color: #4b0049;
     ul {
       list-style-type: none;
@@ -196,15 +215,15 @@
   }
 }
 
-
-
 @media screen and(max-width: 1230px) {
   .start-page {
     &__right-side {
+      justify-content: flex-end;
       width: auto;
     }
   }
 }
+
 @media screen and(max-width: 1125px) {
   .start-page {
     &__about {
@@ -216,29 +235,40 @@
     }
   }
 }
-@media screen and (max-width: 680px) {
+
+@media screen and (max-width: 769px) {
   .start-page {
-    &__right-side {
+    &__lg-icon {
       display: none;
     }
+    &__sm-icon {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .start-page {
+
     .fa-bars {
       display: flex;
       align-self: center;
       color: #ffffff;
     }
-    &__approvals-information{
+    &__approvals-information {
       display: block;
     }
-    &__approvals-content{
+    &__approvals-content {
       width: 100%;
       text-align: center;
       margin-bottom: 20px;
     }
   }
 }
-@media screen and (max-width: 410px){
-  .start-page{
-    &__title{
+
+@media screen and (max-width: 410px) {
+  .start-page {
+    &__title {
       font-size: 20px;
     }
   }
