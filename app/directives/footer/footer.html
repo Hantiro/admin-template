@@ -1,22 +1,84 @@
-<div class="footer">
+<div class="main-footer">
 
-    <div ng-if="!fIsAuth">
-        <button>
-            Register
-        </button>
-        <button>
-            Login
-        </button>
-    </div>
+    <!--<div ng-if="!fIsAuth">-->
+        <!--<button>-->
+            <!--Register-->
+        <!--</button>-->
+        <!--<button>-->
+            <!--Login-->
+        <!--</button>-->
+    <!--</div>-->
 
-    <div ng-if="fIsAuth">
-        <button>
-            Logout
-        </button>
-    </div>
-    <div>
-        en
-    </div>
+    <!--<div ng-if="fIsAuth">-->
+        <!--<button>-->
+            <!--Logout-->
+        <!--</button>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--en-->
+    <!--</div>-->
+    <div class="main-footer__third-content">
 
+        <div class="main-footer__footer">
+            <div class="main-footer__right-side main-footer__right-side--bottom ">
+                <div class="row">
+                    <div class="col-md-6 col-sm-0"></div>
+                    <div class="col-md-3 col-sm-6 main-footer__footer-menu">
+                        <ul>
+                            <li>info</li>
+                        </ul>
+                        <ul>
+                            <li>help & support</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 main-footer__footer-auth">
+                        <div class="main-footer__authorization" ng-if="!fIsAuth">
+                            <p>register</p>
+                            <span class="main-footer__button-login">login</span>
+                            <p class="main-footer__lang">en</p>
+                        </div>
+                        <div class="main-footer__authorization" ng-if="fIsAuth">
+                            <span class="main-footer__button-login">logout</span>
+                            <p class="main-footer__lang">en</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="main-footer__down-footer">
+                <div class="col-md-6 main-footer__lg-icon">
+                    <div class="main-footer__social-icon">
+                        <img src="../content/img/facebook.png">
+                        <img src="../content/img/goog.png">
+                        <img src="../content/img/inst.png">
+                        <img src="../content/img/twitter.png">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="main-footer__down-footer-menu">
+                        <ul>
+                            <li>About us</li>
+                            <li>Terms & Conditions</li>
+                            <li>Privacy policy</li>
+                        </ul>
+                        <ul>
+                            <li>Contact us</li>
+                            <li>FAQ</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 main-footer__sm-icon">
+                    <div class="main-footer__social-icon">
+                        <img src="../content/img/facebook.png">
+                        <img src="../content/img/goog.png">
+                        <img src="../content/img/inst.png">
+                        <img src="../content/img/twitter.png">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 

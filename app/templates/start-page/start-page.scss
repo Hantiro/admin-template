@@ -2,18 +2,13 @@
   .row {
     width: 100%;
     display: flex;
-
+    align-items: center;
   }
-  &__footer-menu {
-    white-space: nowrap;
-    display: flex;
-    justify-content: space-between;
-  }
-  &__footer-auth {
-    display: flex;
-    justify-content: flex-end;
+  li {
+    list-style-type: none;
   }
   iframe {
+    height: 80vmin;
     width: 100%;
   }
   h1 {
@@ -40,9 +35,63 @@
     }
   }
   &__main-block {
-    background: url(../../content/img/bgnew.jpg) center/cover no-repeat;
-    height: 60vmin;
+    background: url(../../content/img/bg-main.jpg) center/cover no-repeat;
+    height: 80vmin;
     position: relative;
+  }
+  &__register {
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    width: 250px;
+    text-transform: uppercase;
+    font-family: AssistantBold;
+    line-height: 70px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-left: 10px;
+  }
+  &__store {
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    display: flex;
+    width: 250px;
+    text-transform: uppercase;
+    font-family: AssistantBold;
+    line-height: 70px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  &__promo {
+    text-align: center;
+    height: 27vh;
+    font-family: AssistantRegular;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    li {
+      margin-bottom: 5px;
+    }
+  }
+  &__buttons-promo {
+
+    display: flex;
+    position: absolute;
+    left: 25%;
+    top: 18%;
+    align-items: flex-end;
+    width: 73%;
+    justify-content: space-between;
+  }
+  &__buttons-app {
+    display: flex;
   }
   &__wave {
     position: absolute;
@@ -63,7 +112,7 @@
 
   &__title {
     margin-top: 20px;
-    color: #c697a2;
+    color: #703a46;
     font-family: AnotherDayInParadise;
     font-size: 30px;
   }
@@ -73,6 +122,7 @@
     font-family: AssistantRegular;
     padding-bottom: 50px;
     .text {
+      padding-right: 100px;
       width: 70%;
       margin-left: auto;
     }
@@ -84,12 +134,9 @@
     }
   }
 
-  &__sm-icon {
-    display: none;
-  }
   &__htc {
     position: absolute;
-    width: 17%;
+    width: 20%;
     z-index: 2;
   }
   &__google {
@@ -100,7 +147,15 @@
     top: 50%;
     width: 15%;
   }
+  &__view {
+    text-align: right;
+    text-transform: uppercase;
+    color: #4b0049;
+    text-decoration: underline;
+    font-family: AssistantBold;
+  }
   &__finkel {
+    padding-top: 90px;
     text-align: center;
     width: 100%;
     position: relative;
@@ -150,6 +205,7 @@
   }
 
   &__approvals {
+    font-family: AssistantLight;
     margin: 50px 0;
     position: relative;
     z-index: 2;
@@ -171,12 +227,33 @@
   &__approvals-content {
     width: 30%;
   }
+  &__book-content {
+    width: 30%;
+    display: flex;
+    img {
+      width: 50%;
+      max-height: 280px;
+    }
+  }
+  &__book-description {
+    margin-left: 20px;
+  }
   &__title-approvals {
     margin-top: 20px;
     font-size: 24px;
     font-family: AssistantRegular;
   }
+  &__title-book {
+    margin-top: 0px;
+    font-size: 24px;
+    font-family: AssistantRegular;
+  }
+  &__subtitle-book {
+    font-size: 20px;
+    font-family: AssistantRegular;
+  }
   &__description-approvals {
+    text-align: justify;
     margin-top: 50px;
     font-family: ArimoItalic;
     font-size: 18px;
@@ -186,90 +263,110 @@
       max-height: 300px;
     }
   }
-  &__footer {
-    margin-top: 30px;
-    padding: 10px 0;
-    width: 100%;
-    background-color: #d0c8c5;
-  }
-  &__third-content {
-    background-color: #fff;
-    overflow: auto;
-  }
-  &__down-footer {
-    width: 100%;
-    display: flex;
-    padding: 30px 5%;
-    background-color: #e9e5df;
-    .col-sm-0 {
-      display: none;
-    }
-  }
-  &__down-footer-menu {
-    display: flex;
-    justify-content: space-between;
-    color: #4b0049;
-    ul {
-      list-style-type: none;
-    }
-  }
-}
 
-@media screen and(max-width: 1230px) {
-  .start-page {
-    &__right-side {
-      justify-content: flex-end;
-      width: auto;
-    }
-  }
-}
-
-@media screen and(max-width: 1125px) {
-  .start-page {
-    &__about {
-      .text {
-        margin: auto;
-        width: 95%;
+  @media screen and(max-width: 1230px) {
+    .start-page {
+      &__book-content {
+        display: block;
         text-align: center;
+      }
+      &__right-side {
+        justify-content: flex-end;
+        width: auto;
       }
     }
   }
-}
 
-@media screen and (max-width: 769px) {
-  .start-page {
-    &__lg-icon {
-      display: none;
-    }
-    &__sm-icon {
-      display: block;
+  @media screen and(max-width: 1125px) {
+    .start-page {
+      &__buttons-promo {
+        display: block;
+        top: 20%;
+      }
+      &__promo {
+        width: max-content;
+        margin-top: 5px;
+      }
+      &__about {
+        .text {
+          padding: 0;
+          margin: auto;
+          width: 95%;
+          text-align: center;
+        }
+      }
     }
   }
-}
+  @media screen and (max-width: 780px) {
+    .start-page {
+      &__buttons-promo {
+        top: 35%;
+      }
+      &__title {
+        text-align: center;
+      }
 
-@media screen and (max-width: 680px) {
-  .start-page {
-
-    .fa-bars {
-      display: flex;
-      align-self: center;
-      color: #ffffff;
-    }
-    &__approvals-information {
-      display: block;
-    }
-    &__approvals-content {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
+      &__register {
+        font-size: 14px;
+        width: 150px;
+        line-height: 30px;
+      }
+      &__store {
+        font-size: 14px;
+        width: 150px;
+        line-height: 30px;
+        img {
+          width: 15%;
+        }
+      }
     }
   }
-}
+  @media screen and (max-width: 680px) {
+    .start-page {
+      &__main-block {
+        height: 100vmin;
+      }
+      &__promo {
+        max-height: 80px;
+      }
+      &__description-approvals {
+        margin-top: 15px;
+      }
+      &__book-content {
+        width: 100%;
+        margin-bottom: 35px;
+      }
+      .fa-bars {
+        display: flex;
+        align-self: center;
+        color: #ffffff;
+      }
+      &__approvals-information {
+        display: block;
+      }
+      &__approvals-content {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+  }
 
-@media screen and (max-width: 410px) {
-  .start-page {
-    &__title {
-      font-size: 20px;
+  @media screen and (max-width: 480px) {
+    .start-page {
+      &__buttons-promo {
+        top: 45%;
+      }
+      &__register {
+        margin: 5px 0 0 0;
+      }
+      &__buttons-app {
+        display: block;
+        top: 55%;
+      }
+      &__title {
+        font-size: 20px;
+      }
     }
   }
 }
