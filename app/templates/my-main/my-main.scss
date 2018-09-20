@@ -1,8 +1,23 @@
 .my-main {
   &__background {
     background: url(../../content/img/main-bg.png) center/cover no-repeat;
-    height: 70vmin;
+    //height: 70vmin;
     position: relative;
+  }
+  p {
+    margin: 0;
+  }
+  &__date {
+    width: 100%;
+    height: auto;
+    margin: 10px;
+  }
+  &__main-calendar {
+    margin-top: 40px;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: auto;
   }
   //&__content {
   //  min-height: calc(100vh - 230px - 40vmin);
@@ -12,9 +27,21 @@
     bottom: 0;
     width: 100%;
   }
-  &__menu{
-    background-color: #fef3f5;
+  &__elements {
+    font-family: AssistantRegular;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4b0049;
+    img {
+      margin-right: 10px;
+    }
   }
-
+  &__menu {
+    padding: 10px 0;
+    background-color: #fceef2;
+  }
 
 }

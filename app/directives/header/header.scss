@@ -40,7 +40,7 @@
     justify-content: space-between;
   }
   &__logo {
-    font-size: 20px;
+    font-size: 30px;
     font-family: AssistantExtraBold;
     display: flex;
     align-items: flex-end;
@@ -48,10 +48,10 @@
     img {
       position: absolute;
       transform: scale(-1, 1);
-      height: 45px;
+      height: 60px;
     }
     p {
-      margin-left: 50px;
+      margin-left: 60px;
     }
   }
   &__right-side {
@@ -117,7 +117,7 @@
   }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1025px) {
   .main-header {
     &__right-side {
       display: none;
