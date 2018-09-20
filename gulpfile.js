@@ -118,17 +118,6 @@ gulp.task('fonts', function () {
 });
 
 /**
- * @desc Copy img
- */
-gulp.task('img', function () {
-    var dest = pkg.paths.build + 'content/img';
-    log('Copying images');
-    return gulp
-        .src(pkg.paths.images)
-        .pipe(gulp.dest(dest));
-});
-
-/**
  * @desc Copy locale json
  */
 gulp.task('locale', function () {
@@ -136,6 +125,18 @@ gulp.task('locale', function () {
     log('Copying fonts');
     return gulp
         .src(pkg.paths.locale)
+        .pipe(gulp.dest(dest));
+});
+
+/**
+ * Webfonts
+ * @return {Stream}
+ */
+gulp.task('webfonts', function () {
+    var dest = pkg.paths.build + 'content/webfonts';
+    log('Copy webfonts');
+    return gulp
+        .src(pkg.paths.webfonts)
         .pipe(gulp.dest(dest));
 });
 
@@ -148,9 +149,9 @@ gulp.task('images', function () {
     log('Compressing, caching, and copying images');
     return gulp
         .src(pkg.paths.images)
-        .pipe(plug.cache(plug.imagemin({
-            optimizationLevel: 3
-        })))
+        // .pipe(plug.cache(plug.imagemin({
+        //     optimizationLevel: 3
+        // })))
         .pipe(gulp.dest(dest));
 });
 
@@ -159,7 +160,7 @@ gulp.task('images', function () {
  * rev, but no map
  * @return {Stream}
  */
-gulp.task('rev-and-inject', ['js', 'vendorjs', 'css', 'vendorcss', 'fonts', 'img'], function () {
+gulp.task('rev-and-inject', ['js', 'vendorjs', 'css', 'vendorcss', 'fonts','webfonts', 'images'], function () {
     log('Rev\'ing files and building index.html');
     var minified = pkg.paths.build + '**/*.min.*';
     var index = pkg.paths.app + 'index.html';

@@ -5,7 +5,8 @@
         'ui.router', 'ngStorage',
         'ui.bootstrap', 'angular-loading-bar',
         'toastr', 'ngAria',
-        'ngMaterial','ngMessages','ngAnimate'
+        'ngMaterial','ngMessages','ngAnimate',
+        'pascalprecht.translate',
     ]);
 
 })();
