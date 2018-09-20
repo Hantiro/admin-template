@@ -6,7 +6,7 @@
     background-color: #d0c8c5;
   }
   &__button-login {
-    margin: 0 15px;
+    margin: 0 15px 0 0;
     padding: 5px 15px;
     color: #ffffff;
     background-color: #4b0049;
@@ -41,7 +41,8 @@
   &__down-footer {
     width: 100%;
     display: flex;
-    padding: 30px 5%;
+    align-items: flex-end;
+    padding: 30px 0;
     background-color: #e9e5df;
     .col-sm-0 {
       display: none;
@@ -50,7 +51,7 @@
   &__footer-menu {
     white-space: nowrap;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
   &__footer-auth {
     display: flex;
@@ -60,14 +61,15 @@
     display: none;
   }
   &__right-side {
-    display: flex;
+    //display: flex;
     align-items: center;
     text-transform: uppercase;
     &--bottom {
-      padding: 0 5%;
-      margin-left: auto;
+      width: 95%;
+      margin: auto;
     }
     ul {
+      padding: 0;
       margin-bottom: 0;
       display: flex;
       list-style-type: none;
@@ -80,9 +82,10 @@
   }
   &__down-footer-menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     color: #4b0049;
     ul {
+      padding: 0;
       list-style-type: none;
     }
   }
@@ -97,8 +100,20 @@
   }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 992px) {
   .main-footer {
+    &__footer-auth {
+      justify-content: flex-start;
+    }
+    .col-sm-0 {
+      display: none;
+    }
+    &__footer-menu {
+      justify-content: flex-start;
+    }
+    &__down-footer-menu {
+      justify-content: flex-start;
+    }
     &__lg-icon {
       display: none;
     }
@@ -123,8 +138,12 @@
     &__footer-auth {
       margin: auto;
     }
-    &__down-footer {
-      display: block;
+    &__authorization {
+      margin: auto;
+    }
+    &__down-footer-menu {
+      justify-content: center;
+      text-align: center;
     }
     .col-sm-0 {
       display: none;

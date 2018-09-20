@@ -5,20 +5,29 @@
                 <img src="../content/img/logo.png">
                 <p dir="rtl">מחשבון טהרה</p>
             </div>
-            <div class="main-header__right-side">
+            <div class="main-header__auth-menu" ng-if="hIsAuth">
+                <ul>
+                    <li>my calendar</li>
+                    <li>pregnancy calculator</li>
+                    <li>mikvahs</li>
+                    <li>tradition</li>
+                    <li>ask the rabbi</li>
+                </ul>
+            </div>
+            <div class="main-header__authorization" ng-if="hIsAuth">
+                <p>Hi! Mirra Gutman</p>
+                <i class="fa fa-user"></i>
+                <p class="main-header__lang">en</p>
+            </div>
+            <div class="main-header__right-side" ng-if="!hIsAuth">
                 <ul>
                     <li>contact us</li>
                     <li>mikvahs</li>
                     <li>tradition</li>
                 </ul>
-                <div class="main-header__authorization" ng-if="!hIsAuth">
+                <div class="main-header__authorization">
                     <p>register</p>
                     <span class="main-header__button-login">login</span>
-                    <p class="main-header__lang">en</p>
-                </div>
-                <div class="main-header__authorization" ng-if="hIsAuth">
-                    <p>Hi! Mirra Gutman</p>
-                    <i class="fa fa-user"></i>
                     <p class="main-header__lang">en</p>
                 </div>
             </div>

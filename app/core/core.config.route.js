@@ -22,6 +22,48 @@
                 controller: 'StartPageCtrl',
                 controllerAs: 'vm'
             })
+            .state('main', {
+                url: '/main',
+                templateUrl: 'templates/main/main.html',
+                controller: 'MainCtrl',
+                controllerAs: 'vm'
+            })
+            .state('my-main', {
+                url: '/my-main',
+                templateUrl: 'templates/my-main/my-main.html',
+                controller: 'MyMainCtrl',
+                controllerAs: 'vm'
+            })
+            .state('main.about', {
+                url: '/about',
+                templateUrl: 'templates/about/about.html',
+                controller: 'AboutCtrl',
+                controllerAs: 'vm'
+            })
+            .state('main.contact-us', {
+                url: '/contact-us',
+                templateUrl: 'templates/contact-us/contact-us.html',
+                controller: 'ContactUsCtrl',
+                controllerAs: 'vm'
+            })
+            .state('main.mikvahs', {
+                url: '/mikvahs',
+                templateUrl: 'templates/mikvahs/mikvahs.html',
+                controller: 'MikvahsCtrl',
+                controllerAs: 'vm'
+            })
+            .state('main.terms', {
+                    url: '/terms',
+                    templateUrl: 'templates/terms/terms.html',
+                    controller: 'TermsCtrl',
+                    controllerAs: 'vm',
+                })
+            .state('main.tradition', {
+                    url: '/tradition',
+                    templateUrl: 'templates/tradition/tradition.html',
+                    controller: 'TraditionCtrl',
+                    controllerAs: 'vm',
+                })
             // .state('app', {
             //     url: '/',
             //     templateUrl: 'templates/app/app.html',

@@ -1,0 +1,43 @@
+.mikvahs {
+  margin-top: 20px;
+  font-family: ArimoBold;
+  font-size: 48px;
+  color: #d0c8c5;
+  a {
+    font-size: 36px;
+    font-family: ArimoRegular;
+    text-decoration: underline;
+    color: #4b0049;
+    margin-left: 20px;
+  }
+  &__link {
+    width: 68%;
+    margin: auto;
+    white-space: nowrap;
+  }
+  &__lang{
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and(max-width: 1024px) {
+  .mikvahs {
+    &__link {
+      width: 100%;
+      white-space: normal;
+    }
+  }
+}
+@media screen and(max-width: 800px) {
+  .mikvahs{
+    text-align: center;
+    a{
+      font-size: 20px;
+      margin-left: 0;
+    }
+    &__lang{
+      display: block;
+    }
+  }
+}

@@ -53,19 +53,19 @@
 
 }
 
-.main {
-  transition: all 0.3s ease;
-  &--full-width {
-    margin-left: 0;
-    width: 100%;
-    max-width: 100%;
-  }
-  margin-top: 55px;
-  margin-left: 168px;
-  width: calc(100% - 168px);
-  height: calc(100% - 55px);
-  padding:25px;
-}
+//.main {
+//  transition: all 0.3s ease;
+//  &--full-width {
+//    margin-left: 0;
+//    width: 100%;
+//    max-width: 100%;
+//  }
+//  margin-top: 55px;
+//  margin-left: 168px;
+//  width: calc(100% - 168px);
+//  height: calc(100% - 55px);
+//  padding:25px;
+//}
 
 .sidebar {
   transition: all 0.3s ease;

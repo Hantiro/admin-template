@@ -2,18 +2,16 @@
 @import "../scss/styles";
 
 //templates styles
-@import "../templates/login/login.scss";
-@import "../templates/app/app.scss";
-@import "../templates/users/users";
-@import "../templates/laws/laws";
+@import "../templates/login/login";
+@import "../templates/app/app";
 @import "../templates/terms/terms";
-@import "../templates/feedback-msg/feedback-msg";
-@import "../templates/purchase/purchase.scss";
-@import "../templates/text/text.scss";
-@import "../templates/dentist-detail/dentist-detail";
-@import "../templates/patient-detail/patient-detail";
-@import "../templates/clinic-detail/clinic-detail";
-@import "../templates/start-page/start-page.scss";
+@import "../templates/start-page/start-page";
+@import "../templates/main/main";
+@import "../templates/about/about";
+@import "../templates/contact-us/contact-us";
+@import "../templates/mikvahs/mikvahs";
+@import "../templates/tradition/tradition";
+@import "../templates/my-main/my-main";
 
 //directive style
 @import '../directives/header/header';
@@ -27,5 +25,5 @@
 @import '../directives/history/history';
 
 //components styles
-@import "../components/confirm/confirm.scss";
+@import "../components/confirm/confirm";
 @import "../components/purchase_create/purchase_create";

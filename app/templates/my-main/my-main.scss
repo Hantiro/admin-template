@@ -1,0 +1,20 @@
+.my-main {
+  &__background {
+    background: url(../../content/img/main-bg.png) center/cover no-repeat;
+    height: 70vmin;
+    position: relative;
+  }
+  //&__content {
+  //  min-height: calc(100vh - 230px - 40vmin);
+  //}
+  &__wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  &__menu{
+    background-color: #fef3f5;
+  }
+
+
+}

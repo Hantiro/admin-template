@@ -1,0 +1,17 @@
+.main {
+  &__background {
+    background: url(../../content/img/bg-template.png) center/cover no-repeat;
+    height: 40vmin;
+    position: relative;
+  }
+  &__content {
+    min-height: calc(100vh - 230px - 40vmin);
+  }
+  &__wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+
+}

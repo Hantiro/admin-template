@@ -25,13 +25,19 @@
   font-family: 'ArimoItalic';
   src: url("../fonts/ArimoItalic.ttf");
 }
+
 @font-face {
   font-family: 'AssistantBold';
   src: url("../fonts/AssistantBold.ttf");
 }
+
 @font-face {
   font-family: 'AssistantLight';
   src: url("../fonts/AssistantLight.ttf");
+}
+@font-face {
+  font-family: 'ArimoBold';
+  src: url("../fonts/ArimoBold.ttf");
 }
 
 @font-face {
@@ -137,6 +143,21 @@ a:hover {
   margin-left: 0;
 }
 
+.contain {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  margin: auto;
+}
+
+.title-page {
+  color: #c697a2;
+  font-size: 30px;
+  font-family: AnotherDayInParadise;
+}
+
 .default-container {
   margin-bottom: 20px;
   background: #fff;
@@ -207,4 +228,10 @@ a:hover {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+}
+
+@media screen and(max-width: 500px) {
+  .contain{
+    justify-content:flex-start;
+  }
 }

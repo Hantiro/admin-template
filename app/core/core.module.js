@@ -4,7 +4,8 @@
     angular.module('app.core', [
         'ui.router', 'ngStorage',
         'ui.bootstrap', 'angular-loading-bar',
-        'toastr'
+        'toastr', 'ngAria',
+        'ngMaterial','ngMessages','ngAnimate'
     ]);
 
 })();
