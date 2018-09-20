@@ -6,65 +6,106 @@
     /* @ngInject */
     function modalSvc($uibModal) {
         var service = {
-            confirmDelete: confirmDelete,
-            purchaseCreate: purchaseCreate,
-            specCreateModal: specCreateModal
+            setPhone: setPhone,
+            setCode: setCode,
+            signup: signup,
+            welcome: welcome,
+            newPass: newPass,
+            login: login,
+            forgotPass: forgotPass
         };
         return service;
 
-        function confirmDelete(){
-            return  $uibModal.open({
+        function setPhone() {
+            return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/confirm/confirm.html',
-                controller: 'ConfirmCtrl',
+                templateUrl: 'components/set-phone/set-phone.html',
+                controller: 'SetPhoneCtrl',
                 controllerAs: 'vm',
-                windowTopClass: 'confirm-modal',
-                size: 'sm',
-                resolve: {
-                    config: {
-                        header_text: 'Confirm',
-                        content_text: 'Delete this item?',
-                        ok: 'Yes',
-                        cancel: 'No'
-                    },
-                }
+                windowTopClass: 'set-phone-modal',
+                size: 'md',
+                resolve: {}
             });
         }
-        
-        function purchaseCreate() {
-            return  $uibModal.open({
+
+        function setCode() {
+            return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/purchase_create/purchase_create.html',
-                controller: 'PurchaseCreateCtrl',
+                templateUrl: 'components/set-code/set-code.html',
+                controller: 'SetCodeCtrl',
                 controllerAs: 'vm',
-                windowTopClass: 'purchase-modal',
-                size: 'sm',
-                resolve: {
-                    config: {
-                        ok: 'Add',
-                        cancel: 'Cancel'
-                    }
-                }
+                windowTopClass: 'set-code-modal',
+                size: 'md',
+                resolve: {}
             });
         }
-        function specCreateModal() {
-            return  $uibModal.open({
+
+        function welcome() {
+            return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/specialty-create/specialty-create.html',
-                controller: 'SpecCreateCtrl',
+                templateUrl: 'components/welcome/welcome.html',
+                controller: 'WelcomeCtrl',
                 controllerAs: 'vm',
-                windowTopClass: 'spec-modal',
-                size: 'sm',
-                resolve: {
-                    config: {
-                        ok: 'Add',
-                        cancel: 'Cancel'
-                    }
-                }
+                windowTopClass: 'welcome-modal',
+                size: 'md',
+                resolve: {}
             });
         }
+
+        function signup() {
+            return $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'components/signup/signup.html',
+                controller: 'SignupCtrl',
+                controllerAs: 'vm',
+                windowTopClass: 'signup-modal',
+                size: 'md',
+                resolve: {}
+            });
+        }
+
+        function newPass() {
+            return $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'components/new-pass/new-pass.html',
+                controller: 'SignupCtrl',
+                controllerAs: 'vm',
+                windowTopClass: 'new-pass-modal',
+                size: 'md',
+                resolve: {}
+            });
+        }
+
+        function login() {
+            return $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'components/login/login.html',
+                controller: 'LoginCtrl',
+                controllerAs: 'vm',
+                windowTopClass: 'login-modal',
+                size: 'md',
+                resolve: {}
+            });
+        }
+
+        function forgotPass() {
+            return $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'components/forgot-pass/forgot-pass.html',
+                controller: 'ForgotPassCtrl',
+                controllerAs: 'vm',
+                windowTopClass: 'forgot-pass-modal',
+                size: 'md',
+                resolve: {}
+            });
+        }
+
     }
 })();

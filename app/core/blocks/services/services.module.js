@@ -8,11 +8,8 @@
         'service.modalSvc',
         'service.textSvc',
         'service.messagesSvc',
-        'service.dentistSvc',
-        'service.patientSvc',
-        'service.clinicsSvc',
-        'service.specSvc',
-        'service.purchaseSvc'
+        'service.traditionSvc',
+        'service.firebaseSvc',
     ]);
 
 })();
