@@ -1,16 +1,19 @@
 .my-main {
+  .col-md-4 {
+    padding: 0;
+  }
   &__background {
     background: url(../../content/img/main-bg.png) center/cover no-repeat;
     //height: 70vmin;
     position: relative;
   }
-  p {
-    margin: 0;
-  }
+  //p {
+  //  margin: 0;
+  //}
   &__date {
     width: 100%;
     height: auto;
-    margin: 10px;
+    padding: 10.7px;
   }
   &__main-calendar {
     margin-top: 40px;
@@ -22,6 +25,11 @@
   //&__content {
   //  min-height: calc(100vh - 230px - 40vmin);
   //}
+  &__content {
+    min-height: calc(100vh - 810px);
+    width: 95%;
+    margin: auto;
+  }
   &__wave {
     position: absolute;
     bottom: 0;
@@ -29,13 +37,17 @@
   }
   &__elements {
     font-family: AssistantRegular;
-    font-size: 16px;
+    font-size: 15px;
     text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #4b0049;
+    p{
+      margin: 0;
+    }
     img {
+      width: 45px;
       margin-right: 10px;
     }
   }
@@ -43,5 +55,25 @@
     padding: 10px 0;
     background-color: #fceef2;
   }
+}
 
+@media screen and(max-width: 992px) {
+  .my-main {
+    &__background {
+      padding-bottom: 50px;
+    }
+    &__elements {
+      //justify-content: flex-start;
+      //width: 50%;
+      //margin: auto;
+      //transform: translateX(+50%);
+      padding: 10px;
+    }
+    &__notification {
+      margin-left: -15px;
+    }
+    &__menu {
+      padding: 0;
+    }
+  }
 }

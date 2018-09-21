@@ -1,5 +1,35 @@
 .legend {
-
+  font-family: ArimoRegular;
+  color: #4b0049;
+  p{
+    margin: 0;
+  }
+  &__propose {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  &__button {
+    background-color: #4b0049;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-left: 15px;
+    padding: 5px 15px;
+  }
+  &__item{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  &__description {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    p {
+      margin: 0 15px 0 5px;
+    }
+  }
 }
 
 
