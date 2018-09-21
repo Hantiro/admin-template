@@ -35,9 +35,15 @@
   font-family: 'AssistantLight';
   src: url("../fonts/AssistantLight.ttf");
 }
+
 @font-face {
   font-family: 'ArimoBold';
   src: url("../fonts/ArimoBold.ttf");
+}
+
+@font-face {
+  font-family: 'ArimoRegular';
+  src: url("../fonts/ArimoRegular.ttf");
 }
 
 @font-face {
@@ -154,6 +160,14 @@ a:hover {
   margin-left: 0;
 }
 
+.button-default {
+  background-color: #4b0049;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 5px 15px;
+  border: 0;
+}
+
 .contain {
   height: 100%;
   display: flex;
@@ -242,7 +256,7 @@ a:hover {
 }
 
 @media screen and(max-width: 500px) {
-  .contain{
-    justify-content:flex-start;
+  .contain {
+    justify-content: flex-start;
   }
 }

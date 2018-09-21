@@ -1,5 +1,36 @@
 .pill {
-
+  text-align: right;
+  font-family: AssistantRegular;
+  &__content {
+    width: 85%;
+  }
+  &__input-calendar {
+    input {
+      background: url(../../content/img/input-calendar.png) no-repeat 150px center #ffffff;
+    }
+  }
+  &__info {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    p {
+      text-align: left;
+      width: 35%;
+      margin-right: 10px;
+    }
+  }
+  input {
+    border: 0;
+    border-top: 10px solid #856894;
+    height: 70px;
+    width: 200px;
+    text-align: center;
+  }
+  button {
+    margin-top: 30px;
+    margin-left: auto;
+  }
 }
 
 
