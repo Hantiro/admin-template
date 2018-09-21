@@ -4,9 +4,11 @@
         .controller('ContactUsCtrl', ContactUsCtrl);
 
     /* @ngInject */
-    function ContactUsCtrl(authSvc, $state, toastr, userSvc) {
+    function ContactUsCtrl(authSvc, userSvc) {
         var vm = this;
-        vm.user = {
-        };
+        init();
+        function init(){
+
+        }
     }
 })();

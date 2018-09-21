@@ -6,12 +6,9 @@
     /* @ngInject */
     function AppCtrl($state, authSvc) {
         var vm = this;
-        vm.logout = authSvc.logout;
-        vm.toggleMenu = toggleMenu;
-        vm.menuOpen = true;
+        init();
+        function init(){
 
-        function toggleMenu() {
-            vm.menuOpen = !vm.menuOpen;
         }
     }
 })();

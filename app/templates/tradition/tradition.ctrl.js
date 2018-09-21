@@ -4,9 +4,11 @@
         .controller('TraditionCtrl', TraditionCtrl);
 
     /* @ngInject */
-    function TraditionCtrl(clinics, clinic_countries) {
+    function TraditionCtrl() {
         var vm = this;
-        vm.user = {
-        };
+        init();
+        function init(){
+
+        }
     }
 })();

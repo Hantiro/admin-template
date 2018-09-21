@@ -121,8 +121,8 @@ gulp.task('fonts', function () {
  * @desc Copy locale json
  */
 gulp.task('locale', function () {
-    var dest = pkg.paths.build + 'content/locale';
-    log('Copying fonts');
+    var dest = pkg.paths.build + 'content/lang';
+    log('Copying locale');
     return gulp
         .src(pkg.paths.locale)
         .pipe(gulp.dest(dest));

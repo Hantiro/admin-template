@@ -4,8 +4,11 @@
         .controller('TermsCtrl', TermsCtrl);
 
     /* @ngInject */
-    function TermsCtrl(clinics, clinic_countries) {
+    function TermsCtrl() {
         var vm = this;
         init();
+        function init(){
+
+        }
     }
 })();

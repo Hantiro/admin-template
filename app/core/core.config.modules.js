@@ -1,17 +1,19 @@
 ;(function () {
     angular
         .module('app')
-        .config(['cfpLoadingBarProvider','$compileProvider', '$uibTooltipProvider','$httpProvider','toastrConfig',
-            function (cfpLoadingBarProvider,$compileProvider,$uibTooltipProvider,$httpProvider,toastrConfig) {
+        .config(['cfpLoadingBarProvider', '$httpProvider', 'toastrConfig', '$translateProvider',
+            function (cfpLoadingBarProvider, $httpProvider, toastrConfig, $translateProvider) {
                 angular.extend(toastrConfig, {
                     preventOpenDuplicates: true,
                 });
-            cfpLoadingBarProvider.includeSpinner = true;
-            $uibTooltipProvider.options({
-                // popupCloseDelay : 2000,
-                popupDelay: 500,
-                placement: 'top'
-            });
-        }]);
+                cfpLoadingBarProvider.includeSpinner = true;
+
+                $translateProvider.useStaticFilesLoader({
+                    prefix: 'lang/lang-',
+                    suffix: '.json'
+                });
+                $translateProvider.registerAvailableLanguageKeys(['eng', 'heb']);
+                $translateProvider.preferredLanguage('eng');
+            }]);
 })();
 

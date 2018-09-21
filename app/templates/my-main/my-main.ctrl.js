@@ -4,9 +4,11 @@
         .controller('MyMainCtrl', MyMainCtrl);
 
     /* @ngInject */
-    function MyMainCtrl(authSvc, $state, toastr, userSvc) {
+    function MyMainCtrl(authSvc,  userSvc) {
         var vm = this;
-        vm.user = {
-        };
+        init();
+        function init(){
+
+        }
     }
 })();

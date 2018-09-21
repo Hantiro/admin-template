@@ -4,9 +4,11 @@
         .controller('MikvahsCtrl', MikvahsCtrl);
 
     /* @ngInject */
-    function MikvahsCtrl(authSvc, $state, toastr, userSvc) {
+    function MikvahsCtrl(authSvc, userSvc) {
         var vm = this;
-        vm.user = {
-        };
+        init();
+        function init(){
+
+        }
     }
 })();

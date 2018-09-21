@@ -4,9 +4,11 @@
         .controller('StartPageCtrl', StartPageCtrl);
 
     /* @ngInject */
-    function StartPageCtrl(authSvc, $state, toastr, userSvc) {
+    function StartPageCtrl(authSvc, userSvc) {
         var vm = this;
-        vm.user = {
-        };
+        init();
+        function init(){
+
+        }
     }
 })();
