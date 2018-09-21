@@ -9,8 +9,9 @@
             templateUrl: 'directives/tradition-item/tradition-item.html',
             replace: true,
             scope: {
-                tTitle: '@',
-                tDesc: '@'
+                tiTitle: '@',
+                tiDesc: '@',
+                tiSubtitle: '@'
             },
             controller: 'TraditionItemCtrl',
             controllerAs: 'vm',

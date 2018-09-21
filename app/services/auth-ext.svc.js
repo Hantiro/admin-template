@@ -4,13 +4,14 @@
     angular.module('service.authExtSvc', []).service('authExtSvc', authExtSvc);
 
     /* @ngInject */
-    function authExtSvc($rootScope, modalSvc, authSvc, authDataSvc) {
+    function authExtSvc($rootScope, modalSvc, authSvc, authDataSvc, $state) {
         var model = {
             signUpProcess: signUpProcess,
             loginProcess: loginProcess,
             checkLogin: checkLogin,
             logout: logout,
-            autoLogin: autoLogin
+            autoLogin: autoLogin,
+            logoutAsk: logoutAsk
         };
 
         $rootScope.$on('logout', function (event, data) {
@@ -56,6 +57,8 @@
             modalSvc.login().result.then(function (res) {
                 if (res && res === 'reset-pass') {
                     resetPassProcess();
+                } else {
+                    $state.go('app.my-main');
                 }
             });
         }
@@ -69,9 +72,9 @@
         }
 
         function resetPassProcess() {
-            modalSvc.resetPassword().result.then(function () {
+            modalSvc.forgotPass().result.then(function () {
 
-            })
+            });
         }
 
         function autoLogin(callback) {
@@ -82,6 +85,12 @@
             if (!authDataSvc.isLogined()) {
                 $state.go('app.start-page');
             }
+        }
+
+        function logoutAsk(){
+            modalSvc.logout().result.then(function(){
+                logout();
+            })
         }
 
         function logout() {

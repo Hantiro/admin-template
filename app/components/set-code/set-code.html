@@ -4,7 +4,13 @@
 <div class="modal-body" id="modal-body">
     <form name="vm.addCodeForm" novalidate>
         <md-input-container md-no-float class="md-block" flex>
-            <input ng-model="vm.code" minlength="4" maxlength="4" type="number" id="code" name="code"
+            <input ng-model="vm.code"
+                   minlength="4"
+                   maxlength="4"
+                   type="number"
+                   id="code"
+                   name="code"
+                   placeholder="{{ 'CONTENT.CODE'|translate}}"
                    aria-label="code">
         </md-input-container>
     </form>

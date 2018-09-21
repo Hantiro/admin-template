@@ -1,5 +1,6 @@
 {
   "CONTENT": {
+    "CODE": "SMS code",
     "REMEMBER_ME": "Remember me on this computer",
     "STATE_CITY": "State and city",
     "PILLS_DELETE": "Delete last pills",

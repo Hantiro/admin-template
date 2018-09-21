@@ -14,12 +14,14 @@
                     </div>
                     <div class="col-md-3 col-sm-3 main-footer__footer-auth">
                         <div class="main-footer__authorization" ng-if="!vm.isAuth()">
-                            <p>register</p>
-                            <span class="main-footer__button-login">login</span>
+                            <p class="cursor-pointer" ng-click="vm.signUp()">register</p>
+                            <span class="main-footer__button-login cursor-pointer"
+                                  ng-click="vm.login()">login</span>
                             <p class="main-footer__lang">en</p>
                         </div>
                         <div class="main-footer__authorization" ng-if="vm.isAuth()">
-                            <span class="main-footer__button-login">logout</span>
+                            <span class="main-footer__button-login cursor-pointer"
+                                  ng-click="vm.logout()">logout</span>
                             <p class="main-footer__lang">en</p>
                         </div>
                     </div>
@@ -39,9 +41,9 @@
                 <div class="col-md-6 col-sm-6 col-xs-8">
                     <div class="main-footer__down-footer-menu">
                         <ul class="col-md-3 col-sm-3 col-xs-4">
-                            <li>About us</li>
+                            <li class="cursor-pointer" ui-sref="app.main.about">About us</li>
                             <li class="cursor-pointer" ui-sref="app.main.terms">Terms & Conditions</li>
-                            <li>Privacy policy</li>
+                            <li class="cursor-pointer" ui-sref="app.main.privacy">Privacy policy</li>
                         </ul>
                         <ul class="col-md-3 col-sm-3 col-xs-4">
                             <li>Contact us</li>

@@ -6,8 +6,11 @@
         .controller('FooterCtrl', FooterCtrl);
 
     /* @ngInject */
-    function FooterCtrl($scope, authSvc) {
+    function FooterCtrl($scope, authDataSvc, authExtSvc) {
         var vm = this;
-        vm.isAuth = authSvc.isLogined;
+        vm.isAuth = authDataSvc.isLogined;
+        vm.signUp = authExtSvc.signUpProcess;
+        vm.login = authExtSvc.loginProcess;
+        vm.logout = authExtSvc.logoutAsk;
     }
 })();

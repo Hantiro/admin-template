@@ -12,7 +12,9 @@
             welcome: welcome,
             newPass: newPass,
             login: login,
-            forgotPass: forgotPass
+            forgotPass: forgotPass,
+            confirm: confirm,
+            logout: logout
         };
         return service;
 
@@ -27,6 +29,41 @@
                 windowTopClass: 'set-phone-modal',
                 size: 'md',
                 resolve: {}
+            });
+        }
+
+        /**
+         *
+         * @param config
+         * @param config.title
+         * @param config.content
+         * @param config.ok
+         * @param config.cancel
+         * @returns { $uibModal }
+         */
+        function confirm(config) {
+            return $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'components/confirm/confirm.html',
+                controller: 'ConfirmModalCtrl',
+                controllerAs: 'vm',
+                backdropClass: 'custom-backdrop',
+                windowTopClass: 'confirm',
+                size: config.size || 'md',
+                resolve: {
+                    config: config || {}
+                }
+            });
+        }
+
+        function logout(){
+            return confirm({
+                title: 'CONTENT.LOGOUT',
+                content: 'CONTENT.ASK_LOGOUT',
+                ok: 'CONTENT.OK',
+                cancel: 'CONTENT.CANCEL',
+                size: 'sm'
             });
         }
 

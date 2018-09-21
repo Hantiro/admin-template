@@ -23,7 +23,11 @@
             vm.data.phone = vm.tmp_credentials.phone;
             authSvc.signUp(vm.data)
                 .then(function (res) {
-                    $uibModalInstance.close(res);
+                    if (res.success) {
+                        $uibModalInstance.close(res);
+                    } else if (res.message) {
+                        messagesSvc.toastr.error(res.message);
+                    }
                 });
         }
 

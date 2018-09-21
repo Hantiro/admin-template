@@ -1,10 +1,25 @@
 <div class="modal-header">
-    <h3 class="modal-title" id="modal-title">Add Purchase</h3>
+    <h3 class="modal-title" id="modal-title">{{'CONTENT.FORGOT_PASSWORD'|translate}}</h3>
 </div>
 <div class="modal-body" id="modal-body">
-
+    <p>{{'CONTENT.TEXT_RESET_PASSWORD_POPUP'|translate}}</p>
+    <div class="form">
+        <form name="vm.resetPassForm" novalidate>
+            <md-input-container md-no-float class="md-block" flex>
+                <md-icon md-font-icon="fa fa-at " aria-hidden="true"></md-icon>
+                <input ng-model="vm.email"
+                       placeholder="{{::'CONTENT.EMAIL'|translate}}"
+                       type="email" id="email"
+                       name="email"
+                       minlength="4"
+                       maxlength="50"
+                       required
+                       aria-label="email">
+            </md-input-container>
+        </form>
+    </div>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="vm.ok()">{{vm.config.ok}}</button>
-    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">{{vm.config.cancel}}</button>
+    <button class="btn btn-primary" type="button" ng-click="vm.continueBtn()"> {{ 'CONTENT.SEND'|translate }}</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">{{ 'CONTENT.CANCEL' | translate }}</button>
 </div>

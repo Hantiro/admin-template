@@ -73,7 +73,7 @@
                 if (response.status === 401) {
                     // $state.go('add-phone');
                     toastr.error('Server Error: ' + response.status + ' ' + response.data.message);
-                    $rootScope.$broadcast('logout', {});
+                    // $rootScope.$broadcast('logout', {});
                 }
                 toastr.error(response.data.message);
             }

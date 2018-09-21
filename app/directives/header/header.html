@@ -9,21 +9,21 @@
                 <ul>
                     <li>my calendar</li>
                     <li>pregnancy calculator</li>
-                    <li>mikvahs</li>
-                    <li>tradition</li>
+                    <li ui-sref="app.main.mikvahs">mikvahs</li>
+                    <li ui-sref="app.main.tradition">tradition</li>
                     <li>ask the rabbi</li>
                 </ul>
             </div>
             <div class="main-header__authorization" ng-if="vm.isAuth()">
-                <p>Hi! Mirra Gutman</p>
+                <p>Hi! {{vm.user().first_name + ' ' + vm.user().last_name }}</p>
                 <i class="fa fa-user"></i>
                 <p class="main-header__lang">en</p>
             </div>
-            <div class="main-header__right-side" ng-if="!vm.isAuth()">
+            <div class="main-header__right-side main-header" ng-if="!vm.isAuth()">
                 <ul>
                     <li>contact us</li>
                     <li>mikvahs</li>
-                    <li>tradition</li>
+                    <li ui-sref="app.main.tradition">tradition</li>
                 </ul>
                 <div class="main-header__authorization">
                     <p class="cursor-pointer" ng-click="vm.signUp()">register</p>

@@ -78,6 +78,15 @@
                 templateUrl: 'templates/tradition/tradition.html',
                 controller: 'TraditionCtrl',
                 controllerAs: 'vm',
+                resolve: {
+                    /* @ngInject */
+                    traditions: function (traditionSvc) {
+                        return traditionSvc.get()
+                            .then(function (res) {
+                                return res.entity || [];
+                            })
+                    }
+                }
             })
     }
 })();

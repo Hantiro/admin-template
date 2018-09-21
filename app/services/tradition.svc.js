@@ -9,6 +9,10 @@
                 get: get
             };
 
+            function get(){
+                return http.get(url.settings.comments);
+            }
+
             return model;
 
 

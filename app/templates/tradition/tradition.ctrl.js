@@ -4,10 +4,12 @@
         .controller('TraditionCtrl', TraditionCtrl);
 
     /* @ngInject */
-    function TraditionCtrl() {
+    function TraditionCtrl(traditions) {
         var vm = this;
+        vm.traditions = traditions;
+
         init();
-        function init(){
+        function init(  ){
 
         }
     }

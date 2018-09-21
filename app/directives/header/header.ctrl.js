@@ -6,10 +6,11 @@
         .controller('HeaderCtrl', HeaderCtrl);
 
     /* @ngInject */
-    function HeaderCtrl($scope, authSvc, authExtSvc) {
+    function HeaderCtrl($scope, authSvc, authExtSvc, authDataSvc) {
         var vm = this;
-        vm.isAuth = authSvc.isLogined;
+        vm.isAuth = authDataSvc.isLogined;
         vm.signUp = authExtSvc.signUpProcess;
         vm.login = authExtSvc.loginProcess;
+        vm.user = authDataSvc.getUser;
     }
 })();
