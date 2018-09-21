@@ -5,8 +5,7 @@
         .module('app')
         .controller('NotificationCtrl', NotificationCtrl);
 
-    NotificationCtrl.$inject = ['$scope'];
-
+    /* @ngInject */
     function NotificationCtrl($scope) {
         var vm = this;
     }

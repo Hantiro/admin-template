@@ -7,11 +7,12 @@
     /* @ngInject */
     function mainConfig($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('start-page');
+        $urlRouterProvider.otherwise('/start-page');
 
         $stateProvider
             .state('app', {
-                url: '',
+                url: '/',
+                abstract: true,
                 templateUrl: 'templates/app/app.html',
                 controller: 'AppCtrl',
                 controllerAs: 'vm',
@@ -21,26 +22,20 @@
                     }]
                 }
             })
-            .state('app.login', {
-                url: '/login',
-                templateUrl: 'templates/login/login.html',
-                controller: 'LoginCtrl',
-                controllerAs: 'vm'
-            })
             .state('app.start-page', {
-                url: '/start-page',
+                url: 'start-page',
                 templateUrl: 'templates/start-page/start-page.html',
                 controller: 'StartPageCtrl',
                 controllerAs: 'vm'
             })
             .state('app.main', {
-                url: '/main',
+                url: 'main',
                 templateUrl: 'templates/main/main.html',
                 controller: 'MainCtrl',
                 controllerAs: 'vm'
             })
             .state('app.my-main', {
-                url: '/my-main',
+                url: 'my-main',
                 templateUrl: 'templates/my-main/my-main.html',
                 controller: 'MyMainCtrl',
                 controllerAs: 'vm'
@@ -68,6 +63,15 @@
                 templateUrl: 'templates/terms/terms.html',
                 controller: 'TermsCtrl',
                 controllerAs: 'vm',
+                resolve: {
+                    /* @ngInject */
+                    terms: function (textSvc) {
+                        return textSvc.getTerms()
+                            .then(function (res) {
+                                return res.entity || [];
+                            })
+                    }
+                }
             })
             .state('app.main.tradition', {
                 url: '/tradition',

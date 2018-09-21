@@ -4,17 +4,17 @@
         .controller('WelcomeCtrl', WelcomeCtrl);
 
     /* @ngInject */
-    function WelcomeCtrl($uibModalInstance,config,messagesSvc) {
+    function WelcomeCtrl($uibModalInstance,data,messagesSvc) {
         var vm = this;
-        vm.config = config;
+        vm.buy = buy;
+        vm.data = angular.copy(data);
 
-        vm.ok = function(){
-            if(validation()){
+        function buy(){
                 $uibModalInstance.close(vm.model);
-            }
-        };
+        }
+
         vm.cancel = function(){
             $uibModalInstance.dismiss(false);
-        };
+        }
     }
 })();

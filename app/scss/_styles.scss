@@ -131,7 +131,18 @@ a, a:focus {
 
 a:hover {
   text-decoration: none;
-  color: #42bc9b;
+}
+
+.cursor-pointer {
+  cursor:pointer;
+}
+
+.md-virtual-repeat-container.md-autocomplete-suggestions-container {
+  z-index: 1100 !important;
+}
+
+.custom-backdrop.modal-backdrop.fade {
+  opacity: 0.3;
 }
 
 .container {

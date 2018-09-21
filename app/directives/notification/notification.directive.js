@@ -2,8 +2,7 @@
     angular.module('directives.notification', [])
         .directive('notification', notification);
 
-    notification.$inject = ['$document', '$timeout'];
-
+    /* @ngInject */
     function notification($document, $timeout) {
         return {
             restrict: 'E',

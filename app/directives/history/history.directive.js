@@ -2,8 +2,7 @@
     angular.module('directives.history', [])
         .directive('history', history);
 
-    history.$inject = ['$document', '$timeout'];
-
+    /* @ngInject */
     function history($document, $timeout) {
         return {
             restrict: 'E',

@@ -10,6 +10,9 @@
         'service.messagesSvc',
         'service.traditionSvc',
         'service.firebaseSvc',
+        'service.googleSvc',
+        'service.authExtSvc',
+        'service.authDataSvc',
     ]);
 
 })();

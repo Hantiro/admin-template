@@ -5,8 +5,7 @@
         .module('app')
         .controller('CalendarCtrl', CalendarCtrl);
 
-    CalendarCtrl.$inject = ['$scope'];
-
+    /* @ngInject */
     function CalendarCtrl($scope) {
         var vm = this;
     }

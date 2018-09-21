@@ -5,8 +5,7 @@
         .module('app')
         .controller('PillCtrl', PillCtrl);
 
-    PillCtrl.$inject = ['$scope'];
-
+    /* @ngInject */
     function PillCtrl($scope) {
         var vm = this;
     }

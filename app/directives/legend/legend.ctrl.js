@@ -5,8 +5,7 @@
         .module('app')
         .controller('LegendCtrl', LegendCtrl);
 
-    LegendCtrl.$inject = ['$scope'];
-
+    /* @ngInject */
     function LegendCtrl($scope) {
         var vm = this;
     }

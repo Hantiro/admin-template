@@ -2,8 +2,7 @@
     angular.module('directives.traditionItem', [])
         .directive('traditionItem', traditionItem);
 
-    traditionItem.$inject = ['$document', '$timeout'];
-
+    /* @ngInject */
     function traditionItem($document, $timeout) {
         return {
             restrict: 'E',

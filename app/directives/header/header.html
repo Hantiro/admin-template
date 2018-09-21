@@ -5,7 +5,7 @@
                 <img src="/content/img/logo.png">
                 <p dir="rtl">מחשבון טהרה</p>
             </div>
-            <div class="main-header__auth-menu" ng-if="hIsAuth">
+            <div class="main-header__auth-menu" ng-if="vm.isAuth()">
                 <ul>
                     <li>my calendar</li>
                     <li>pregnancy calculator</li>
@@ -14,20 +14,21 @@
                     <li>ask the rabbi</li>
                 </ul>
             </div>
-            <div class="main-header__authorization" ng-if="hIsAuth">
+            <div class="main-header__authorization" ng-if="vm.isAuth()">
                 <p>Hi! Mirra Gutman</p>
                 <i class="fa fa-user"></i>
                 <p class="main-header__lang">en</p>
             </div>
-            <div class="main-header__right-side" ng-if="!hIsAuth">
+            <div class="main-header__right-side" ng-if="!vm.isAuth()">
                 <ul>
                     <li>contact us</li>
                     <li>mikvahs</li>
                     <li>tradition</li>
                 </ul>
                 <div class="main-header__authorization">
-                    <p>register</p>
-                    <span class="main-header__button-login">login</span>
+                    <p class="cursor-pointer" ng-click="vm.signUp()">register</p>
+                    <span class="main-header__button-login cursor-pointer"
+                            ng-click="vm.login()">login</span>
                     <p class="main-header__lang">en</p>
                 </div>
             </div>

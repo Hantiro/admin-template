@@ -4,9 +4,8 @@
         .controller('ForgotPassCtrl', ForgotPassCtrl);
 
     /* @ngInject */
-    function ForgotPassCtrl($uibModalInstance,config,messagesSvc) {
+    function ForgotPassCtrl($uibModalInstance,messagesSvc) {
         var vm = this;
-        vm.config = config;
 
         vm.ok = function(){
             if(validation()){

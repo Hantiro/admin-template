@@ -10,7 +10,7 @@
     /* @ngInject */
     function runBlock($timeout, authSvc, $rootScope, $state) {
 
-        $state.go('start-page');
+        // $state.go('app.start-page');
         // $timeout(function(){
         //     authSvc.processAutoLogin();
         // });

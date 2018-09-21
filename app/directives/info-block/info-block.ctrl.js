@@ -5,8 +5,7 @@
         .module('app')
         .controller('InfoBlockCtrl', InfoBlockCtrl);
 
-    InfoBlockCtrl.$inject = ['$scope'];
-
+    /* @ngInject */
     function InfoBlockCtrl($scope) {
         var vm = this;
     }

@@ -2,8 +2,7 @@
     angular.module('directives.legend', [])
         .directive('legend', legend);
 
-    legend.$inject = ['$document', '$timeout'];
-
+    /* @ngInject */
     function legend($document, $timeout) {
         return {
             restrict: 'E',

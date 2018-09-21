@@ -5,7 +5,7 @@
         .factory('http', http);
 
     /* @ngInject */
-    function http($rootScope, $http, $q, $localStorage, toastr) {
+    function http($rootScope, $http, $q, $localStorage, toastr, $translate, authDataSvc) {
         var request = function (method, url, data) {
             $rootScope.loading = true;
             var config = {
@@ -17,9 +17,10 @@
                 },
                 withCredentials: true
             };
-            if (method === 'POST' && data.responseType) {
+            if (method === 'POST' && data && data.responseType) {
                 config.responseType = data.responseType;
             }
+
             if (method === 'GET') {
                 config.params = data;
                 if (data && data.responseType) {
@@ -28,15 +29,14 @@
             } else {
                 config.data = data;
             }
-            if ($localStorage.auth_key) {
-                url = url + '?auth_key=' + $localStorage.auth_key;
+
+            config.url = url;
+            if (authDataSvc.getToken()) {
+                config.headers.Authorization = 'Bearer ' + authDataSvc.getToken();
             }
-            if ($localStorage.token) {
-                config.url = url;
-                // config.headers.Authorization = 'Token ' + $sessionStorage.token;
-                config.headers.Authorization = 'Bearer ' + $localStorage.token;
-            } else {
-                config.url = url;
+
+            if ($translate.use()) {
+                config.url += (config.url.indexOf('?') === -1 ? '?' : '&') + 'lang=' + $translate.use();
             }
             return $http(config).then(requestSuccess, requestError);
         };
@@ -73,7 +73,7 @@
                 if (response.status === 401) {
                     // $state.go('add-phone');
                     toastr.error('Server Error: ' + response.status + ' ' + response.data.message);
-                    $rootScope.$broadcast('logout',{});
+                    $rootScope.$broadcast('logout', {});
                 }
                 toastr.error(response.data.message);
             }

@@ -3,44 +3,47 @@
         .module('factory.url', [])
         .factory('url', [
             function () {
-                var baseUrl = 'http://denta.grassbusinesslabs.tk/api/';
+                var baseUrl = 'http://mahsevon.grassbusinesslabs.tk/api/';
 
                 return {
-                    push: {
-                        test: baseUrl + 'test'
+                    calendar: {
+                        month: baseUrl + 'month',
+                        create_event: baseUrl + 'event',
+                        create_event_history: baseUrl + 'store-from-list',
+                        delete_last_event: baseUrl + 'destroy',
+                        getList: baseUrl + 'list'
                     },
-                    admin: {
-                        login: baseUrl + 'admin/login'
+                    pill: {
+                        create: baseUrl + 'pills',
+                        delete_last: baseUrl + 'destroy-pills'
                     },
-                    static : {
-                        share: baseUrl + 'static/sharing',
-                        start_page: baseUrl + 'static/start',
-                        privacy: baseUrl + 'static/privacy',
-                        about: baseUrl + 'static/about',
-                        terms: baseUrl + 'static/terms',
-                        text: baseUrl + 'static/text/1'
+                    gestation: {
+                        create: baseUrl + 'gestation',
+                        get: baseUrl + 'gestation-date'
                     },
-                    question: baseUrl + 'question',
+                    auth: {
+                        login: baseUrl + 'login',
+                        sendPhone: baseUrl + 'send-phone',
+                        sendCode: baseUrl + 'send-code',
+                        signUp: baseUrl + 'new-user',
+                        resetPassword: baseUrl + 'reset-password',
+                    },
+                    settings: {
+                        contactUs: baseUrl + 'mail',
+                        comments: baseUrl + 'laws',
+                        terms: baseUrl + 'license-agreements',
+                    },
+                    notificationSettings: {
+                        setToken: baseUrl + 'set-device',
+                        settings: baseUrl + 'notification'
+
+                    },
                     user: {
-                        remove: baseUrl + 'user/remove',
-                        id: baseUrl + 'user/'
-                    },
-                    amount: {
-                        dentists: baseUrl + 'amount/dentists',
-                        patients: baseUrl + 'amount/patients',
-                        clinics: baseUrl + 'amount/terms'
-                    },
-                    purchase_plan: {
-                        create: baseUrl + 'purchase-plan/create',
-                        get: baseUrl + 'purchase-plan/get'
-                    },
-                    dentists: baseUrl + 'dentists',
-                    patients: baseUrl + 'patients',
-                    clinics: baseUrl + 'clinics',
-                    clinic_id: baseUrl + 'clinic/',
-                    specialities: baseUrl + 'specialties',
-                    specialty: baseUrl + 'specialty'
-                };
-            }
-        ]);
+                        view: baseUrl + 'user',
+                        update: baseUrl + 'user',
+                        updatePassword: baseUrl + 'change-password',
+                        userSettings: baseUrl + 'setting'
+                    }
+                }
+            }]);
 })();

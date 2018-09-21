@@ -2,8 +2,7 @@
     angular.module('directives.calendar', [])
         .directive('calendar', calendar);
 
-    calendar.$inject = ['$document', '$timeout'];
-
+    /* @ngInject */
     function calendar($document, $timeout) {
         return {
             restrict: 'E',

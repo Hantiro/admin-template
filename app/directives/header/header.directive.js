@@ -2,8 +2,7 @@
     angular.module('directives.header', [])
         .directive('header', header);
 
-    header.$inject = ['$document', '$timeout'];
-
+    /* @ngInject */
     function header($document, $timeout) {
         return {
             restrict: 'E',
@@ -11,8 +10,7 @@
             replace: true,
             scope: {
                 hLang: '@',
-                hUser: '@',
-                hIsAuth: '=' //'true - is autorized'
+                hUser: '@'
             },
             controller: 'HeaderCtrl',
             controllerAs: 'vm',

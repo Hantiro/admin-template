@@ -5,9 +5,11 @@
         .module('app')
         .controller('HeaderCtrl', HeaderCtrl);
 
-    HeaderCtrl.$inject = ['$scope'];
-
-    function HeaderCtrl($scope) {
+    /* @ngInject */
+    function HeaderCtrl($scope, authSvc, authExtSvc) {
         var vm = this;
+        vm.isAuth = authSvc.isLogined;
+        vm.signUp = authExtSvc.signUpProcess;
+        vm.login = authExtSvc.loginProcess;
     }
 })();

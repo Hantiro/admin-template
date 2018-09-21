@@ -2,8 +2,7 @@
     angular.module('directives.pill', [])
         .directive('pill', pill);
 
-    pill.$inject = ['$document', '$timeout'];
-
+    /* @ngInject */
     function pill($document, $timeout) {
         return {
             restrict: 'E',

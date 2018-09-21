@@ -4,8 +4,10 @@
         .controller('TermsCtrl', TermsCtrl);
 
     /* @ngInject */
-    function TermsCtrl() {
+    function TermsCtrl(terms) {
         var vm = this;
+        vm.terms = terms;
+
         init();
         function init(){
 

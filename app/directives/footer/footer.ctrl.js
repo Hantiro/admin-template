@@ -5,9 +5,9 @@
         .module('app')
         .controller('FooterCtrl', FooterCtrl);
 
-    FooterCtrl.$inject = ['$scope'];
-
-    function FooterCtrl($scope) {
+    /* @ngInject */
+    function FooterCtrl($scope, authSvc) {
         var vm = this;
+        vm.isAuth = authSvc.isLogined;
     }
 })();

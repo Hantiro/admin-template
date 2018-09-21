@@ -5,8 +5,7 @@
         .module('app')
         .controller('TraditionItemCtrl', TraditionItemCtrl);
 
-    TraditionItemCtrl.$inject = ['$scope'];
-
+    /* @ngInject */
     function TraditionItemCtrl($scope) {
         var vm = this;
     }

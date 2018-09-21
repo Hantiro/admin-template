@@ -4,9 +4,8 @@
         .controller('NewPassCtrl', NewPassCtrl);
 
     /* @ngInject */
-    function NewPassCtrl($uibModalInstance,config,messagesSvc) {
+    function NewPassCtrl($uibModalInstance,messagesSvc) {
         var vm = this;
-        vm.config = config;
 
         vm.ok = function(){
             if(validation()){

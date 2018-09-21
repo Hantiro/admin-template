@@ -41,7 +41,8 @@
 </div>
 
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>-->
-
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCkSnpfwNLeEWBxrvb81-k2puMWIkTg_nM"></script>
+<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
 <!-- inject-vendor:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
@@ -83,6 +84,9 @@
 <script src="services/message.svc.js"></script>
 <script src="services/tradition.svc.js"></script>
 <script src="services/firebase.svc.js"></script>
+<script src="services/google.svc.js"></script>
+<script src="services/auth-ext.svc.js"></script>
+<script src="services/auth-data.svc.js"></script>
 
 <!-- Filters -->
 <script src="filters/tooltips/tooltips.filter.js"></script>
@@ -96,7 +100,6 @@
 <script src="components/welcome/welcome.ctrl.js"></script>
 <!-- Controllers -->
 <script src="templates/app/app.ctrl.js"></script>
-<script src="templates/login/login.ctrl.js"></script>
 <script src="templates/terms/terms.ctrl.js"></script>
 <script src="templates/start-page/start-page.ctrl.js"></script>
 <script src="templates/main/main.ctrl.js"></script>

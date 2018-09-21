@@ -2,8 +2,7 @@
     angular.module('directives.infoBlock', [])
         .directive('infoBlock', infoBlock);
 
-        infoBlock.$inject = ['$document', '$timeout'];
-
+    /* @ngInject */
     function infoBlock($document, $timeout) {
         return {
             restrict: 'E',

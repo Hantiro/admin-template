@@ -5,8 +5,7 @@
         .module('app')
         .controller('HistoryCtrl', HistoryCtrl);
 
-    HistoryCtrl.$inject = ['$scope'];
-
+    /* @ngInject */
     function HistoryCtrl($scope) {
         var vm = this;
     }
