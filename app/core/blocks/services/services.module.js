@@ -13,6 +13,7 @@
         'service.googleSvc',
         'service.authExtSvc',
         'service.authDataSvc',
+        'service.dateSvc'
     ]);
 
 })();

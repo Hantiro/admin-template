@@ -14,7 +14,8 @@
             login: login,
             forgotPass: forgotPass,
             confirm: confirm,
-            logout: logout
+            logout: logout,
+            getDate: getDate
         };
         return service;
 
@@ -57,13 +58,27 @@
             });
         }
 
-        function logout(){
+        function logout() {
             return confirm({
                 title: 'CONTENT.LOGOUT',
                 content: 'CONTENT.ASK_LOGOUT',
                 ok: 'CONTENT.OK',
                 cancel: 'CONTENT.CANCEL',
                 size: 'sm'
+            });
+        }
+
+        function getDate() {
+            return $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'components/select-date-popup/select-date-popup.html',
+                controller: 'SelectDatePopupCtrl',
+                controllerAs: 'vm',
+                backdropClass: 'custom-backdrop',
+                windowTopClass: 'select-date-popup',
+                size: 'md',
+                resolve: {}
             });
         }
 

@@ -4,22 +4,67 @@
     angular.module('service.utilsSvc', []).service('utilsSvc', utilsSvc);
 
     /* @ngInject */
-    function utilsSvc(user) {
+    function utilsSvc() {
+        let NUMBER_HE = {
+            1: 'א',
+            2: 'ב',
+            3: 'ג',
+            4: 'ד',
+            5: 'ה',
+            6: 'ו',
+            7: 'ז',
+            8: 'ח',
+            9: 'ט',
+            10: 'י',
+            11: 'יא',
+            12: 'יב',
+            13: 'יג',
+            14: 'יד',
+            15: 'טו',
+            16: 'טז',
+            17: 'יז',
+            18: 'יח',
+            19: 'יט',
+            20: 'כ',
+            21: 'כא',
+            22: 'כב',
+            23: 'כג',
+            24: 'כד',
+            25: 'כה',
+            26: 'כו',
+            27: 'כז',
+            28: 'כח',
+            29: 'כט',
+            30: 'ל'
+        };
+
+        let DAYS_ORDER = [
+            "SUN",
+            "MON",
+            "TUE",
+            "WED",
+            "THU",
+            "FRI",
+            "SAT"
+        ];
+
+        const EMAIL_REG = /^((([a-zA-Z\-0-9_.])+[a-zA-Z0-9_.]{2,})|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         // servise which work with client and send request on server
         var service = {
             isNumber: isNumber,
             isMSIE: isMSIE,
-            getUnicalData: getUnicalData,
-            createObjByArrayIds: createObjByArrayIds,
-            findWithAttr: findWithAttr,
-            checkUserParam: checkUserParam,
-            spArrObjByParam: spArrObjByParam,
-            updArrObjByParam: updArrObjByParam,
-            getArrByParam: getArrByParam,
-            objectToArrayWithKey: objectToArrayWithKey
+            showDatePicker: showDatePicker,
+            NUMBER_HE: NUMBER_HE,
+            DAYS_ORDER: DAYS_ORDER,
+            EMAIL_REG: EMAIL_REG,
         };
         return service;
+
+        // fixme temporary for compability
+        function showDatePicker(){
+            return $q.reject();
+        }
 
         //return new array of parameter by object param
         function getArrByParam(arrayObj, param) {

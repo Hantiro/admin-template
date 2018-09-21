@@ -1,0 +1,70 @@
+<div class="calendar-custom">
+    <div class="calendar-custom__header">
+        <div class="calendar-custom__delete-event"
+             ng-if="vm.calendarModel.last_part_period && ccType === 'detailed'">
+            {{ vm.textDelete() | translate }}
+            <img src="content/img/icon/close-icon.png" ng-click="vm.deleteLastEvent()"/>
+        </div>
+
+        <div class="row-flex">
+            <span class="calendar-custom__prev col-10-flex" ng-click="vm.nextMonth()">
+                <i class="icon ion-ios-arrow-thin-left"></i>
+            </span>
+            <span class="calendar-custom__title col-80-flex">
+                {{ vm.calendarModel.gregorian_year + ' - ' +
+                  ('MONTH.'+vm.calendarModel.jewish_month_name | translate) }}
+            </span>
+            <span class="calendar-custom__next col-10-flex" ng-click="vm.prevMonth()">
+                <i class="icon ion-ios-arrow-thin-right"></i>
+            </span>
+        </div>
+    </div>
+
+    <!--END HEADER ---------------------------------------------------------------------->
+
+    <div class="calendar-custom__body">
+        <div class="row-flex calendar-custom__days">
+            <div class="col-flex" ng-repeat="item in vm.days track by $index">{{ "DAY."+item | translate }}</div>
+        </div>
+        <div class="row-flex calendar-custom__week"
+             ng-if="vm.calendarModel.weeks.length"
+             ng-repeat="week in vm.calendarModel.weeks track by $index">
+
+            <!--DAY ITEM ------------------------------------->
+            <div class="col-flex calendar-custom__item"
+                 ng-click="vm.selectDay(vm.calendarModel, day)"
+                 ng-repeat="day in week track by $index"
+                 ng-class="{'calendar-custom__item--current-month': vm.isDayInCurrentMonth(day),
+                            'calendar-custom__item--clean_day': day.mark && day.mark.clean_day,
+                            'calendar-custom__item--pill_day': day.mark && day.mark.pill_day,
+                            'calendar-custom__item--current-day': vm.isCurrentDay(day),
+                            'calendar-custom__item--wave-day': day.events.top === vm.EVENT_CONST.WATER,
+                            'calendar-custom__item--marked': ccType === 'simple' && vm.isDaySelected(day),
+                            'calendar-custom__item--prediction': day.events.prediction,
+                            'calendar-custom__item--end-red': day.events.top === vm.EVENT_CONST.END_RED }">
+                <div ng-if="ccType && ccType === 'detailed'" class="calendar-custom__item-content">
+                    <div class="calendar-custom__day-he calendar-custom__day">
+                        <span> {{ vm.NUMB_HE[day.jewish_day] }} </span>
+                        <span> <img ng-if="day.events.top && day.events.top >= 1 "
+                                    ng-src="{{ vm.dayEventImgSrc(day.events.top) }}"
+                                    alt="img"></span>
+                    </div>
+                    <div class="calendar-custom__day-g calendar-custom__day">
+                        <span> {{ day.gregorian_day }} </span>
+                        <span> <img ng-if="day.events.bottom && day.events.bottom >= 1"
+                                    ng-src="{{ vm.dayEventImgSrc(day.events.bottom) }}"
+                                    alt="img"> </span>
+                    </div>
+                </div>
+                <!--SIMPLE DAY ------------------------------------>
+                <div class="calendar-custom__simple-day" ng-if="ccType && ccType === 'simple'">
+                    <div class="text-center">{{ vm.NUMB_HE[day.jewish_day] }}</div>
+                    <div class="text-center">{{ day.gregorian_day }}</div>
+                </div>
+
+            </div>
+
+            <!----------------------------------------------------->
+        </div>
+    </div>
+</div>

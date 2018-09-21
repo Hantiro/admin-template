@@ -1,16 +1,16 @@
 <div class="my-main">
     <div class="my-main__background">
-        <header h-is-auth="true"></header>
+        <header></header>
         <div class="row">
             <div class="col-md-4">
                 <div class="my-main__menu">
                     <div class="row">
                         <div class="col-md-6 my-main__elements">
-                            <img src="../content/img/pill.png" alt="">
+                            <img src="content/img/pill.png" alt="">
                             <p>take a pill</p>
                         </div>
                         <div class="col-md-6 my-main__elements">
-                            <img src="../content/img/calendar.png" alt="">
+                            <img src="content/img/calendar.png" alt="">
                             <p>calendar</p>
                         </div>
                     </div>
@@ -19,10 +19,16 @@
             </div>
 
             <div class="col-md-4">
-                <div class="my-main__menu">
-                    <img class="my-main__date" src="../content/img/date.png" alt="">
-                </div>
-                <img class="my-main__main-calendar" src="../content/img/main-calendar.png" alt="">
+                <!--<div class="my-main__menu">-->
+                <!--<img class="my-main__date" src="content/img/date.png" alt="">-->
+                <!--</div>-->
+                <!--<img class="my-main__main-calendar"  src="content/img/main-calendar.png" alt="">-->
+                <calendar-custom class="my-main__main-calendar"
+                                 cc-type="detailed"
+                                 cc-selected="selectedModel"
+                                 cc-updated-model="vm.updateModel"
+                                 cc-update-selected="vm.updateSelected"
+                                 cc-is-select-time="vm.isSelectTime"></calendar-custom>
             </div>
 
 
@@ -30,11 +36,11 @@
                 <div class="my-main__menu">
                     <div class="row">
                         <div class="col-md-6 my-main__elements">
-                            <img src="../content/img/list.png" alt="">
+                            <img src="content/img/list.png" alt="">
                             <p>list of results</p>
                         </div>
                         <div class="col-md-6 my-main__elements">
-                            <img class="my-main__notification" src="../content/img/notification.png" alt="">
+                            <img class="my-main__notification" src="content/img/notification.png" alt="">
                             <p>notification</p>
                         </div>
                     </div>
@@ -42,12 +48,11 @@
                 <notification></notification>
             </div>
         </div>
-        <img class="my-main__wave" src="../content/img/wave.png">
+        <img class="my-main__wave" src="content/img/wave.png">
     </div>
 
 </div>
 <div class="my-main__content">
     <legend></legend>
 </div>
-<footer f-is-auth="true"></footer>
-</div>
+<footer></footer>

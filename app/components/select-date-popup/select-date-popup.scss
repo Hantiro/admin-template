@@ -1,0 +1,30 @@
+.select-date-popup {
+  .popup {
+    width: 95vw !important;
+    //height: 90vh !important;
+  }
+
+  .popup-head {
+    height: 0px;
+    padding: 0;
+  }
+
+  .popup-body {
+    padding: 0px;
+  }
+
+  .popup-buttons {
+    min-height: 36px;
+    padding: 0px;
+     button {
+       margin-right: 0;
+       height: 30px;
+       min-height: 30px;
+       max-height: 30px;
+     }
+  }
+
+  .popup {
+    background: linear-gradient(to bottom, rgba(236, 205, 210, 1) 0%, rgba(253, 231, 203, 1) 100%);
+  }
+}

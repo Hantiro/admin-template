@@ -99,14 +99,14 @@
                 <md-checkbox ng-model="vm.data.email_dispatch" aria-label="Checkbox 1"></md-checkbox>
             </div>
         </div>
-        <div>
-            <md-button ng-click="vm.signUp()">
-                {{'CONTENT.SIGN_UP'|translate}}
-            </md-button>
-        </div>
+        <!--<div>-->
+            <!--<md-button ng-click="vm.signUp()">-->
+                <!--{{'CONTENT.SIGN_UP'|translate}}-->
+            <!--</md-button>-->
+        <!--</div>-->
     </form>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="vm.ok()">{{vm.config.ok}}</button>
-    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">{{vm.config.cancel}}</button>
+    <button class="btn btn-primary" type="button" ng-click="vm.signUp()"> {{'CONTENT.SIGN_UP'|translate}}</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()"> {{ 'CONTENT.CANCEL' | translate}}</button>
 </div>

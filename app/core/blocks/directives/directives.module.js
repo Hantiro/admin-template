@@ -10,6 +10,7 @@
         'directives.infoBlock',
         'directives.pill',
         'directives.notification',
-        'directives.history'
+        'directives.history',
+        'directives.calendarCustom'
     ]);
 })();
