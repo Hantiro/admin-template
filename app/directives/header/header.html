@@ -8,6 +8,7 @@
             <div class="main-header__auth-menu" ng-if="vm.isAuth()">
                 <ul>
                     <li class="main-header_auth-menu--active" ui-sref="app.my-main">my calendar</li>
+
                     <li>pregnancy calculator</li>
                     <li ui-sref="app.main.mikvahs">mikvahs</li>
                     <li ui-sref="app.main.tradition">tradition</li>
@@ -15,7 +16,9 @@
                 </ul>
             </div>
             <div class="main-header__authorization" ng-if="vm.isAuth()">
-                <p>Hi! {{vm.user().first_name + ' ' + vm.user().last_name }}</p>
+                <p class="main-header__authorization--user">
+                    Hi! {{vm.user().first_name + ' ' + vm.user().last_name}}
+                </p>
                 <i class="fa fa-user"></i>
                 <p class="main-header__lang">en</p>
             </div>
@@ -28,7 +31,7 @@
                 <div class="main-header__authorization">
                     <p class="cursor-pointer" ng-click="vm.signUp()">register</p>
                     <span class="main-header__button-login cursor-pointer"
-                            ng-click="vm.login()">login</span>
+                          ng-click="vm.login()">login</span>
                     <p class="main-header__lang">en</p>
                 </div>
             </div>

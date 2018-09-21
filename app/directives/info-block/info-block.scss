@@ -1,5 +1,50 @@
 .info-block {
+  color: #e4587f;
 
+  &__circle-day {
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
+    width: 240px;
+    height: 240px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &--is-edit {
+      color: #51c4d4;
+    }
+  }
+  &__edit {
+    margin-top: 20px;
+  }
+  &__default-text {
+    font-family: AssistantRegular;
+    font-size: 24px;
+    width: 65%;
+    margin: 0 auto;
+  }
+  &__text-bold {
+    font-family: AssistantBold;
+    font-size: 28px;
+    position: relative;
+    &:after {
+      position: absolute;
+      content: '';
+      height: 2px;
+      width: 180%;
+      background-color: #e4587f;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &--is-edit {
+      &:after {
+        background-color: #51c4d4;
+      }
+    }
+  }
 }
 
 

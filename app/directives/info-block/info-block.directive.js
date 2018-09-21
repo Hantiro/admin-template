@@ -11,6 +11,7 @@
             scope: {
                 ibType: '@', //'default' - only with text, 'pregnancy' - with pregnancy image and date
                 ibText: '@',
+                ibSubText:'@',
                 ibDate: '@',
                 ibIsEdit: '='
             },

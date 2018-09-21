@@ -1,15 +1,19 @@
 <div class="info-block">
-
-    <div ng-if="ibType === 'default'" ng-class="{'info-block--is-edit': ibIsEdit }">
-        <span>{{ ibText }}</span>
-        <img ng-if="ibIsEdit">
-    </div>
+        <div class="info-block__circle-day"
+             ng-if="ibType === 'default'"
+             ng-class="{'info-block__circle-day--is-edit': ibIsEdit }">
+            <p class="info-block__default-text">{{ ibText }}</p>
+            <p class="info-block__text-bold"
+               ng-class="{'info-block__text-bold--is-edit':ibIsEdit}"
+               ng-if="ibSubText">{{ ibSubText }}</p>
+        <img class="info-block__edit" src="content/img/edit-pencil.png" ng-if="ibIsEdit">
+</div>
 <!---------------------------------------------------->
-    <div ng-if="ibType === 'pregnancy'">
-        <img>
-        <div> Expected birth date at </div>
-        <div> {{ ibDate }}</div>
-    </div>
+<div ng-if="ibType === 'pregnancy'">
+    <img>
+    <div> Expected birth date at</div>
+    <div> {{ ibDate }}</div>
+</div>
 
 </div>
 
