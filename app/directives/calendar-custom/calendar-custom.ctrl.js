@@ -79,7 +79,6 @@
             return 'content/img/icon/'+vm.IMG_CONST[event_const_number];
         }
 
-
         function isDaySelected(day) {
             if ($scope.ccSelected && $scope.ccSelected.selected) {
                 return $scope.ccSelected.selected.g_year === vm.calendarModel.gregorian_year &&
