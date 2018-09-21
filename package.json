@@ -63,13 +63,13 @@
       "./app/bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg",
       "./app/bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf",
       "./app/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff",
-      "./app/bower_components/bootstrap/fonts/AnotherDayInParadise.ttf",
-      "./app/bower_components/bootstrap/fonts/ArimoItalic.ttf",
-      "./app/bower_components/bootstrap/fonts/ArimoBold.ttf",
-      "./app/bower_components/bootstrap/fonts/AssistantExtraBold.ttf",
-      "./app/bower_components/bootstrap/fonts/AssistantRegular.ttf",
-      "./app/bower_components/bootstrap/fonts/AssistantBold.ttf",
-      "./app/bower_components/bootstrap/fonts/AssistantLight.ttf"
+      "./app/content/fonts/AnotherDayInParadise.ttf",
+      "./app/content/bootstrap/fonts/ArimoItalic.ttf",
+      "./app/content/bootstrap/fonts/ArimoBold.ttf",
+      "./app/content/bootstrap/fonts/AssistantExtraBold.ttf",
+      "./app/content/bootstrap/fonts/AssistantRegular.ttf",
+      "./app/content/bootstrap/fonts/AssistantBold.ttf",
+      "./app/content/bootstrap/fonts/AssistantLight.ttf"
     ],
     "images": [
       "./app/content/img/**/*"
