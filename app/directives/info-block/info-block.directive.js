@@ -9,7 +9,10 @@
             templateUrl: 'directives/info-block/info-block.html',
             replace: true,
             scope: {
-                ibType: '@' //'default' - only with text, 'pregnancy' - with pregnancy image and date
+                ibType: '@', //'default' - only with text, 'pregnancy' - with pregnancy image and date
+                ibText: '@',
+                ibDate: '@',
+                ibIsEdit: '='
             },
             controller: 'InfoBlockCtrl',
             controllerAs: 'vm',

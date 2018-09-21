@@ -1,4 +1,15 @@
 <div class="info-block">
 
+    <div ng-if="ibType === 'default'" ng-class="{'info-block--is-edit': ibIsEdit }">
+        <span>{{ ibText }}</span>
+        <img ng-if="ibIsEdit">
+    </div>
+<!---------------------------------------------------->
+    <div ng-if="ibType === 'pregnancy'">
+        <img>
+        <div> Expected birth date at </div>
+        <div> {{ ibDate }}</div>
+    </div>
+
 </div>
 
