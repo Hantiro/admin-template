@@ -1,0 +1,41 @@
+<p class="contact-us__title">
+    For any problem, malfunction and question you can contact us via e-mail.
+</p>
+<ng-form name="vm.contactUsForm" novalidate class="contact-us__contact-content">
+    <div class="contact-us__left-side">
+        <md-input-container md-no-float class="md-block" flex-gt-sm>
+            <input placeholder="{{'CONTENT.FULL_NAME'|translate}}"
+                   id="name"
+                   ng-model="vm.model.name"
+                   name="name"
+                   aria-label="name"
+                   type="text">
+        </md-input-container>
+        <md-input-container md-no-float class="md-block" flex-gt-sm>
+            <input placeholder="{{'CONTENT.EMAIL'|translate}}"
+                   id="email"
+                   ng-model="vm.model.email"
+                   name="email"
+                   aria-label="email"
+                   ng-pattern="vm.EMAIL_REG">
+        </md-input-container>
+        <md-input-container md-no-float class="md-block" flex-gt-sm>
+            <input placeholder="{{'CONTENT.SUBJECT'|translate}}"
+                   id="subject"
+                   name="subject"
+                   ng-model="vm.model.title"
+                   aria-label="subject"
+                   type="text">
+        </md-input-container>
+    </div>
+    <div class="contact-us__right-side">
+        <md-input-container class="md-block" flex-gt-sm>
+                    <textarea type="text"
+                              rows="6"
+                              placeholder="{{'CONTENT.RECORD_YOUR_WORDS'|translate}}"
+                              ng-model="vm.model.description">
+                    </textarea>
+        </md-input-container>
+    </div>
+</ng-form>
+<div class="contact-us__send" ng-click="vm.sendMail()"> {{'CONTENT.SEND'|translate}}</div>

@@ -9,7 +9,7 @@
         vm.sendMail = sendMail;
         vm.EMAIL_REG = utilsSvc.EMAIL_REG;
         vm.model = {};
-
+        vm.step = 1;
 
         init();
 
@@ -25,7 +25,8 @@
                 .then(function (res) {
                     if (res.success) {
                         messagesSvc.show('SUCCESS.SEND', 'success');
-                        vm.data = {};
+                        vm.model = {};
+                        vm.step = 2;
                     }
                 })
         }

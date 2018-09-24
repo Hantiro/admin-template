@@ -26,7 +26,7 @@
             return http.get(url.settings.terms)
         }
 
-        function contactUs() {
+        function contactUs(data) {
             return http.post(url.settings.contactUs, data);
         }
     }
