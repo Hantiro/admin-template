@@ -53,7 +53,8 @@
                 controllerAs: 'vm'
             })
             .state('app.main.contact-us', {
-                url: '/contact-us',data: {
+                url: '/contact-us',
+                data: {
                     trans_name: 'CONTENT.CONTACT_US'
                 },
                 templateUrl: 'templates/contact-us/contact-us.html',
@@ -76,6 +77,21 @@
                 },
                 templateUrl: 'templates/faq/faq.html',
                 controller: 'FaqCtrl',
+                controllerAs: 'vm'
+            })
+            .state('app.main.rabbi', {
+                url: '/rabbi',
+                data: {
+                    trans_name: 'CONTENT.ASK_RABBI'
+                },
+                templateUrl: 'templates/rabbi/rabbi.html',
+                controller: 'RabbiCtrl',
+                controllerAs: 'vm'
+            })
+            .state('app.main.profile', {
+                url: '/profile',
+                templateUrl: 'templates/profile/profile.html',
+                controller: 'ProfileCtrl',
                 controllerAs: 'vm'
             })
             .state('app.main.terms', {
