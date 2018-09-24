@@ -61,9 +61,9 @@ gulp.task('css', ['sass'], function () {
     return gulp.src(pkg.paths.css)
         .pipe(plug.concat('all.min.css'))
         .pipe(plug.autoprefixer({
-            browsers: ['last 4 versions'],
+            browsers: ['last 3 versions'],
             cascade: false,
-            grid: true}))
+            grid: true }))
         .pipe(cleanCss({ compatibility: '*' }))
         .pipe(gulp.dest(pkg.paths.build + 'content/css'));
 });

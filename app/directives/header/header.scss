@@ -1,4 +1,7 @@
 .main-header {
+  md-input-container {
+    margin: 0;
+  }
   ul {
     padding-left: 0;
     margin-bottom: 0;
@@ -94,14 +97,11 @@
     background-color: #4b0049;
   }
   &__lang {
+    color: #4b0049;
     position: relative;
-    &:after {
-      top: 50%;
-      left: 20px;
-      position: absolute;
-      content: '';
-      border: 5px solid transparent;
-      border-top: 5px solid #4b0049;
+    .md-select-value {
+      border-bottom: none;
+      border-bottom-color: transparent;
     }
   }
 }

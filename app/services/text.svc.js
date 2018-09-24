@@ -9,6 +9,7 @@
             getPrivacy: getPrivacy,
             getAbout: getAbout,
             getTerms: getTerms,
+            contactUs: contactUs
         };
         return model;
 
@@ -25,5 +26,8 @@
             return http.get(url.settings.terms)
         }
 
+        function contactUs() {
+            return http.post(url.settings.contactUs, data);
+        }
     }
 })();

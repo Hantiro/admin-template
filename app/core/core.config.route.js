@@ -36,30 +36,53 @@
             })
             .state('app.my-main', {
                 url: 'my-main',
+                data: {
+                  auth: true
+                },
                 templateUrl: 'templates/my-main/my-main.html',
                 controller: 'MyMainCtrl',
                 controllerAs: 'vm'
             })
             .state('app.main.about', {
                 url: '/about',
+                data: {
+                  trans_name: 'CONTENT.ABOUT'
+                },
                 templateUrl: 'templates/about/about.html',
                 controller: 'AboutCtrl',
                 controllerAs: 'vm'
             })
             .state('app.main.contact-us', {
-                url: '/contact-us',
+                url: '/contact-us',data: {
+                    trans_name: 'CONTENT.CONTACT_US'
+                },
                 templateUrl: 'templates/contact-us/contact-us.html',
                 controller: 'ContactUsCtrl',
                 controllerAs: 'vm'
             })
             .state('app.main.mikvahs', {
                 url: '/mikvahs',
+                data: {
+                    trans_name: 'CONTENT.MIKVAHS'
+                },
                 templateUrl: 'templates/mikvahs/mikvahs.html',
                 controller: 'MikvahsCtrl',
                 controllerAs: 'vm'
             })
+            .state('app.main.faq', {
+                url: '/faq',
+                data: {
+                    trans_name: 'CONTENT.FAQ'
+                },
+                templateUrl: 'templates/faq/faq.html',
+                controller: 'FaqCtrl',
+                controllerAs: 'vm'
+            })
             .state('app.main.terms', {
                 url: '/terms',
+                data: {
+                    trans_name: 'CONTENT.TERMS_CONDITIONS'
+                },
                 templateUrl: 'templates/terms/terms.html',
                 controller: 'TermsCtrl',
                 controllerAs: 'vm',
@@ -75,6 +98,9 @@
             })
             .state('app.main.tradition', {
                 url: '/tradition',
+                data: {
+                    trans_name: 'CONTENT.TRADITION'
+                },
                 templateUrl: 'templates/tradition/tradition.html',
                 controller: 'TraditionCtrl',
                 controllerAs: 'vm',

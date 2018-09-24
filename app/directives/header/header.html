@@ -20,7 +20,17 @@
                     Hi! {{vm.user().first_name + ' ' + vm.user().last_name}}
                 </p>
                 <i class="fa fa-user"></i>
-                <p class="main-header__lang">en</p>
+                <p class="main-header__lang">
+                    <md-input-container>
+                        <md-select ng-model="vm.currentLang">
+                            <md-option ng-repeat="item in vm.allLang"
+                                       ng-value="item"
+                                       ng-click="vm.setLang(item)">
+                                {{item}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </p>
             </div>
             <div class="main-header__right-side main-header" ng-if="!vm.isAuth()">
                 <ul>
@@ -32,7 +42,17 @@
                     <p class="cursor-pointer" ng-click="vm.signUp()">register</p>
                     <span class="main-header__button-login cursor-pointer"
                           ng-click="vm.login()">login</span>
-                    <p class="main-header__lang">en</p>
+                    <p class="main-header__lang">
+                        <md-input-container>
+                            <md-select ng-model="vm.currentLang">
+                                <md-option ng-repeat="item in vm.allLang"
+                                           ng-value="item"
+                                           ng-click="vm.setLang(item)">
+                                    {{item}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </p>
                 </div>
             </div>
             <i class="fas fa-bars fa-lg"></i>

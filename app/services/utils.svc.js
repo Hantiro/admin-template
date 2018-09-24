@@ -57,7 +57,7 @@
             showDatePicker: showDatePicker,
             NUMBER_HE: NUMBER_HE,
             DAYS_ORDER: DAYS_ORDER,
-            EMAIL_REG: EMAIL_REG,
+            EMAIL_REG: EMAIL_REG
         };
         return service;
 

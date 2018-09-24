@@ -17,12 +17,32 @@
                             <p class="cursor-pointer register" ng-click="vm.signUp()">register</p>
                             <span class="main-footer__button-login cursor-pointer"
                                   ng-click="vm.login()">login</span>
-                            <p class="main-footer__lang">en</p>
+                            <p class="main-footer__lang">
+                                <md-input-container>
+                                    <md-select ng-model="vm.currentLang">
+                                        <md-option ng-repeat="item in vm.allLang"
+                                                   ng-value="item"
+                                                   ng-click="vm.setLang(item)">
+                                            {{item}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </p>
                         </div>
                         <div class="main-footer__authorization" ng-if="vm.isAuth()">
                             <span class="main-footer__button-login cursor-pointer"
                                   ng-click="vm.logout()">logout</span>
-                            <p class="main-footer__lang">en</p>
+                            <p class="main-footer__lang">
+                                <md-input-container>
+                                    <md-select ng-model="vm.currentLang">
+                                        <md-option ng-repeat="item in vm.allLang"
+                                                   ng-value="item"
+                                                   ng-click="vm.setLang(item)">
+                                            {{item}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -46,7 +66,7 @@
                             <li class="cursor-pointer" ui-sref="app.main.privacy">Privacy policy</li>
                         </ul>
                         <ul class="col-md-3 col-sm-3 col-xs-4">
-                            <li>Contact us</li>
+                            <li class="cursor-pointer" ui-sref="app.main.contact-us">Contact us</li>
                             <li>FAQ</li>
                         </ul>
                     </div>
