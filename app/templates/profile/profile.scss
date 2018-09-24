@@ -1,5 +1,7 @@
 .profile {
   &__main-form {
+    width: 70%;
+    margin: auto;
     display: flex;
     justify-content: space-between;
   }
@@ -108,7 +110,7 @@
     font-size: 18px;
   }
   &__button-contain {
-    width: 30%;
+    width: 36%;
     text-align: right;
   }
 }
