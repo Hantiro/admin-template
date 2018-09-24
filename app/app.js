@@ -8,7 +8,7 @@
         ]).run(runBlock);
 
     /* @ngInject */
-    function runBlock($timeout, authSvc, $rootScope, $state, $transitions, pagesSvc) {
+    function runBlock($timeout, authDataSvc, $rootScope, $state, $transitions, pagesSvc) {
 
         // $state.go('app.start-page');
         // $timeout(function(){

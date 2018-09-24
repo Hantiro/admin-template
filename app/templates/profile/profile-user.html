@@ -1,0 +1,54 @@
+<div>
+    <md-input-container md-no-float class="md-block" flex-gt-sm>
+        <input placeholder="Name"
+               id="name"
+               name="name"
+               aria-label="name"
+               type="text">
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block" flex-gt-sm>
+        <input placeholder="Surname"
+               id="surname"
+               name="surname"
+               aria-label="surname"
+               type="text">
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block" flex-gt-sm>
+        <input placeholder="Location"
+               id="location"
+               name="location"
+               aria-label="location"
+               type="text">
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block" flex-gt-sm>
+        <input placeholder="Email"
+               id="email"
+               name="email"
+               aria-label="email"
+               type="email">
+    </md-input-container>
+
+    <button class="button-not-default" ng-click="vm.showNewPassword = !vm.showNewPassword">Reset the
+        password
+    </button>
+
+    <md-input-container md-no-float class="md-block" flex-gt-sm ng-if="vm.showNewPassword">
+        <input placeholder="New password"
+               id="new-password"
+               name="new-password"
+               aria-label="new-password"
+               type="password">
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block" flex-gt-sm ng-if="vm.showNewPassword">
+        <input placeholder="Repeat password"
+               id="repeat-password"
+               name="repeat-password"
+               aria-label="repeat-password"
+               type="password">
+    </md-input-container>
+
+</div>
