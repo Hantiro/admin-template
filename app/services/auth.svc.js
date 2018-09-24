@@ -46,8 +46,6 @@
                 return http.post(url.auth.setToken, data);
             }
             //------------------------------
-
-
         }
     }
 

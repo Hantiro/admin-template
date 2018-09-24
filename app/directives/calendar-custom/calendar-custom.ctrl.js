@@ -7,7 +7,7 @@
 
     /* @ngInject */
     function CalendarCustomCtrl($scope, utilsSvc, dateSvc, messagesSvc) {
-        let vm = this;
+        var vm = this;
 
         vm.nextMonth = nextMonth;
         vm.prevMonth = prevMonth;
@@ -36,7 +36,7 @@
             if(dateSvc.getPreloadedForSimple() && isSimpleMode() && angular.isUndefined(params)){
                 setModelData(dateSvc.getPreloadedForSimple());
             } else {
-                let param = Object.assign({}, params);
+                var param = Object.assign({}, params);
                 if (isSimpleMode()) {
                     param.default = 1;
                 }
@@ -112,7 +112,7 @@
 
         function isBeforeStartRedDay(sDay) {
             if (angular.isUndefined(vm.calendarModel.lastEvent)) return false;
-            let lastEvent = vm.calendarModel.lastEvent;
+            var lastEvent = vm.calendarModel.lastEvent;
             if (sDay.jewish_year < lastEvent.jewish_year) {
                 return true;
             }

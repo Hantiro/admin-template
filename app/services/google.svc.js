@@ -6,8 +6,8 @@
     googleSvc.$inject = ['http', 'url','$rootScope', 'messagesSvc', '$q'];
 
     function googleSvc(http, url, $rootScope, messagesSvc, $q) {
-        let gmap;
-        let model = {
+        var gmap;
+        var model = {
             searchAddress: searchAddress,
             init: init
         };

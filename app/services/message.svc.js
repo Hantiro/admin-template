@@ -7,7 +7,7 @@
 
     /* @ngInject */
     function messagesSvc($translate, toastr, $q) {
-        let model = {
+        var model = {
             show: show,
             toastr: toastr
         };
@@ -21,14 +21,14 @@
          * @param {Object} config - config for toastr
          */
         function show(key, type, config) {
-            let defered = $q.defer();
-            let cfg = config || {};
+            var defered = $q.defer();
+            var cfg = config || {};
             if (key && type && (type === 'error' || type === 'success' || type === 'info' || type === 'warning')) {
-                return $translate(key).then((translation) => {
+                return $translate(key).then(function(translation)  {
                         toastr[type](translation, null, cfg);
                         defered.resolve(translation);
                     },
-                    (translationId) => {
+                    function(translationId) {
                         console.log(translationId);
                         defered.reject('Error with params');
                     });

@@ -89,7 +89,7 @@
       "./app/bower_components/angular-animate/angular-animate.min.js",
       "./app/bower_components/angular-messages/angular-messages.min.js",
       "./app/bower_components/angular-translate/angular-translate.min.js",
-      ".app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
+      "./app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
     ],
     "vendorcss": [
       "./app/bower_components/bootstrap/dist/css/bootstrap.min.css",

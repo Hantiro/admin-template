@@ -5,11 +5,11 @@
 
     /* @ngInject */
     function dateSvc(http, url, $state,  $rootScope, utilsSvc, $q, $translate, messagesSvc) {
-        let CALENDAR_TYPE = {
+        var CALENDAR_TYPE = {
             DETAILED: "detailed",
             SIMPLE: "simple"
         };
-        let EVENT_CONST = {
+        var EVENT_CONST = {
             'NIGHT': 1,
             'DAY': 2,
             'RED': 3,
@@ -21,7 +21,7 @@
             'PILLS': 9
         };
 
-        let EVENT_IMG = {};
+        var EVENT_IMG = {};
         EVENT_IMG[EVENT_CONST.NIGHT] = 'moon.png';
         EVENT_IMG[EVENT_CONST.DAY] = 'sun.png';
         EVENT_IMG[EVENT_CONST.RED] = 'active_day.png';
@@ -32,23 +32,23 @@
         EVENT_IMG[EVENT_CONST.PILLS] = 'pill-day.png';
         EVENT_IMG[EVENT_CONST.CLEAN_DAY] = 'clean-day.png';
 
-        let PERIOD_CONST = {
+        var PERIOD_CONST = {
             EMPTY: 0,
             START: 1,
             END: 2
         };
 
-        let TYPE_EVENT = {
+        var TYPE_EVENT = {
             PERIODS: 1,
             PILLS: 2,
             GESTATION: 3
         };
 
-        let currentSelectModel;
-        let popupInstance;
-        let preloadSimpleCalendarModel;
+        var currentSelectModel;
+        var popupInstance;
+        var preloadSimpleCalendarModel;
 
-        let model = {
+        var model = {
             getDate: getDate,
             loadMonth: loadMonth,
             createEvent: createEvent,
@@ -120,8 +120,8 @@
 
         function prepareMonthObj(monthObj) {
             if (!monthObj) return;
-            let lastRedDay = {};
-            let calendarModel = Object.assign({}, monthObj);
+            var lastRedDay = {};
+            var calendarModel = Object.assign({}, monthObj);
             calendarModel.jewish_day = +calendarModel.jewish_day;
             calendarModel.jewish_month = +calendarModel.jewish_month;
             calendarModel.jewish_year = +calendarModel.jewish_year;
@@ -145,7 +145,7 @@
 
         function prepareCalendarWeeks(weeks, calendarModel) {
             if (!weeks) return [];
-            for (let i = 0; i < weeks.length; i++) {
+            for (var i = 0; i < weeks.length; i++) {
                 weeks[i] = prepareCalendarDaysInWeeks(weeks[i]);
             }
             if (weeks[5] && weeks[5][0] &&
@@ -173,15 +173,15 @@
 
         function prepareCalendarDaysInWeeks(weekItem) {
             if (!weekItem) return [];
-            let week = weekItem.reverse();
-            for (let j = 0; j < week.length; j++) {
+            var week = weekItem.reverse();
+            for (var j = 0; j < week.length; j++) {
                 week[j] = prepareCalendarDay(week[j]);
             }
             return week;
         }
 
         function nextMonth(monthObj, isSimple) {
-            let params = {
+            var params = {
                 year: monthObj.jewish_year,
                 month: monthObj.next_month
             };
@@ -195,7 +195,7 @@
         }
 
         function prevMonth(monthObj, isSimple) {
-            let params = {
+            var params = {
                 year: monthObj.jewish_year,
                 month: monthObj.prev_month
             };
@@ -210,7 +210,7 @@
 
         //----------------------------------------------------------------
         function processSelectDay(monthObj, dayObj, scope) {
-            let selectedModel = {
+            var selectedModel = {
                 g_day: dayObj.gregorian_day,
                 g_month: dayObj.gregorian_month,
                 g_year: dayObj.gregorian_year
@@ -219,11 +219,11 @@
         }
 
         function selectTime(selectedDay, monthObj) {
-            let time = {
+            var time = {
                 hour: 15,
                 minute: 30
             };
-            let selectedModel = Object.assign({}, selectedDay, time);
+            var selectedModel = Object.assign({}, selectedDay, time);
             return !window.ionic.Platform.isWebView() ?
                 selectDate(selectedModel, monthObj) : processDeviceTime(selectedModel, monthObj); //web or real device
         }
@@ -249,7 +249,7 @@
         //---------------------------------------------------
 
         function createFirstDay(selectedModel) {
-            let requestObj = selectedModel.selected;
+            var requestObj = selectedModel.selected;
             requestObj.type_id = TYPE_EVENT.PERIODS;
             requestObj.part_period = 1;
             return createEventHistory(requestObj);
@@ -274,7 +274,7 @@
 
         function getDate(params, selectCallback) {
             return preloadSimple().then(function(){
-                let scope = $rootScope.$new(true);
+                var scope = $rootScope.$new(true);
                 scope.isSelectTime = params.isSelectTime || false;
                 scope.updatedModel = selectCallback || angular.noop;
             });
@@ -286,7 +286,7 @@
                 messagesSvc.show('ERROR.NEED_SELECT_DATE', 'error');
                 e.preventDefault();
             }
-            let selected = angular.copy(currentSelectModel);
+            var selected = angular.copy(currentSelectModel);
             currentSelectModel = null;
             popupInstance.close(selected);
         }

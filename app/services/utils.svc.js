@@ -5,7 +5,7 @@
 
     /* @ngInject */
     function utilsSvc() {
-        let NUMBER_HE = {
+        var NUMBER_HE = {
             1: 'א',
             2: 'ב',
             3: 'ג',
@@ -38,7 +38,7 @@
             30: 'ל'
         };
 
-        let DAYS_ORDER = [
+        var DAYS_ORDER = [
             "SUN",
             "MON",
             "TUE",
@@ -94,20 +94,6 @@
                 array.push(val);
             });
             return array;
-        }
-
-        function checkUserParam(paramName) {
-            if (angular.isUndefined(paramName)) return false;
-            switch (paramName) {
-                case 'teams':
-                    return (user.getUser().teams && user.getUser().teams.length);
-                case 'profile':
-                    return (user.getUser().grade && user.getUser().speciality && user.getUser().directorate);
-                case 'manager teams':
-                    return (user.getUser().manager_in_teams && user.getUser().manager_in_teams.length);
-                default:
-                    return false;
-            }
         }
 
         /**

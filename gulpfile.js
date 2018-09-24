@@ -34,10 +34,10 @@ gulp.task('js', ['templatecache'], function () {
     return gulp
         .src(source)
         // .pipe(plug.sourcemaps.init()) // get screwed up in the file rev process
-        .pipe(plug.concat('all.min.js'))
         .pipe(plug.ngAnnotate({add: true, single_quotes: true}))
         .pipe(plug.uglify({mangle: true, compress:{drop_debugger:true}}))
         .on('error', function (err) { console.log(err.toString()); })
+        .pipe(plug.concat('all.min.js'))
         // .pipe(plug.sourcemaps.write('./'))
         .pipe(gulp.dest(pkg.paths.build));
 });
@@ -60,8 +60,11 @@ gulp.task('css', ['sass'], function () {
     log('Bundling, minifying, and copying the app\'s CSS');
     return gulp.src(pkg.paths.css)
         .pipe(plug.concat('all.min.css'))
-        .pipe(plug.autoprefixer('last 2 version', '> 5%'))
-        .pipe(cleanCss({}))
+        .pipe(plug.autoprefixer({
+            browsers: ['last 4 versions'],
+            cascade: false,
+            grid: true}))
+        .pipe(cleanCss({ compatibility: '*' }))
         .pipe(gulp.dest(pkg.paths.build + 'content/css'));
 });
 
