@@ -5,24 +5,15 @@
 
 
     /* @ngInject */
-    function userSvc($localStorage, url, http) {
+    function userSvc(url, http) {
         var model = {
-            resetData: resetData,
             getUser: getUser
         };
         return model;
 
 
-        function getUser(user_id) {
-            return http.get(url.user.id + user_id).then(function(res){
-                return res;
-            });
-        }
-
-
-        function resetData(){
-            $localStorage.$reset();
-            $sessionStorage.$reset();
+        function getUser() {
+            return http.get(url.user.view);
         }
 
     }

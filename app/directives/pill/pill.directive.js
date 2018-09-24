@@ -10,6 +10,7 @@
             replace: true,
             controller: 'PillCtrl',
             controllerAs: 'vm',
+            scope: {}
         };
     }
 })();

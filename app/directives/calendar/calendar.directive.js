@@ -10,6 +10,7 @@
             replace: true,
             controller: 'CalendarCtrl',
             controllerAs: 'vm',
+            scope: {}
         };
     }
 })();

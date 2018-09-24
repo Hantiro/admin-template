@@ -3,13 +3,13 @@
         .directive('legend', legend);
 
     /* @ngInject */
-    function legend($document, $timeout) {
+    function legend() {
         return {
             restrict: 'E',
             templateUrl: 'directives/legend/legend.html',
-            replace: true,
             controller: 'LegendCtrl',
             controllerAs: 'vm',
+            scope: {}
         };
     }
 })();

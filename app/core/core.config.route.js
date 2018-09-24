@@ -17,9 +17,14 @@
                 controller: 'AppCtrl',
                 controllerAs: 'vm',
                 resolve: {
-                    translateReady: ['$translate', function ($translate) {
+                    /* @ngInject */
+                    translateReady: function ($translate) {
                         return $translate.onReady();
-                    }]
+                    },
+                    /* @ngInject */
+                    userAutoLogin: function(authExtSvc){
+                        return authExtSvc.autoLogin();
+                    }
                 }
             })
             .state('app.start-page', {
@@ -36,9 +41,6 @@
             })
             .state('app.my-main', {
                 url: 'my-main',
-                data: {
-                  auth: true
-                },
                 templateUrl: 'templates/my-main/my-main.html',
                 controller: 'MyMainCtrl',
                 controllerAs: 'vm'

@@ -5,24 +5,27 @@
             <div class="col-md-4">
                 <div class="my-main__menu">
                     <div class="row">
-                        <div class="col-md-6 my-main__elements">
+                        <div ng-click="vm.chActivTab('activeA','pill')"
+                             class="col-md-6 my-main__elements"
+                            ng-class="{'my-main__menu--active': vm.tabModel.activeA === 'pill'}">
                             <img src="content/img/pill.png" alt="">
                             <p>take a pill</p>
                         </div>
-                        <div class="col-md-6 my-main__elements">
+                        <div ng-click="vm.chActivTab('activeA','calendar')"
+                             class="col-md-6 my-main__elements"
+                             ng-class="{'my-main__menu--active': vm.tabModel.activeA === 'calendar'}">
                             <img src="content/img/calendar.png" alt="">
                             <p>calendar</p>
                         </div>
                     </div>
                 </div>
-                <info-block ib-type="default" ib-text="click to choose the first day"
-                            ib-sub-text="of seeing" ib-is-edit="true">
-                </info-block>
+                <calendar ng-if="vm.tabModel.activeA === 'calendar'"></calendar>
+                <pill ng-if="vm.tabModel.activeA === 'pill'"></pill>
             </div>
 
             <div class="col-md-4">
                 <!--<div class="my-main__menu">-->
-                    <!--<img class="my-main__date" src="content/img/date.png" alt="">-->
+                <!--<img class="my-main__date" src="content/img/date.png" alt="">-->
                 <!--</div>-->
                 <calendar-custom class="my-main__main-calendar"
                                  cc-type="detailed"
@@ -32,21 +35,25 @@
                                  cc-is-select-time="vm.isSelectTime"></calendar-custom>
             </div>
 
-
             <div class="col-md-4">
                 <div class="my-main__menu">
                     <div class="row">
-                        <div class="col-md-6 my-main__elements">
+                        <div ng-click="vm.chActivTab('activeB','history')"
+                             class="col-md-6 my-main__elements"
+                             ng-class="{'my-main__menu--active': vm.tabModel.activeB === 'history'}">
                             <img src="content/img/list.png" alt="">
                             <p>list of results</p>
                         </div>
-                        <div class="col-md-6 my-main__elements">
+                        <div ng-click="vm.chActivTab('activeB','notification')"
+                             class="col-md-6 my-main__elements"
+                             ng-class="{'my-main__menu--active': vm.tabModel.activeB === 'notification'}">
                             <img class="my-main__notification" src="content/img/notification.png" alt="">
                             <p>notification</p>
                         </div>
                     </div>
                 </div>
-                <notification></notification>
+                <notification ng-if="vm.tabModel.activeB === 'notification'"></notification>
+                <history ng-if="vm.tabModel.activeB === 'history'"></history>
             </div>
         </div>
         <img class="my-main__wave" src="content/img/wave.png">

@@ -4,7 +4,7 @@
     angular.module('service.authExtSvc', []).service('authExtSvc', authExtSvc);
 
     /* @ngInject */
-    function authExtSvc($rootScope, modalSvc, authSvc, authDataSvc, $state) {
+    function authExtSvc($rootScope, modalSvc, authSvc, authDataSvc, $state, userSvc) {
         var model = {
             signUpProcess: signUpProcess,
             loginProcess: loginProcess,
@@ -77,8 +77,15 @@
             });
         }
 
-        function autoLogin(callback) {
-            return callback && callback();
+        function autoLogin() {
+            if(authDataSvc.isLogined() && !authDataSvc.getUser()){
+                return userSvc.getUser().then(function(res){
+                    authDataSvc.setUser(res.entity || {});
+                    return res;
+                });
+            } else if(authDataSvc.isLogined() && authDataSvc.getUser()) {
+                return true;
+            }
         }
 
         function checkLogin() {

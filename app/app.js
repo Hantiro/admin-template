@@ -15,6 +15,8 @@
         //     authSvc.processAutoLogin();
         // });
         //
+
+
         $transitions.onBefore({}, function(transition) {
             // check if the state should be auth
             if ( transition.to().data && transition.to().data.auth && !authDataSvc.isLogined()) {

@@ -55,6 +55,9 @@
   &__menu {
     padding: 10px 0;
     background-color: #fceef2;
+    &--active {
+      background: red;
+    }
   }
 }
 
