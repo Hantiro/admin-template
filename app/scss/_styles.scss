@@ -45,6 +45,10 @@
   font-family: 'ArimoRegular';
   src: url("../fonts/ArimoRegular.ttf");
 }
+@font-face {
+  font-family: 'AssistantSemiBold';
+  src: url("../fonts/AssistantSemiBold.ttf");
+}
 
 @font-face {
   //font-family: 'ralewaybold';
@@ -140,7 +144,7 @@ a:hover {
 }
 
 .cursor-pointer {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .md-virtual-repeat-container.md-autocomplete-suggestions-container {
@@ -166,6 +170,13 @@ a:hover {
   color: #ffffff;
   padding: 5px 15px;
   border: 0;
+}
+
+.button-not-default {
+  background-color: #fff;
+  color: #4b0049;
+  padding: 5px 15px;
+  border: 1px solid #4b0049;
 }
 
 .contain {

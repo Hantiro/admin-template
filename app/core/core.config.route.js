@@ -58,6 +58,18 @@
                 controller: 'MikvahsCtrl',
                 controllerAs: 'vm'
             })
+            .state('app.main.rabbi', {
+                url: '/rabbi',
+                templateUrl: 'templates/rabbi/rabbi.html',
+                controller: 'RabbiCtrl',
+                controllerAs: 'vm'
+            })
+            .state('app.main.profile', {
+                url: '/profile',
+                templateUrl: 'templates/profile/profile.html',
+                controller: 'ProfileCtrl',
+                controllerAs: 'vm'
+            })
             .state('app.main.terms', {
                 url: '/terms',
                 templateUrl: 'templates/terms/terms.html',
