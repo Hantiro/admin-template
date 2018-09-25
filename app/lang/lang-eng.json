@@ -98,7 +98,8 @@
     "TEXT_HOME_POPUP": "The day of prisha of the previous day of seeing",
     "PERMANENT_DAY": "Permanent day",
     "RETIREMENT_MENSTRUAL": "Prisha is not period",
-    "ASK_LOGOUT": "Are you sure you want to logout?"
+    "ASK_LOGOUT": "Are you sure you want to logout?",
+    "PRIVACY_POLICY": "Privacy policy"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",

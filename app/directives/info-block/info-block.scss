@@ -1,5 +1,6 @@
 .info-block {
   color: #e4587f;
+  margin-top: 70px;
 
   &__circle-day {
     text-align: center;
@@ -44,6 +45,11 @@
         background-color: #51c4d4;
       }
     }
+  }
+}
+@media screen and(max-width: 992px){
+  .info-block{
+    margin-bottom: 70px;
   }
 }
 

@@ -1,5 +1,70 @@
 .history {
+  text-align: center;
+  font-family: ArimoRegular;
+  background: #fff;
+  &__add {
+    margin: -25px 0 0 30px;
+    background-color: #4b0049;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    i {
+      color: #ffffff;
+      font-size: 20px;
+      vertical-align: middle;
+    }
+  }
+  .scroll-content {
+    top: calc(20vh + 70px);
+    height: calc(100vh - 20vh - 70px);
+  }
+
+  &__date {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.122);
+    .layout-row {
+      justify-content: space-between;
+      width: 100%;
+      .col-70 {
+        display: flex;
+        align-items: flex-end;
+      }
+      .col-30 {
+        z-index: 2;
+      }
+    }
+    .ion-android-calendar {
+      font-size: 32px;
+      &:before {
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  &__date-text {
+    font-family: "ArimoRegular";
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.38);
+    padding-right: 15px;
+  }
+  .list-item-custom__date {
+    color: #8bd8e2;
+  }
+  p {
+    font-family: ArimoBold;
+    font-size: 24px;
+    color: #ea688b;
+  }
+  span {
+    font-family: ArimoBold;
+    font-size: 16px;
+    color: #622161;
+  }
+
 
 }
-
-

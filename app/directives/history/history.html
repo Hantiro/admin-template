@@ -1,4 +1,32 @@
-<div class="history">
-
-</div>
-
+<ion-view class="history" dir="ltr">
+    <main-header mh-type="middle-header" mh-show-back="true" mh-title="Visual evidence list"></main-header>
+    <div class="history__date" >
+        <div layout="row" layout-align="flex-end space-between">
+            <div class="col-30">
+                <button class="history__add" ng-click="vm.openCalendar()">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="col-70">
+                <span class="history__date-text">{{'CONTENT.DATE_TEXT'|translate}}</span>
+                <img src="content/img/icon/fa-calendar.png">
+            </div>
+        </div>
+    </div>
+    <ion-content>
+        <list-item-custom
+                ng-if="vm.modelDays.data && vm.modelDays.data.length"
+                ng-repeat="item in vm.modelDays.data track by $index"
+                lic-date-text="{{ vm.currentLang() === 'eng' ? item.data2 : item.data1 }}"
+                lic-day-part-text="{{ item.isDay === 2 ? 'CONTENT.DAY':'CONTENT.NIGHT' | translate }}"
+                lic-is-day="item.isDay === 2"></list-item-custom>
+        <p>{{'CONTENT.PERMANENT_DAY'|translate}}</p>
+        <span>{{ vm.modelDays.isRegular ? 'CONTENT.REGULAR':'CONTENT.IRREGULAR' | translate }}</span>
+        <list-item-custom
+                ng-if="vm.modelDays.predictionArray && vm.modelDays.predictionArray.length"
+                ng-repeat="item in vm.modelDays.predictionArray track by $index"
+                lic-date-text="{{ vm.currentLang() === 'eng' ? item.data2 : item.data1 }}"
+                lic-day-part-text="{{ item.isDay === 2 ? 'CONTENT.DAY':'CONTENT.NIGHT' | translate }}"
+                lic-is-day="item.isDay === 2"></list-item-custom>
+    </ion-content>
+</ion-view>
