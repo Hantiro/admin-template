@@ -56,27 +56,31 @@
 
         function requestError(response) {
             var defer = $q.defer();
+            var text = '';
             if (response.status === 200) {
-                toastr.error('Server Error: ' + response.data);
+                text = 'Server Error: ' + response.data;
             }
             else if (response.status === -1) {
-                toastr.error('Server unavailable');
+                text = 'Server unavailable';
             }
             else if (response.status === 500) {
-                toastr.error(response.data.message);
-                // toastr.error('Server Error: ' + response.status + ' ' + response.data.message);
+                toastr.error(response.data.message, null, {
+                    tapToDismiss: true,
+                    timeout: 20000
+                });
             }
             else if (response.status === 403) {
-                toastr.error('Access denied.');
+                text = 'Access denied';
             }
-            else {
-                if (response.status === 401) {
-                    // $state.go('add-phone');
-                    toastr.error('Server Error: ' + response.status + ' ' + response.data.message);
-                    // $rootScope.$broadcast('logout', {});
+            else if (response.status === 401) {
+                if (response.data.message || response.data.error) {
+                    text = response.data.message || response.data.error;
+                } else {
+                    text = 'Unauthorized';
                 }
-                toastr.error(response.data.message);
             }
+            text = response.data.message || response.data.error;
+            toastr.error(text);
             defer.reject(response.data);
             return defer.promise;
         }

@@ -120,7 +120,7 @@
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
                 windowTopClass: 'signup-modal',
-                size: 'md',
+                size: 'lg',
                 resolve: {}
             });
         }
