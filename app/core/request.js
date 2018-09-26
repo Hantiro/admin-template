@@ -55,8 +55,8 @@
         }
 
         function requestError(response) {
-            var defer = $q.defer();
             var text = '';
+            var defer = $q.defer();
             if (response.status === 200) {
                 text = 'Server Error: ' + response.data;
             } else if (response.status === -1) {
