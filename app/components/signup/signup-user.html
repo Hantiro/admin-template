@@ -1,0 +1,61 @@
+<div>
+    <md-input-container md-no-float class="md-block" flex-gt-sm>
+        <input placeholder="Name"
+               id="name"
+               name="name"
+               aria-label="name"
+               type="text">
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block" flex-gt-sm>
+        <input placeholder="Surname"
+               id="surname"
+               name="surname"
+               aria-label="surname"
+               type="text">
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block" flex-gt-sm>
+        <input placeholder="Location"
+               id="location"
+               name="location"
+               aria-label="location"
+               type="text">
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block" flex-gt-sm>
+        <input placeholder="Email"
+               id="email"
+               name="email"
+               aria-label="email"
+               type="email">
+    </md-input-container>
+
+
+    <md-input-container md-no-float class="md-block" flex-gt-sm>
+        <input placeholder="Password"
+               id="password"
+               name="password"
+               aria-label="password"
+               type="password">
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block" flex-gt-sm>
+        <input placeholder="Repeat password"
+               id="repeat-password"
+               name="repeat-password"
+               aria-label="repeat-password"
+               type="password">
+    </md-input-container>
+    <div class="signup-modal__confirm">
+        <div class="signup-modal__policy">
+            <md-checkbox ng-model="vm.data.license_agreement" required></md-checkbox>
+            <p>I agree to the </p>
+            <a ui-sref="app.main.terms" target="_blank">Terms of use and Privacy Policy</a>
+        </div>
+        <div>
+            <md-checkbox ng-model="vm.data.email_dispatch" aria-label="Checkbox 1"></md-checkbox>
+            <span>I would like to receive benefits and advertising material</span>
+        </div>
+    </div>
+</div>

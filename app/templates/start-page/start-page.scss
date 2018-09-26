@@ -230,9 +230,13 @@
   &__book-content {
     width: 30%;
     display: flex;
+  }
+  &__images {
+    width: 100%;
+    max-height: 280px;
     img {
-      width: 50%;
-      max-height: 280px;
+      width: 100%;
+      height: auto;
     }
   }
   &__book-description {
