@@ -8,14 +8,14 @@
 
         <div class="row-flex">
             <span class="calendar-custom__prev col-10-flex" ng-click="vm.nextMonth()">
-                <i class="icon ion-ios-arrow-thin-left"></i>
+                <i class="fas fa-arrow-left"></i>
             </span>
             <span class="calendar-custom__title col-80-flex">
                 {{ vm.calendarModel.gregorian_year + ' - ' +
                   ('MONTH.'+vm.calendarModel.jewish_month_name | translate) }}
             </span>
             <span class="calendar-custom__next col-10-flex" ng-click="vm.prevMonth()">
-                <i class="icon ion-ios-arrow-thin-right"></i>
+                <i class="fas fa-arrow-right"></i>
             </span>
         </div>
     </div>

@@ -1,7 +1,14 @@
 .notification {
+  border-top: 1px solid #ffffff;
   padding: 30px 0px;
   font-family: AssistantRegular;
   font-size: 16px;
+  background-color: rgba(236, 222, 218, 0.8);
+  z-index: 9;
+  position: absolute;
+  width: 100%;
+  height: 140vmin;
+  overflow: hidden;
   md-switch {
     margin: 0;
   }
@@ -17,6 +24,9 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    p {
+      margin: 0;
+    }
   }
   &__desc {
     color: #9e9592;
@@ -28,6 +38,16 @@
     text-align: center;
     width: 70%;
     margin: 30px auto;
+  }
+  &__button {
+    margin-top: 50px;
+  }
+}
+
+@media screen and(max-width: 992px) {
+  .notification {
+    height: auto;
+    position: relative;
   }
 }
 

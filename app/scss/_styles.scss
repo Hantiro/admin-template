@@ -45,6 +45,7 @@
   font-family: 'ArimoRegular';
   src: url("../fonts/ArimoRegular.ttf");
 }
+
 @font-face {
   font-family: 'AssistantSemiBold';
   src: url("../fonts/AssistantSemiBold.ttf");
@@ -94,6 +95,15 @@ html, body {
   padding: 0 !important;
   background-color: #fff;
   overflow: auto;
+}
+
+md-select.md-default-theme:not([disabled]):focus .md-select-value, md-select:not([disabled]):focus .md-select-value {
+  border-bottom-color: transparent;
+  color: #4b0049;
+}
+
+md-select.md-default-theme .md-select-icon, md-select .md-select-icon {
+  color: #4b0049;
 }
 
 [ng\:cloak], [ng-cloak], .ng-cloak {

@@ -1,5 +1,6 @@
 .calendar-custom {
-
+  position: relative;
+  z-index: 11;
   .col-flex {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -40,14 +41,17 @@
     display: -ms-flexbox;
     display: flex;
     width: 100%;
+    color: #4b0049;
   }
 
   .col-flex {
     margin: 0 1px 0 1px;
   }
   &__header {
-    padding: 10px 5px 5px 5px;
-    background: #fff;
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background: #fcf0f3;
   }
 
   &__delete-event {
@@ -67,7 +71,8 @@
   }
 
   &__body {
-    //padding-top: 10px;
+    width: 90%;
+    margin: 50px auto 0;
   }
 
   &__prev, &__next {
@@ -110,7 +115,7 @@
 
   &__day-he {
     height: 50%;
-    color: #000;
+    color: #4b0049;
   }
 
   &__title {

@@ -114,6 +114,24 @@
                     }
                 }
             })
+            .state('app.main.privacy', {
+                url: '/privacy',
+                data: {
+                    trans_name: 'CONTENT.PRIVACY_POLICY'
+                },
+                templateUrl: 'templates/privacy/privacy.html',
+                controller: 'PrivacyCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    /* @ngInject */
+                    // privacy: function (textSvc) {
+                    //     return textSvc.getPrivacy()
+                    //         .then(function (res) {
+                    //             return res.entity || [];
+                    //         })
+                    // }
+                }
+            })
             .state('app.main.tradition', {
                 url: '/tradition',
                 data: {

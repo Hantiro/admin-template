@@ -1,4 +1,7 @@
 .main-header {
+  .md-select-value .md-select-icon {
+    text-align: start;
+  }
   md-input-container {
     margin: 0;
   }
@@ -87,7 +90,7 @@
     }
 
     i {
-      margin: 0 10px 5px;
+      margin: 0 10px;
     }
   }
   &__button-login {
