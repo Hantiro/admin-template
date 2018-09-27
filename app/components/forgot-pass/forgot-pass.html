@@ -2,11 +2,10 @@
     <h3 class="modal-title" id="modal-title">{{'CONTENT.FORGOT_PASSWORD'|translate}}</h3>
 </div>
 <div class="modal-body" id="modal-body">
-    <p>{{'CONTENT.TEXT_RESET_PASSWORD_POPUP'|translate}}</p>
+
     <div class="form">
         <form name="vm.resetPassForm" novalidate>
             <md-input-container md-no-float class="md-block" flex>
-                <md-icon md-font-icon="fa fa-at " aria-hidden="true"></md-icon>
                 <input ng-model="vm.email"
                        placeholder="{{::'CONTENT.EMAIL'|translate}}"
                        type="email" id="email"
@@ -17,9 +16,10 @@
                        aria-label="email">
             </md-input-container>
         </form>
+        <p>Enter your Email and we wil send you  link to reset your old password</p>
     </div>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="vm.continueBtn()"> {{ 'CONTENT.SEND'|translate }}</button>
-    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">{{ 'CONTENT.CANCEL' | translate }}</button>
+    <button class="button-default" ng-click="vm.continueBtn()"> {{ 'CONTENT.SEND'|translate }}</button>
+    <button class="button-not-default" ng-click="vm.cancel()">{{ 'CONTENT.CANCEL' | translate }}</button>
 </div>

@@ -8,13 +8,15 @@
         ]).run(runBlock);
 
     /* @ngInject */
-    function runBlock($timeout, authDataSvc, $rootScope, $state, $transitions, pagesSvc) {
+    function runBlock($timeout, authDataSvc, $rootScope, $state, $transitions, pagesSvc, modalSvc) {
 
         // $state.go('app.start-page');
         // $timeout(function(){
         //     authSvc.processAutoLogin();
         // });
         //
+
+        modalSvc.login();
 
         $transitions.onBefore({}, function(transition) {
             // check if the state should be auth

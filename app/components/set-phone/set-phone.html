@@ -4,9 +4,8 @@
 <div class="modal-body" id="modal-body">
     <form name="vm.addPhoneForm" novalidate>
         <md-input-container class="md-block" flex>
-            <md-icon md-font-icon="fa fa-phone fa-lg" aria-hidden="true"></md-icon>
             <input minlength="6" maxlength="20"
-                   required
+                   aria-label="phone"
                    placeholder="{{ 'CONTENT.PHONE_NUMBER'|translate}}"
                    ng-model="vm.phone"
                    type="number" id="phone"
@@ -20,6 +19,6 @@
     </form>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="vm.addPhone()">{{ 'Next' }}</button>
-    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">{{ 'Cancel' }}</button>
+    <button class="button-default" ng-click="vm.addPhone()">{{ 'Next' }}</button>
+    <button class="button-not-default" ng-click="vm.cancel()">{{ 'Cancel' }}</button>
 </div>

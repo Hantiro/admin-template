@@ -134,7 +134,7 @@
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
                 windowTopClass: 'new-pass-modal',
-                size: 'sm',
+                size: 'md',
                 resolve: {}
             });
         }
@@ -148,7 +148,7 @@
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
                 windowTopClass: 'login-modal',
-                size: 'sm',
+                size: 'md',
                 resolve: {}
             });
         }
@@ -162,7 +162,7 @@
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
                 windowTopClass: 'forgot-pass-modal',
-                size: 'sm',
+                size: 'md',
                 resolve: {}
             });
         }

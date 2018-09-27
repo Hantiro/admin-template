@@ -1,3 +1,26 @@
 .set-code-modal {
+  .modal-help {
+    font-family: AssistantRegular;
+    color: #b1b1b1;
+  }
 
+  span {
+    text-decoration: underline;
+    color: #0042ff;
+  }
+  .modal-text {
+    font-size: 18px;
+    text-align: center;
+  }
+  input {
+    font-size: 18px;
+    font-family: AssistantRegular;
+    text-align: center;
+    width: 50%;
+  }
+  md-input-container.md-block {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+  }
 }

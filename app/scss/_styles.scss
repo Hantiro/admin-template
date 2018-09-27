@@ -156,7 +156,33 @@ a:hover {
 .cursor-pointer {
   cursor: pointer;
 }
+.modal-footer {
+  border-top: 0;
+  text-align: center;
+  padding: 10px 15px 20px;
+}
+.modal-header {
+  padding: 20px;
+  border-bottom: 0;
+}
+.modal-title {
+  font-family: AssistantSemiBold;
+  color: #4b0049;
+  font-size: 18px;
+  text-align: center;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.modal-content {
+  border-radius: 0;
+}
 
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+  border-color: #a57fa4;
+}
 .md-virtual-repeat-container.md-autocomplete-suggestions-container {
   z-index: 1100 !important;
 }
