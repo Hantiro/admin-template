@@ -77,10 +77,10 @@
             delete $localStorage.phone;
             delete $localStorage.token;
             delete $sessionStorage.token;
-            // localStorage.clear();
-            // sessionStorage.clear();
-            // $localStorage.$reset();
-            // $sessionStorage.$reset();
+            localStorage.clear();
+            sessionStorage.clear();
+            $localStorage.$reset();
+            $sessionStorage.$reset();
         }
     }
 })

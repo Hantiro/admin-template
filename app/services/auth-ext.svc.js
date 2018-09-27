@@ -4,7 +4,7 @@
     angular.module('service.authExtSvc', []).service('authExtSvc', authExtSvc);
 
     /* @ngInject */
-    function authExtSvc($rootScope, modalSvc, authSvc, authDataSvc, $state, userSvc) {
+    function authExtSvc($rootScope, modalSvc, authSvc, authDataSvc, $state, userSvc, $timeout) {
         var model = {
             signUpProcess: signUpProcess,
             loginProcess: loginProcess,
@@ -81,9 +81,10 @@
             if(authDataSvc.isLogined() && !authDataSvc.getUser()){
                 return userSvc.getUser().then(function(res){
                     authDataSvc.setUser(res.entity || {});
-                    return res;
+                    $state.go('app.my-main');
                 });
             } else if(authDataSvc.isLogined() && authDataSvc.getUser()) {
+                $state.go('app.my-main');
                 return true;
             }
         }
@@ -102,8 +103,11 @@
 
         function logout() {
             authDataSvc.clearAuthData();
-            $state.go('app.start-page', {}, {reload: true});
-            window.location.reload(true);
+            $timeout(function(){
+                $state.go('app.start-page').promise.then(function(){
+                    window.location.reload(true);
+                });
+            },1000);
         }
     }
 })

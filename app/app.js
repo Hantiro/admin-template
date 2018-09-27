@@ -16,7 +16,6 @@
         // });
         //
 
-
         $transitions.onBefore({}, function(transition) {
             // check if the state should be auth
             if ( transition.to().data && transition.to().data.auth && !authDataSvc.isLogined()) {
@@ -27,8 +26,7 @@
 
         $transitions.onFinish({}, function (transition) {
             pagesSvc.setCurrentName(
-                transition.to().data && transition.to().data.trans_name ?
-                transition.to().data.trans_name: '');
+                transition.to().data && transition.to().data.trans_name ?  transition.to().data.trans_name : '');
         });
     }
 })();
