@@ -10,7 +10,9 @@
             replace: true,
             controller: 'CalendarCtrl',
             controllerAs: 'vm',
-            scope: {}
+            scope: {
+                calShowInfo: '=', //true - false, if true show first or last day
+            }
         };
     }
 })();

@@ -1,7 +1,11 @@
 <div class="calendar-view">
-    <info-block ib-type="default" ib-text="click to choose the first day"
+    <div ng-if="calShowInfo">
+        <info-block
+                ib-type="default"
+                ib-text="click to choose the first day"
                 ib-sub-text="of seeing">
-    </info-block>
-    <delete-event></delete-event>
+        </info-block>
+        <delete-event></delete-event>
+    </div>
 </div>
 
