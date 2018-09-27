@@ -4,7 +4,7 @@
     angular.module('service.dateSvc', []).factory('dateSvc', dateSvc);
 
     /* @ngInject */
-    function dateSvc(http, url, $state,  $rootScope, utilsSvc, $q, $translate, messagesSvc) {
+    function dateSvc(http, url, $state, $rootScope, utilsSvc, $q, $translate, messagesSvc) {
         var CALENDAR_TYPE = {
             DETAILED: "detailed",
             SIMPLE: "simple"
@@ -47,6 +47,7 @@
         var currentSelectModel;
         var popupInstance;
         var preloadSimpleCalendarModel;
+        var currentCalendarModel;
 
         var model = {
             getDate: getDate,
@@ -63,6 +64,9 @@
             createFirstDay: createFirstDay,
             createEventHistory: createEventHistory,
             getPreloadedForSimple: getPreloadedForSimple,
+            getCalendarModel: getCalendarModel,
+            setCalendarModel: setCalendarModel,
+            getDeleteText: getDeleteText,
             EVENT_IMG: EVENT_IMG,
             EVENT_CONST: EVENT_CONST,
             PERIOD_CONST: PERIOD_CONST,
@@ -101,7 +105,7 @@
         }
 
         function preloadSimple() {
-            if(preloadSimpleCalendarModel){
+            if (preloadSimpleCalendarModel) {
                 return $q.when(preloadSimpleCalendarModel);
             }
             return loadMonth({default: 1}).then(function (res) {
@@ -110,7 +114,21 @@
             })
         }
 
-        function clearPreloadSimple(){
+        function getCalendarModel() {
+            return currentCalendarModel || {};
+        }
+
+        function setCalendarModel(model) {
+            currentCalendarModel = model;
+            $rootScope.$broadcast('calendar_model_updated', model);
+        }
+
+        function getDeleteText() {
+            return getCalendarModel() && getCalendarModel().last_part_period === PERIOD_CONST.END ?
+                'CONTENT.DELETE_LAST_DAY' : 'CONTENT.DELETE_FIRST_DAY';
+        }
+
+        function clearPreloadSimple() {
             preloadSimpleCalendarModel = null;
         }
 
@@ -273,7 +291,7 @@
 
 
         function getDate(params, selectCallback) {
-            return preloadSimple().then(function(){
+            return preloadSimple().then(function () {
                 var scope = $rootScope.$new(true);
                 scope.isSelectTime = params.isSelectTime || false;
                 scope.updatedModel = selectCallback || angular.noop;

@@ -12,11 +12,9 @@
         vm.nextMonth = nextMonth;
         vm.prevMonth = prevMonth;
         vm.selectDay = selectDay;
-        vm.deleteLastEvent = deleteLastEvent;
         vm.isCurrentDay = isCurrentDay;
         vm.isDayInCurrentMonth = isDayInCurrentMonth;
         vm.isDaySelected = isDaySelected;
-        vm.textDelete = textDelete;
         vm.dayEventImgSrc = dayEventImgSrc;
 
         vm.EVENT_CONST = dateSvc.EVENT_CONST;
@@ -52,6 +50,7 @@
 
         function setModelData(data){
             vm.calendarModel = data;
+            dateSvc.setCalendarModel(data);
             if (angular.isFunction($scope.ccUpdatedModel)) {
                 $scope.ccUpdatedModel(vm.calendarModel);
             }
@@ -85,11 +84,6 @@
                     $scope.ccSelected.selected.g_month === day.gregorian_month &&
                     $scope.ccSelected.selected.g_day === day.gregorian_day;
             }
-        }
-
-        function textDelete() {
-            return vm.calendarModel.last_part_period === vm.PERIOD_CONST.END ?
-                'CONTENT.DELETE_LAST_DAY' : 'CONTENT.DELETE_FIRST_DAY';
         }
 
         function isCurrentDay(day) {

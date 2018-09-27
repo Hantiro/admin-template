@@ -1,10 +1,5 @@
 <div class="calendar-custom">
     <div class="calendar-custom__header">
-        <div class="calendar-custom__delete-event"
-             ng-if="vm.calendarModel.last_part_period && ccType === 'detailed'">
-            {{ vm.textDelete() | translate }}
-            <img src="content/img/icon/close-icon.png" ng-click="vm.deleteLastEvent()"/>
-        </div>
 
         <div class="row-flex">
             <span class="calendar-custom__prev col-10-flex" ng-click="vm.nextMonth()">

@@ -14,7 +14,10 @@
         'service.authExtSvc',
         'service.authDataSvc',
         'service.dateSvc',
-        'service.pagesSvc'
+        'service.pagesSvc',
+        'service.pillsSvc',
+        'service.notificationSvc',
+        'service.settingsSvc',
     ]);
 
 })();

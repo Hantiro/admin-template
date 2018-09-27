@@ -1,5 +1,6 @@
 @import "../scss/_vars";
 @import "../scss/styles";
+
 //templates styles
 @import "../templates/app/app";
 @import "../templates/terms/terms";
@@ -27,6 +28,8 @@
 @import '../directives/history/history';
 @import '../directives/calendar-custom/calendar-custom';
 @import '../directives/list-item-custom/list-item-custom';
+@import '../directives/delete-event/delete-event';
+
 //components styles
 @import "../components/forgot-pass/forgot-pass";
 @import "../components/login/login";
