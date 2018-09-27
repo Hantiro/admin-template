@@ -11,6 +11,7 @@
         'directives.pill',
         'directives.notification',
         'directives.history',
-        'directives.calendarCustom'
+        'directives.calendarCustom',
+        'directives.listItemCustom'
     ]);
 })();

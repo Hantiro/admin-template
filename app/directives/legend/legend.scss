@@ -5,17 +5,23 @@
   p {
     margin: 0;
   }
+  &__button {
+    font-size: 18px;
+  }
   &__propose {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
+    p {
+      margin-right: 10px;
+    }
   }
   &__button {
     background-color: #4b0049;
     text-transform: uppercase;
     color: #ffffff;
     margin-left: 15px;
-    padding: 5px 15px;
+    padding: 5px 20px;
   }
   &__item {
     margin-bottom: 10px;
