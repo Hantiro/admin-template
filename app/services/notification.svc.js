@@ -6,7 +6,7 @@
 
     /* @ngInject */
     function notificationSvc(url, http) {
-        let model = {
+        var model = {
             subscribe: subscribe,
             settingsView: settingsView,
             settingsUpdate: settingsUpdate

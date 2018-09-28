@@ -18,6 +18,8 @@
             }
             if (vm.tmp_address) {
                 vm.data.address = vm.tmp_address.description;
+            } else {
+                vm.data.address = 'Temp address';
             }
             vm.data.code = vm.tmp_credentials.code;
             vm.data.phone = vm.tmp_credentials.phone;

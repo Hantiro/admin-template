@@ -5,7 +5,7 @@
 
     /* @ngInject */
     function gestationSvc(http, url) {
-        let model = {
+        var model = {
             create: create,
             get: get,
             remove: remove

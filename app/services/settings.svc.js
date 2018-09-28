@@ -5,7 +5,7 @@
 
     /* @ngInject */
     function settingsSvc($localStorage, http, url, $state) {
-        let model = {
+        var model = {
             contactUs: contactUs,
             comments: comments,
             terms: terms

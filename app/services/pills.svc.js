@@ -5,12 +5,10 @@
 
     /* @ngInject */
     function pillsSvc(http, url, $rootScope, dateSvc, messagesSvc, $q) {
-        let model = {
+        var model = {
             create: create,
             deleteLast: deleteLast
         };
-
-        let sendModel = {};
 
         function deleteLast() {
             return http.delete(url.pill.delete_last);
