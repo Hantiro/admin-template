@@ -11,7 +11,7 @@
             controller: 'CalendarCtrl',
             controllerAs: 'vm',
             scope: {
-                calShowInfo: '=', //true - false, if true show first or last day
+                calShowTime: '=', //true - false, if true show time select
             }
         };
     }

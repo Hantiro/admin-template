@@ -1,13 +1,13 @@
 <div class="calendar-view">
-    <div ng-if="calShowInfo">
+    <div ng-if="!vm.showTime">
         <info-block
                 ib-type="default"
-                ib-text="click to choose the first day"
-                ib-sub-text="of seeing">
+                ib-text="{{vm.textHeader | translate}}"
+                ib-sub-text="{{'CONTENT.ENTER' | translate}}">
         </info-block>
         <delete-event></delete-event>
     </div>
-    <div ng-if="!calShowInfo">
+    <div ng-if="vm.showTime">
         <div uib-timepicker
              ng-model="vm.timeModel"
              ng-change="vm.changedTime()"

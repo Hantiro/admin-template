@@ -24,7 +24,7 @@
         vm.days = utilsSvc.DAYS_ORDER;
         vm.calendarModel = {};
 
-        $scope.$on('update_calendar', function (event, data) {
+        $scope.$on(dateSvc.CALENDAR_EVENT.UPDATE_CALENDAR, function (event, data) {
             if (!isSimpleMode()) {
                 if (vm.calendarModel.jewish_year && vm.calendarModel.jewish_month >= 0) {
                     return init({
@@ -37,7 +37,6 @@
         });
 
         init();
-
         function init(params) {
             //check preload data (this used if this directive used as popup for select date, and not wait download new calendar before show);
             //if params is set we no need use cache
@@ -127,7 +126,7 @@
 
         function selectDay(calendarObj, day) {
             if(checkSelectedDay(calendarObj, day)){
-                dateSvc.processSelectDay(calendarObj, day, $scope).then(afterSelectDay);
+                dateSvc.processSelectDay(calendarObj, day, $scope);
             }
         }
 

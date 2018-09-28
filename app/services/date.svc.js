@@ -22,6 +22,14 @@
             'PILLS': 9
         };
 
+        var CALENDAR_EVENT = {
+            DELETED_EVENT: '0',
+            CREATED_EVENT: '1',
+            UPDATED_MODEL: '2',
+            UPDATE_CALENDAR: '3',
+            SELECTED_CALENDAR: '4'
+        };
+
         var EVENT_IMG = {};
         EVENT_IMG[EVENT_CONST.NIGHT] = 'moon.png';
         EVENT_IMG[EVENT_CONST.DAY] = 'sun.png';
@@ -46,15 +54,14 @@
         };
 
         var currentSelectModel;
-        var popupInstance;
         var preloadSimpleCalendarModel;
         var currentCalendarModel;
         var currentMonthCalendarModel;
         var currentDay;
         var selectedDay;
+        var selectedMonth;
 
         var model = {
-            getDate: getDate,
             loadMonth: loadMonth,
             createEvent: createEvent,
             deleteLastEvent: deleteLastEvent,
@@ -74,6 +81,9 @@
             setCurrentDay: setCurrentDay,
             getSelectedDay: getSelectedDay,
             setSelectedDay: setSelectedDay,
+            setSelectedMonth: setSelectedMonth,
+            getSelectedMonth: getSelectedMonth,
+            CALENDAR_EVENT: CALENDAR_EVENT,
             EVENT_IMG: EVENT_IMG,
             EVENT_CONST: EVENT_CONST,
             PERIOD_CONST: PERIOD_CONST,
@@ -92,7 +102,10 @@
         }
 
         function deleteLastEvent() {
-            return http.delete(url.calendar.delete_last_event);
+            return http.delete(url.calendar.delete_last_event).then(function (res) {
+                $rootScope.$broadcast(CALENDAR_EVENT.DELETED_EVENT,{});
+                return res;
+            });
         }
 
         //without params - loading current month
@@ -103,7 +116,9 @@
         }
 
         function createEvent(data) {
-            return http.post(url.calendar.create_event, data);
+            return http.post(url.calendar.create_event, data).then(function (res) {
+                $rootScope.$broadcast(CALENDAR_EVENT.CREATED_EVENT,{});
+            });
         }
 
         //-----------------------------------------
@@ -127,7 +142,9 @@
 
         function setCalendarModel(model) {
             currentCalendarModel = model;
-            $rootScope.$broadcast('calendar_model_updated', model);
+            setSelectedMonth(null); //reset
+            setSelectedDay(null); //reset
+            $rootScope.$broadcast(CALENDAR_EVENT.UPDATED_MODEL, model);
         }
 
         //current != selected when choise prev or next month, current means real current
@@ -159,6 +176,13 @@
             return selectedDay || {};
         }
 
+        function setSelectedMonth(monthObj){
+            selectedMonth = monthObj;
+        }
+
+        function getSelectedMonth() {
+            return selectedMonth || {};
+        }
 
         function getDeleteText() {
             return getCalendarModel() && getCalendarModel().last_part_period === PERIOD_CONST.END ?
@@ -170,7 +194,7 @@
         }
 
         function updateCalendar() {
-            $rootScope.$broadcast('update_calendar', {});
+            $rootScope.$broadcast(CALENDAR_EVENT.UPDATE_CALENDAR, {});
         }
 
         //----------------------------------------------------------------
@@ -181,6 +205,11 @@
             //     g_year: dayObj.gregorian_year
             // };
             setSelectedDay(dayObj);
+            setSelectedMonth(monthObj);
+            $rootScope.$broadcast(CALENDAR_EVENT.SELECTED_CALENDAR,{
+                day: dayObj,
+                month: monthObj
+            })
         }
 
         function selectTime(selectedDay, monthObj) {
@@ -189,19 +218,18 @@
                 minute: 30
             };
             var selectedModel = Object.assign({}, selectedDay, time);
-            return !window.ionic.Platform.isWebView() ?
-                selectDate(selectedModel, monthObj) : processDeviceTime(selectedModel, monthObj); //web or real device
+            selectDate(selectedModel, monthObj);
         }
 
-        function processDeviceTime(selectedModel, monthObj) {
-            return utilsSvc.showDatePicker(new Date(), 'time', 3).then(function success(res) {
-                selectedModel = Object.assign(selectedModel, {
-                    hour: res.getHours(),
-                    minute: res.getMinutes()
-                });
-                return selectDate(selectedModel, monthObj);
-            });
-        }
+        // function processDeviceTime(selectedModel, monthObj) {
+        //     return utilsSvc.showDatePicker(new Date(), 'time', 3).then(function success(res) {
+        //         selectedModel = Object.assign(selectedModel, {
+        //             hour: res.getHours(),
+        //             minute: res.getMinutes()
+        //         });
+        //         return selectDate(selectedModel, monthObj);
+        //     });
+        // }
 
         function selectDate(selectDayModel, monthObj) {
             currentSelectModel = {
@@ -234,25 +262,6 @@
                     break;
             }
             return createEvent(selectedModel);
-        }
-
-
-        function getDate(params, selectCallback) {
-            return preloadSimple().then(function () {
-                var scope = $rootScope.$new(true);
-                scope.isSelectTime = params.isSelectTime || false;
-                scope.updatedModel = selectCallback || angular.noop;
-            });
-        }
-
-        function processOk(e) {
-            if (!currentSelectModel) {
-                messagesSvc.show('ERROR.NEED_SELECT_DATE', 'error');
-                e.preventDefault();
-            }
-            var selected = angular.copy(currentSelectModel);
-            currentSelectModel = null;
-            popupInstance.close(selected);
         }
 
         return model;
