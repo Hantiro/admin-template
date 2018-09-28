@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h3 class="modal-title" id="modal-title"> {{'CONTENT.ADD_CODE'|translate}}</h3>
+    <p class="modal-title" id="modal-title">Enter the code, that you get by SMS</p>
 </div>
 <div class="modal-body" id="modal-body">
     <form name="vm.addCodeForm" novalidate>
@@ -14,19 +14,16 @@
                    aria-label="code">
         </md-input-container>
     </form>
-    <p>
-        <span ng-click="vm.changePhone()">{{'CONTENT.REPLACE_NUMBER'|translate}}</span>
-        {{'CONTENT.OR'|translate}}
-        <span ng-click="vm.recentCode()">{{'CONTENT.SEND_AGAIN'|translate}}</span>
-        {{'CONTENT.NOT_GET'|translate}}
-    </p>
-    <div>
-        <div ng-click="vm.next()">
-            {{'CONTENT.CONTINUE'|translate}}
+    <div class="modal-text">
+        <p class="modal-help">Didn't get?</p>
+        <div>
+            <span>send again</span>
+            or
+            <span>change phone number</span>
         </div>
     </div>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="vm.next()">{{'next'}}</button>
-    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">{{ 'cancel'}}</button>
+    <button class="button-default" ng-click="vm.next()">{{'next'}}</button>
+    <button class="button-not-default" ng-click="vm.cancel()">{{ 'cancel'}}</button>
 </div>

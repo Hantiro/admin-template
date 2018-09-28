@@ -20,11 +20,37 @@
   &__edit {
     margin-top: 20px;
   }
+  &__date {
+    margin-top: 10px;
+    &:after {
+      height: 2px;
+      width: 50%;
+      position: absolute;
+      content: '';
+      background-color: #e4587f;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
   &__default-text {
     font-family: AssistantRegular;
     font-size: 20px;
     width: 65%;
     margin: 0 auto;
+  }
+  &__birth {
+    color: #32004b;
+    font-family: ArimoRegular;
+    font-size: 20px;
+  }
+  &__pregnant {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    img {
+      width: 200px;
+    }
   }
   &__text-bold {
     font-family: AssistantBold;
@@ -47,8 +73,9 @@
     }
   }
 }
-@media screen and(max-width: 992px){
-  .info-block{
+
+@media screen and(max-width: 992px) {
+  .info-block {
     margin-bottom: 70px;
   }
 }

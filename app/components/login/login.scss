@@ -1,3 +1,21 @@
 .login-modal {
-
+  md-icon {
+    color: #4b0049;
+  }
+  md-input-container{
+    margin: 0;
+  }
+  .remember{
+    text-align: left;
+  }
+  md-input-container.md-icon-left {
+    padding-left: 0;
+  }
+  .forgot{
+    text-decoration: underline;
+    color: #4d51ff;
+  }
+  input {
+    padding-left: 30px;
+  }
 }

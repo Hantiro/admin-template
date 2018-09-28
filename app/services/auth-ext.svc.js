@@ -48,8 +48,8 @@
             modalSvc.signup().result.then(function (res) {
                 welcomeProcess(res);
             }).catch(function () {
-                authDataSvc.clearAuthData();
             });
+            authDataSvc.clearAuthData();
         }
 
         function loginProcess() {
