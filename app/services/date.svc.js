@@ -242,7 +242,7 @@
         //---------------------------------------------------
 
         function createFirstDay(selectedModel) {
-            var requestObj = selectedModel.selected;
+            var requestObj = selectedModel;
             requestObj.type_id = TYPE_EVENT.PERIODS;
             requestObj.part_period = 1;
             return createEventHistory(requestObj);
