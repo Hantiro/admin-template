@@ -4,11 +4,12 @@
     angular.module('service.dateSvc', []).factory('dateSvc', dateSvc);
 
     /* @ngInject */
-    function dateSvc(http, url, $state, $rootScope, utilsSvc, $q, $translate, messagesSvc) {
+    function dateSvc(http, url,  $rootScope, utilsSvc, $q,  messagesSvc, dateExtSvc) {
         var CALENDAR_TYPE = {
             DETAILED: "detailed",
             SIMPLE: "simple"
         };
+
         var EVENT_CONST = {
             'NIGHT': 1,
             'DAY': 2,
@@ -48,15 +49,15 @@
         var popupInstance;
         var preloadSimpleCalendarModel;
         var currentCalendarModel;
+        var currentMonthCalendarModel;
+        var currentDay;
+        var selectedDay;
 
         var model = {
             getDate: getDate,
             loadMonth: loadMonth,
             createEvent: createEvent,
             deleteLastEvent: deleteLastEvent,
-            prepareMonthObj: prepareMonthObj,
-            nextMonth: nextMonth,
-            prevMonth: prevMonth,
             processSelectDay: processSelectDay,
             getListEvents: getListEvents,
             createRedDay: createRedDay,
@@ -66,7 +67,13 @@
             getPreloadedForSimple: getPreloadedForSimple,
             getCalendarModel: getCalendarModel,
             setCalendarModel: setCalendarModel,
+            setCurrentMonthModel: setCurrentMonthModel,
+            getCurrentMonthModel: getCurrentMonthModel,
             getDeleteText: getDeleteText,
+            getCurrentDay: getCurrentDay,
+            setCurrentDay: setCurrentDay,
+            getSelectedDay: getSelectedDay,
+            setSelectedDay: setSelectedDay,
             EVENT_IMG: EVENT_IMG,
             EVENT_CONST: EVENT_CONST,
             PERIOD_CONST: PERIOD_CONST,
@@ -91,7 +98,7 @@
         //without params - loading current month
         function loadMonth(params) {
             return http.get(url.calendar.month, params).then(function (res) {
-                return prepareMonthObj(res);
+                return dateExtSvc.prepareMonthObj(res);
             });
         }
 
@@ -123,6 +130,36 @@
             $rootScope.$broadcast('calendar_model_updated', model);
         }
 
+        //current != selected when choise prev or next month, current means real current
+        function getCurrentMonthModel() {
+            return currentMonthCalendarModel || {};
+        }
+
+        //current != selected when choise prev or next month, current means real current
+        function setCurrentMonthModel(model) {
+            currentDay = dateExtSvc.searchCurrentDayInMonth(model);
+            currentMonthCalendarModel = model;
+        }
+
+        //current != selected when choise prev or next month, current means real current
+        function setCurrentDay(dayModel) {
+            currentDay = dayModel;
+        }
+
+        //current != selected when choise prev or next month, current means real current
+        function getCurrentDay() {
+            return currentDay || {};
+        }
+
+        function setSelectedDay(dayModel){
+            selectedDay = dayModel;
+        }
+
+        function getSelectedDay(){
+            return selectedDay || {};
+        }
+
+
         function getDeleteText() {
             return getCalendarModel() && getCalendarModel().last_part_period === PERIOD_CONST.END ?
                 'CONTENT.DELETE_LAST_DAY' : 'CONTENT.DELETE_FIRST_DAY';
@@ -136,104 +173,14 @@
             $rootScope.$broadcast('update_calendar', {});
         }
 
-        function prepareMonthObj(monthObj) {
-            if (!monthObj) return;
-            var lastRedDay = {};
-            var calendarModel = Object.assign({}, monthObj);
-            calendarModel.jewish_day = +calendarModel.jewish_day;
-            calendarModel.jewish_month = +calendarModel.jewish_month;
-            calendarModel.jewish_year = +calendarModel.jewish_year;
-            calendarModel.gregorian_day = +calendarModel.gregorian_day;
-            calendarModel.gregorian_month = +calendarModel.gregorian_month;
-            calendarModel.gregorian_year = +calendarModel.gregorian_year;
-            calendarModel.next_month = +calendarModel.next_month;
-            calendarModel.prev_month = +calendarModel.prev_month;
-            calendarModel.jewish_current_day = +calendarModel.jewish_current_day;
-            calendarModel.jewish_current_month = +calendarModel.jewish_current_month;
-            calendarModel.jewish_month_name = calendarModel.jewish_month_name.toUpperCase();
-            calendarModel.last_part_period = +calendarModel.last_part_period;
-            if (calendarModel.weeks) {
-                calendarModel.weeks = prepareCalendarWeeks(calendarModel.weeks, calendarModel, lastRedDay);
-            }
-            if (calendarModel.lastEvent) {
-                calendarModel.lastEvent = prepareCalendarDay(calendarModel.lastEvent);
-            }
-            return calendarModel;
-        }
-
-        function prepareCalendarWeeks(weeks, calendarModel) {
-            if (!weeks) return [];
-            for (var i = 0; i < weeks.length; i++) {
-                weeks[i] = prepareCalendarDaysInWeeks(weeks[i]);
-            }
-            if (weeks[5] && weeks[5][0] &&
-                weeks[5][0].jewish_month !== calendarModel.jewish_month) {
-                weeks.pop();
-            }
-            return weeks;
-        }
-
-        function prepareCalendarDay(day) {
-            day.gregorian_day = +day.gregorian_day;
-            day.gregorian_month = +day.gregorian_month;
-            day.gregorian_year = +day.gregorian_year;
-            day.jewish_day = +day.jewish_day;
-            day.jewish_month = +day.jewish_month;
-            day.jewish_year = +day.jewish_year;
-            if (day.events) {
-                day.events.top = +day.events.top;
-                day.events.bottom = +day.events.bottom;
-            }
-            day.mark.clean_day = !!day.mark.clean_day;
-            day.mark.pill_day = !!day.mark.pill_day;
-            return day;
-        }
-
-        function prepareCalendarDaysInWeeks(weekItem) {
-            if (!weekItem) return [];
-            var week = weekItem.reverse();
-            for (var j = 0; j < week.length; j++) {
-                week[j] = prepareCalendarDay(week[j]);
-            }
-            return week;
-        }
-
-        function nextMonth(monthObj, isSimple) {
-            var params = {
-                year: monthObj.jewish_year,
-                month: monthObj.next_month
-            };
-            if (isSimple) {
-                params.default = 1;
-            }
-            if (monthObj.next_month === 1) {
-                params.year = monthObj.jewish_year + 1;
-            }
-            return params;
-        }
-
-        function prevMonth(monthObj, isSimple) {
-            var params = {
-                year: monthObj.jewish_year,
-                month: monthObj.prev_month
-            };
-            if (monthObj.prev_month === 13 || (monthObj.prev_month === 12 && monthObj.jewish_month === 1)) {
-                params.year = monthObj.jewish_year - 1;
-            }
-            if (isSimple) {
-                params.default = 1;
-            }
-            return params;
-        }
-
         //----------------------------------------------------------------
         function processSelectDay(monthObj, dayObj, scope) {
-            var selectedModel = {
-                g_day: dayObj.gregorian_day,
-                g_month: dayObj.gregorian_month,
-                g_year: dayObj.gregorian_year
-            };
-            return scope.ccIsSelectTime ? selectTime(selectedModel, monthObj) : selectDate(selectedModel, monthObj);
+            // var selectedModel = {
+            //     g_day: dayObj.gregorian_day,
+            //     g_month: dayObj.gregorian_month,
+            //     g_year: dayObj.gregorian_year
+            // };
+            setSelectedDay(dayObj);
         }
 
         function selectTime(selectedDay, monthObj) {
@@ -297,7 +244,6 @@
                 scope.updatedModel = selectCallback || angular.noop;
             });
         }
-
 
         function processOk(e) {
             if (!currentSelectModel) {
