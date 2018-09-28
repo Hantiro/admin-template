@@ -1,61 +1,98 @@
 <div>
     <md-input-container md-no-float class="md-block" flex-gt-sm>
-        <input placeholder="Name"
-               id="name"
-               name="name"
+        <input placeholder="{{'CONTENT.FIRST_NAME'|translate}}"
+               required
+               minlength="2"
+               maxlength="20"
+               ng-model="vm.data.first_name"
+               name="first_name"
                aria-label="name"
-               type="text">
+               type="text" id="first_name">
     </md-input-container>
 
     <md-input-container md-no-float class="md-block" flex-gt-sm>
-        <input placeholder="Surname"
-               id="surname"
-               name="surname"
+        <input placeholder="{{'CONTENT.LAST_NAME'|translate}}"
+               id="last_name"
+               name="last_name"
+               required
+               minlength="2"
+               maxlength="20"
+               ng-model="vm.data.last_name"
                aria-label="surname"
                type="text">
     </md-input-container>
 
-    <md-input-container md-no-float class="md-block" flex-gt-sm>
-        <input placeholder="Location"
-               id="location"
-               name="location"
-               aria-label="location"
-               type="text">
-    </md-input-container>
+    <md-autocomplete flex flex-gt-sm required
+                     class="md-block"
+                     md-input-name="autocompleteField"
+                     md-no-cache="true"
+                     md-min-length="1"
+                     md-search-text-change="vm.search(vm.searchText)"
+                     md-selected-item="vm.tmp_address"
+                     md-search-text="vm.searchText"
+                     md-items="item in vm.search(vm.searchText)"
+                     md-item-text="item.description"
+                     md-require-match
+                     md-floating-label="{{'CONTENT.STATE_CITY' | translate}}">
+        <md-item-template>
+    <span md-highlight-text="vm.searchText"
+          md-highlight-flags="^i">{{item.description}}</span>
+        </md-item-template>
+        <md-not-found>
+            {{ 'CONTENT.NOT_FOUND' | translate}} {{vm.searchText}}
+        </md-not-found>
+    </md-autocomplete>
 
     <md-input-container md-no-float class="md-block" flex-gt-sm>
-        <input placeholder="Email"
+        <input placeholder="{{'CONTENT.EMAIL'|translate}}"
                id="email"
+               ng-model="vm.data.email"
                name="email"
                aria-label="email"
-               type="email">
+               type="email"
+               minlength="4"
+               maxlength="50"
+               required>
     </md-input-container>
 
 
     <md-input-container md-no-float class="md-block" flex-gt-sm>
-        <input placeholder="Password"
+        <input placeholder="{{'CONTENT.PASSWORD'|translate}}"
                id="password"
+               ng-model="vm.data.password"
+               minlength="6"
                name="password"
                aria-label="password"
+               required
                type="password">
     </md-input-container>
 
+
     <md-input-container md-no-float class="md-block" flex-gt-sm>
-        <input placeholder="Repeat password"
-               id="repeat-password"
-               name="repeat-password"
+        <input placeholder="{{'CONTENT.REPEAT_PASSWORD'|translate}}"
+               id="repeat_password"
+               minlength="6"
+               required
+               ng-pattern="vm.data.password"
+               ng-model="vm.repeat_password"
+               name="repeat_password"
                aria-label="repeat-password"
                type="password">
+        <div class="error-block" ng-messages="vm.signUpForm.repeat_password.$error">
+            <div class="error-block" ng-message-exp="['pattern']">
+                {{'CONTENT.PASSWORD_NOT_EQUAL'|translate}}
+            </div>
+        </div>
     </md-input-container>
     <div class="signup-modal__confirm">
         <div class="signup-modal__policy">
             <md-checkbox ng-model="vm.data.license_agreement" required></md-checkbox>
-            <p>I agree to the </p>
-            <a ui-sref="app.main.terms" target="_blank">Terms of use and Privacy Policy</a>
+            <p>{{'CONTENT.I_CONFIRM'|translate}} </p>
+            <a ui-sref="app.main.terms" target="_blank">{{'CONTENT.TERMS_AND_POLICY'|translate}}</a>
         </div>
         <div>
             <md-checkbox ng-model="vm.data.email_dispatch" aria-label="Checkbox 1"></md-checkbox>
-            <span>I would like to receive benefits and advertising material</span>
+            <span>{{'CONTENT.RECEIVING_ADVERTISING'|translate}}</span>
         </div>
     </div>
 </div>

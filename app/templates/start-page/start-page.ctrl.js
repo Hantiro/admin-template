@@ -4,8 +4,9 @@
         .controller('StartPageCtrl', StartPageCtrl);
 
     /* @ngInject */
-    function StartPageCtrl(authSvc, userSvc) {
+    function StartPageCtrl(authExtSvc, userSvc) {
         var vm = this;
+        vm.signUp = authExtSvc.signUpProcess;
         init();
         function init(){
 
