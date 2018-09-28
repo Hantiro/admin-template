@@ -4,10 +4,10 @@
         .controller('WelcomeCtrl', WelcomeCtrl);
 
     /* @ngInject */
-    function WelcomeCtrl($uibModalInstance,data,messagesSvc) {
+    function WelcomeCtrl($uibModalInstance,messagesSvc) {
         var vm = this;
         vm.buy = buy;
-        vm.data = angular.copy(data);
+        // vm.data = angular.copy(data);
 
         function buy(){
                 $uibModalInstance.close(vm.model);

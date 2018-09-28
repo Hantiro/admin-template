@@ -204,15 +204,17 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
   background-color: #4b0049;
   text-transform: uppercase;
   color: #ffffff;
-  padding: 5px 15px;
+  padding: 0 15px;
   border: 0;
+  height: 30px;
 }
 
 
 .button-not-default {
   background-color: #fff;
   color: #4b0049;
-  padding: 5px 15px;
+  padding: 0 15px;
+  height: 30px;
   border: 1px solid #4b0049;
 }
 

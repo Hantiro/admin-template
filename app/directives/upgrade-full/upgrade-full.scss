@@ -1,3 +1,18 @@
 .upgrade-full {
-
+  &__propose {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    p {
+      margin-right: 10px;
+    }
+  }
+  &__button {
+    font-size: 18px;
+    background-color: #4b0049;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-left: 15px;
+    padding: 5px 20px;
+  }
 }

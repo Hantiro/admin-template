@@ -7,7 +7,7 @@
         </info-block>
         <delete-event></delete-event>
     </div>
-    <div ng-if="vm.showTime">
+    <div ng-if="vm.showTime" class="calendar-view__time">
         <div uib-timepicker
              ng-model="vm.timeModel"
              ng-change="vm.changedTime()"
@@ -15,7 +15,7 @@
              minute-step="1"
              show-meridian="true">
         </div>
-        <button ng-click="vm.save()">Save</button>
+        <button class="button-default" ng-click="vm.save()">Save</button>
     </div>
 </div>
 

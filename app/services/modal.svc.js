@@ -105,7 +105,7 @@
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
                 windowTopClass: 'welcome-modal',
-                size: 'sm',
+                size: 'md',
                 resolve: resolve || {}
             });
         }
@@ -148,7 +148,7 @@
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
                 windowTopClass: 'login-modal',
-                size: 'md',
+                size: 'sm',
                 resolve: {}
             });
         }

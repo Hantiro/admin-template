@@ -26,6 +26,19 @@
     width: 65%;
     margin: 0 auto;
   }
+  &__birth {
+    color: #32004b;
+    font-family: ArimoRegular;
+    font-size: 20px;
+  }
+  &__pregnant{
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    img{
+      width: 200px;
+    }
+  }
   &__text-bold {
     font-family: AssistantBold;
     font-size: 20px;
@@ -47,8 +60,9 @@
     }
   }
 }
-@media screen and(max-width: 992px){
-  .info-block{
+
+@media screen and(max-width: 992px) {
+  .info-block {
     margin-bottom: 70px;
   }
 }

@@ -23,22 +23,17 @@
                        id="password"
                        type="{{ isHidden ? 'password': 'text'}}">
             </md-input-container>
-            <div>
-                <span>{{'CONTENT.REMEMBER_ME '|translate}}</span>
+            <div class="remember">
                 <md-checkbox ng-model="vm.remember_me" aria-label="Checkbox 1"></md-checkbox>
+                <span>{{'CONTENT.REMEMBER_ME '|translate}}</span>
             </div>
         </form>
     </div>
-    <div ng-click="vm.resetPassword()">
+    <div class="forgot" ng-click="vm.resetPassword()">
         {{'CONTENT.FORGOT_PASSWORD'|translate}}
-    </div>
-    <div ng-click="vm.login()">
-        <div>
-            {{'CONTENT.CONTINUE'|translate}}
-        </div>
     </div>
 </div>
 <div class="modal-footer">
-    <button class="button-default" type="button" ng-click="vm.login()">{{ 'login'}}</button>
+    <button class="button-default" type="button" ng-click="vm.login()">sing in</button>
     <button class="button-not-default" type="button" ng-click="vm.cancel()">{{ 'cancel'}}</button>
 </div>
