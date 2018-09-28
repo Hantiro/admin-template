@@ -16,8 +16,14 @@
             predictionArray: []
         };
 
-        init();
+        $scope.$on(dateSvc.CALENDAR_EVENT.CREATED_EVENT, function(){
+            init();
+        });
+        $scope.$on(dateSvc.CALENDAR_EVENT.DELETED_EVENT, function(){
+            init();
+        });
 
+        init();
         function init() {
             dateSvc.getListEvents().then(function (res) {
                 vm.modelDays = res;

@@ -12,6 +12,8 @@
         'directives.notification',
         'directives.history',
         'directives.calendarCustom',
-        'directives.listItemCustom'
+        'directives.listItemCustom',
+        'directives.deleteEvent',
+        'directives.upgradeFull',
     ]);
 })();

@@ -1,0 +1,53 @@
+<div class="my-main">
+    <div class="my-main__base">
+        <div class="my-main__background">
+            <header></header>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="my-main__menu">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 my-main__elements">
+                            </div>
+                            <div class="col-md-6 col-sm-6 my-main__elements">
+                            </div>
+                        </div>
+                    </div>
+                    <info-block ib-text="{{ 'CONTENT.START_PREGNANCY' |translate }}"
+                                ib-sub-text="{{ 'CONTENT.ENTER'|translate }}"
+                                ib-type="default"
+                                ib-is-edit="!!vm.dateBirthday.start"
+                                ib-date=""></info-block>
+                </div>
+
+                <div class="col-md-4">
+                    <calendar-custom class="my-main__main-calendar"
+                                     cc-type="detailed"
+                                     cc-selected="selectedModel"
+                                     cc-updated-model="vm.updateModel"
+                                     cc-update-selected="vm.updateSelected"
+                                     cc-is-select-time="vm.isSelectTime"></calendar-custom>
+                    <div class="my-main__content--sm">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="my-main__menu">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 my-main__elements">
+                            </div>
+                            <div class="col-md-6 col-sm-6 my-main__elements">
+                            </div>
+                        </div>
+                    </div>
+                    <info-block
+                            ib-type="pregnancy"
+                            ib-date="{{vm.dateBirthday.end}}"></info-block>
+                </div>
+            </div>
+            <img class="my-main__wave" src="content/img/wave.png">
+        </div>
+        <div class="my-main__content">
+        </div>
+    </div>
+    <footer></footer>
+</div>

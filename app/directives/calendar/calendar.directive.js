@@ -10,7 +10,9 @@
             replace: true,
             controller: 'CalendarCtrl',
             controllerAs: 'vm',
-            scope: {}
+            scope: {
+                calShowTime: '=', //true - false, if true show time select
+            }
         };
     }
 })();

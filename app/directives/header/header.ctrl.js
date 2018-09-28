@@ -15,10 +15,58 @@
         vm.setLang = setLang;
         vm.currentLang = $translate.use();
         vm.allLang = $translate.getAvailableLanguageKeys();
+        vm.menu = {
+            full: [
+                {
+                    id: 0,
+                    view: 'app.my-main',
+                    title: 'my calendar'
+                },
+                {
+                    id: 1,
+                    view: 'app.pregnancy',
+                    title: 'pregnancy calculator'
+                },
+                {
+                    id: 2,
+                    view: 'app.main.mikvahs',
+                    title: 'mikvahs'
+                },
+                {
+                    id: 3,
+                    view: 'app.main.tradition',
+                    title: 'tradition'
+                },
+                {
+                    id: 4,
+                    view: 'app.main.rabbi',
+                    title: 'ask the rabbi'
+                }
+            ],
+            simple: [
+                {
+                    id: 0,
+                    view: 'app.main.contact-us',
+                    title: 'contact us'
+                },
+                {
+                    id: 1,
+                    view: 'app.main.mikvahs',
+                    title: 'mikvahs'
+                },
+                {
+                    id: 2,
+                    view: 'app.main.tradition',
+                    title: 'tradition'
+                }
+            ]
+        };
 
         function setLang(lang) {
             vm.currentLang = lang;
             $translate.use(lang);
         }
+
+
     }
 })();

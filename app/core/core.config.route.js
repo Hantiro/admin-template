@@ -48,6 +48,15 @@
                 controller: 'MyMainCtrl',
                 controllerAs: 'vm'
             })
+            .state('app.pregnancy', {
+                url: 'pregnancy',
+                data: {
+                    auth: true
+                },
+                templateUrl: 'templates/pregnancy/pregnancy.html',
+                controller: 'PregnancyCtrl',
+                controllerAs: 'vm'
+            })
             .state('app.main.about', {
                 url: '/about',
                 data: {

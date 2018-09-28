@@ -1,6 +1,21 @@
 <div class="calendar-view">
-    <info-block ib-type="default" ib-text="click to choose the first day"
-                ib-sub-text="of seeing" ib-is-edit="true">
-    </info-block>
+    <div ng-if="!vm.showTime">
+        <info-block
+                ib-type="default"
+                ib-text="{{vm.textHeader | translate}}"
+                ib-sub-text="{{'CONTENT.ENTER' | translate}}">
+        </info-block>
+        <delete-event></delete-event>
+    </div>
+    <div ng-if="vm.showTime">
+        <div uib-timepicker
+             ng-model="vm.timeModel"
+             ng-change="vm.changedTime()"
+             hour-step="1"
+             minute-step="1"
+             show-meridian="true">
+        </div>
+        <button ng-click="vm.save()">Save</button>
+    </div>
 </div>
 
