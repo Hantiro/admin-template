@@ -12,7 +12,7 @@
         vm.textDelete = dateSvc.getDeleteText();
         vm.calendarData = dateSvc.getCalendarModel();
 
-        $scope.$on('calendar_model_updated', function (event, data) {
+        $scope.$on(dateSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
             vm.calendarData = data;
             vm.textDelete = dateSvc.getDeleteText();
         });

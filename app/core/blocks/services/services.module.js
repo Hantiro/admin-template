@@ -19,6 +19,7 @@
         'service.pillsSvc',
         'service.notificationSvc',
         'service.settingsSvc',
+        'service.gestationSvc',
     ]);
 
 })();

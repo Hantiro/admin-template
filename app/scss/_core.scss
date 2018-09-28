@@ -15,6 +15,7 @@
 @import "../templates/rabbi/rabbi";
 @import "../templates/profile/profile";
 @import "../templates/privacy/privacy";
+@import "../templates/pregnancy/pregnancy";
 
 //directive style
 @import '../directives/header/header';
@@ -29,6 +30,7 @@
 @import '../directives/calendar-custom/calendar-custom';
 @import '../directives/list-item-custom/list-item-custom';
 @import '../directives/delete-event/delete-event';
+@import '../directives/upgrade-full/upgrade-full';
 
 //components styles
 @import "../components/forgot-pass/forgot-pass";

@@ -14,5 +14,6 @@
         'directives.calendarCustom',
         'directives.listItemCustom',
         'directives.deleteEvent',
+        'directives.upgradeFull',
     ]);
 })();
