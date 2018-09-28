@@ -4,14 +4,24 @@
         .controller('PregnancyCtrl', PregnancyCtrl);
 
     /* @ngInject */
-    function PregnancyCtrl($scope,gestationSvc,dateSvc) {
+    function PregnancyCtrl($scope, gestationSvc, dateSvc) {
         var vm = this;
         vm.editStartDate = editStartDate;
+        vm.remove = remove;
         vm.dateBirthday = '';
         vm.model = {};
+        vm.text = {
+            title: '',
+            subtitle: ''
+        };
+        vm.date;
 
+        $scope.$on(dateSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
+            vm.model = data.day;
+            editStartDate();
+        });
 
-        $scope.$on(dateSvc.CALENDAR_EVENT.SELECTED_CALENDAR,function(event,data){
+        $scope.$on(dateSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
             vm.model = data.day;
             editStartDate();
         });
@@ -19,7 +29,18 @@
         init();
 
         function init() {
+            vm.text = {
+                title: '',
+                subtitle: ''
+            };
             getDate();
+        }
+
+        function remove() {
+            gestationSvc.remove().then(function () {
+                dateSvc.updateCalendar();
+                init();
+            })
         }
 
         function editStartDate() {
@@ -27,7 +48,7 @@
                 g_day: vm.model.gregorian_day,
                 g_month: vm.model.gregorian_month,
                 g_year: vm.model.gregorian_year,
-            }).then(function(){
+            }).then(function () {
                 dateSvc.updateCalendar();
                 init();
             });
@@ -36,6 +57,9 @@
         function getDate() {
             gestationSvc.get().then(function (res) {
                 vm.dateBirthday = res;
+                vm.date = res.start_ext.split('/');
+                vm.text.title = vm.date[0] + ' ' + vm.date[1];
+                vm.text.subtitle = vm.date[2];
             })
         }
     }

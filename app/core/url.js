@@ -19,7 +19,8 @@
                     },
                     gestation: {
                         create: baseUrl + 'gestation',
-                        get: baseUrl + 'gestation-date'
+                        get: baseUrl + 'gestation-date',
+                        delete: baseUrl + 'destroy-gestation'
                     },
                     auth: {
                         login: baseUrl + 'login',

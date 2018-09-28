@@ -12,11 +12,13 @@
                             </div>
                         </div>
                     </div>
-                    <info-block ib-text="{{ 'CONTENT.START_PREGNANCY' |translate }}"
-                                ib-sub-text="{{ 'CONTENT.ENTER'|translate }}"
+                    <info-block ib-text="{{ (vm.text.title) || ('CONTENT.START_PREGNANCY' |translate) }}"
+                                ib-sub-text="{{ (vm.text.subtitle) || ('CONTENT.ENTER'|translate) }}"
                                 ib-type="default"
                                 ib-is-edit="!!vm.dateBirthday.start"
                                 ib-date=""></info-block>
+                    <button ng-if="!!vm.dateBirthday.start"
+                            ng-click="vm.remove()">Delete gestation</button>
                 </div>
 
                 <div class="col-md-4">
