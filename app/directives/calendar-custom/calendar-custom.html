@@ -19,7 +19,7 @@
 
     <div class="calendar-custom__body">
         <div class="row-flex calendar-custom__days">
-            <div class="col-flex" ng-repeat="item in vm.days track by $index">{{ "DAY."+item | translate }}</div>
+            <div class="col-flex" ng-repeat="item in vm.days | orderBy:'-1' track by $index">{{ "DAY."+item | translate }}</div>
         </div>
         <div class="row-flex calendar-custom__week"
              ng-if="vm.calendarModel.weeks.length"

@@ -74,6 +74,7 @@
                 } else {
                     text = 'Unauthorized';
                 }
+                $rootScope.$broadcast('logout');
             }
             text = response.data.message || response.data.error;
             toastr.error(text);
