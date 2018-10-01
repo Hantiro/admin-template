@@ -13,7 +13,7 @@
                     suffix: '.json'
                 });
                 $translateProvider.registerAvailableLanguageKeys(['eng', 'heb']);
-                $translateProvider.preferredLanguage('eng');
+                $translateProvider.preferredLanguage('heb');
             }]);
 })();
 
