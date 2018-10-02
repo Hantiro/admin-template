@@ -33,7 +33,11 @@
         </div>
     </div>
     <div dir="ltr" ng-if="vm.step === vm.STEPS.ADD_DATE_TIME">
-        <div>Selected date: {{ vm.dateText}}</div>
+        <div>Selected date:</div>
+        <div class="history__info">
+            <input class="history__input-calendar" type="text" ng-model="vm.dateText" readonly>
+        </div>
+
         <div uib-timepicker
              ng-model="vm.timeModel"
              hour-step="1"
@@ -41,7 +45,8 @@
              show-meridian="true">
         </div>
         <div>
-            <button ng-click="vm.add()">ADD</button>
+            <button class="button-default" ng-click="vm.add()">add</button>
+            <button class="button-not-default" ng-click="vm.cancel()">cancel</button>
         </div>
     </div>
 </div>

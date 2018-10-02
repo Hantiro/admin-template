@@ -36,7 +36,10 @@
     top: calc(20vh + 70px);
     height: calc(100vh - 20vh - 70px);
   }
-
+  table {
+    display: flex;
+    justify-content: center;
+  }
   &__date {
     width: 95%;
     margin: auto;
@@ -72,6 +75,27 @@
   .list-item-custom__date {
     color: #8bd8e2;
   }
+  &__info {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+
+      font-size: 18px;
+      text-align: left;
+      width: 35%;
+      margin: 0 10px 0 0;
+    }
+  }
+  &__input-calendar {
+    border: 0;
+    border-top: 10px solid #856894;
+    height: 70px;
+    width: 200px;
+    text-align: center;
+    background: url(../../content/img/icon/fa-calendar.png) no-repeat 150px center #ffffff;
+  }
   p {
     font-family: ArimoBold;
     font-size: 24px;
@@ -83,6 +107,7 @@
     color: #ffffff;
   }
 }
+
 @media screen and(max-width: 992px) {
   .history {
     height: auto;

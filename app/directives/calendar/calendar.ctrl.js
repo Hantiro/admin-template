@@ -10,6 +10,7 @@
         var vm = this;
         vm.changedTime = changedTime;
         vm.save = save;
+        vm.cancel = cancel;
         vm.timeModel = (new Date());
         vm.calendarModel = dateSvc.getCalendarModel();
         vm.showTime = false;
@@ -18,8 +19,8 @@
         $scope.$on(dateSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
             vm.calendarData = data;
             vm.textHeader = data.last_part_period === dateSvc.PERIOD_CONST.END ||
-                            data.last_part_period === dateSvc.PERIOD_CONST.EMPTY ?
-                            'CONTENT.THE_START_DATE' : 'CONTENT.THE_END_DATE';
+            data.last_part_period === dateSvc.PERIOD_CONST.EMPTY ?
+                'CONTENT.THE_START_DATE' : 'CONTENT.THE_END_DATE';
         });
 
         $scope.$on(dateSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
@@ -32,6 +33,9 @@
 
         }
 
+        function cancel() {
+            vm.showTime = false;
+        }
 
         function save() {
             if (dateSvc.getSelectedDay()) {
