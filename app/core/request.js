@@ -47,8 +47,7 @@
             if (response.data.error) {
                 toastr.error(response.data.error);
                 defer.reject(response.data.error);
-            }
-            else {
+            } else {
                 defer.resolve(response.data);
             }
             return defer.promise;
