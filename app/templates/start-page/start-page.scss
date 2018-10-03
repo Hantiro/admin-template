@@ -229,7 +229,9 @@
   }
   &__approvals-image {
     max-width: 18%;
-    height: 350px;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
   }
   &__approvals-content {
     width: 30%;
