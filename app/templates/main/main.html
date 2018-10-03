@@ -1,6 +1,8 @@
 <div class="main">
     <div class="main__background">
-        <header h-is-auth="true"></header>
+        <header h-is-auth="true">
+            <menu-custom></menu-custom>
+        </header>
         <div class="main__contain">
             <p class="title-page">{{ vm.currentPageName() | translate }}</p>
         </div>
@@ -9,5 +11,6 @@
     <div class="main__content">
         <ui-view></ui-view>
     </div>
+
     <footer f-is-auth="true"></footer>
 </div>
