@@ -6,7 +6,7 @@
         .controller('HeaderCtrl', HeaderCtrl);
 
     /* @ngInject */
-    function HeaderCtrl($scope, authSvc, authExtSvc, authDataSvc, $translate) {
+    function HeaderCtrl($scope, $rootScope, authSvc, authExtSvc, authDataSvc, $translate) {
         var vm = this;
         vm.isAuth = authDataSvc.isLogined;
         vm.signUp = authExtSvc.signUpProcess;
@@ -72,5 +72,13 @@
             vm.currentLang = lang;
             $translate.use(lang);
         }
+
+        var eventTranslateEnd = $rootScope.$on('$translateChangeEnd',function(e,d){
+            vm.currentLang =  $translate.use();
+        });
+
+        $scope.$on('$destroy', function () {
+            eventTranslateEnd();
+        });
     }
 })();
