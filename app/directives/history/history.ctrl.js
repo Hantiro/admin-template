@@ -15,6 +15,7 @@
             vm.getItemDateByLang = getItemDateByLang;
             vm.isDay = isDay;
             vm.add = add;
+            vm.cancel = cancel;
             vm.STEPS = {
                 SHOW_LIST: 1,
                 ADD_DATE_TIME: 2,
@@ -29,7 +30,7 @@
             vm.timeModel = (new Date());
             vm.dateModel;
             vm.dateText;
-
+            ``
             $scope.$on(dateSvc.CALENDAR_EVENT.CREATED_EVENT, function () {
                 init();
             });
@@ -53,6 +54,10 @@
 
             function updateDateText() {
                 vm.dateText = vm.dateModel.gregorian_day + '/' + vm.dateModel.gregorian_month + '/' + vm.dateModel.gregorian_year;
+            }
+
+            function cancel() {
+                vm.step = vm.STEPS.SHOW_LIST;
             }
 
             function add() {

@@ -72,7 +72,5 @@
             vm.currentLang = lang;
             $translate.use(lang);
         }
-
-
     }
 })();

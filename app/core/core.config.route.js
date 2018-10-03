@@ -155,7 +155,7 @@
             .state('app.main.tradition', {
                 url: '/tradition',
                 data: {
-                    trans_name: 'CONTENT.TRADITION'
+                    trans_name: 'CONTENT.HALACOT'
                 },
                 templateUrl: 'templates/tradition/tradition.html',
                 controller: 'TraditionCtrl',

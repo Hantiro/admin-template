@@ -15,8 +15,8 @@
     margin: 0;
   }
   &__video-image {
-      width: 100%;
-      height: auto;
+    width: 100%;
+    height: auto;
   }
   &__right-side {
     display: flex;
@@ -219,6 +219,16 @@
       color: #8f6060;
       font-size: 40px;
     }
+    &--bottom {
+      width: 90%;
+      margin: auto;
+      text-align: justify;
+      &:after {
+        content: '';
+        width: 100%;
+        display: inline-block;
+      }
+    }
   }
   &__approvals-information {
     color: #8f6060;
@@ -226,6 +236,12 @@
     width: 95%;
     margin: auto;
     justify-content: space-between;
+  }
+  &__approvals-image {
+    max-width: 18%;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
   }
   &__approvals-content {
     width: 30%;
@@ -235,11 +251,10 @@
     display: flex;
   }
   &__images {
-    width: 100%;
-    max-height: 280px;
     img {
       width: 100%;
       height: auto;
+
     }
   }
   &__book-description {
@@ -273,6 +288,11 @@
 
   @media screen and(max-width: 1230px) {
     .start-page {
+      &__images {
+        img {
+          height: 350px;
+        }
+      }
       &__book-content {
         display: block;
         text-align: center;
@@ -330,6 +350,18 @@
   }
   @media screen and (max-width: 680px) {
     .start-page {
+      &__approvals-image {
+        width: 100%;
+        height: auto;
+      }
+      &__images {
+        img {
+          height: auto;
+        }
+      }
+      &__book-description {
+        margin: 10px 0;
+      }
       &__main-block {
         height: 100vmin;
       }
