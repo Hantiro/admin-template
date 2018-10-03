@@ -85,7 +85,6 @@
 }
 
 html, body {
-  position: fixed;
   min-height: 100%;
   height: 100%;
   max-width: 100%;
@@ -94,7 +93,11 @@ html, body {
   margin: 0 !important;
   padding: 0 !important;
   background-color: #fff;
-  overflow: auto;
+  overflow-y: visible!important;
+  position: initial !important;
+  top: initial !important;
+  overflow: initial !important;
+
 }
 
 md-select.md-default-theme:not([disabled]):focus .md-select-value, md-select:not([disabled]):focus .md-select-value {
@@ -171,11 +174,19 @@ a:hover {
   font-size: 18px;
   text-align: center;
 }
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.modal-open{
+  overflow: auto;
+}
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+
 .modal-content {
   border-radius: 0;
 }

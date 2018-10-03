@@ -219,6 +219,16 @@
       color: #8f6060;
       font-size: 40px;
     }
+    &--bottom {
+      width: 90%;
+      margin: auto;
+      text-align: justify;
+      &:after {
+        content: '';
+        width: 100%;
+        display: inline-block;
+      }
+    }
   }
   &__approvals-information {
     color: #8f6060;

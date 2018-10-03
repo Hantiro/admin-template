@@ -35,7 +35,7 @@
                 {
                     id: 3,
                     view: 'app.main.tradition',
-                    title: 'tradition'
+                    title: 'halacot'
                 },
                 {
                     id: 4,
@@ -57,7 +57,7 @@
                 {
                     id: 2,
                     view: 'app.main.tradition',
-                    title: 'tradition'
+                    title: 'halacot'
                 }
             ]
         };
