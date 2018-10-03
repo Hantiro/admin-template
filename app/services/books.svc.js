@@ -6,7 +6,7 @@
     booksSvc.$inject = ['http', 'url'];
 
     function booksSvc(http, url) {
-        let model = {
+        var model = {
             get: get,
             create: create,
             remove: remove,

@@ -30,7 +30,7 @@
             vm.timeModel = (new Date());
             vm.dateModel;
             vm.dateText;
-            ``
+
             $scope.$on(dateSvc.CALENDAR_EVENT.CREATED_EVENT, function () {
                 init();
             });
