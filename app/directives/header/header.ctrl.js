@@ -30,34 +30,40 @@
                 {
                     id: 2,
                     view: 'app.main.mikvahs',
-                    title: 'mikvahs'
+                    title: 'mikvahs',
+                    trans: 'CONTENT.MIKVAHS'
                 },
                 {
                     id: 3,
                     view: 'app.main.tradition',
-                    title: 'tradition'
+                    title: 'tradition',
+                    trans: 'CONTENT.TRADITION'
                 },
                 {
                     id: 4,
                     view: 'app.main.rabbi',
-                    title: 'ask the rabbi'
+                    title: 'ask the rabbi',
+                    trans: 'CONTENT.ASK_RABBI'
                 }
             ],
             simple: [
                 {
                     id: 0,
                     view: 'app.main.contact-us',
-                    title: 'contact us'
+                    title: 'contact us',
+                    trans: 'CONTENT.CONTACT_US'
                 },
                 {
                     id: 1,
                     view: 'app.main.mikvahs',
-                    title: 'mikvahs'
+                    title: 'mikvahs',
+                    trans: 'CONTENT.MIKVAHS'
                 },
                 {
                     id: 2,
                     view: 'app.main.tradition',
-                    title: 'tradition'
+                    title: 'tradition',
+                    trans: 'CONTENT.TRADITION'
                 }
             ]
         };
