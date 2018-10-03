@@ -35,7 +35,7 @@
     </div>
     <div class="start-page__second-content">
         <!--<iframe width="1280" src="https://www.youtube.com/embed/6v2L2UGZJAM"-->
-                <!--frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+        <!--frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
         <img class="start-page__video-image" src="content/img/img-video.jpg" alt="">
         <div class="start-page__finkel">
             <!--<img class="start-page__finkel-image" src="content/img/Finkel.png">-->
@@ -95,43 +95,15 @@
             <p>Books</p>
         </div>
         <div class="start-page__approvals-information">
-            <div class="start-page__book-content">
+            <div class="start-page__book-content" ng-repeat="item in vm.books">
                 <div class="start-page__images">
-                    <img src="content/img/book1.jpg" alt="">
+                    <img ng-src="{{item.image}}" alt="img">
                 </div>
                 <div class="start-page__book-description">
-                    <div class="start-page__title-book">Name of the Book</div>
-                    <div class="start-page__subtitle-book">subtitle</div>
+                    <div class="start-page__title-book">{{ vm.getTitle(item) }}</div>
+                    <div class="start-page__subtitle-book">{{ vm.getSubtitle(item) }}</div>
                     <div class="start-page__description-approvals">
-                        Video of virtual explanition about the website. It is a long established fact that a reader
-                        will be distracted by the readable content of a page when looking at its layout.”
-                    </div>
-                </div>
-            </div>
-            <div class="start-page__book-content">
-                <div class="start-page__images">
-                    <img src="content/img/book3.jpg" alt="">
-                </div>
-                <div class="start-page__book-description">
-                    <div class="start-page__title-book">Name of the Book</div>
-                    <div class="start-page__subtitle-book">subtitle</div>
-                    <div class="start-page__description-approvals">
-                        Video of virtual explanition about the website. It is a long established fact that a reader
-                        will be distracted by the readable content of a page when looking at its layout.”
-                    </div>
-                </div>
-            </div>
-            <div class="start-page__book-content">
-                <div class="start-page__images">
-                    <img src="content/img/book2.jpg" alt="">
-                </div>
-
-                <div class="start-page__book-description">
-                    <div class="start-page__title-book">Name of the Book</div>
-                    <div class="start-page__subtitle-book">subtitle</div>
-                    <div class="start-page__description-approvals">
-                        Video of virtual explanition about the website. It is a long established fact that a reader
-                        will be distracted by the readable content of a page when looking at its layout.”
+                        {{ vm.getDescription(item) }}
                     </div>
                 </div>
             </div>
