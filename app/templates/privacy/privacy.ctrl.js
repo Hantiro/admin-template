@@ -4,9 +4,9 @@
         .controller('PrivacyCtrl', PrivacyCtrl);
 
     /* @ngInject */
-    function PrivacyCtrl(terms) {
+    function PrivacyCtrl(licence) {
         var vm = this;
-        vm.terms = terms;
+        vm.privacy = licence;
 
         init();
         function init(){

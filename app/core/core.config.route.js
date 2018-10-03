@@ -72,7 +72,16 @@
                 },
                 templateUrl: 'templates/about/about.html',
                 controller: 'AboutCtrl',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                resolve: {
+                    /* @ngInject */
+                    about: function (textSvc) {
+                        return textSvc.about()
+                            .then(function (res) {
+                                return res.entity || [];
+                            })
+                    }
+                }
             })
             .state('app.main.contact-us', {
                 url: '/contact-us',
@@ -127,7 +136,7 @@
                 resolve: {
                     /* @ngInject */
                     terms: function (textSvc) {
-                        return textSvc.getTerms()
+                        return textSvc.terms()
                             .then(function (res) {
                                 return res.entity || [];
                             })
@@ -144,12 +153,12 @@
                 controllerAs: 'vm',
                 resolve: {
                     /* @ngInject */
-                    // privacy: function (textSvc) {
-                    //     return textSvc.getPrivacy()
-                    //         .then(function (res) {
-                    //             return res.entity || [];
-                    //         })
-                    // }
+                    licence: function (textSvc) {
+                        return textSvc.licence()
+                            .then(function (res) {
+                                return res.entity || [];
+                            })
+                    }
                 }
             })
             .state('app.main.tradition', {

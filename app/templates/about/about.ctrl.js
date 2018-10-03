@@ -4,8 +4,9 @@
         .controller('AboutCtrl', AboutCtrl);
 
     /* @ngInject */
-    function AboutCtrl(authSvc, userSvc) {
+    function AboutCtrl(about) {
         var vm = this;
+        vm.about = about;
         init();
 
         function init() {

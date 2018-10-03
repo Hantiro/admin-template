@@ -1,11 +1,10 @@
 <div class="terms">
     <div class="contain">
-        <div ng-repeat="item in vm.terms">
-            <p class="terms__title">
-                {{item.name}}
-            </p>
-            <p class="terms__description">
-                {{item.description}}
+        <div>
+            <!--<p class="terms__title">-->
+                <!--{{item.name}}-->
+            <!--</p>-->
+            <p class="terms__description" ng-bind-html="vm.terms.description">
             </p>
         </div>
 

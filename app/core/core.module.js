@@ -7,6 +7,7 @@
         'toastr', 'ngAria',
         'ngMaterial','ngMessages','ngAnimate',
         'pascalprecht.translate',
+        'ngSanitize'
     ]);
 
 })();
