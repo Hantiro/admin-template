@@ -6,7 +6,9 @@
                 <div ng-include="'templates/profile/profile-halakhic.html'" class="profile__right-side"></div>
             </div>
             <div class=" profile__button-contain">
-                <button class="button-default">save</button>
+                <button class="button-default" ng-click="vm.save()">
+                    {{'CONTENT.SAVE'|translate}}
+                </button>
             </div>
         </div>
     </div>

@@ -1,54 +1,100 @@
 <div>
-    <md-input-container md-no-float class="md-block" flex-gt-sm>
-        <input placeholder="Name"
-               id="name"
-               name="name"
-               aria-label="name"
-               type="text">
-    </md-input-container>
+    <ng-form name="vm.profileForm" novalidate>
+        <md-input-container md-no-float class="md-block" flex-gt-sm>
+            <input placeholder="{{'CONTENT.FIRST_NAME'|translate}}"
+                   required
+                   minlength="2"
+                   maxlength="20"
+                   ng-model="vm.data.first_name"
+                   type="text" id="first_name"
+                   name="first_name"
+                   aria-label="first_name">
+        </md-input-container>
 
-    <md-input-container md-no-float class="md-block" flex-gt-sm>
-        <input placeholder="Surname"
-               id="surname"
-               name="surname"
-               aria-label="surname"
-               type="text">
-    </md-input-container>
+        <md-input-container md-no-float class="md-block" flex-gt-sm>
+            <input placeholder="{{'CONTENT.LAST_NAME'|translate}}"
+                   id="last_name"
+                   name="last_name"
+                   aria-label="last_name"
+                   required
+                   minlength="2"
+                   maxlength="20"
+                   ng-model="vm.data.last_name"
+                   type="text">
+        </md-input-container>
 
-    <md-input-container md-no-float class="md-block" flex-gt-sm>
-        <input placeholder="Location"
-               id="location"
-               name="location"
-               aria-label="location"
-               type="text">
-    </md-input-container>
+        <md-autocomplete flex required
+                         md-input-name="autocompleteField"
+                         md-no-cache="true"
+                         md-min-length="1"
+                         md-search-text-change="vm.search(vm.searchText)"
+                         md-selected-item="vm.selected_search_item"
+                         md-search-text="vm.searchText"
+                         md-items="item in vm.search(vm.searchText)"
+                         md-item-text="item.description"
+                         md-require-match
+                         md-floating-label="{{'CONTENT.STATE_CITY' | translate}}">
+            <md-item-template>
+                          <span md-highlight-text="vm.searchText"
+                                md-highlight-flags="^i">{{item.description}}</span>
+            </md-item-template>
+            <md-not-found>
+                {{ 'CONTENT.NOT_FOUND' | translate }} {{vm.searchText}}.
+            </md-not-found>
+        </md-autocomplete>
 
-    <md-input-container md-no-float class="md-block" flex-gt-sm>
-        <input placeholder="Email"
-               id="email"
-               name="email"
-               aria-label="email"
-               type="email">
-    </md-input-container>
+        <md-input-container md-no-float class="md-block" flex-gt-sm>
+            <input placeholder="{{'CONTENT.PHONE_NUMBER'|translate}}"
+                   id="phone"
+                   minlength="6"
+                   maxlength="20"
+                   name="phone"
+                   aria-label="phone"
+                   required
+                   ng-model="vm.data.phone"
+                   type="text">
+        </md-input-container>
 
-    <button class="button-not-default" ng-click="vm.showNewPassword = !vm.showNewPassword">Reset the
-        password
-    </button>
+        <md-input-container md-no-float class="md-block" flex-gt-sm>
+            <input placeholder="{{'CONTENT.EMAIL'|translate}}"
+                   ng-model="vm.data.email"
+                   type="email" id="email"
+                   required
+                   minlength="4"
+                   maxlength="50"
+                   name="email"
+                   aria-label="email">
+        </md-input-container>
 
-    <md-input-container md-no-float class="md-block" flex-gt-sm ng-if="vm.showNewPassword">
-        <input placeholder="New password"
-               id="new-password"
-               name="new-password"
-               aria-label="new-password"
-               type="password">
-    </md-input-container>
+        <button class="button-not-default" ng-click="vm.showNewPassword = !vm.showNewPassword">
+            Reset the password
+        </button>
+    </ng-form>
 
-    <md-input-container md-no-float class="md-block" flex-gt-sm ng-if="vm.showNewPassword">
-        <input placeholder="Repeat password"
-               id="repeat-password"
-               name="repeat-password"
-               aria-label="repeat-password"
-               type="password">
-    </md-input-container>
+    <div ng-show="vm.showNewPassword">
+        <ng-form name="vm.changePasswordForm" novalidate>
+            <md-input-container md-no-float class="md-block" flex-gt-sm>
+                <input placeholder="{{'CONTENT.NEW_PASSWORD'|translate}}"
+                       required
+                       ng-model="vm.data.password"
+                       type="password"
+                       id="new-password"
+                       name="new-password"
+                       aria-label="new-password">
+            </md-input-container>
 
+            <md-input-container md-no-float class="md-block" flex-gt-sm>
+                <input placeholder="{{'CONTENT.REPEAT_THE_PASSWORD'|translate}}"
+                       required
+                       ng-model="vm.repeat_password"
+                       type="password"
+                       id="repeat_password"
+                       name="repeat_password"
+                       aria-label="repeat-password">
+            </md-input-container>
+            <button class="button-not-default" ng-click="vm.updatePassword()">
+                {{'CONTENT.CONTINUE'|translate}}
+            </button>
+        </ng-form>
+    </div>
 </div>
