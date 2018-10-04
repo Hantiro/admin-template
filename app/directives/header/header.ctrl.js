@@ -20,12 +20,14 @@
                 {
                     id: 0,
                     view: 'app.my-main',
-                    title: 'my calendar'
+                    title: 'my calendar',
+                    trans: 'CONTENT.CALENDAR'
                 },
                 {
                     id: 1,
                     view: 'app.pregnancy',
-                    title: 'pregnancy calculator'
+                    title: 'pregnancy calculator',
+                    trans: 'CONTENT.PREGNANCY_CALCULATOR'
                 },
                 {
                     id: 2,
