@@ -16,7 +16,8 @@
     li {
       text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
       text-transform: uppercase;
-      margin-right: 15px;
+      margin-right: 22px;
+      font-size: 16px;
       cursor: pointer;
     }
   }
@@ -37,7 +38,7 @@
 
   &__menu {
     border: 1px solid white;
-    margin-top: 20px;
+    margin-top: 13px;
     padding: 5px 0;
     display: flex;
     align-items: center;
@@ -47,12 +48,13 @@
   }
   &__content {
     align-items: center;
-    width: 95%;
+    width: 98%;
     margin: auto;
     display: flex;
     justify-content: space-between;
   }
   &__logo {
+    margin-left: 73px;
     cursor: pointer;
     font-size: 25px;
     font-family: AssistantExtraBold;
@@ -62,17 +64,17 @@
     img {
       position: absolute;
       transform: scale(-1, 1);
-      height: 50px;
+      height: 59px;
     }
     p {
-      margin-left: 60px;
+      margin-left: 71px;
     }
   }
   &__right-side {
-    width: 41%;
+    width: 44%;
     justify-content: space-between;
     display: flex;
-    align-items: center;
+    //align-items: center;
     text-transform: uppercase;
     &--bottom {
       padding: 0 5%;
@@ -81,7 +83,7 @@
 
   }
   &__authorization {
-    align-items: center;
+    //align-items: center;
     font-family: AssistantRegular;
     display: flex;
     color: #4b0049;
