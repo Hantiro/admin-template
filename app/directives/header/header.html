@@ -9,7 +9,7 @@
                 <ul>
                     <li ng-repeat="item in vm.menu.full | orderBy:'id'"
                         ui-sref-active="main-header__auth-menu--active"
-                        ui-sref="{{item.view}}">{{item.title}}
+                        ui-sref="{{item.view}}">{{ item.trans | translate }}
                     </li>
                 </ul>
             </div>
@@ -34,13 +34,13 @@
                 <ul>
                     <li ng-repeat="item in vm.menu.simple | orderBy:'id'"
                         ui-sref-active="main-header__auth-menu--active"
-                        ui-sref="{{item.view}}">{{item.title}}
+                        ui-sref="{{item.view}}">{{ item.trans | translate }}
                     </li>
                 </ul>
                 <div class="main-header__authorization">
-                    <p class="cursor-pointer" ng-click="vm.signUp()">register</p>
+                    <p class="cursor-pointer" ng-click="vm.signUp()">{{ 'CONTENT.REGISTER' | translate }}</p>
                     <span class="main-header__button-login cursor-pointer"
-                          ng-click="vm.login()">login</span>
+                          ng-click="vm.login()">{{ 'CONTENT.LOGIN' | translate }}</span>
                     <p class="main-header__lang">
                         <md-input-container>
                             <md-select ng-model="vm.currentLang">

@@ -6,7 +6,7 @@
         .controller('HeaderCtrl', HeaderCtrl);
 
     /* @ngInject */
-    function HeaderCtrl($scope, authSvc, authExtSvc, authDataSvc, $translate) {
+    function HeaderCtrl($scope, $rootScope, authSvc, authExtSvc, authDataSvc, $translate) {
         var vm = this;
         vm.isAuth = authDataSvc.isLogined;
         vm.signUp = authExtSvc.signUpProcess;
@@ -30,34 +30,40 @@
                 {
                     id: 2,
                     view: 'app.main.mikvahs',
-                    title: 'mikvahs'
+                    title: 'mikvahs',
+                    trans: 'CONTENT.MIKVAHS'
                 },
                 {
                     id: 3,
                     view: 'app.main.tradition',
-                    title: 'halacot'
+                    title: 'tradition',
+                    trans: 'CONTENT.TRADITION'
                 },
                 {
                     id: 4,
                     view: 'app.main.rabbi',
-                    title: 'ask the rabbi'
+                    title: 'ask the rabbi',
+                    trans: 'CONTENT.ASK_RABBI'
                 }
             ],
             simple: [
                 {
                     id: 0,
                     view: 'app.main.contact-us',
-                    title: 'contact us'
+                    title: 'contact us',
+                    trans: 'CONTENT.CONTACT_US'
                 },
                 {
                     id: 1,
                     view: 'app.main.mikvahs',
-                    title: 'mikvahs'
+                    title: 'mikvahs',
+                    trans: 'CONTENT.MIKVAHS'
                 },
                 {
                     id: 2,
                     view: 'app.main.tradition',
-                    title: 'halacot'
+                    title: 'tradition',
+                    trans: 'CONTENT.TRADITION'
                 }
             ]
         };
@@ -66,5 +72,13 @@
             vm.currentLang = lang;
             $translate.use(lang);
         }
+
+        var eventTranslateEnd = $rootScope.$on('$translateChangeEnd',function(e,d){
+            vm.currentLang =  $translate.use();
+        });
+
+        $scope.$on('$destroy', function () {
+            eventTranslateEnd();
+        });
     }
 })();

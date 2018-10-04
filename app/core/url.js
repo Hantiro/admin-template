@@ -6,6 +6,17 @@
                 var baseUrl = 'http://mahsevon.grassbusinesslabs.tk/api/';
 
                 return {
+                    text: {
+                        terms: baseUrl + 'license-agreements/terms',
+                        licence: baseUrl + 'license-agreements/licence',
+                        about: baseUrl + 'license-agreements/about'
+                    },
+                    books: {
+                        get: baseUrl + 'books',
+                        update: baseUrl + 'books/update',
+                        create: baseUrl + 'books/create',
+                        delete: baseUrl + 'books/delete',
+                    },
                     calendar: {
                         month: baseUrl + 'month',
                         create_event: baseUrl + 'event',

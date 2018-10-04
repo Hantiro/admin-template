@@ -26,7 +26,8 @@
     "ngstorage": "^0.3.11",
     "font-awesome": "Font-Awesome#^5.1.0",
     "angular-translate": "^2.18.1",
-    "angular-translate-loader-static-files": "^2.18.1"
+    "angular-translate-loader-static-files": "^2.18.1",
+    "angular-sanitize": "1.5.8"
   },
   "resolutions": {
     "angular": ">=1.5.8"

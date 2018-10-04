@@ -6,24 +6,23 @@
     /* @ngInject */
     function textSvc(url, http) {
         var model = {
-            getPrivacy: getPrivacy,
-            getAbout: getAbout,
-            getTerms: getTerms,
+            terms: terms,
+            licence: licence,
+            about: about,
             contactUs: contactUs
         };
         return model;
 
-        function getAbout() {
-            return http.get(url.static.about);
+        function terms() {
+            return http.get(url.text.terms);
         }
 
-
-        function getPrivacy() {
-            return http.get(url.static.privacy);
+        function licence() {
+            return http.get(url.text.licence);
         }
 
-        function getTerms() {
-            return http.get(url.settings.terms)
+        function about() {
+            return http.get(url.text.about);
         }
 
         function contactUs(data) {

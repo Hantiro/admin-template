@@ -47,8 +47,7 @@
             if (response.data.error) {
                 toastr.error(response.data.error);
                 defer.reject(response.data.error);
-            }
-            else {
+            } else {
                 defer.resolve(response.data);
             }
             return defer.promise;
@@ -69,7 +68,7 @@
             } else if (response.status === 403) {
                 text = 'Access denied';
             } else if (response.status === 401) {
-                if (response.data.message || response.data.error) {
+                if (response.data && (response.data.message || response.data.error)) {
                     text = response.data.message || response.data.error;
                 } else {
                     text = 'Unauthorized';

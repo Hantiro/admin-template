@@ -3,7 +3,7 @@
         <header h-is-auth="true"></header>
         <div class="start-page__content">
             <div class="start-page__title">
-                Love and honesty are the things that make a good wife and mother...
+                {{ "CONTENT.TITLE_LANDING" | translate }}
             </div>
         </div>
         <div class="start-page__content">
@@ -12,9 +12,9 @@
                 <div class="start-page__buttons-app">
                     <div class="start-page__store">
                         <img src="content/img/download-button.png">
-                        <p>download app</p>
+                        <p>{{ 'CONTENT.DOWNLOAD_APP' | translate }}</p>
                     </div>
-                    <div class="start-page__register" ng-click="vm.signUp()">register</div>
+                    <div class="start-page__register" ng-click="vm.signUp()">{{ 'CONTENT.REGISTER' | translate }}</div>
                 </div>
                 <div class="start-page__promo">
                     <li>Welcome to Thearat Habiet</li>
@@ -25,17 +25,9 @@
     </div>
     <div class="start-page__about">
         <div class="text">
-            <h1>Explanation about the app and website</h1>
+            <h1>{{ 'CONTENT.ABOUT_SITE_TITLE' | translate}}</h1>
             <p>
-                Video of virtual explanition about the website. It is a long established fact that a reader will be
-                distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
-                is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-                content here', making it look like readable English. Many desktop publishing packages and web page
-                editors
-                now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web
-                sites
-                still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes
-                on purpose (injected humour and the like).
+                {{ 'CONTENT.ABOUT_SITE_DESCRIPTION' | translate }}
             </p>
         </div>
     </div>
@@ -106,43 +98,15 @@
             <p>Books</p>
         </div>
         <div class="start-page__approvals-information">
-            <div class="start-page__book-content">
+            <div class="start-page__book-content" ng-repeat="item in vm.books">
                 <div class="start-page__images">
-                    <img src="content/img/book1.jpg" alt="">
+                    <img ng-src="{{item.image}}" alt="img">
                 </div>
                 <div class="start-page__book-description">
-                    <div class="start-page__title-book">Name of the Book</div>
-                    <div class="start-page__subtitle-book">subtitle</div>
+                    <div class="start-page__title-book">{{ vm.getTitle(item) }}</div>
+                    <div class="start-page__subtitle-book">{{ vm.getSubtitle(item) }}</div>
                     <div class="start-page__description-approvals">
-                        Video of virtual explanition about the website. It is a long established fact that a reader
-                        will be distracted by the readable content of a page when looking at its layout.”
-                    </div>
-                </div>
-            </div>
-            <div class="start-page__book-content">
-                <div class="start-page__images">
-                    <img src="content/img/book3.jpg" alt="">
-                </div>
-                <div class="start-page__book-description">
-                    <div class="start-page__title-book">Name of the Book</div>
-                    <div class="start-page__subtitle-book">subtitle</div>
-                    <div class="start-page__description-approvals">
-                        Video of virtual explanition about the website. It is a long established fact that a reader
-                        will be distracted by the readable content of a page when looking at its layout.”
-                    </div>
-                </div>
-            </div>
-            <div class="start-page__book-content">
-                <div class="start-page__images">
-                    <img src="content/img/book2.jpg" alt="">
-                </div>
-
-                <div class="start-page__book-description">
-                    <div class="start-page__title-book">Name of the Book</div>
-                    <div class="start-page__subtitle-book">subtitle</div>
-                    <div class="start-page__description-approvals">
-                        Video of virtual explanition about the website. It is a long established fact that a reader
-                        will be distracted by the readable content of a page when looking at its layout.”
+                        {{ vm.getDescription(item) }}
                     </div>
                 </div>
             </div>

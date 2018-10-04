@@ -124,7 +124,7 @@ gulp.task('fonts', function () {
  * @desc Copy locale json
  */
 gulp.task('locale', function () {
-    var dest = pkg.paths.build + 'content/lang';
+    var dest = pkg.paths.build + 'lang';
     log('Copying locale');
     return gulp
         .src(pkg.paths.locale)
@@ -163,7 +163,7 @@ gulp.task('images', function () {
  * rev, but no map
  * @return {Stream}
  */
-gulp.task('rev-and-inject', ['js', 'vendorjs', 'css', 'vendorcss', 'fonts','webfonts', 'images'], function () {
+gulp.task('rev-and-inject', ['locale','js', 'vendorjs', 'css', 'vendorcss', 'fonts','webfonts', 'images'], function () {
     log('Rev\'ing files and building index.html');
     var minified = pkg.paths.build + '**/*.min.*';
     var index = pkg.paths.app + 'index.html';
