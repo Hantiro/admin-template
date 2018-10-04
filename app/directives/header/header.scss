@@ -27,9 +27,9 @@
   p {
     margin: 0;
   }
-  .fa-bars {
-    display: none;
-  }
+  //.fa-bars {
+  //  display: none;
+  //}
   &__auth-menu {
     width: 60%;
     &--active {
@@ -145,11 +145,6 @@
     }
     &__authorization {
       display: none;
-    }
-    .fa-bars {
-      display: flex;
-      align-self: center;
-      color: #ffffff;
     }
   }
 }

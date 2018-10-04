@@ -1,5 +1,17 @@
 <div class="menu-custom">
-    <div class="menu-custom__mobile-menu">
+    <div>
+        <span uib-dropdown on-toggle="toggled(open)">
+            <a href id="simple-dropdown" uib-dropdown-toggle>
+                <i class="fas fa-bars fa-lg"></i>
+            </a>
 
+                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown" ng-if="!vm.isAuth()">
+                    <li ng-repeat="item in vm.menu.full | orderBy:'id'"
+                        ui-sref-active="main-header__auth-menu--active"
+                        ui-sref="{{item.view}}">{{ item.trans | translate }}
+                    </li>
+                </ul>
+
+        </span>
     </div>
 </div>

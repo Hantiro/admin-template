@@ -1,11 +1,34 @@
 .menu-custom {
+  a{
+    color: #ffffff;
+  }
+  display: none;
+  .dropdown-menu{
+    left: unset;
+    right: 0;
+  }
+  ul{
+    display: none;
+  }
   &__mobile-menu {
     background-color: #fff;
     position: absolute;
     right: 0;
-    top: 85px;
+    top: 70px;
     height: 100%;
     z-index: 20;
-    width: 30%;
+    width: 60%;
+    max-width: 300px;
+  }
+  &__right-side{
+    ul{
+      display: block;
+      margin-left: 0;
+    }
+  }
+}
+@media screen and (max-width: 1025px){
+  .menu-custom{
+    display: block;
   }
 }
