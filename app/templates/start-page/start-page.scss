@@ -17,6 +17,7 @@
   &__video-image {
     width: 100%;
     height: auto;
+    margin-top: 26px;
   }
   &__right-side {
     display: flex;
@@ -54,7 +55,7 @@
     border: 1px solid #fff;
     border-radius: 5px;
     padding: 0 10px;
-    margin-left: 10px;
+    margin-left: 63px;
   }
   &__store {
     background: rgba(0, 0, 0, 0.4);
@@ -74,23 +75,24 @@
   }
   &__promo {
     text-align: center;
-    height: 27vh;
+    height: 315px;
     font-family: AssistantRegular;
     background-color: #fff;
     padding: 5px;
     border-radius: 10px;
+    width: 215px;
+    font-size: 16px;
     li {
       margin-bottom: 5px;
     }
   }
   &__buttons-promo {
-
     display: flex;
     position: absolute;
-    left: 25%;
-    top: 18%;
+    left: 36%;
+    top: 28%;
     align-items: flex-end;
-    width: 73%;
+    width: 62%;
     justify-content: space-between;
   }
   &__buttons-app {
@@ -114,10 +116,11 @@
   }
 
   &__title {
-    margin-top: 20px;
+    margin-top: 22px;
     color: #703a46;
     font-family: AnotherDayInParadise;
-    font-size: 30px;
+    font-size: 41px;
+    margin-left: 51px;
   }
   &__about {
     background-color: #fff;
@@ -126,11 +129,12 @@
     padding-bottom: 50px;
     .text {
       padding-right: 100px;
-      width: 70%;
+      width: 63%;
       margin-left: auto;
     }
     h1 {
-      margin-bottom: 20px;
+      margin-bottom: 27px;
+      margin-top: 20px;
     }
     p {
       font-size: 16px;
@@ -139,8 +143,12 @@
 
   &__htc {
     position: absolute;
-    width: 20%;
+    width: 26%;
+    top: 170px;
+    left: 90px;
     z-index: 2;
+    max-width: 350px;
+    max-height: 750px;
   }
   &__google {
     position: absolute;
@@ -209,7 +217,7 @@
 
   &__approvals {
     font-family: AssistantLight;
-    margin: 50px 0;
+    margin: 20px 0;
     position: relative;
     z-index: 2;
     text-align: center;
@@ -217,7 +225,7 @@
     width: 100%;
     p {
       color: #8f6060;
-      font-size: 40px;
+      font-size: 50px;
     }
     &--bottom {
       width: 90%;
@@ -288,6 +296,12 @@
 
   @media screen and(max-width: 1230px) {
     .start-page {
+      &__buttons-app {
+        display: block;
+      }
+      &__register {
+        margin: 5px 0 0 0;
+      }
       &__images {
         img {
           height: 350px;
@@ -306,10 +320,16 @@
 
   @media screen and(max-width: 1125px) {
     .start-page {
-      &__buttons-promo {
-        display: block;
-        top: 20%;
+      &__title{
+        font-size: 35px;
       }
+      &__htc {
+        width: 21%;
+      }
+      //&__buttons-promo {
+      //  display: block;
+      //  top: 20%;
+      //}
       &__promo {
         width: max-content;
         margin-top: 5px;
@@ -326,7 +346,14 @@
   }
   @media screen and (max-width: 780px) {
     .start-page {
+      &__htc{
+        left: 30px;
+      }
+      &__promo{
+        height: 230px;
+      }
       &__buttons-promo {
+        display: block;
         top: 35%;
       }
       &__title {
@@ -350,6 +377,7 @@
   }
   @media screen and (max-width: 680px) {
     .start-page {
+
       &__approvals-image {
         width: 100%;
         height: auto;
@@ -396,9 +424,7 @@
       &__buttons-promo {
         top: 45%;
       }
-      &__register {
-        margin: 5px 0 0 0;
-      }
+
       &__buttons-app {
         display: block;
         top: 55%;
