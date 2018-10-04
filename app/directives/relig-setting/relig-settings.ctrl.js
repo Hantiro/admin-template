@@ -3,10 +3,10 @@
 
     angular
         .module('app')
-        .controller('ProfileDataCtrl', ProfileDataCtrl);
+        .controller('ReligSettingCtrl', ReligSettingCtrl);
 
     /* @ngInject */
-    function ProfileDataCtrl($scope, googleSvc, utilsSvc, userSvc) {
+    function ReligSettingCtrl($scope, googleSvc, utilsSvc, userSvc) {
         var vm = this;
         vm.save = save;
         vm.search = googleSvc.searchAddress;
