@@ -6,12 +6,13 @@
         .controller('ProfileDataCtrl', ProfileDataCtrl);
 
     /* @ngInject */
-    function ProfileDataCtrl($scope, googleSvc, utilsSvc, userSvc) {
+    function ProfileDataCtrl($scope, googleSvc, utilsSvc, userSvc, messagesSvc) {
         var vm = this;
         vm.save = save;
         vm.search = googleSvc.searchAddress;
         vm.updatePassword = updatePassword;
         vm.data = {};
+        vm.resetPass = {};
         vm.searchText = '';
         vm.emailRegExp = utilsSvc.EMAIL_REG;
 
@@ -51,16 +52,16 @@
                 messagesSvc.show('ERROR.PASS', 'error');
                 return;
             }
-            if (vm.data.password !== vm.repeat_password) {
+            if (vm.resetPass.password !== vm.resetPass.password_confirmation) {
                 messagesSvc.show('ERROR.PASS_EQUAL', 'error');
                 return;
             }
-            userSvc.updatePassword(vm.data)
+            userSvc.updatePassword(vm.resetPass)
                 .then(function (res) {
                     if (res.status) {
-                        vm.repeat_password = '';
-                        vm.data.password = '';
-                        messagesSvc.show('SUCCESS.PASS_CHANGED', 'success');
+                        vm.resetPass.password_confirmation = '';
+                        vm.resetPass.password = '';
+                        messagesSvc.show('SUCCESS.PASS_CHANGES', 'success');
                         vm.showNewPassword = false;
                     }
                 });

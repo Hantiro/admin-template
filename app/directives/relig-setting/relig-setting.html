@@ -1,45 +1,51 @@
 <div class="relig-setting">
-        <p class="profile__title">Choose halakhic methods</p>
-        <md-radio-group ng-model="data.group1">
+        <p class="profile__title"> {{'CONTENT.USER_SETTINGS_TITLE'|translate}} </p>
+        <md-radio-group ng-model="vm.user_settings.religion_settings_id.id">
 
-            <md-radio-button value="Yosef"> Sephardic according to Rabbi Yosef</md-radio-button>
-            <md-radio-button value="Eliyahu">Sephardic according to Rabbi Mordecai Eliyahu</md-radio-button>
-            <md-radio-button value="Ashkenazi">אשכנזי לפי פוסקי אשכנז</md-radio-button>
+            <md-radio-button ng-repeat="setting in vm.religious_settings"
+                             ng-value="setting.id"
+                             ng-click="vm.checkSettings(setting.id)">
+                {{setting.description}}
+            </md-radio-button>
 
         </md-radio-group>
-        <div dir="rtl" class="profile__select-button" ng-click="vm.showSettings = !vm.showSettings"
+        <div dir="rtl" class="profile__select-button"
+             ng-click="vm.showSettings = !vm.showSettings"
              layout="row"
              layout-align="space-between">
             <div>
                 <md-icon md-font-icon="fa"
                          ng-class="{ 'fa-chevron-down': vm.showSettings,
-                                                 'fa-chevron-right': !vm.showSettings }"
+                                     'fa-chevron-right': !vm.showSettings }"
                          aria-hidden="true"></md-icon>
             </div>
             <div class="profile__select">
-                <span>Or zarua</span>
+                <span>{{'CONTENT.CHOOSE_LIGHT'|translate}}</span>
             </div>
         </div>
         <div layout="column" layout-align="center" class="profile__mark-content">
-            <div ng-if="vm.showSettings" class="profile__only-check-mark">
+            <div ng-if="vm.showSettings"
+                 class="profile__only-check-mark">
                 <md-checkbox ng-model="vm.user_settings.monthly_cycle" aria-label="Checkbox 1">
-                    <span>Veset Hahodesh</span>
+                    <span>{{'CONTENT.MONTH_PERIOD'|translate}}</span>
                 </md-checkbox>
             </div>
-            <div class="profile__only-check-mark" ng-if="vm.showSettings">
+            <div class="profile__only-check-mark"
+                 ng-if="vm.showSettings">
                 <md-checkbox ng-model="vm.user_settings.interval_cycle" aria-label="Checkbox 1">
-                    <span>Veset Haflaga</span>
+                    <span>{{'CONTENT.SAILING_PERIOD'|translate}}</span>
                 </md-checkbox>
             </div>
-            <div ng-if="vm.showSettings" class="profile__only-check-mark">
+            <div ng-if="vm.showSettings"
+                 class="profile__only-check-mark">
                 <md-checkbox ng-model="vm.user_settings.average_cycle" aria-label="Checkbox 1">
-                    <span>Ona binonit</span>
+                    <span>{{'CONTENT.MIDDLE_SEASON'|translate}}</span>
                 </md-checkbox>
             </div>
-            <div class="profile__checked">
+            <div class="profile__checked"
+                 ng-if="vm.user_settings.religion_settings_id.id === 2">
                 <md-checkbox ng-model="vm.user_settings.le_horma" aria-label="Checkbox 1">
-                    <p>Onah Benonit 24 Hours</p>
-                    <p>According to Rabbi Mordechai Eliyahu</p>
+                    <p>{{'CONTENT.24HOURS'|translate}}</p>
                 </md-checkbox>
             </div>
         </div>

@@ -8,7 +8,8 @@
         var model = {
             contactUs: contactUs,
             comments: comments,
-            terms: terms
+            terms: terms,
+            getReligiousSettings: getReligiousSettings
         };
         return model;
 
@@ -22,6 +23,10 @@
 
         function terms() {
             return http.get(url.settings.terms)
+        }
+
+        function getReligiousSettings() {
+            return http.get(url.settings.getAllSettings)
         }
 
     }
