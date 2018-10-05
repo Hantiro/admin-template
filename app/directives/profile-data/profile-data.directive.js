@@ -9,10 +9,13 @@
             templateUrl: 'directives/profile-data/profile-data.html',
             replace: true,
             scope: {
-                mode: '@' //reg or update
+                pdMode: '@', //reg or update,
+                pdOptions: '='
             },
             controller: 'ProfileDataCtrl',
             controllerAs: 'vm',
+            link: function(scope) {
+            }
         };
     }
 })();

@@ -17,6 +17,8 @@
 
         init();
         function init() {
+            $scope.pdOptions = {};
+            $scope.pdOptions.save = save; //link to save for call outside from controller
             getUserData();
         }
 
