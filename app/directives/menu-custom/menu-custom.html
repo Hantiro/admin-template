@@ -4,14 +4,52 @@
             <a href id="simple-dropdown" uib-dropdown-toggle>
                 <i class="fas fa-bars fa-lg"></i>
             </a>
-
-                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown" ng-if="!vm.isAuth()">
-                    <li ng-repeat="item in vm.menu.full | orderBy:'id'"
-                        ui-sref-active="main-header__auth-menu--active"
-                        ui-sref="{{item.view}}">{{ item.trans | translate }}
+            <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown" ng-if="!vm.isAuth()">
+                <li ng-repeat="item in vm.menu.simple | orderBy:'id'"
+                    ui-sref-active="main-header__auth-menu--active"
+                    ui-sref="{{item.view}}">{{ item.trans | translate }}
+                </li>
+                <li class="menu-custom__auth">
+                <p class="cursor-pointer" ng-click="vm.signUp()">{{ 'CONTENT.REGISTER' | translate }}</p>
+                    <span class="menu-custom__button-login cursor-pointer"
+                          ng-click="vm.login()">{{ 'CONTENT.LOGIN' | translate }}</span>
                     </li>
-                </ul>
+                    <p class="menu-custom__lang">
+                        <md-input-container>
+                            <md-select ng-model="vm.currentLang">
+                                <md-option ng-repeat="item in vm.allLang"
+                                           ng-value="item"
+                                           ng-click="vm.setLang(item)">
+                                    {{item}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </p>
+            </ul>
 
+            <ul class="dropdown-menu" uib-dropdown-menu ariabelledby="simple-dropdown" ng-if="vm.isAuth()">
+               <li ng-repeat="item in vm.menu.full | orderBy:'id'"
+                   ui-sref-active="main-header__auth-menu--active"
+                   ui-sref="{{item.view}}">{{ item.trans | translate }}
+               </li>
+                <p class="menu-custom__lang">
+                        <md-input-container>
+                            <md-select ng-model="vm.currentLang">
+                                <md-option ng-repeat="item in vm.allLang"
+                                           ng-value="item"
+                                           ng-click="vm.setLang(item)">
+                                    {{item}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </p>
+                <li class="menu-custom__user">
+                <p class="main-header__authorization--user cursor-pointer" ui-sref="app.main.profile">
+                    Hi! {{vm.user().first_name + ' ' + vm.user().last_name}}
+                </p>
+                <i class="fa fa-user"></i>
+                </li>
+            </ul>
         </span>
     </div>
 </div>
