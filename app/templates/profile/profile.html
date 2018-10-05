@@ -2,11 +2,17 @@
     <div class="contain">
         <div class="profile__contact-content">
             <div class="profile__main-form">
-                <div ng-include="'templates/profile/profile-user.html'" class="profile__left-side"></div>
-                <div ng-include="'templates/profile/profile-halakhic.html'" class="profile__right-side"></div>
+                <div class="profile__left-side">
+                    <profile-data></profile-data>
+                </div>
+                <div class="profile__right-side">
+                    <relig-setting></relig-setting>
+                </div>
             </div>
             <div class=" profile__button-contain">
-                <button class="button-default">save</button>
+                <button class="button-default" ng-click="vm.save()">
+                    {{'CONTENT.SAVE'|translate}}
+                </button>
             </div>
         </div>
     </div>

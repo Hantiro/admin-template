@@ -16,5 +16,7 @@
         'directives.deleteEvent',
         'directives.upgradeFull',
         'directives.menuCustom',
+        'directives.profileData',
+        'directives.religSetting'
     ]);
 })();

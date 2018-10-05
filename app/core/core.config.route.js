@@ -120,11 +120,21 @@
                 controllerAs: 'vm'
             })
             .state('app.main.profile', {
-                url: '/profile',
-                templateUrl: 'templates/profile/profile.html',
-                controller: 'ProfileCtrl',
-                controllerAs: 'vm'
-            })
+                    url: '/profile',
+                    templateUrl: 'templates/profile/profile.html',
+                    controller: 'ProfileCtrl',
+                    controllerAs: 'vm',
+                    resolve: {
+                        /* @ngInject */
+                        profileData: function (userSvc) {
+                            return userSvc.view()
+                                .then(function (res) {
+                                    return res.entity;
+                                });
+                        }
+                    }
+                }
+            )
             .state('app.main.terms', {
                 url: '/terms',
                 data: {

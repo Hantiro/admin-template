@@ -8,8 +8,8 @@
         ]).run(runBlock);
 
     /* @ngInject */
-    function runBlock($timeout, authDataSvc, $rootScope, $state, $transitions, pagesSvc, modalSvc) {
-
+    function runBlock($timeout, authDataSvc, $rootScope, $state, $transitions, pagesSvc, modalSvc, userSvc, $translate) {
+        $translate.use(userSvc.getLang() || 'heb');
         // $state.go('app.start-page');
         // $timeout(function(){
         //     authSvc.processAutoLogin();
@@ -28,6 +28,13 @@
         $transitions.onFinish({}, function (transition) {
             pagesSvc.setCurrentName(
                 transition.to().data && transition.to().data.trans_name ?  transition.to().data.trans_name : '');
+        });
+
+        $rootScope.$on('$translateChangeEnd', function (e,d) {
+            userSvc.setLang($translate.use());
+        });
+        $rootScope.$on('$translateLoadingEnd', function (e,d) {
+            userSvc.setLang($translate.use());
         });
     }
 })();

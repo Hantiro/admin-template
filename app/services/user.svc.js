@@ -5,14 +5,16 @@
 
 
     /* @ngInject */
-    function userSvc(url, http) {
+    function userSvc(url, http, $localStorage) {
         var model = {
             view: view,
             update: update,
             updatePassword: updatePassword,
             getSettings: getSettings,
             setSettings: setSettings,
-            getUser: view
+            getUser: view,
+            getLang: getLang,
+            setLang: setLang
         };
         return model;
 
@@ -33,5 +35,12 @@
             return http.post(url.user.userSettings, data);
         }
 
+        function getLang() {
+            return $localStorage.lang;
+        }
+
+        function setLang(lang) {
+            $localStorage.lang = lang;
+        }
     }
 })();

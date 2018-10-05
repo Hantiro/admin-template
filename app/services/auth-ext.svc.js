@@ -47,9 +47,11 @@
         function createUser() {
             modalSvc.signup().result.then(function (res) {
                 welcomeProcess(res);
+                authDataSvc.clearAuthData();
             }).catch(function () {
+                authDataSvc.clearAuthData();
             });
-            authDataSvc.clearAuthData();
+
         }
 
         function loginProcess() {
@@ -78,12 +80,12 @@
         }
 
         function autoLogin() {
-            if(authDataSvc.isLogined() && !authDataSvc.getUser()){
-                return userSvc.getUser().then(function(res){
+            if (authDataSvc.isLogined() && !authDataSvc.getUser()) {
+                return userSvc.getUser().then(function (res) {
                     authDataSvc.setUser(res.entity || {});
                     $state.go('app.my-main');
                 });
-            } else if(authDataSvc.isLogined() && authDataSvc.getUser()) {
+            } else if (authDataSvc.isLogined() && authDataSvc.getUser()) {
                 $state.go('app.my-main');
                 return true;
             }
@@ -95,19 +97,22 @@
             }
         }
 
-        function logoutAsk(){
-            modalSvc.logout().result.then(function(){
-                logout();
+        function logoutAsk() {
+            modalSvc.logout().result.then(function () {
+                logout({
+                    needReload: true
+                });
             })
         }
 
-        function logout() {
+        function logout(conf) {
+            var config = conf || {};
             authDataSvc.clearAuthData();
-            $timeout(function(){
-                $state.go('app.start-page').promise.then(function(){
-                    window.location.reload(true);
+            $timeout(function () {
+                $state.go('app.start-page').then(function () {
+                    config.needReload && window.location.reload(true);
                 });
-            },1000);
+            }, 1000);
         }
     }
 })

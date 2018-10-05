@@ -1,21 +1,31 @@
 ;(function () {
+    'use strict';
+
     angular
         .module('app')
-        .controller('ProfileCtrl', ProfileCtrl);
+        .controller('ReligSettingCtrl', ReligSettingCtrl);
 
     /* @ngInject */
-    function ProfileCtrl(authSvc, userSvc, messagesSvc, utilsSvc, googleSvc, profileData) {
+    function ReligSettingCtrl($scope, googleSvc, utilsSvc, userSvc) {
         var vm = this;
         vm.save = save;
         vm.search = googleSvc.searchAddress;
         vm.updatePassword = updatePassword;
-        vm.data = profileData;
-        vm.searchText = vm.data.address;
+        vm.data = {};
+        vm.searchText = '';
         vm.emailRegExp = utilsSvc.EMAIL_REG;
+
         init();
-
         function init() {
+            getUserData();
+        }
 
+        function getUserData() {
+            userSvc.view()
+                .then(function (res) {
+                    vm.data = res.entity;
+                    vm.searchText = vm.data.address;
+                });
         }
 
         function save() {
