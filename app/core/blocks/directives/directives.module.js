@@ -2,6 +2,7 @@
     'use strict';
 
     angular.module('app.directives', [
+        'directives.anchor',
         'directives.header',
         'directives.footer',
         'directives.calendar',
@@ -17,6 +18,7 @@
         'directives.upgradeFull',
         'directives.menuCustom',
         'directives.profileData',
-        'directives.religSetting'
+        'directives.religSetting',
+        'directives.includeTemplate'
     ]);
 })();
