@@ -15,6 +15,7 @@
             count: 1
         };
 
+
         $scope.$on(dateSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
             processDate();
         });
@@ -26,20 +27,25 @@
         init();
 
         function init() {
+            dateSvc.setSelectedDay(dateSvc.getCurrentDay());
+            vm.isPills = dateSvc.getCalendarModel() && dateSvc.getCalendarModel().is_pills;
             vm.model = {
                 count: 1
             };
-            vm.isPills = dateSvc.getCalendarModel() && dateSvc.getCalendarModel().is_pills;
+            processDate();
         }
 
         function processDate() {
-            var month = dateSvc.getSelectedDay();
-            vm.model.date = '' + month.gregorian_day + '/' + month.gregorian_month + '/' + month.gregorian_year;
+            vm.model.date = generateDateFormat(dateSvc.getSelectedDay())
         }
 
-        function save(){
-            if(!vm.model.date || vm.model.count < 0){
-                messagesSvc.show('ERROR.VERIFY_DATA','error');
+        function generateDateFormat(day) {
+            return [day.gregorian_day, day.gregorian_month, day.gregorian_year].join('/');
+        }
+
+        function save() {
+            if (!vm.model.date || vm.model.count < 0) {
+                messagesSvc.show('ERROR.VERIFY_DATA', 'error');
                 return;
             }
             pillsSvc.create({

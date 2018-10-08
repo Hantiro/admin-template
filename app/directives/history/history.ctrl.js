@@ -28,8 +28,8 @@
                 predictionArray: []
             };
             vm.timeModel = (new Date());
-            vm.dateModel;
-            vm.dateText;
+            vm.dateModel = dateSvc.getSelectedDay();
+            vm.dateText = generateDateFormat(vm.dateModel);
 
             $scope.$on(dateSvc.CALENDAR_EVENT.CREATED_EVENT, function () {
                 init();
@@ -38,22 +38,32 @@
                 init();
             });
 
+            $scope.$on(dateSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
+                init();
+            });
+
             $scope.$on(dateSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function () {
-                vm.dateModel = dateSvc.getSelectedDay();
-                updateDateText();
+                updateModel();
             });
 
             init();
 
             function init() {
+                dateSvc.setSelectedDay(dateSvc.getCurrentDay());
+                updateModel();
                 dateSvc.getListEvents().then(function (res) {
                     vm.modelDays = res;
                     vm.step = vm.STEPS.SHOW_LIST;
                 });
             }
 
-            function updateDateText() {
-                vm.dateText = vm.dateModel.gregorian_day + '/' + vm.dateModel.gregorian_month + '/' + vm.dateModel.gregorian_year;
+            function updateModel() {
+                vm.dateModel = dateSvc.getSelectedDay();
+                vm.dateText = generateDateFormat(vm.dateModel);
+            }
+
+            function generateDateFormat(day){
+                return [day.gregorian_day, day.gregorian_month, day.gregorian_year].join('/');
             }
 
             function cancel() {
@@ -86,8 +96,10 @@
             }
 
             function addDateTime() {
+                //by default set current day as selected day
+                dateSvc.setSelectedDay(dateSvc.getCurrentDay());
+                updateModel();
                 vm.step = vm.STEPS.ADD_DATE_TIME;
-                dateSvc.setSelectedDay(null);
             }
 
             function currentLang() {

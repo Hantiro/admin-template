@@ -42,12 +42,14 @@
             //if params is set we no need use cache
             if(dateSvc.getPreloadedForSimple() && isSimpleMode() && angular.isUndefined(params)){
                 setModelData(dateSvc.getPreloadedForSimple());
-            } else {
+            } else if(params) {
                 var param = Object.assign({}, params);
                 if (isSimpleMode()) {
                     param.default = 1;
                 }
                 processLoadingMonth(param);
+            } else {
+                processLoadingMonth();
             }
         }
 
@@ -57,6 +59,10 @@
                 //without params = current month in current year (not selected)
                 if(!isSimpleMode() && angular.isUndefined(param)){
                     dateSvc.setCurrentMonthModel(res);
+                    //set selected month - current month
+                    dateSvc.setSelectedMonth(res);
+                    //set selected day - current day in current month
+                    dateSvc.setSelectedDay(dateSvc.getCurrentDay());
                 }
             });
         }
@@ -87,7 +93,7 @@
 
         function isCurrentDay(day) {
             return vm.calendarModel.jewish_current_day === day.jewish_day &&
-                vm.calendarModel.jewish_current_month === day.jewish_month
+                vm.calendarModel.jewish_current_month === day.jewish_month;
         }
 
         function isDayInCurrentMonth(day) {

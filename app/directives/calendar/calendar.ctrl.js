@@ -49,8 +49,8 @@
                 dateSvc.createRedDay(sendObj, dateSvc.getSelectedMonth()).then(
                     function (res) {
                         dateSvc.updateCalendar();
-                        dateSvc.setSelectedMonth(null);
-                        dateSvc.setSelectedDay(null);
+                        dateSvc.setSelectedMonth(dateSvc.getCurrentMonthModel());
+                        dateSvc.setSelectedDay(dateSvc.getCurrentDay());
                         vm.showTime = false;
                     }
                 );

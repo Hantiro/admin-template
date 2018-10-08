@@ -142,8 +142,8 @@
 
         function setCalendarModel(model) {
             currentCalendarModel = model;
-            setSelectedMonth(null); //reset
-            setSelectedDay(null); //reset
+            setSelectedMonth(getCurrentMonthModel()); //reset to current
+            setSelectedDay(getCurrentDay()); //reset to current
             $rootScope.$broadcast(CALENDAR_EVENT.UPDATED_MODEL, model);
         }
 
@@ -154,13 +154,13 @@
 
         //current != selected when choise prev or next month, current means real current
         function setCurrentMonthModel(model) {
-            currentDay = dateExtSvc.searchCurrentDayInMonth(model);
-            currentMonthCalendarModel = model;
+            setCurrentDay(dateExtSvc.searchCurrentDayInMonth(model));
+            currentMonthCalendarModel = angular.copy(model);
         }
 
         //current != selected when choise prev or next month, current means real current
         function setCurrentDay(dayModel) {
-            currentDay = dayModel;
+            currentDay = angular.copy(dayModel);
         }
 
         //current != selected when choise prev or next month, current means real current
@@ -169,7 +169,7 @@
         }
 
         function setSelectedDay(dayModel){
-            selectedDay = dayModel;
+            selectedDay = angular.copy(dayModel);
         }
 
         function getSelectedDay(){
@@ -177,7 +177,7 @@
         }
 
         function setSelectedMonth(monthObj){
-            selectedMonth = monthObj;
+            selectedMonth = angular.copy(monthObj);
         }
 
         function getSelectedMonth() {
