@@ -3,15 +3,15 @@
         <div class="profile__contact-content">
             <div class="profile__main-form">
                 <div class="profile__left-side">
-                    <profile-data></profile-data>
+                    <profile-data pd-options="vm.pdOptions"></profile-data>
                 </div>
                 <div class="profile__right-side">
-                    <relig-setting></relig-setting>
+                    <relig-setting rs-options="vm.rsOptions"></relig-setting>
                 </div>
             </div>
             <div class=" profile__button-contain">
-                <button class="button-default" ng-click="vm.save()">
-                    {{'CONTENT.SAVE'|translate}}
+                <button class="button-default" ng-click="vm.update()">
+                    {{ 'CONTENT.SAVE'|translate }}
                 </button>
             </div>
         </div>

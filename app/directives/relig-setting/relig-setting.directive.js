@@ -9,10 +9,13 @@
             templateUrl: 'directives/relig-setting/relig-setting.html',
             replace: true,
             scope: {
-                mode: '@' //reg or update
+                rsMode: '@', //reg or update
+                rsOptions: '='
             },
             controller: 'ReligSettingCtrl',
             controllerAs: 'vm',
+            link: function (scope) {
+            }
         };
     }
 })();

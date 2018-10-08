@@ -133,7 +133,7 @@
     "SEND": "Successfully sent",
     "GESTATION_START_DATE_CHANGED": "Gestation start day was changed",
     "DONE_PILL": "Calculating pills was successfully",
-    "PASS_CHANGED": "Password was changed"
+    "PASS_CHANGES": "Password was changed"
   },
   "INFO": {
     "CHECK_EMAIL": "Check your email for change  password",

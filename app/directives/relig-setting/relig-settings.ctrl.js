@@ -6,62 +6,58 @@
         .controller('ReligSettingCtrl', ReligSettingCtrl);
 
     /* @ngInject */
-    function ReligSettingCtrl($scope, googleSvc, utilsSvc, userSvc) {
+    function ReligSettingCtrl($scope, googleSvc, utilsSvc, userSvc, settingsSvc, messagesSvc) {
         var vm = this;
-        vm.save = save;
-        vm.search = googleSvc.searchAddress;
-        vm.updatePassword = updatePassword;
-        vm.data = {};
-        vm.searchText = '';
-        vm.emailRegExp = utilsSvc.EMAIL_REG;
-
+        vm.saveSettings = saveSettings;
+        vm.changeReligion = changeReligion;
+        vm.checkSettings = checkSettings;
+        vm.showSettings = false;
+        vm.user_settings;
+        vm.religious_settings;
+        vm.tmp_settings = {};
+        vm.MORDECAI = 'Mordecai';
         init();
         function init() {
-            getUserData();
+            $scope.rsOptions = {};
+            $scope.rsOptions.save = saveSettings; //link to save for call outside from controller
+            getUserSettings();
+            getReligSettings();
         }
 
-        function getUserData() {
-            userSvc.view()
+        function getUserSettings() {
+            userSvc.getSettings()
                 .then(function (res) {
-                    vm.data = res.entity;
-                    vm.searchText = vm.data.address;
-                });
+                    vm.user_settings =  res.entity || [];
+                })
         }
 
-        function save() {
-            if (vm.profileForm.$invalid) {
-                messagesSvc.show('ERROR.FILL_FIELDS', 'error');
-                return;
-            }
-            if (vm.selected_search_item) {
-                vm.data.address = vm.selected_search_item.description;
-            }
-            userSvc.update(vm.data)
+        function getReligSettings(){
+            settingsSvc.getReligiousSettings()
                 .then(function (res) {
-                    if (res.status) {
-                        messagesSvc.show('SUCCESS.UPDATED', 'success')
+                    vm.religious_settings = res.data || [];
+                })
+        }
+
+        function saveSettings() {
+            vm.tmp_settings.id = vm.user_settings.id;
+            vm.tmp_settings.monthly_cycle = vm.user_settings.monthly_cycle;
+            vm.tmp_settings.interval_cycle = vm.user_settings.interval_cycle;
+            vm.tmp_settings.average_cycle = vm.user_settings.average_cycle;
+            vm.tmp_settings.le_horma = vm.user_settings.le_horma;
+            vm.tmp_settings.religion_settings_id = vm.user_settings.religion_settings_id.id;
+            userSvc.setSettings(vm.tmp_settings)
+                .then(function (res) {
+                    if (res) {
+                        messagesSvc.show('SUCCESS.UPDATED', 'success');
                     }
-                });
+                })
+        }
+        function checkSettings(id) {
+            vm.tmp_settings.religion_settings_id = id;
         }
 
-        function updatePassword() {
-            if (vm.changePasswordForm.$invalid) {
-                messagesSvc.show('ERROR.PASS', 'error');
-                return;
-            }
-            if (vm.data.password !== vm.repeat_password) {
-                messagesSvc.show('ERROR.PASS_EQUAL', 'error');
-                return;
-            }
-            userSvc.updatePassword(vm.data)
-                .then(function (res) {
-                    if (res.status) {
-                        vm.repeat_password = '';
-                        vm.data.password = '';
-                        messagesSvc.show('SUCCESS.PASS_CHANGED', 'success');
-                        vm.showNewPassword = false;
-                    }
-                });
+        function changeReligion(item) {
+            vm.user_settings.religion = item;
         }
     }
 })();

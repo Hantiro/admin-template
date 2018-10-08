@@ -11,12 +11,14 @@
                         licence: baseUrl + 'license-agreements/licence',
                         about: baseUrl + 'license-agreements/about'
                     },
+
                     books: {
                         get: baseUrl + 'books',
                         update: baseUrl + 'books/update',
                         create: baseUrl + 'books/create',
                         delete: baseUrl + 'books/delete',
                     },
+
                     calendar: {
                         month: baseUrl + 'month',
                         create_event: baseUrl + 'event',
@@ -24,15 +26,18 @@
                         delete_last_event: baseUrl + 'destroy',
                         getList: baseUrl + 'list'
                     },
+
                     pill: {
                         create: baseUrl + 'pills',
                         delete_last: baseUrl + 'destroy-pills'
                     },
+
                     gestation: {
                         create: baseUrl + 'gestation',
                         get: baseUrl + 'gestation-date',
                         delete: baseUrl + 'destroy-gestation'
                     },
+
                     auth: {
                         login: baseUrl + 'login',
                         sendPhone: baseUrl + 'send-phone',
@@ -40,16 +45,20 @@
                         signUp: baseUrl + 'new-user',
                         resetPassword: baseUrl + 'reset-password',
                     },
+
                     settings: {
                         contactUs: baseUrl + 'mail',
                         comments: baseUrl + 'laws',
                         terms: baseUrl + 'license-agreements',
+                        getAllSettings: baseUrl + 'religion-settings'
                     },
+
                     notificationSettings: {
                         setToken: baseUrl + 'set-device',
                         settings: baseUrl + 'notification'
 
                     },
+
                     user: {
                         view: baseUrl + 'user',
                         update: baseUrl + 'user',
