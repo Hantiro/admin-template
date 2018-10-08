@@ -1,7 +1,7 @@
 <div class="delete-event">
     <div ng-if="vm.calendarData && vm.calendarData.last_part_period">
-        <span>{{ vm.textDelete | translate }}</span>
-        <img src="content/img/icon/close-icon.png" alt="delete last event"
-             ng-click="vm.deleteLastEvent()"/>
+        <p ng-click="vm.deleteLastEvent()">{{ vm.textDelete | translate }}
+            <img src="content/img/icon/close-icon.png" alt="delete last event"/>
+        </p>
     </div>
 </div>

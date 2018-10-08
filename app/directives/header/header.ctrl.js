@@ -13,8 +13,10 @@
         vm.login = authExtSvc.loginProcess;
         vm.user = authDataSvc.getUser;
         vm.setLang = setLang;
-        vm.currentLang = $translate.use();
-        vm.allLang = $translate.getAvailableLanguageKeys();
+        vm.currentLang = $translate.use().toUpperCase();
+        vm.allLang = $translate.getAvailableLanguageKeys().map(function (el, index, arr) {
+            return el.toUpperCase();
+        });
         vm.menu = {
             full: [
                 {
@@ -76,7 +78,7 @@
         }
 
         var eventTranslateEnd = $rootScope.$on('$translateChangeEnd',function(e,d){
-            vm.currentLang =  $translate.use();
+            vm.currentLang =  $translate.use().toUpperCase();
         });
 
         $scope.$on('$destroy', function () {
