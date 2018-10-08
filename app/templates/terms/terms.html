@@ -4,7 +4,7 @@
             <!--<p class="terms__title">-->
                 <!--{{item.name}}-->
             <!--</p>-->
-            <p class="terms__description" ng-bind-html="vm.terms.description">
+            <p class="terms__description" ng-bind-html="vm.terms.description | trusted">
             </p>
         </div>
 

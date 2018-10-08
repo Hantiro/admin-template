@@ -3,7 +3,7 @@
         <!--<p class="about__title">-->
             <!--Title-->
         <!--</p>-->
-        <p class="about__description" ng-bind-html="vm.about.description">
+        <p class="about__description" ng-bind-html="vm.about.description | trusted">
         </p>
         <!--<iframe height="720" src="https://www.youtube.com/embed/6v2L2UGZJAM" frameborder="0"-->
                 <!--allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
