@@ -18,7 +18,7 @@
             <list-item-custom
                     ng-if="vm.modelDays.data && vm.modelDays.data.length"
                     ng-repeat="item in vm.modelDays.data track by $index"
-                    lic-date-text="{{ vm.getItemDateByLang(item) }}"
+                    lic-date-text="{{ item.fullData }}"
                     lic-day-part-text="{{ vm.getDayNight(item.isDay) | translate }}"
                     lic-is-day="vm.isDay(item.isDay)"></list-item-custom>
             <div ng-if="vm.modelDays.predictionArray && vm.modelDays.predictionArray.length">
@@ -26,7 +26,7 @@
                 <span>{{ vm.isRegularText() | translate }}</span>
                 <list-item-custom
                         ng-repeat="item in vm.modelDays.predictionArray track by $index"
-                        lic-date-text="{{ vm.getItemDateByLang(item) }}"
+                        lic-date-text="{{ item.fullData }}"
                         lic-day-part-text="{{ vm.getDayNight(item.isDay) | translate }}"
                         lic-is-day="vm.isDay(item.isDay)"></list-item-custom>
             </div>
