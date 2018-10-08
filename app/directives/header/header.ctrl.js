@@ -73,7 +73,7 @@
         };
 
         function setLang(lang) {
-            vm.currentLang = lang;
+            // vm.currentLang = lang;
             $translate.use(lang);
         }
 

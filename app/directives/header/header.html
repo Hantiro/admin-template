@@ -43,13 +43,13 @@
                           ng-click="vm.login()">{{ 'CONTENT.LOGIN' | translate }}</span>
                     <p class="main-header__lang">
                         <md-input-container>
-                            <md-select ng-model="vm.currentLang">
-                                <md-option ng-repeat="item in vm.allLang"
-                                           ng-value="item"
-                                           ng-click="vm.setLang(item)">
-                                    {{item}}
-                                </md-option>
-                            </md-select>
+                                <md-select ng-model="vm.currentLang">
+                                    <md-option ng-repeat="item in vm.allLang"
+                                               ng-value="item"
+                                               ng-click="vm.setLang(item)">
+                                        {{ ('LANG.' + item) | translate }}
+                                    </md-option>
+                                </md-select>
                         </md-input-container>
                     </p>
                 </div>
