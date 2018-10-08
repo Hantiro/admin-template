@@ -12,8 +12,8 @@
         vm.isSelectTime = true;
         vm.calendarModel = {};
         vm.tabModel = {
-            'activeA': 'pill', // 'calendar' or 'pill'
-            'activeB': 'notification' // 'history' or 'notification'
+            'activeA': null, // 'calendar' or 'pill'
+            'activeB': 'history' // 'history' or 'notification'
         };
 
         init();
@@ -22,6 +22,11 @@
 
         function chActivTab(type, active){
             vm.tabModel[type] = active;
+            if(type === 'activeA'){
+                vm.tabModel['activeB'] = null;
+            } else {
+                vm.tabModel['activeA'] = null;
+            }
         }
 
         function updateModel(res) {
