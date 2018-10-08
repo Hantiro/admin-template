@@ -15,7 +15,8 @@
             forgotPass: forgotPass,
             confirm: confirm,
             logout: logout,
-            getDate: getDate
+            getDate: getDate,
+            religPopup: religPopup
         };
         return service;
 
@@ -120,7 +121,7 @@
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
                 windowTopClass: 'signup-modal',
-                size: 'lg',
+                size: 'md',
                 resolve: {}
             });
         }
@@ -162,6 +163,20 @@
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
                 windowTopClass: 'forgot-pass-modal',
+                size: 'md',
+                resolve: {}
+            });
+        }
+
+        function religPopup() {
+            return $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'components/relig-popup/relig-popup.html',
+                controller: 'ReligPopupCtrl',
+                controllerAs: 'vm',
+                backdropClass: 'custom-backdrop',
+                windowTopClass: 'relig-modal',
                 size: 'md',
                 resolve: {}
             });

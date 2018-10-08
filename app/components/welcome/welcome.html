@@ -1,12 +1,22 @@
 <div class="modal-header">
-    <h3 class="modal-title" id="modal-title">Welcome {{vm.name}}</h3>
+    <h3 class="modal-title" id="modal-title">
+        Welcome {{ vm.user.first_name }}
+    </h3>
 </div>
 <p>We are happy to greet you!</p>
 <p>You can try the app for 7 days FREE.</p>
 <div class="modal-body" id="modal-body">
-    <a href="">Test for 7 days</a>
+    <a ng-click="vm.test()">Test for 7 days</a>
 </div>
 <div class="modal-footer">
-    <button class="btn-default" type="button" ng-click="vm.buy()">{{'Buy full account now'}}</button>
-    <button class="button-not-default" type="button" ng-click="vm.cancel()">{{ 'cancel'}}</button>
+    <button class="btn-default"
+            type="button"
+            ng-click="vm.buy()">
+        {{'Buy full account now'}}
+    </button>
+    <button class="button-not-default"
+            type="button"
+            ng-click="vm.cancel()">
+        {{ 'cancel'}}
+    </button>
 </div>

@@ -1,0 +1,20 @@
+<div class="relig-modal">
+    <div class="contain">
+        <form name="vm.signUpForm" novalidate>
+            <div class="relig-modal__contact-content">
+                <div class="relig-modal__main-form">
+                    <relig-setting rs-options="vm.rsOptions"
+                                   rs-mode="signup"></relig-setting>
+                </div>
+                <div class="relig-modal__button-contain">
+                    <button class="button-default" ng-click="vm.next()">
+                        {{'CONTENT.CONTINUE'|translate}}
+                    </button>
+                    <button class="button-not-default" ng-click="vm.cancel()">
+                        {{ 'CONTENT.CANCEL' | translate}}
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

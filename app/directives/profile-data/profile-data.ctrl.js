@@ -39,7 +39,7 @@
             if (vm.selected_search_item) {
                 vm.data.address = vm.selected_search_item.description;
             }
-            userSvc.update(vm.data)
+            return userSvc.update(vm.data)
                 .then(function (res) {
                     if (res.status) {
                         messagesSvc.show('SUCCESS.UPDATED', 'success')

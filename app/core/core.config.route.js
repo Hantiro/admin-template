@@ -5,8 +5,8 @@
         .config(mainConfig);
 
     /* @ngInject */
-    function mainConfig($stateProvider, $urlRouterProvider) {
-
+    function mainConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+        $locationProvider.hashPrefix('!');
         $urlRouterProvider.otherwise('/start-page');
 
         $stateProvider

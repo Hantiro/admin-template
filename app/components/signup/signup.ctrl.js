@@ -10,6 +10,7 @@
         vm.tmp_credentials = authDataSvc.getCred();
         vm.signUp = signUp;
         vm.data = {};
+        vm.rsOptions = {};
 
         function signUp() {
             if (vm.signUpForm.$invalid) {
@@ -26,6 +27,8 @@
             authSvc.signUp(vm.data)
                 .then(function (res) {
                     if (res.success) {
+                        authDataSvc.setUser(res.data.user);
+                        authDataSvc.setToken(res.data.token);
                         $uibModalInstance.close(res);
                     } else if (res.message) {
                         messagesSvc.toastr.error(res.message);

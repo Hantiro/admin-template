@@ -4,17 +4,21 @@
         .controller('WelcomeCtrl', WelcomeCtrl);
 
     /* @ngInject */
-    function WelcomeCtrl($uibModalInstance,messagesSvc) {
+    function WelcomeCtrl($uibModalInstance, authDataSvc, messagesSvc) {
         var vm = this;
         vm.buy = buy;
-        // vm.data = angular.copy(data);
+        vm.user = authDataSvc.getUser();
 
-        function buy(){
-                $uibModalInstance.close(vm.model);
+        function buy() {
+            // $uibModalInstance.close(vm.model);
         }
 
-        vm.cancel = function(){
+        vm.test = function (res) {
+            $uibModalInstance.close('test_date');
+        };
+
+        vm.cancel = function () {
             $uibModalInstance.dismiss(false);
-        }
+        };
     }
 })();

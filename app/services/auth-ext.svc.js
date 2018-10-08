@@ -46,13 +46,21 @@
 
         function createUser() {
             modalSvc.signup().result.then(function (res) {
-                welcomeProcess(res);
-                authDataSvc.clearAuthData();
+                religSettings();
             }).catch(function () {
                 authDataSvc.clearAuthData();
             });
 
         }
+
+        function religSettings() {
+            modalSvc.religPopup().result.then(function (res) {
+                welcomeProcess();
+            }).catch(function (res){
+                authDataSvc.clearAuthData();
+            });
+        }
+
 
         function loginProcess() {
             authDataSvc.clearAuthData();
@@ -65,17 +73,18 @@
             });
         }
 
-        function welcomeProcess(userData) {
+        function welcomeProcess() {
             modalSvc.welcome().result.then(function (res) {
-                loginProcess();
+               if(res = 'test_date'){
+                   $state.go('app.my-main');
+               }
             }).catch(function () {
-                // logout();
-            })
+                authDataSvc.clearAuthData();
+            });
         }
 
         function resetPassProcess() {
             modalSvc.forgotPass().result.then(function () {
-
             });
         }
 

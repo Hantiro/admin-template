@@ -37,11 +37,13 @@
   md-checkbox.md-default-theme.md-checked .md-icon, md-checkbox.md-checked .md-icon {
     background-color: #4b0049;
   }
+
   &__checked {
     p {
       margin: 0;
     }
   }
+
   md-icon[md-font-icon] {
     border-radius: 2px;
     background-color: #b799b6;
@@ -136,13 +138,6 @@
     }
     &__main-form {
       display: block;
-    }
-    &__left-side {
-      //text-align: center;
-      width: 100%;
-    }
-    &__right-side {
-      width: 100%;
     }
   }
 }

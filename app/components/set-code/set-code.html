@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <p class="modal-title" id="modal-title">Enter the code, that you get by SMS</p>
+    <p class="modal-title" id="modal-title">{{ 'CONTENT.ADD_CODE' | translate }}</p>
 </div>
 <div class="modal-body" id="modal-body">
     <form name="vm.addCodeForm" novalidate>
@@ -17,9 +17,9 @@
     <div class="modal-text">
         <p class="modal-help">Didn't get?</p>
         <div>
-            <span>send again</span>
+            <span ng-click="vm.recentCode()">{{ 'CONTENT.SEND_AGAIN'|translate }}</span>
             or
-            <span>change phone number</span>
+            <span ng-click="vm.changePhone()">{{ 'CONTENT.REPLACE_NUMBER'|translate}}</span>
         </div>
     </div>
 </div>
