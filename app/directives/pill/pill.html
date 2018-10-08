@@ -1,16 +1,16 @@
 <div class="pill">
     <div class="pill__content">
         <div class="pill__info">
-            <p>First day of taking pills</p>
+            <p>{{'CONTENT.FIRST_DAY_PILLS' | translate}}</p>
             <input class="pill__input-calendar" type="text" ng-model="vm.model.date" readonly>
         </div>
         <div class="pill__info">
-            <p>Input the number of days to consume the pill</p>
+            <p>{{'CONTENT.INPUT_NUMBER_DAYS' | translate}}</p>
             <input type="number" min="1" ng-model="vm.model.count">
         </div>
         <div class="pill__buttons">
 
-                <button class="button-default" ng-click="vm.save()">save</button>
+                <button class="button-default" ng-click="vm.save()">{{'CONTENT.SAVE' | translate}}</button>
             <button class="button-not-default" ng-if="vm.isPills"
                     ng-click="vm.deletePills()">Delete last pills
             </button>

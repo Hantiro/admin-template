@@ -9,14 +9,6 @@
     <a ng-click="vm.test()">Test for 7 days</a>
 </div>
 <div class="modal-footer">
-    <button class="btn-default"
-            type="button"
-            ng-click="vm.buy()">
-        {{'Buy full account now'}}
-    </button>
-    <button class="button-not-default"
-            type="button"
-            ng-click="vm.cancel()">
-        {{ 'cancel'}}
-    </button>
+    <button class="btn-default" type="button" ng-click="vm.buy()">{{'Buy full account now'}}</button>
+    <button class="button-not-default" type="button" ng-click="vm.cancel()">{{'CONTENT.CANCEL' | translate}}</button>
 </div>

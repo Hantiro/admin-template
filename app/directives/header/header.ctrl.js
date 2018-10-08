@@ -13,8 +13,10 @@
         vm.login = authExtSvc.loginProcess;
         vm.user = authDataSvc.getUser;
         vm.setLang = setLang;
-        vm.currentLang = $translate.use();
-        vm.allLang = $translate.getAvailableLanguageKeys();
+        vm.currentLang = $translate.use().toUpperCase();
+        vm.allLang = $translate.getAvailableLanguageKeys().map(function (el, index, arr) {
+            return el.toUpperCase();
+        });
         vm.menu = {
             full: [
                 {
@@ -38,8 +40,8 @@
                 {
                     id: 3,
                     view: 'app.main.tradition',
-                    title: 'tradition',
-                    trans: 'CONTENT.TRADITION'
+                    title: 'halacot',
+                    trans: 'CONTENT.HALACOT'
                 },
                 {
                     id: 4,
@@ -64,8 +66,8 @@
                 {
                     id: 2,
                     view: 'app.main.tradition',
-                    title: 'tradition',
-                    trans: 'CONTENT.TRADITION'
+                    title: 'halacot',
+                    trans: 'CONTENT.HALACOT'
                 }
             ]
         };
@@ -76,7 +78,7 @@
         }
 
         var eventTranslateEnd = $rootScope.$on('$translateChangeEnd',function(e,d){
-            vm.currentLang =  $translate.use();
+            vm.currentLang =  $translate.use().toUpperCase();
         });
 
         $scope.$on('$destroy', function () {
