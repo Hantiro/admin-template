@@ -5,7 +5,7 @@
             <md-radio-button ng-repeat="setting in vm.religious_settings"
                              ng-value="setting.id"
                              ng-click="vm.checkSettings(setting.id)">
-                {{setting.description}}
+                {{ vm.RELIG_SETTING[setting.name] | translate }}
             </md-radio-button>
 
         </md-radio-group>

@@ -19,6 +19,11 @@
         vm.SETTING_CONST = {
             MORDECAI: 2
         };
+        vm.RELIG_SETTING = {
+            'YOSEF': 'CONTENT.SEPHARDY_YOSEF',
+            'MORDECAI': 'CONTENT.SEPHARDY_MORDECAI',
+            'ASHKENAZI': 'CONTENT.SEPHARDY_AUTHORITIES'
+        };
 
         init();
 
@@ -40,7 +45,16 @@
             settingsSvc.getReligiousSettings()
                 .then(function (res) {
                     vm.religious_settings = res.data || [];
+                    prepareRelig();
                 })
+        }
+
+        function prepareRelig() {
+            vm.religious_settings = vm.religious_settings.map(function (val,index) {
+                var temp = val;
+                temp.name = temp.name.toUpperCase();
+                return temp;
+            });
         }
 
         function saveSettings(config) {
