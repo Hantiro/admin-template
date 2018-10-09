@@ -1,7 +1,17 @@
 .signup-modal {
   margin: 30px 0;
+  &__title-user {
+    text-align: center;
+    color: #4b0049;
+    font-family: AssistantSemiBold;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
   .contain {
     width: 80%;
+  }
+  &__user-side {
+    margin: auto;
   }
   &__main-form {
     margin: auto;

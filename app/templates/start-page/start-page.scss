@@ -255,13 +255,13 @@
     width: 30%;
   }
   &__book-content {
-    width: 30%;
+    width: 31%;
     display: flex;
   }
   &__images {
     img {
-      width: 100%;
-      height: auto;
+      width: 205px;
+      height: 330px;
 
     }
   }
@@ -296,6 +296,9 @@
 
   @media screen and(max-width: 1230px) {
     .start-page {
+      &__book-description{
+        margin: 0;
+      }
       &__buttons-app {
         display: block;
       }
@@ -304,7 +307,8 @@
       }
       &__images {
         img {
-          height: 350px;
+          width: 200px;
+          height: 330px;
         }
       }
       &__book-content {
@@ -320,7 +324,7 @@
 
   @media screen and(max-width: 1125px) {
     .start-page {
-      &__title{
+      &__title {
         font-size: 35px;
       }
       &__htc {
@@ -346,10 +350,10 @@
   }
   @media screen and (max-width: 780px) {
     .start-page {
-      &__htc{
+      &__htc {
         left: 30px;
       }
-      &__promo{
+      &__promo {
         height: 230px;
       }
       &__buttons-promo {

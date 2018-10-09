@@ -3,7 +3,7 @@
         <div class="my-main__background">
             <header></header>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 my-main__start-day">
                     <div class="my-main__menu">
                         <div class="row">
                             <div class="col-md-6 col-sm-6 my-main__elements">
@@ -17,8 +17,12 @@
                                 ib-type="default"
                                 ib-is-edit="!!vm.dateBirthday.start"
                                 ib-date=""></info-block>
-                    <button ng-if="!!vm.dateBirthday.start"
-                            ng-click="vm.remove()">Delete gestation</button>
+                    <button class="delete-button" ng-if="!!vm.dateBirthday.start"
+                            ng-click="vm.remove()">
+                            Delete gestation
+                        <img src="content/img/icon/close-icon.png" alt="delete last event"/>
+                    </button>
+
                 </div>
 
                 <div class="col-md-4">

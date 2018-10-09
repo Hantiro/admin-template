@@ -4,6 +4,10 @@
   .contain {
     width: 80%;
   }
+  &__button-contain {
+    width: 100%;
+    text-align: center;
+  }
   &__main-form {
     margin: auto;
     display: flex;

@@ -41,7 +41,7 @@
                     id: 3,
                     view: 'app.main.tradition',
                     title: 'halacot',
-                    trans: 'CONTENT.HALACOT'
+                    trans: 'CONTENT.TRADITION'
                 },
                 {
                     id: 4,
@@ -67,7 +67,7 @@
                     id: 2,
                     view: 'app.main.tradition',
                     title: 'halacot',
-                    trans: 'CONTENT.HALACOT'
+                    trans: 'CONTENT.TRADITION'
                 }
             ]
         };

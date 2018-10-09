@@ -1,5 +1,5 @@
 .relig-setting {
-
+  margin: auto;
   md-input-container {
     margin: 0;
   }
@@ -94,6 +94,7 @@
     font-family: AssistantSemiBold;
     margin-bottom: 20px;
     font-size: 20px;
+    text-align: center;
   }
   &__send {
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);

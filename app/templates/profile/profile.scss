@@ -110,6 +110,7 @@
     font-size: 18px;
   }
   &__button-contain {
+    margin-top: 10px;
     width: 36%;
     text-align: right;
   }
@@ -122,6 +123,7 @@
       text-align: center;
     }
     &__main-form {
+      width: 100%;
       display: block;
     }
     &__left-side {
