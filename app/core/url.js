@@ -6,6 +6,9 @@
                 var baseUrl = 'http://mahsevon.grassbusinesslabs.tk/api/';
 
                 return {
+                    add_info: {
+                        getByName: baseUrl + 'addition-information/by-name',
+                    },
                     text: {
                         terms: baseUrl + 'license-agreements/terms',
                         licence: baseUrl + 'license-agreements/licence',

@@ -9,9 +9,14 @@
             terms: terms,
             licence: licence,
             about: about,
-            contactUs: contactUs
+            contactUs: contactUs,
+            getByNameArr: getByNameArr
         };
         return model;
+
+        function getByNameArr(namesArr) {
+            return http.post(url.add_info.getByName, { names: namesArr});
+        }
 
         function terms() {
             return http.get(url.text.terms);
