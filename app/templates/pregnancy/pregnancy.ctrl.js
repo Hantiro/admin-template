@@ -17,13 +17,12 @@
         vm.date;
 
         $scope.$on(dateSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
-            vm.model = data.day;
+            vm.model = dateSvc.getSelectedDay();
             editStartDate();
         });
 
         $scope.$on(dateSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
-            vm.model = data.day;
-            editStartDate();
+            vm.model = dateSvc.getSelectedDay();
         });
 
         init();
@@ -57,9 +56,11 @@
         function getDate() {
             gestationSvc.get().then(function (res) {
                 vm.dateBirthday = res;
-                vm.date = res.start_ext.split('/');
-                vm.text.title = vm.date[0] + ' ' + vm.date[1];
-                vm.text.subtitle = vm.date[2];
+                if(res.start_ext){
+                    vm.date = res.start_ext.split('/');
+                    vm.text.title = vm.date[0] + ' ' + vm.date[1];
+                    vm.text.subtitle = vm.date[2];
+                }
             })
         }
     }
