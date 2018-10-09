@@ -1,7 +1,6 @@
 .info-block {
   color: #e4587f;
   margin-top: 70px;
-
   &__circle-day {
     text-align: center;
     background-color: white;
@@ -20,8 +19,11 @@
   &__edit {
     margin-top: 20px;
   }
+
   &__date {
-    margin-top: 10px;
+    position: relative;
+    height: 25px;
+    font-size: 20px;
     &:after {
       height: 2px;
       width: 50%;
@@ -33,17 +35,20 @@
       transform: translateX(-50%);
     }
   }
+
   &__default-text {
     font-family: AssistantRegular;
     font-size: 20px;
     width: 65%;
     margin: 0 auto;
   }
+
   &__birth {
     color: #32004b;
     font-family: ArimoRegular;
     font-size: 20px;
   }
+
   &__pregnant {
     text-align: center;
     position: relative;
@@ -52,6 +57,7 @@
       width: 200px;
     }
   }
+
   &__text-bold {
     font-family: AssistantBold;
     font-size: 20px;

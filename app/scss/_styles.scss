@@ -93,7 +93,7 @@ html, body {
   margin: 0 !important;
   padding: 0 !important;
   background-color: #fff;
-  overflow-y: visible!important;
+  overflow-y: visible !important;
   position: initial !important;
   top: initial !important;
   overflow: initial !important;
@@ -159,41 +159,51 @@ a:hover {
 .cursor-pointer {
   cursor: pointer;
 }
+
 .modal-footer {
   border-top: 0;
   text-align: center;
   padding: 10px 15px 20px;
 }
+
 .modal-header {
   padding: 20px;
   border-bottom: 0;
 }
+
 .modal-title {
   font-family: AssistantSemiBold;
   color: #4b0049;
   font-size: 18px;
   text-align: center;
 }
+
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.modal-open{
+
+.modal-open {
   overflow: auto;
 }
-input[type=number] {
-  -moz-appearance:textfield;
-}
 
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 .modal-content {
   border-radius: 0;
 }
 
+md-progress-linear {
+  display: none;
+}
+
 md-input-container:not(.md-input-invalid).md-input-focused .md-input {
   border-color: #a57fa4;
 }
+
 .md-virtual-repeat-container.md-autocomplete-suggestions-container {
   z-index: 1100 !important;
 }
@@ -220,7 +230,6 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
   height: 30px;
 }
 
-
 .button-not-default {
   text-transform: uppercase;
   background-color: #fff;
@@ -228,6 +237,31 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
   padding: 0 15px;
   height: 30px;
   border: 1px solid #4b0049;
+}
+
+.button-primary {
+  text-transform: uppercase;
+  background-color: #fff;
+  color: #4b0049;
+  padding: 0 15px;
+  height: 30px;
+  border: 1px solid #4b0049;
+  min-width: 165px;
+}
+
+.delete-button {
+  z-index: 40;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: underline;
+  color: #858585;
+  border: 0;
+  background: transparent;
+  margin-top: 10px;
+  img {
+    vertical-align: bottom;
+    cursor: pointer;
+  }
 }
 
 .contain {

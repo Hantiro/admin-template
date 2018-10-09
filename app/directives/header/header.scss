@@ -11,15 +11,16 @@
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-    margin-left: -11px;
     font-family: AssistantExtraBold;
     color: #ffffff;
     li {
       text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
       text-transform: uppercase;
-      margin-right: 25px;
       font-size: 16px;
       cursor: pointer;
+      &:hover {
+        color: #4b0049;
+      }
       a {
         color: inherit;
       }
@@ -84,7 +85,9 @@
       padding: 0 5%;
       margin-left: auto;
     }
-
+    li {
+      margin-right: 25px;
+    }
   }
   &__authorization {
     align-items: center;
@@ -120,6 +123,9 @@
 
 @media screen and(max-width: 1230px) {
   .main-header {
+    &__logo {
+      margin-left: 0;
+    }
     &__right-side {
       width: auto;
     }
