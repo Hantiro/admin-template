@@ -108,7 +108,16 @@
                 },
                 templateUrl: 'templates/faq/faq.html',
                 controller: 'FaqCtrl',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                resolve: {
+                    /* @ngInject */
+                    faq: function (textSvc) {
+                        return textSvc.faq()
+                            .then(function (res) {
+                                return res.entity || [];
+                            })
+                    }
+                }
             })
             .state('app.main.rabbi', {
                 url: '/rabbi',
@@ -164,7 +173,7 @@
                 resolve: {
                     /* @ngInject */
                     licence: function (textSvc) {
-                        return textSvc.licence()
+                        return textSvc.faq()
                             .then(function (res) {
                                 return res.entity || [];
                             })

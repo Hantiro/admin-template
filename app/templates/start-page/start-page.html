@@ -43,11 +43,10 @@
             <p>{{ 'CONTENT.APPROVAL' | translate }}</p>
         </div>
         <div class="start-page__approvals--bottom">
-            <img class="start-page__approvals-image" src="content/img/6.jpg">
-            <img class="start-page__approvals-image" src="content/img/7.jpg">
-            <img class="start-page__approvals-image" src="content/img/8.jpg">
-            <img class="start-page__approvals-image" src="content/img/9.jpg">
-            <img class="start-page__approvals-image" src="content/img/10.jpg">
+            <img class="start-page__approvals-image"
+                 ng-repeat="img in vm.imgs"
+                 ng-src="{{img}}"
+                 ng-click="vm.viewImg(img)">
             <!--<div class="start-page__approvals-content">-->
             <!--&lt;!&ndash;<div class="start-page__video">&ndash;&gt;-->
             <!--&lt;!&ndash;<iframe width="1280" height="720" src="https://www.youtube.com/embed/6v2L2UGZJAM"&ndash;&gt;-->

@@ -7,18 +7,23 @@
     function textSvc(url, http) {
         var model = {
             terms: terms,
-            licence: licence,
+            faq: faq,
             about: about,
-            contactUs: contactUs
+            contactUs: contactUs,
+            getByNameArr: getByNameArr
         };
         return model;
+
+        function getByNameArr(namesArr) {
+            return http.post(url.add_info.getByName, { names: namesArr});
+        }
 
         function terms() {
             return http.get(url.text.terms);
         }
 
-        function licence() {
-            return http.get(url.text.licence);
+        function faq() {
+            return http.get(url.text.faq);
         }
 
         function about() {

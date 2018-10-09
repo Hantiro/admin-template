@@ -16,7 +16,8 @@
             confirm: confirm,
             logout: logout,
             getDate: getDate,
-            religPopup: religPopup
+            religPopup: religPopup,
+            viewImg: viewImg
         };
         return service;
 
@@ -179,6 +180,24 @@
                 windowTopClass: 'relig-modal',
                 size: 'md',
                 resolve: {}
+            });
+        }
+
+        function viewImg(imgSrc) {
+            return $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'components/view-img/view-img.html',
+                controller: 'ViewImgCtrl',
+                controllerAs: 'vm',
+                backdropClass: 'custom-backdrop',
+                windowTopClass: 'view-img',
+                size: 'lg',
+                resolve: {
+                    imgSrc: function(){
+                        return imgSrc || ''
+                    }
+                }
             });
         }
 
