@@ -6,8 +6,9 @@
                 <i class="fas fa-arrow-left"></i>
             </span>
             <span class="calendar-custom__title col-80-flex">
-                {{ vm.calendarModel.gregorian_year + ' - ' +
-                  ('MONTH.'+vm.calendarModel.jewish_month_name | translate) }}
+                <span>{{vm.calendarModel.gregorian_year}}</span> &nbsp; / &nbsp;
+                <span>{{vm.calendarModel.jewish_year_heb}}</span>
+                <span> &nbsp; - &nbsp;{{('MONTH.'+vm.calendarModel.jewish_month_name | translate)}}</span>
             </span>
             <span class="calendar-custom__next col-10-flex" ng-click="vm.prevMonth()">
                 <i class="fas fa-arrow-right"></i>
