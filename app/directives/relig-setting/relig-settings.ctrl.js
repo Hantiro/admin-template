@@ -16,6 +16,9 @@
         vm.religious_settings;
         vm.tmp_settings = {};
         vm.MORDECAI = 'Mordecai';
+        vm.SETTING_CONST = {
+            MORDECAI: 2
+        };
 
         init();
 
@@ -62,6 +65,9 @@
 
         function checkSettings(id) {
             vm.tmp_settings.religion_settings_id = id;
+            if(id === vm.SETTING_CONST.MORDECAI){
+                vm.user_settings.le_horma = true;
+            }
         }
 
         function changeReligion(item) {
