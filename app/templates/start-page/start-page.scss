@@ -230,12 +230,10 @@
     &--bottom {
       width: 90%;
       margin: auto;
-      text-align: justify;
-      &:after {
-        content: '';
-        width: 100%;
-        display: inline-block;
-      }
+      /* text-align: justify; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
   &__approvals-information {
