@@ -1,7 +1,6 @@
 .info-block {
   color: #e4587f;
   margin-top: 70px;
-
   &__circle-day {
     text-align: center;
     background-color: white;
@@ -20,7 +19,7 @@
   &__edit {
     margin-top: 20px;
   }
-  }
+
   &__date {
     position: relative;
     height: 25px;
@@ -35,24 +34,21 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    &:empty{
-      background: red;
-      padding: 3px;
-      margin-left: 7px;
-      display: inline-block;
-    }
   }
+
   &__default-text {
     font-family: AssistantRegular;
     font-size: 20px;
     width: 65%;
     margin: 0 auto;
   }
+
   &__birth {
     color: #32004b;
     font-family: ArimoRegular;
     font-size: 20px;
   }
+
   &__pregnant {
     text-align: center;
     position: relative;
@@ -61,6 +57,7 @@
       width: 200px;
     }
   }
+
   &__text-bold {
     font-family: AssistantBold;
     font-size: 20px;
@@ -81,6 +78,7 @@
       }
     }
   }
+}
 
 @media screen and(max-width: 992px) {
   .info-block {
