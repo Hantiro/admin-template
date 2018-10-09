@@ -11,7 +11,7 @@
                     },
                     text: {
                         terms: baseUrl + 'license-agreements/terms',
-                        licence: baseUrl + 'license-agreements/licence',
+                        faq: baseUrl + 'license-agreements/faq',
                         about: baseUrl + 'license-agreements/about'
                     },
 

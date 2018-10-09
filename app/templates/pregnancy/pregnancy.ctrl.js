@@ -63,5 +63,10 @@
                 }
             })
         }
+
+        $scope.$on('lang_changed',function (e,d) {
+            init();
+        });
+
     }
 })();

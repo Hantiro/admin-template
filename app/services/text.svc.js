@@ -7,7 +7,7 @@
     function textSvc(url, http) {
         var model = {
             terms: terms,
-            licence: licence,
+            faq: faq,
             about: about,
             contactUs: contactUs,
             getByNameArr: getByNameArr
@@ -22,8 +22,8 @@
             return http.get(url.text.terms);
         }
 
-        function licence() {
-            return http.get(url.text.licence);
+        function faq() {
+            return http.get(url.text.faq);
         }
 
         function about() {
