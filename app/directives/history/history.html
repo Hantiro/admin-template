@@ -8,7 +8,7 @@
             <div class="history__date">
                 <div layout="row" layout-align="flex-end space-between">
                     <div class="">
-                        <span class="history__date-text">Input the day of menstruation</span>
+                        <span class="history__date-text">{{'CONTENT.CHOOSE_FROM_CALENDAR'|translate}}</span>
                         <img src="content/img/icon/fa-calendar.png">
                     </div>
                 </div>
@@ -33,7 +33,7 @@
         </div>
     </div>
     <div dir="ltr" ng-if="vm.step === vm.STEPS.ADD_DATE_TIME">
-        <div>Selected date:</div>
+        <div>{{'CONTENT.CHOOSE_FROM_CALENDAR'|translate}}</div>
         <div class="history__info">
             <input class="history__input-calendar" type="text" ng-model="vm.dateText" readonly>
         </div>

@@ -1,13 +1,15 @@
 {
   "CONTENT": {
     "DOWNLOAD_APP": "Download app",
-    "ABOUT_SITE_TITLE": "Explanation about the app and website",
-    "ABOUT_SITE_DESCRIPTION": "Video of virtual explanition about the website. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+    "ABOUT_SITE_TITLE": "\"Explanation of application and site\" purity of the house and calculator purity",
+    "ABOUT_SITE_DESCRIPTION": "The \"Taheret HaBayit\" website and the \"Tahara Purification\" application are designed to help the woman cleanse the family and replace the manual purification tablets with new tools in the modern era. Many women testify that they are missing out on tests during the seven days, and that they are confused with calculating retirement days. The perfect solution is the \"purity of the home - purity\" program. The software gives the possibility of defining each woman as such, and according to what custom of laws she chooses. For example, according to Rabbi Ovadia Yosef zt \"l, according to Rabbi Mordechai Eliyahu zt\" l or according to the testimony of Ashkenaz. The software is connected to a world clock by calculating the times and sending reminders in the morning and before sunset all over the world according to the woman's location online. In the app and on the site are Halachot in easy and shortened language according to topics, as well as a personal access code.",
     "TITLE_LANDING": "Love and honesty are the things that make a good wife and mother...",
-    "SECOND_TITLE_LANDING": "All her honor is the daughter of a king, and she is dressed in gold. (Tehillim M”P)",
+    "SECOND_TITLE_LANDING": "כל כבודה בת מלך פנימה ממשבצות זהב לבושה. (תהילים מ”פ",
+    "TITLE_PROPOSE": "Download the \"Taharat HaBayit - Tahara Calculator\" program today and save yourself from confusion and mistakes.",
     "REGISTER": "Register",
     "_______________________________": "________________________",
     "CALENDAR": "My calendar",
+    "JUST_CALENDAR": "Calendar",
     "PREGNANCY_CALCULATOR": "Pregnancy calculator",
     "ASK_RABBI": "Ask the rabbi",
     "FAQ": "FAQ",
@@ -58,6 +60,7 @@
     "PROFILE_SETTINGS": "Profile settings",
     "LIST_OF_DAYS": "List of days of seeing",
     "LIST_OF_DAYS2": "Visual evidence list",
+    "LIST_OF_RESULT": "List of result",
     "LAWS": "Halacot",
     "PREGNANCY": "Pregnancy calculator",
     "MIKHVAS": "Mikvhas",
@@ -129,7 +132,10 @@
     "ALREADY_REGISTER": "You already register",
     "SEPHARDY_YOSEF": "Sephardy according to Rabbi Ovadia Yosef Z.T.L",
     "SEPHARDY_MORDECAI": "Sephardy according to Rabbi Mordecai Eliyahu Z.T.L",
-    "SEPHARDY_AUTHORITIES": "Ashkenazi according to Ashkenazic authorities"
+    "SEPHARDY_AUTHORITIES": "Ashkenazi according to Ashkenazic authorities",
+    "CHOOSE_FROM_CALENDAR": "Choose from the calendar the date",
+    "CHOOSE_FROM_CALENDAR2": "Choose from the calendar the date"
+
 
   },
   "ERROR": {

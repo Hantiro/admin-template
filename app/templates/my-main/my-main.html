@@ -10,13 +10,13 @@
                                  class="col-md-6 col-sm-6 my-main__elements"
                                  ng-class="{'my-main__menu--active': vm.tabModel.activeA === 'pill'}">
                                 <img src="content/img/icon/pill_time.png" alt="">
-                                <p>take a pill</p>
+                                <p>{{ 'CONTENT.PILLS' | translate }}</p>
                             </div>
                             <div ng-click="vm.chActivTab('activeA','calendar')"
                                  class="col-md-6 col-sm-6 my-main__elements"
                                  ng-class="{'my-main__menu--active': vm.tabModel.activeA === 'calendar'}">
                                 <img src="content/img/icon/cal.png" alt="">
-                                <p>calendar</p>
+                                <p>{{ 'CONTENT.JUST_CALENDAR' | translate }}</p>
                             </div>
                         </div>
                     </div>
@@ -46,13 +46,13 @@
                                  class="col-md-6 col-sm-6 my-main__elements"
                                  ng-class="{'my-main__menu--active': vm.tabModel.activeB === 'history'}">
                                 <img src="content/img/icon/list-result.png" alt="">
-                                <p>list of results</p>
+                                <p>{{ 'CONTENT.LIST_OF_RESULT' | translate }}</p>
                             </div>
                             <div ng-click="vm.chActivTab('activeB','notification')"
                                  class="col-md-6 col-sm-6 my-main__elements"
                                  ng-class="{'my-main__menu--active': vm.tabModel.activeB === 'notification'}">
                                 <img class="my-main__notification" src="content/img/icon/not.png" alt="">
-                                <p>notification</p>
+                                <p>{{ 'CONTENT.NOTIFICATION' | translate }}</p>
                             </div>
                         </div>
                     </div>
