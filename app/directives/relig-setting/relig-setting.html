@@ -5,7 +5,7 @@
             <md-radio-button ng-repeat="setting in vm.religious_settings"
                              ng-value="setting.id"
                              ng-click="vm.checkSettings(setting.id)">
-                {{setting.description}}
+                {{ vm.RELIG_SETTING[setting.name] | translate }}
             </md-radio-button>
 
         </md-radio-group>
@@ -43,7 +43,7 @@
                 </md-checkbox>
             </div>
             <div class="profile__checked"
-                 ng-if="vm.user_settings.religion_settings_id.id === 2">
+                 ng-if="vm.user_settings.religion_settings_id.id === vm.SETTING_CONST.MORDECAI">
                 <md-checkbox ng-model="vm.user_settings.le_horma" aria-label="Checkbox 1">
                     <p>{{'CONTENT.24HOURS'|translate}}</p>
                 </md-checkbox>
