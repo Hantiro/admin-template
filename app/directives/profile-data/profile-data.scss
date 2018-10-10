@@ -1,4 +1,5 @@
 .profile-data {
+  text-align: center;
   md-input-container {
     margin: 0;
   }
@@ -21,6 +22,9 @@
     p {
       margin: 0;
     }
+  }
+  &__save-button{
+    margin-top: 10px;
   }
   md-icon[md-font-icon] {
     border-radius: 2px;
