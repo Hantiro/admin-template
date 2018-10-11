@@ -39,7 +39,9 @@
             });
 
             $scope.$on(dateSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
-                init();
+                if (vm.step !== vm.STEPS.ADD_DATE_TIME) {
+                    init();
+                }
             });
 
             $scope.$on(dateSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function () {
@@ -62,7 +64,7 @@
                 vm.dateText = generateDateFormat(vm.dateModel);
             }
 
-            function generateDateFormat(day){
+            function generateDateFormat(day) {
                 return [day.gregorian_day, day.gregorian_month, day.gregorian_year].join('/');
             }
 
