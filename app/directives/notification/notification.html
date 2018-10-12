@@ -7,6 +7,33 @@
             </div>
             <md-switch ng-model="item.status"></md-switch>
         </div>
+        <md-input-container md-no-float class="md-block" flex>
+            <div class="notification__write-settings">
+                <p>{{ 'CONTENT.TIME_FOR_ALARM' | translate }}</p>
+                <input type="text" id="time"
+                       required
+                       name="time"
+                       aria-label="time">
+            </div>
+        </md-input-container>
+        <md-input-container md-no-float class="md-block" flex>
+            <div class="notification__write-settings">
+                <p>{{ 'CONTENT.HOUR_MORNING' | translate }}</p>
+                <input type="text" id="hour"
+                       required
+                       name="hour"
+                       aria-label="hour">
+            </div>
+        </md-input-container>
+        <md-input-container md-no-float class="md-block" flex>
+            <div class="notification__write-settings">
+                <p>{{ 'CONTENT.HOUR_SUNSET' | translate }}</p>
+                <input type="text" id="sunset"
+                       required
+                       name="sunset"
+                       aria-label="sunset">
+            </div>
+        </md-input-container>
         <button class="notification__button button-default" ng-click="vm.save()">
             {{'CONTENT.SAVE'|translate}}
         </button>

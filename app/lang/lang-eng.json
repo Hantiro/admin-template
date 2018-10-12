@@ -82,7 +82,7 @@
     "FULL_NAME": "Full name",
     "PILLS": "Pills",
     "STOP_NOTIFICATION": "stop the notification",
-    "MENOPAUSE": "7 clens",
+    "MENOPAUSE": "7 cleans",
     "THE_FIRST_SEVENTH_DAYS": "The first and seventh day will send an notification anyway",
     "STOP_THEARA": "Notification on hefsek theara",
     "DAY_NIGHT": "Day/night notification",
@@ -135,7 +135,10 @@
     "SEPHARDY_MORDECAI": "Sephardy according to Rabbi Mordecai Eliyahu Z.T.L",
     "SEPHARDY_AUTHORITIES": "Ashkenazi according to Ashkenazic authorities",
     "CHOOSE_FROM_CALENDAR": "Choose from the calendar the date",
-    "CHOOSE_FROM_CALENDAR2": "Choose from the calendar the date"
+    "CHOOSE_FROM_CALENDAR2": "Choose from the calendar the date",
+    "TIME_FOR_ALARM": "Time for alarm:",
+    "HOUR_MORNING": "An hour in the morning:",
+    "HOUR_SUNSET": "Two hours before sunset:"
 
 
   },
