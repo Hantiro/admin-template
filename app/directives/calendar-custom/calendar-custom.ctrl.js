@@ -6,7 +6,7 @@
         .controller('CalendarCustomCtrl', CalendarCustomCtrl);
 
     /* @ngInject */
-    function CalendarCustomCtrl($scope, utilsSvc, dateSvc, dateExtSvc, messagesSvc) {
+    function CalendarCustomCtrl($scope, utilsSvc, dateSvc, dateExtSvc, messagesSvc, modalSvc) {
         var vm = this;
 
         vm.nextMonth = nextMonth;
@@ -132,8 +132,32 @@
 
         function selectDay(calendarObj, day) {
             if(checkSelectedDay(calendarObj, day)){
-                dateSvc.processSelectDay(calendarObj, day, $scope);
+                if(isFutureDay(calendarObj, day)){
+                    if(isDayPrediction(day)){
+                        modalSvc.dayInfo(day);
+                    }
+                } else {
+                    dateSvc.processSelectDay(calendarObj, day, $scope);
+                }
             }
+        }
+
+        function isDayPrediction(day) {
+            return day.events.prediction;
+        }
+
+        function isFutureDay(calendarObj, day){
+            var currDay = dateSvc.getCurrentDay();
+            if(day.jewish_year < currDay.jewish_year){
+                return false;
+            }
+            if(day.jewish_month < currDay.jewish_month){
+                return false;
+            }
+            if(day.jewish_month === currDay.jewish_month && day.jewish_day <= currDay.jewish_day){
+                return false;
+            }
+            return true;
         }
 
         function afterSelectDay(selectModel){

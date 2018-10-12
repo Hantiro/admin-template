@@ -17,7 +17,8 @@
             logout: logout,
             getDate: getDate,
             religPopup: religPopup,
-            viewImg: viewImg
+            viewImg: viewImg,
+            dayInfo: dayInfo
         };
         return service;
 
@@ -196,6 +197,24 @@
                 resolve: {
                     imgSrc: function(){
                         return imgSrc || ''
+                    }
+                }
+            });
+        }
+
+        function dayInfo(day) {
+            return $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'components/day-info/day-info.html',
+                controller: 'DayInfoCtrl',
+                controllerAs: 'vm',
+                backdropClass: 'custom-backdrop',
+                windowTopClass: 'day-info',
+                size: 'sm',
+                resolve: {
+                    day: function(){
+                        return day
                     }
                 }
             });

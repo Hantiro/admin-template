@@ -135,9 +135,11 @@
     "SEPHARDY_MORDECAI": "Sephardy according to Rabbi Mordecai Eliyahu Z.T.L",
     "SEPHARDY_AUTHORITIES": "Ashkenazi according to Ashkenazic authorities",
     "CHOOSE_FROM_CALENDAR": "Choose from the calendar the date",
-    "CHOOSE_FROM_CALENDAR2": "Choose from the calendar the date"
-
-
+    "CHOOSE_FROM_CALENDAR2": "Choose from the calendar the date",
+    "PREDICTION_MONTHLY": "Monthly",
+    "PREDICTION_AVERAGE": "Middle",
+    "PREDICTION_INTERVAL": "Interval",
+    "MONTH_DAY": "Month day"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",

@@ -88,6 +88,9 @@
             if (day.events) {
                 day.events.top = +day.events.top;
                 day.events.bottom = +day.events.bottom;
+                if(day.events.prediction_type){
+                    day.events.prediction_type = day.events.prediction_type.toUpperCase();
+                }
             }
             day.mark.clean_day = !!day.mark.clean_day;
             day.mark.pill_day = !!day.mark.pill_day;

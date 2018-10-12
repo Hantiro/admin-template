@@ -22,6 +22,12 @@
             'PILLS': 9
         };
 
+        var PREDICTION = {
+            'MONTHLY': 1,
+            'AVERAGE': 2,
+            'INTERVAL': 3
+        };
+
         var CALENDAR_EVENT = {
             DELETED_EVENT: '0',
             CREATED_EVENT: '1',
@@ -89,6 +95,7 @@
             PERIOD_CONST: PERIOD_CONST,
             TYPE_EVENT: TYPE_EVENT,
             CALENDAR_TYPE: CALENDAR_TYPE,
+            PREDICTION: PREDICTION
         };
 
         //requests -------------------------------
@@ -209,7 +216,7 @@
             $rootScope.$broadcast(CALENDAR_EVENT.SELECTED_CALENDAR,{
                 day: dayObj,
                 month: monthObj
-            })
+            });
         }
 
         function selectTime(selectedDay, monthObj) {

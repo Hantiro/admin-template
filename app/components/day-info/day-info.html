@@ -1,10 +1,13 @@
 <div class="modal-header">
-    <h3 class="modal-title" id="modal-title">{{vm.config.title | translate}}</h3>
+    <div class="row">
+        <div class="col-md-8">{{ 'CONTENT.MONTH_DAY' | translate }}</div>
+        <div class="col-md-4"><img ng-src="{{ 'content/img/'+ vm.EVENT_IMG[vm.day.events.bottom] }}"></div>
+    </div>
 </div>
 <div class="modal-body" id="modal-body">
- {{vm.config.content | translate}}
+ {{ ('CONTENT.PREDICTION_' + vm.day.events.prediction_type) | translate }}
 </div>
-<div class="modal-footer">
-    <button class="button-default" type="button" ng-click="vm.ok()">{{'CONTENT.OK'|translate}}</button>
-    <button class="button-not-default" type="button" ng-click="vm.cancel()">{{'CONTENT.CANCEL'|translate}}</button>
+<div class="modal-footer" >
+    <!--<button class="button-default" type="button" ng-click="vm.ok()">{{'CONTENT.OK'|translate}}</button>-->
+    <!--<button class="button-not-default" type="button" ng-click="vm.cancel()">{{'CONTENT.CANCEL'|translate}}</button>-->
 </div>
