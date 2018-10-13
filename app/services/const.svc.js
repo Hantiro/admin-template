@@ -5,9 +5,11 @@
 
     /* @ngInject */
     function constSvc() {
+        var ICON_PATH = 'content/img/icon/';
+
         var CALENDAR_TYPE = {
-            DETAILED: "detailed",
-            SIMPLE: "simple"
+            DETAILED: 'detailed',
+            SIMPLE: 'simple'
         };
 
         var EVENT_CONST = {
@@ -66,8 +68,14 @@
             PERIOD_CONST: PERIOD_CONST,
             TYPE_EVENT: TYPE_EVENT,
             CALENDAR_TYPE: CALENDAR_TYPE,
-            PREDICTION: PREDICTION
+            PREDICTION: PREDICTION,
+            ICON_PATH: ICON_PATH,
+            eventIconPath:eventIconPath
         };
+
+        function eventIconPath(event){
+           return  ICON_PATH+EVENT_IMG[event];
+        }
 
         return model;
     }

@@ -15,7 +15,7 @@
         vm.isCurrentDay = isCurrentDay;
         vm.isDayInCurrentMonth = isDayInCurrentMonth;
         vm.isDaySelected = isDaySelected;
-        vm.dayEventImgSrc = dayEventImgSrc;
+        vm.dayEventImgSrc = constSvc.eventIconPath;
 
         vm.EVENT_CONST = constSvc.EVENT_CONST;
         vm.IMG_CONST = constSvc.EVENT_IMG;
@@ -79,10 +79,6 @@
             }
         }
 
-        function dayEventImgSrc(event_const_number){
-            return 'content/img/icon/'+vm.IMG_CONST[event_const_number];
-        }
-
         function isDaySelected(day) {
             if ($scope.ccSelected && $scope.ccSelected.selected) {
                 return $scope.ccSelected.selected.g_year === vm.calendarModel.gregorian_year &&
@@ -92,34 +88,11 @@
         }
 
         function isCurrentDay(day) {
-            return vm.calendarModel.jewish_current_day === day.jewish_day &&
-                vm.calendarModel.jewish_current_month === day.jewish_month;
+            return dateExtSvc.isCurrentDay(vm.calendarModel, day);
         }
 
         function isDayInCurrentMonth(day) {
             return vm.calendarModel.jewish_month === day.jewish_month
-        }
-
-        function isBeforeStartRedDay(sDay) {
-            if (angular.isUndefined(vm.calendarModel.lastEvent)) return false;
-            var lastEvent = vm.calendarModel.lastEvent;
-            if (sDay.jewish_year < lastEvent.jewish_year) {
-                return true;
-            }
-            //similar year
-            if (sDay.jewish_year === lastEvent.jewish_year) {
-                if (sDay.jewish_month < lastEvent.jewish_month) {
-                    return true;
-                }
-                //similar month
-                if (sDay.jewish_month === lastEvent.jewish_month) {
-                    if (sDay.jewish_day < lastEvent.jewish_day) {
-                        return true;
-                    }
-                }
-            }
-            //--------------
-            return false;
         }
 
         function nextMonth() {
@@ -132,32 +105,14 @@
 
         function selectDay(calendarObj, day) {
             if(checkSelectedDay(calendarObj, day)){
-                if(isFutureDay(calendarObj, day)){
-                    if(isDayPrediction(day)){
+                if(dateExtSvc.isFutureDay(day, dateSvc.getCurrentDay())){
+                    if(dateExtSvc.isDayPrediction(day)){
                         modalSvc.dayInfo(day);
                     }
                 } else {
                     dateSvc.processSelectDay(calendarObj, day, $scope);
                 }
             }
-        }
-
-        function isDayPrediction(day) {
-            return day.events.prediction;
-        }
-
-        function isFutureDay(calendarObj, day){
-            var currDay = dateSvc.getCurrentDay();
-            if(day.jewish_year < currDay.jewish_year){
-                return false;
-            }
-            if(day.jewish_month < currDay.jewish_month){
-                return false;
-            }
-            if(day.jewish_month === currDay.jewish_month && day.jewish_day <= currDay.jewish_day){
-                return false;
-            }
-            return true;
         }
 
         function afterSelectDay(selectModel){
@@ -184,7 +139,7 @@
             }
             if(!isSimpleMode()){
                 if(vm.calendarModel.last_part_period === constSvc.PERIOD_CONST.START){
-                    if(isBeforeStartRedDay(day)){
+                    if(dateExtSvc.isBeforeStartRedDay(vm.calendarModel, day)){
                         messagesSvc.show('ERROR.BEFORE_START','error');
                         return false;
                     }
