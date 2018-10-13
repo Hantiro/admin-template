@@ -4,60 +4,7 @@
     angular.module('service.dateSvc', []).factory('dateSvc', dateSvc);
 
     /* @ngInject */
-    function dateSvc(http, url,  $rootScope, utilsSvc, $q,  messagesSvc, dateExtSvc) {
-        var CALENDAR_TYPE = {
-            DETAILED: "detailed",
-            SIMPLE: "simple"
-        };
-
-        var EVENT_CONST = {
-            'NIGHT': 1,
-            'DAY': 2,
-            'RED': 3,
-            'END_RED': 4,
-            'FORECAST': 5,
-            'BREAK': 6,
-            'WATER': 7,
-            'CLEAN_DAY': 8,
-            'PILLS': 9
-        };
-
-        var PREDICTION = {
-            'MONTHLY': 1,
-            'AVERAGE': 2,
-            'INTERVAL': 3
-        };
-
-        var CALENDAR_EVENT = {
-            DELETED_EVENT: '0',
-            CREATED_EVENT: '1',
-            UPDATED_MODEL: '2',
-            UPDATE_CALENDAR: '3',
-            SELECTED_CALENDAR: '4'
-        };
-
-        var EVENT_IMG = {};
-        EVENT_IMG[EVENT_CONST.NIGHT] = 'moon.png';
-        EVENT_IMG[EVENT_CONST.DAY] = 'sun.png';
-        EVENT_IMG[EVENT_CONST.RED] = 'active_day.png';
-        EVENT_IMG[EVENT_CONST.END_RED] = 'last_day.png';
-        EVENT_IMG[EVENT_CONST.FORECAST] = 'star.png';
-        EVENT_IMG[EVENT_CONST.BREAK] = 'circle.png';
-        EVENT_IMG[EVENT_CONST.WATER] = 'sea_waves.png';
-        EVENT_IMG[EVENT_CONST.PILLS] = 'pill-day.png';
-        EVENT_IMG[EVENT_CONST.CLEAN_DAY] = 'clean-day.png';
-
-        var PERIOD_CONST = {
-            EMPTY: 0,
-            START: 1,
-            END: 2
-        };
-
-        var TYPE_EVENT = {
-            PERIODS: 1,
-            PILLS: 2,
-            GESTATION: 3
-        };
+    function dateSvc(http, url,  $rootScope, utilsSvc, $q,  messagesSvc, dateExtSvc, constSvc) {
 
         var currentSelectModel;
         var preloadSimpleCalendarModel;
@@ -89,13 +36,6 @@
             setSelectedDay: setSelectedDay,
             setSelectedMonth: setSelectedMonth,
             getSelectedMonth: getSelectedMonth,
-            CALENDAR_EVENT: CALENDAR_EVENT,
-            EVENT_IMG: EVENT_IMG,
-            EVENT_CONST: EVENT_CONST,
-            PERIOD_CONST: PERIOD_CONST,
-            TYPE_EVENT: TYPE_EVENT,
-            CALENDAR_TYPE: CALENDAR_TYPE,
-            PREDICTION: PREDICTION
         };
 
         //requests -------------------------------
@@ -124,7 +64,7 @@
 
         function createEvent(data) {
             return http.post(url.calendar.create_event, data).then(function (res) {
-                $rootScope.$broadcast(CALENDAR_EVENT.CREATED_EVENT,{});
+                $rootScope.$broadcast(constSvc.CALENDAR_EVENT.CREATED_EVENT,{});
             });
         }
 
@@ -151,7 +91,7 @@
             currentCalendarModel = model;
             setSelectedMonth(getCurrentMonthModel()); //reset to current
             setSelectedDay(getCurrentDay()); //reset to current
-            $rootScope.$broadcast(CALENDAR_EVENT.UPDATED_MODEL, model);
+            $rootScope.$broadcast(constSvc.CALENDAR_EVENT.UPDATED_MODEL, model);
         }
 
         //current != selected when choise prev or next month, current means real current
@@ -192,7 +132,7 @@
         }
 
         function getDeleteText() {
-            return getCalendarModel() && getCalendarModel().last_part_period === PERIOD_CONST.END ?
+            return getCalendarModel() && getCalendarModel().last_part_period === constSvc.PERIOD_CONST.END ?
                 'CONTENT.DELETE_LAST_DAY' : 'CONTENT.DELETE_FIRST_DAY';
         }
 
@@ -201,7 +141,7 @@
         }
 
         function updateCalendar() {
-            $rootScope.$broadcast(CALENDAR_EVENT.UPDATE_CALENDAR, {});
+            $rootScope.$broadcast(constSvc.CALENDAR_EVENT.UPDATE_CALENDAR, {});
         }
 
         //----------------------------------------------------------------
@@ -213,7 +153,7 @@
             // };
             setSelectedDay(dayObj);
             setSelectedMonth(monthObj);
-            $rootScope.$broadcast(CALENDAR_EVENT.SELECTED_CALENDAR,{
+            $rootScope.$broadcast(constSvc.CALENDAR_EVENT.SELECTED_CALENDAR,{
                 day: dayObj,
                 month: monthObj
             });
@@ -250,22 +190,22 @@
 
         function createFirstDay(selectedModel) {
             var requestObj = selectedModel;
-            requestObj.type_id = TYPE_EVENT.PERIODS;
+            requestObj.type_id = constSvc.TYPE_EVENT.PERIODS;
             requestObj.part_period = 1;
             return createEventHistory(requestObj);
         }
 
         function createRedDay(selectedModel, monthObj) {
-            selectedModel.type_id = TYPE_EVENT.PERIODS;
+            selectedModel.type_id = constSvc.TYPE_EVENT.PERIODS;
             switch (monthObj.last_part_period) {
-                case PERIOD_CONST.EMPTY:
-                    selectedModel.part_period = PERIOD_CONST.START;
+                case constSvc.PERIOD_CONST.EMPTY:
+                    selectedModel.part_period = constSvc.PERIOD_CONST.START;
                     break;
-                case PERIOD_CONST.START:
-                    selectedModel.part_period = PERIOD_CONST.END;
+                case constSvc.PERIOD_CONST.START:
+                    selectedModel.part_period = constSvc.PERIOD_CONST.END;
                     break;
-                case PERIOD_CONST.END:
-                    selectedModel.part_period = PERIOD_CONST.START;
+                case constSvc.PERIOD_CONST.END:
+                    selectedModel.part_period = constSvc.PERIOD_CONST.START;
                     break;
             }
             return createEvent(selectedModel);

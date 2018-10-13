@@ -6,13 +6,13 @@
         .controller('DeleteEventCtrl', DeleteEventCtrl);
 
     /* @ngInject */
-    function DeleteEventCtrl($scope, dateSvc) {
+    function DeleteEventCtrl($scope, dateSvc, constSvc) {
         var vm = this;
         vm.deleteLastEvent = deleteLastEvent;
         vm.textDelete = dateSvc.getDeleteText();
         vm.calendarData = dateSvc.getCalendarModel();
 
-        $scope.$on(dateSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
+        $scope.$on(constSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
             vm.calendarData = data;
             vm.textDelete = dateSvc.getDeleteText();
         });

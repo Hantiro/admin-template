@@ -6,7 +6,7 @@
         .controller('CalendarCtrl', CalendarCtrl);
 
     /* @ngInject */
-    function CalendarCtrl($scope, dateSvc) {
+    function CalendarCtrl($scope, dateSvc, constSvc) {
         var vm = this;
         vm.changedTime = changedTime;
         vm.save = save;
@@ -16,14 +16,14 @@
         vm.showTime = false;
         vm.textHeader = 'CONTENT.THE_START_DATE';
 
-        $scope.$on(dateSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
+        $scope.$on(constSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
             vm.calendarData = data;
-            vm.textHeader = data.last_part_period === dateSvc.PERIOD_CONST.END ||
-            data.last_part_period === dateSvc.PERIOD_CONST.EMPTY ?
+            vm.textHeader = data.last_part_period === constSvc.PERIOD_CONST.END ||
+            data.last_part_period === constSvc.PERIOD_CONST.EMPTY ?
                 'CONTENT.THE_START_DATE' : 'CONTENT.THE_END_DATE';
         });
 
-        $scope.$on(dateSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
+        $scope.$on(constSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
             vm.showTime = true;
         });
 

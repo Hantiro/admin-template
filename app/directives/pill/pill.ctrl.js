@@ -6,7 +6,7 @@
         .controller('PillCtrl', PillCtrl);
 
     /* @ngInject */
-    function PillCtrl($scope, dateSvc, messagesSvc, pillsSvc) {
+    function PillCtrl($scope, dateSvc, messagesSvc, pillsSvc, constSvc) {
         var vm = this;
         vm.save = save;
         vm.deletePills = deletePills;
@@ -16,11 +16,11 @@
         };
 
 
-        $scope.$on(dateSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
+        $scope.$on(constSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
             processDate();
         });
 
-        $scope.$on(dateSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
+        $scope.$on(constSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
             init();
         });
 

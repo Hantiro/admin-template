@@ -6,7 +6,7 @@
         .controller('CalendarCustomCtrl', CalendarCustomCtrl);
 
     /* @ngInject */
-    function CalendarCustomCtrl($scope, utilsSvc, dateSvc, dateExtSvc, messagesSvc, modalSvc) {
+    function CalendarCustomCtrl($scope, utilsSvc, dateSvc, dateExtSvc, messagesSvc, modalSvc, constSvc) {
         var vm = this;
 
         vm.nextMonth = nextMonth;
@@ -17,14 +17,14 @@
         vm.isDaySelected = isDaySelected;
         vm.dayEventImgSrc = dayEventImgSrc;
 
-        vm.EVENT_CONST = dateSvc.EVENT_CONST;
-        vm.IMG_CONST = dateSvc.EVENT_IMG;
-        vm.PERIOD_CONST = dateSvc.PERIOD_CONST;
+        vm.EVENT_CONST = constSvc.EVENT_CONST;
+        vm.IMG_CONST = constSvc.EVENT_IMG;
+        vm.PERIOD_CONST = constSvc.PERIOD_CONST;
         vm.NUMB_HE = utilsSvc.NUMBER_HE;
         vm.days = utilsSvc.DAYS_ORDER;
         vm.calendarModel = {};
 
-        $scope.$on(dateSvc.CALENDAR_EVENT.UPDATE_CALENDAR, function (event, data) {
+        $scope.$on(constSvc.CALENDAR_EVENT.UPDATE_CALENDAR, function (event, data) {
             if (!isSimpleMode()) {
                 if (vm.calendarModel.jewish_year && vm.calendarModel.jewish_month >= 0) {
                     return init({
@@ -68,7 +68,7 @@
         }
 
         function isSimpleMode(){
-            return $scope.ccType && $scope.ccType === dateSvc.CALENDAR_TYPE.SIMPLE;
+            return $scope.ccType && $scope.ccType === constSvc.CALENDAR_TYPE.SIMPLE;
         }
 
         function setModelData(data){
@@ -183,7 +183,7 @@
                 return false;
             }
             if(!isSimpleMode()){
-                if(vm.calendarModel.last_part_period === dateSvc.PERIOD_CONST.START){
+                if(vm.calendarModel.last_part_period === constSvc.PERIOD_CONST.START){
                     if(isBeforeStartRedDay(day)){
                         messagesSvc.show('ERROR.BEFORE_START','error');
                         return false;
