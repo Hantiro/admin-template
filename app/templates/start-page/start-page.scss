@@ -57,10 +57,10 @@
     padding: 0 10px;
     margin-left: 63px;
   }
-  &__propose{
+  &__propose {
     font-weight: bold;
   }
-  &__quote{
+  &__quote {
     font-size: 20px;
   }
   &__store {
@@ -122,11 +122,11 @@
   }
 
   &__title {
-    margin-top: 22px;
+    margin: 22px auto;
     color: #703a46;
     font-family: AnotherDayInParadise;
-    font-size: 41px;
-    margin-left: 51px;
+    font-size: 46px;
+
   }
   &__about {
     background-color: #fff;
@@ -300,7 +300,7 @@
 
   @media screen and(max-width: 1230px) {
     .start-page {
-      &__book-description{
+      &__book-description {
         margin: 0;
       }
       &__buttons-app {
