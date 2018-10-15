@@ -1,6 +1,17 @@
 <div class="history" dir="rtl">
-
-    <div ng-if="vm.step === vm.STEPS.SHOW_LIST">
+    <div class="history__scroll" ng-if="vm.step === vm.STEPS.SHOW_LIST">
+        <div>
+            <div ng-if="vm.modelDays.predictionArray && vm.modelDays.predictionArray.length">
+                <p>{{'CONTENT.PERMANENT_DAY'|translate}}</p>
+                <span>{{ vm.isRegularText() | translate }}</span>
+                <list-item-custom
+                        ng-repeat="item in vm.modelDays.predictionArray track by $index"
+                        lic-date-text="{{ item.fullData }}"
+                        lic-day-part-text="{{ vm.getDayNight(item.isDay) | translate }}"
+                        lic-type-prediction="{{ vm.getTypeTrans(item.type) | translate }}"
+                        lic-is-day="vm.isDay(item.isDay)"></list-item-custom>
+            </div>
+        </div>
         <div class="history__top">
             <button class="history__add" ng-click="vm.addDateTime()">
                 <div class="history__icon">+</div>
@@ -14,24 +25,12 @@
                 </div>
             </div>
         </div>
-        <div>
-            <list-item-custom
-                    ng-if="vm.modelDays.data && vm.modelDays.data.length"
-                    ng-repeat="item in vm.modelDays.data track by $index"
-                    lic-date-text="{{ item.fullData }}"
-                    lic-day-part-text="{{ vm.getDayNight(item.isDay) | translate }}"
-                    lic-is-day="vm.isDay(item.isDay)"></list-item-custom>
-            <div ng-if="vm.modelDays.predictionArray && vm.modelDays.predictionArray.length">
-                <p>{{'CONTENT.PERMANENT_DAY'|translate}}</p>
-                <span>{{ vm.isRegularText() | translate }}</span>
-                <list-item-custom
-                        ng-repeat="item in vm.modelDays.predictionArray track by $index"
-                        lic-date-text="{{ item.fullData }}"
-                        lic-day-part-text="{{ vm.getDayNight(item.isDay) | translate }}"
-                        lic-type-prediction="{{ vm.getTypeTrans(item.type) | translate }}"
-                        lic-is-day="vm.isDay(item.isDay)"></list-item-custom>
-            </div>
-        </div>
+        <list-item-custom
+                ng-if="vm.modelDays.data && vm.modelDays.data.length"
+                ng-repeat="item in vm.modelDays.data track by $index"
+                lic-date-text="{{ item.fullData }}"
+                lic-day-part-text="{{ vm.getDayNight(item.isDay) | translate }}"
+                lic-is-day="vm.isDay(item.isDay)"></list-item-custom>
     </div>
     <div dir="ltr" ng-if="vm.step === vm.STEPS.ADD_DATE_TIME">
         <div>{{'CONTENT.CHOOSE_FROM_CALENDAR'|translate}}</div>
