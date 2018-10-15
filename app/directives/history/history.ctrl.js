@@ -16,6 +16,7 @@
             vm.isDay = isDay;
             vm.add = add;
             vm.cancel = cancel;
+            vm.getTypeTrans = getTypeTrans;
             vm.STEPS = {
                 SHOW_LIST: 1,
                 ADD_DATE_TIME: 2,
@@ -122,6 +123,10 @@
 
             function getItemDateByLang(item) {
                 return vm.currentLang() === 'eng' ? item.data2 : item.data1;
+            }
+
+            function getTypeTrans(type){
+               return  'CONTENT.PREDICTION_' + type.toUpperCase();
             }
 
         }

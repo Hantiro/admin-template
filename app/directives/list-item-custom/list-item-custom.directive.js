@@ -11,7 +11,8 @@
             scope: {
                 licIsDay: '=',
                 licDayPartText: '@',
-                licDateText: '@'
+                licDateText: '@',
+                licTypePrediction: '@'
             },
             controller: 'ListItemCustomCtrl',
             controllerAs: 'vm',

@@ -28,6 +28,7 @@
                         ng-repeat="item in vm.modelDays.predictionArray track by $index"
                         lic-date-text="{{ item.fullData }}"
                         lic-day-part-text="{{ vm.getDayNight(item.isDay) | translate }}"
+                        lic-type-prediction="{{ vm.getTypeTrans(item.type) | translate }}"
                         lic-is-day="vm.isDay(item.isDay)"></list-item-custom>
             </div>
         </div>
