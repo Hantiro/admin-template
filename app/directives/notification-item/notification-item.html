@@ -9,7 +9,7 @@
     <div ng-if="niModelExt[+niItemModel.notification_id].setting"
          class="notification-item__settings"
          ng-repeat="set in niModelExt[+niItemModel.notification_id].setting track by $index">
-        <md-input-container md-no-float class="md-block" flex>
+        <md-input-container md-no-float class="md-block" flex auto-dir>
             <div class="notification-item__write-settings">
                 <p>{{ set.name | translate }}</p>
                 <input type="number" id="time"
