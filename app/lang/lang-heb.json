@@ -134,7 +134,10 @@
     "SEPHARDY_MORDECAI": "ספרדי לפי הרב מרדכי אליהו זצ\"ל",
     "SEPHARDY_AUTHORITIES": "אשכנזי לפי פוסקי אשכנז",
     "CHOOSE_FROM_CALENDAR": "בחרי מהלוח שנה את התאריך המבוקש",
-    "CHOOSE_FROM_CALENDAR2": "בחרי מהלוח שנה את התאריך המבוקש"
+    "CHOOSE_FROM_CALENDAR2": "בחרי מהלוח שנה את התאריך המבוקש",
+    "TIME_FOR_ALARM": "שעה להתראה:",
+    "HOUR_MORNING": "שעה בבוקר:",
+    "HOUR_SUNSET": "שעתיים לפני השקיעה :"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",
