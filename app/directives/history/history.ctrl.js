@@ -118,7 +118,11 @@
             }
 
             function isRegularText() {
-                return vm.modelDays.isRegular ? 'CONTENT.REGULAR' : 'CONTENT.IRREGULAR';
+                if( !vm.modelDays.isRegular){
+                   return  'CONTENT.IRREGULAR';
+                }  else if(vm.modelDays.predictionArray[0] && vm.modelDays.predictionArray[0].type) {
+                   return  'CONTENT.PREDICTION_' + vm.modelDays.predictionArray[0].type.toUpperCase();
+                }
             }
 
             function getItemDateByLang(item) {
