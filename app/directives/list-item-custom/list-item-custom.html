@@ -1,13 +1,14 @@
 <div class="list-item-custom">
     <div class="list-item-custom__result">
-
-        <div class="list-item-custom__day-part text-center">
-            <img ng-src="{{ vm.dayIcon(licIsDay) }}" alt="part of day">
+        <div class="list-item-custom__prediction">
+            <div class="list-item-custom__day-part text-center">
+                <img ng-src="{{ vm.dayIcon(licIsDay) }}" alt="part of day">
+            </div>
+            <div class="list-item-custom__day-part-text text-right">
+                {{ licDayPartText }}
+            </div>
         </div>
         {{ licTypePrediction }}
-        <div class="list-item-custom__day-part-text text-right">
-            {{ licDayPartText }}
-        </div>
         <div class="list-item-custom__date text-right">
             {{ licDateText }}
         </div>
