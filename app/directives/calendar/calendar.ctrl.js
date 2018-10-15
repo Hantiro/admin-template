@@ -6,7 +6,7 @@
         .controller('CalendarCtrl', CalendarCtrl);
 
     /* @ngInject */
-    function CalendarCtrl($scope, dateSvc) {
+    function CalendarCtrl($scope, dateSvc, constSvc) {
         var vm = this;
         vm.changedTime = changedTime;
         vm.save = save;
@@ -16,21 +16,23 @@
         vm.showTime = false;
         vm.textHeader = 'CONTENT.THE_START_DATE';
 
-        $scope.$on(dateSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
+        $scope.$on(constSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
             vm.calendarData = data;
-            vm.textHeader = data.last_part_period === dateSvc.PERIOD_CONST.END ||
-            data.last_part_period === dateSvc.PERIOD_CONST.EMPTY ?
-                'CONTENT.THE_START_DATE' : 'CONTENT.THE_END_DATE';
         });
 
-        $scope.$on(dateSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
+        $scope.$on(constSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
             vm.showTime = true;
         });
 
         init();
 
         function init() {
+            vm.textHeader = isStart() ? 'CONTENT.THE_START_DATE' : 'CONTENT.THE_END_DATE';
+        }
 
+        function isStart() {
+            return vm.calendarModel.last_part_period === constSvc.PERIOD_CONST.END
+                || vm.calendarModel.last_part_period === constSvc.PERIOD_CONST.EMPTY;
         }
 
         function cancel() {
@@ -38,28 +40,28 @@
         }
 
         function save() {
-            if (dateSvc.getSelectedDay()) {
-                var sendObj = {
-                    hour: vm.timeModel.getHours(),
-                    minute: vm.timeModel.getMinutes(),
-                    g_day: dateSvc.getSelectedDay().gregorian_day,
-                    g_month: dateSvc.getSelectedDay().gregorian_month,
-                    g_year: dateSvc.getSelectedDay().gregorian_year
-                };
-                dateSvc.createRedDay(sendObj, dateSvc.getSelectedMonth()).then(
-                    function (res) {
-                        dateSvc.updateCalendar();
-                        dateSvc.setSelectedMonth(dateSvc.getCurrentMonthModel());
-                        dateSvc.setSelectedDay(dateSvc.getCurrentDay());
-                        vm.showTime = false;
-                    }
-                );
+            if (!dateSvc.getSelectedDay()) {
+                return;
             }
+            var sendObj = {
+                hour: vm.timeModel.getHours(),
+                minute: vm.timeModel.getMinutes(),
+                g_day: dateSvc.getSelectedDay().gregorian_day,
+                g_month: dateSvc.getSelectedDay().gregorian_month,
+                g_year: dateSvc.getSelectedDay().gregorian_year
+            };
+            dateSvc.createRedDay(sendObj, dateSvc.getSelectedMonth()).then(afterSave);
+        }
+
+        function afterSave() {
+            dateSvc.updateCalendar();
+            dateSvc.setSelectedMonth(dateSvc.getCurrentMonthModel());
+            dateSvc.setSelectedDay(dateSvc.getCurrentDay());
+            vm.showTime = false;
         }
 
         function changedTime() {
-                
+            
         }
-
     }
 })();

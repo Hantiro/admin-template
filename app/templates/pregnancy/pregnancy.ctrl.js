@@ -4,7 +4,7 @@
         .controller('PregnancyCtrl', PregnancyCtrl);
 
     /* @ngInject */
-    function PregnancyCtrl($scope, gestationSvc, dateSvc) {
+    function PregnancyCtrl($scope, gestationSvc, dateSvc, constSvc) {
         var vm = this;
         vm.editStartDate = editStartDate;
         vm.remove = remove;
@@ -16,12 +16,12 @@
         };
         vm.date;
 
-        $scope.$on(dateSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
+        $scope.$on(constSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
             vm.model = dateSvc.getSelectedDay();
             editStartDate();
         });
 
-        $scope.$on(dateSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
+        $scope.$on(constSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
             vm.model = dateSvc.getSelectedDay();
         });
 

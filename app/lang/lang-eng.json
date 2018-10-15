@@ -139,8 +139,10 @@
     "TIME_FOR_ALARM": "Time for alarm:",
     "HOUR_MORNING": "An hour in the morning:",
     "HOUR_SUNSET": "Two hours before sunset:"
-
-
+    "PREDICTION_MONTHLY": "Monthly",
+    "PREDICTION_AVERAGE": "Middle",
+    "PREDICTION_INTERVAL": "Interval",
+    "MONTH_DAY": "Month day"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",

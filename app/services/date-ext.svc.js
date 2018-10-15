@@ -10,8 +10,56 @@
             prepareMonthObj: prepareMonthObj,
             searchCurrentDayInMonth: searchCurrentDayInMonth,
             prevMonth: prevMonth,
-            nextMonth: nextMonth
+            nextMonth: nextMonth,
+            isFutureDay: isFutureDay,
+            isDayPrediction: isDayPrediction,
+            isBeforeStartRedDay: isBeforeStartRedDay,
+            isCurrentDay: isCurrentDay
         };
+
+        function isCurrentDay(calendarModel,day) {
+            return calendarModel.jewish_current_day === day.jewish_day &&
+                calendarModel.jewish_current_month === day.jewish_month;
+        }
+
+        function isBeforeStartRedDay(calendarModel, sDay) {
+            if (angular.isUndefined(calendarModel.lastEvent)) return false;
+            var lastEvent = calendarModel.lastEvent;
+            if (sDay.jewish_year < lastEvent.jewish_year) {
+                return true;
+            }
+            //similar year
+            if (sDay.jewish_year === lastEvent.jewish_year) {
+                if (sDay.jewish_month < lastEvent.jewish_month) {
+                    return true;
+                }
+                //similar month
+                if (sDay.jewish_month === lastEvent.jewish_month) {
+                    if (sDay.jewish_day < lastEvent.jewish_day) {
+                        return true;
+                    }
+                }
+            }
+            //--------------
+            return false;
+        }
+
+        function isDayPrediction(day) {
+            return day.events.prediction;
+        }
+
+        function isFutureDay(selDay, currentDay){
+            if(selDay.jewish_year < currentDay.jewish_year){
+                return false;
+            }
+            if(selDay.jewish_month < currentDay.jewish_month){
+                return false;
+            }
+            if(selDay.jewish_month === currentDay.jewish_month && selDay.jewish_day <= currentDay.jewish_day){
+                return false;
+            }
+            return true;
+        }
 
         function nextMonth(monthObj, isSimple) {
             var params = {
@@ -88,6 +136,9 @@
             if (day.events) {
                 day.events.top = +day.events.top;
                 day.events.bottom = +day.events.bottom;
+                if(day.events.prediction_type){
+                    day.events.prediction_type = day.events.prediction_type.toUpperCase();
+                }
             }
             day.mark.clean_day = !!day.mark.clean_day;
             day.mark.pill_day = !!day.mark.pill_day;

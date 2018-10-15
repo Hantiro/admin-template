@@ -68,14 +68,10 @@
             } else if (response.status === 403) {
                 text = 'Access denied';
             } else if (response.status === 401) {
-                if (response.data && (response.data.message || response.data.error)) {
-                    text = response.data.message || response.data.error;
-                } else {
-                    text = 'Unauthorized';
-                }
+                text = 'Unauthorized';
                 $rootScope.$broadcast('logout');
             }
-            text = response.data.message || response.data.error;
+            text = response.data && (response.data.message || response.data.error);
             toastr.error(text);
             defer.reject(response.data);
             return defer.promise;

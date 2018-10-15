@@ -4,9 +4,10 @@
         .controller('DayInfoCtrl', DayInfoCtrl);
 
     /* @ngInject */
-    function DayInfoCtrl($uibModalInstance, config) {
+    function DayInfoCtrl($uibModalInstance, dateSvc, constSvc, day) {
         var vm = this;
-        vm.config = config;
+        vm.day = day;
+        vm.partDayImg = constSvc.eventIconPath(day.events.bottom);
 
         vm.ok = function () {
             $uibModalInstance.close(true);

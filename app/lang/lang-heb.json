@@ -138,6 +138,10 @@
     "TIME_FOR_ALARM": "שעה להתראה:",
     "HOUR_MORNING": "שעה בבוקר:",
     "HOUR_SUNSET": "שעתיים לפני השקיעה :"
+    "PREDICTION_MONTHLY": "יום הפרישה של יום החודש",
+    "PREDICTION_AVERAGE": "יום פרישה של עונה בינונית",
+    "PREDICTION_INTERVAL": "יום פרישה של ההפלגה",
+    "MONTH_DAY": "Month day"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",

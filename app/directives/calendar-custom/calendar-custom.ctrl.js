@@ -6,7 +6,7 @@
         .controller('CalendarCustomCtrl', CalendarCustomCtrl);
 
     /* @ngInject */
-    function CalendarCustomCtrl($scope, utilsSvc, dateSvc, dateExtSvc, messagesSvc) {
+    function CalendarCustomCtrl($scope, utilsSvc, dateSvc, dateExtSvc, messagesSvc, modalSvc, constSvc) {
         var vm = this;
 
         vm.nextMonth = nextMonth;
@@ -15,16 +15,16 @@
         vm.isCurrentDay = isCurrentDay;
         vm.isDayInCurrentMonth = isDayInCurrentMonth;
         vm.isDaySelected = isDaySelected;
-        vm.dayEventImgSrc = dayEventImgSrc;
+        vm.dayEventImgSrc = constSvc.eventIconPath;
 
-        vm.EVENT_CONST = dateSvc.EVENT_CONST;
-        vm.IMG_CONST = dateSvc.EVENT_IMG;
-        vm.PERIOD_CONST = dateSvc.PERIOD_CONST;
+        vm.EVENT_CONST = constSvc.EVENT_CONST;
+        vm.IMG_CONST = constSvc.EVENT_IMG;
+        vm.PERIOD_CONST = constSvc.PERIOD_CONST;
         vm.NUMB_HE = utilsSvc.NUMBER_HE;
         vm.days = utilsSvc.DAYS_ORDER;
         vm.calendarModel = {};
 
-        $scope.$on(dateSvc.CALENDAR_EVENT.UPDATE_CALENDAR, function (event, data) {
+        $scope.$on(constSvc.CALENDAR_EVENT.UPDATE_CALENDAR, function (event, data) {
             if (!isSimpleMode()) {
                 if (vm.calendarModel.jewish_year && vm.calendarModel.jewish_month >= 0) {
                     return init({
@@ -68,7 +68,7 @@
         }
 
         function isSimpleMode(){
-            return $scope.ccType && $scope.ccType === dateSvc.CALENDAR_TYPE.SIMPLE;
+            return $scope.ccType && $scope.ccType === constSvc.CALENDAR_TYPE.SIMPLE;
         }
 
         function setModelData(data){
@@ -77,10 +77,6 @@
             if (angular.isFunction($scope.ccUpdatedModel)) {
                 $scope.ccUpdatedModel(vm.calendarModel);
             }
-        }
-
-        function dayEventImgSrc(event_const_number){
-            return 'content/img/icon/'+vm.IMG_CONST[event_const_number];
         }
 
         function isDaySelected(day) {
@@ -92,34 +88,11 @@
         }
 
         function isCurrentDay(day) {
-            return vm.calendarModel.jewish_current_day === day.jewish_day &&
-                vm.calendarModel.jewish_current_month === day.jewish_month;
+            return dateExtSvc.isCurrentDay(vm.calendarModel, day);
         }
 
         function isDayInCurrentMonth(day) {
             return vm.calendarModel.jewish_month === day.jewish_month
-        }
-
-        function isBeforeStartRedDay(sDay) {
-            if (angular.isUndefined(vm.calendarModel.lastEvent)) return false;
-            var lastEvent = vm.calendarModel.lastEvent;
-            if (sDay.jewish_year < lastEvent.jewish_year) {
-                return true;
-            }
-            //similar year
-            if (sDay.jewish_year === lastEvent.jewish_year) {
-                if (sDay.jewish_month < lastEvent.jewish_month) {
-                    return true;
-                }
-                //similar month
-                if (sDay.jewish_month === lastEvent.jewish_month) {
-                    if (sDay.jewish_day < lastEvent.jewish_day) {
-                        return true;
-                    }
-                }
-            }
-            //--------------
-            return false;
         }
 
         function nextMonth() {
@@ -132,7 +105,13 @@
 
         function selectDay(calendarObj, day) {
             if(checkSelectedDay(calendarObj, day)){
-                dateSvc.processSelectDay(calendarObj, day, $scope);
+                if(dateExtSvc.isFutureDay(day, dateSvc.getCurrentDay())){
+                    if(dateExtSvc.isDayPrediction(day)){
+                        modalSvc.dayInfo(day);
+                    }
+                } else {
+                    dateSvc.processSelectDay(calendarObj, day, $scope);
+                }
             }
         }
 
@@ -159,8 +138,8 @@
                 return false;
             }
             if(!isSimpleMode()){
-                if(vm.calendarModel.last_part_period === dateSvc.PERIOD_CONST.START){
-                    if(isBeforeStartRedDay(day)){
+                if(vm.calendarModel.last_part_period === constSvc.PERIOD_CONST.START){
+                    if(dateExtSvc.isBeforeStartRedDay(vm.calendarModel, day)){
                         messagesSvc.show('ERROR.BEFORE_START','error');
                         return false;
                     }

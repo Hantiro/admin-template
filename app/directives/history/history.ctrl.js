@@ -6,7 +6,7 @@
             .controller('HistoryCtrl', HistoryCtrl);
 
         /* @ngInject */
-        function HistoryCtrl($scope, dateSvc, $translate, messagesSvc) {
+        function HistoryCtrl($scope, dateSvc, $translate, messagesSvc, constSvc) {
             var vm = this;
             vm.addDateTime = addDateTime;
             vm.currentLang = currentLang;
@@ -31,18 +31,20 @@
             vm.dateModel = dateSvc.getSelectedDay();
             vm.dateText = generateDateFormat(vm.dateModel);
 
-            $scope.$on(dateSvc.CALENDAR_EVENT.CREATED_EVENT, function () {
+            $scope.$on(constSvc.CALENDAR_EVENT.CREATED_EVENT, function () {
                 init();
             });
-            $scope.$on(dateSvc.CALENDAR_EVENT.DELETED_EVENT, function () {
-                init();
-            });
-
-            $scope.$on(dateSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
+            $scope.$on(constSvc.CALENDAR_EVENT.DELETED_EVENT, function () {
                 init();
             });
 
-            $scope.$on(dateSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function () {
+            $scope.$on(constSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
+                if (vm.step !== vm.STEPS.ADD_DATE_TIME) {
+                    init();
+                }
+            });
+
+            $scope.$on(constSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function () {
                 updateModel();
             });
 
@@ -62,7 +64,7 @@
                 vm.dateText = generateDateFormat(vm.dateModel);
             }
 
-            function generateDateFormat(day){
+            function generateDateFormat(day) {
                 return [day.gregorian_day, day.gregorian_month, day.gregorian_year].join('/');
             }
 
