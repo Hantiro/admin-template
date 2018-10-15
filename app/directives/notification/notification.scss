@@ -1,6 +1,5 @@
 .notification {
   border-top: 1px solid #ffffff;
-  padding: 30px 0px;
   font-family: AssistantRegular;
   font-size: 16px;
   background-color: rgba(236, 222, 218, 0.8);
@@ -36,11 +35,21 @@
   }
   &__content {
     text-align: center;
-    width: 70%;
-    margin: 30px auto;
+    width: 76%;
+    margin: 15px auto;
   }
-  &__button {
-    margin-top: 50px;
+  md-input-container{
+    margin: 10px 0;
+  }
+  &__write-settings{
+    display: flex;
+    align-items: center;
+    p{
+      margin: 0;
+    }
+    input{
+      width: 80px;
+    }
   }
 }
 
