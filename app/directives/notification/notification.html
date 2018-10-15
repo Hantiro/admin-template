@@ -1,42 +1,11 @@
 <div class="notification">
     <div class="notification__content">
-        <div class="notification__settings" ng-repeat="item in  vm.pushSettings track by $index">
-            <div class="notification__name-desc">
-                <p class="notification__name">{{ vm.TEXT_NOTIF[+item.notification_id].title | translate }}</p>
-                <p class="notification__desc">{{ vm.TEXT_NOTIF[+item.notification_id].descr | translate }}</p>
-            </div>
-            <md-switch ng-model="item.status"></md-switch>
-        </div>
-        <md-input-container md-no-float class="md-block" flex>
-            <div class="notification__write-settings">
-                <p>{{ 'CONTENT.TIME_FOR_ALARM' | translate }}</p>
-                <input type="number" id="time"
-                       required
-                       name="time"
-                       aria-label="time">
-            </div>
-        </md-input-container>
-        <md-input-container md-no-float class="md-block" flex>
-            <div class="notification__write-settings">
-                <p>{{ 'CONTENT.HOUR_MORNING' | translate }}</p>
-                <input type="number" id="hour"
-                       required
-                       name="hour"
-                       aria-label="hour">
-            </div>
-        </md-input-container>
-        <md-input-container md-no-float class="md-block" flex>
-            <div class="notification__write-settings">
-                <p>{{ 'CONTENT.HOUR_SUNSET' | translate }}</p>
-                <input type="number" id="sunset"
-                       required
-                       name="sunset"
-                       aria-label="sunset">
-            </div>
-        </md-input-container>
-        <button class="notification__button button-default" ng-click="vm.save()">
-            {{'CONTENT.SAVE'|translate}}
-        </button>
+        <notification-item ng-repeat="item in vm.pushSettings track by $index"
+                           ni-item-model="item"
+                           ni-model-ext="vm.model "></notification-item>
     </div>
+    <button class="notification__button button-default" ng-click="vm.save()">
+        {{'CONTENT.SAVE'|translate}}
+    </button>
 </div>
 

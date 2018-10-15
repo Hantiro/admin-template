@@ -20,6 +20,7 @@
         'directives.profileData',
         'directives.religSetting',
         'directives.includeTemplate',
-        'directives.autoDir'
+        'directives.autoDir',
+        'directives.notificationItem'
     ]);
 })();

@@ -1,0 +1,23 @@
+<div class="notification-item" ng-if="niItemModel.notification_id">
+    <div class="notification-item__header">
+        <md-switch ng-model="niItemModel.status"></md-switch>
+        <div class="notification-item__info">
+            <p class="notification-item__name">{{ niModelExt[+niItemModel.notification_id].title | translate }}</p>
+            <p class="notification-item__desc">{{ niModelExt[+niItemModel.notification_id].descr | translate }}</p>
+        </div>
+    </div>
+    <div ng-if="niModelExt[+niItemModel.notification_id].setting"
+         class="notification-item__settings"
+         ng-repeat="set in niModelExt[+niItemModel.notification_id].setting track by $index">
+        <md-input-container md-no-float class="md-block" flex>
+            <div class="notification-item__write-settings">
+                <p>{{ set.name | translate }}</p>
+                <input type="number" id="time"
+                       required
+                       ng-model="set.model"
+                       name="time"
+                       aria-label="time">
+            </div>
+        </md-input-container>
+    </div>
+</div>

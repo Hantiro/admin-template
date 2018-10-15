@@ -10,14 +10,28 @@
         var vm = this;
         vm.save = save;
         vm.pushSettings = [];
-        vm.TEXT_NOTIF = {
+        vm.model = {
             1: {
                 title: 'CONTENT.PILLS',
-                descr: 'CONTENT.STOP_NOTIFICATION'
+                descr: 'CONTENT.STOP_NOTIFICATION',
+                setting: [{
+                    model: null,
+                    name: 'CONTENT.TIME_FOR_ALARM'
+                }]
             },
             2: {
                 title: 'CONTENT.MENOPAUSE',
-                descr: 'CONTENT.THE_FIRST_SEVENTH_DAYS'
+                descr: 'CONTENT.THE_FIRST_SEVENTH_DAYS',
+                setting: [
+                    {
+                    model: null,
+                    name: 'CONTENT.HOUR_MORNING'
+                },
+                {
+                    model: null,
+                    name: 'CONTENT.HOUR_SUNSET'
+                }
+                ]
             },
             3: {
                 title: 'CONTENT.STOP_THEARA',

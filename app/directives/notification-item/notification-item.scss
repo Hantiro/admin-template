@@ -1,0 +1,44 @@
+.notification-item {
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__desc {
+    color: #9e9592;
+  }
+  &__name {
+    color: #2f2d2c;
+  }
+
+  &__write-settings {
+    display: flex;
+    align-items: right;
+    p {
+      margin: 0;
+    }
+    input {
+      width: 80px;
+    }
+  }
+
+  md-switch {
+    margin: 0;
+  }
+
+  md-switch.md-default-theme.md-checked .md-bar, md-switch.md-checked .md-bar {
+    background-color: #9b6b90;
+  }
+
+  md-switch.md-default-theme.md-checked .md-thumb, md-switch.md-checked .md-thumb {
+    background-color: #4b0049;
+  }
+
+  md-input-container {
+    margin: 10px 0;
+  }
+
+}
+
+
