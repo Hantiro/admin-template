@@ -19,6 +19,7 @@
         'directives.menuCustom',
         'directives.profileData',
         'directives.religSetting',
-        'directives.includeTemplate'
+        'directives.includeTemplate',
+        'directives.autoDir'
     ]);
 })();
