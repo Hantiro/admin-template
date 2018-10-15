@@ -6,7 +6,7 @@
         .controller('CalendarCtrl', CalendarCtrl);
 
     /* @ngInject */
-    function CalendarCtrl($scope, dateSvc, constSvc) {
+    function CalendarCtrl($scope, dateSvc, dateExtSvc, constSvc, messagesSvc) {
         var vm = this;
         vm.changedTime = changedTime;
         vm.save = save;
@@ -18,16 +18,26 @@
 
         $scope.$on(constSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
             vm.calendarData = data;
+
         });
 
         $scope.$on(constSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
-            vm.showTime = true;
+            checkCorrectDate(data);
         });
 
         init();
 
         function init() {
             vm.textHeader = isStart() ? 'CONTENT.THE_START_DATE' : 'CONTENT.THE_END_DATE';
+        }
+
+        function checkCorrectDate() {
+            if(dateExtSvc.isCurrentMonthAndNotFuture(dateSvc.getSelectedDay(), dateSvc.getCurrentDay(), dateSvc.getCurrentMonth())) {
+                vm.showTime = true;
+            } else {
+                vm.showTime = false;
+                messagesSvc.show('ERROR.ONLY_CURRENT_MONTH_AND_NOT_FUTURE', 'error');
+            }
         }
 
         function isStart() {
@@ -55,7 +65,7 @@
 
         function afterSave() {
             dateSvc.updateCalendar();
-            dateSvc.setSelectedMonth(dateSvc.getCurrentMonthModel());
+            dateSvc.setSelectedMonth(dateSvc.getCurrentMonth());
             dateSvc.setSelectedDay(dateSvc.getCurrentDay());
             vm.showTime = false;
         }

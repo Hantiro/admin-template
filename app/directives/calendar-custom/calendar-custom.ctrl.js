@@ -37,12 +37,13 @@
         });
 
         init();
+
         function init(params) {
             //check preload data (this used if this directive used as popup for select date, and not wait download new calendar before show);
             //if params is set we no need use cache
-            if(dateSvc.getPreloadedForSimple() && isSimpleMode() && angular.isUndefined(params)){
+            if (dateSvc.getPreloadedForSimple() && isSimpleMode() && angular.isUndefined(params)) {
                 setModelData(dateSvc.getPreloadedForSimple());
-            } else if(params) {
+            } else if (params) {
                 var param = Object.assign({}, params);
                 if (isSimpleMode()) {
                     param.default = 1;
@@ -53,12 +54,12 @@
             }
         }
 
-        function processLoadingMonth(param){
+        function processLoadingMonth(param) {
             dateSvc.loadMonth(param).then(function (res) {
                 setModelData(res);
                 //without params = current month in current year (not selected)
-                if(!isSimpleMode() && angular.isUndefined(param)){
-                    dateSvc.setCurrentMonthModel(res);
+                if (!isSimpleMode() && angular.isUndefined(param)) {
+                    dateSvc.setCurrentMonth(res);
                     //set selected month - current month
                     dateSvc.setSelectedMonth(res);
                     //set selected day - current day in current month
@@ -67,11 +68,11 @@
             });
         }
 
-        function isSimpleMode(){
+        function isSimpleMode() {
             return $scope.ccType && $scope.ccType === constSvc.CALENDAR_TYPE.SIMPLE;
         }
 
-        function setModelData(data){
+        function setModelData(data) {
             vm.calendarModel = data;
             dateSvc.setCalendarModel(data);
             if (angular.isFunction($scope.ccUpdatedModel)) {
@@ -104,18 +105,16 @@
         }
 
         function selectDay(calendarObj, day) {
-            if(checkSelectedDay(calendarObj, day)){
-                if(dateExtSvc.isFutureDay(day, dateSvc.getCurrentDay())){
-                    if(dateExtSvc.isDayPrediction(day)){
-                        modalSvc.dayInfo(day);
-                    }
+            if (checkSelectedDay(calendarObj, day)) {
+                if (dateExtSvc.isFutureDay(day, dateSvc.getCurrentDay()) && dateExtSvc.isDayPrediction(day)) {
+                    modalSvc.dayInfo(day);
                 } else {
                     dateSvc.processSelectDay(calendarObj, day, $scope);
                 }
             }
         }
 
-        function afterSelectDay(selectModel){
+        function afterSelectDay(selectModel) {
             if (angular.isFunction($scope.ccUpdateSelected)) {
                 $scope.ccUpdateSelected(selectModel);
             }
@@ -128,7 +127,7 @@
             }
         }
 
-        function checkSelectedDay(calendarObj, day){
+        function checkSelectedDay(calendarObj, day) {
             if (angular.isDefined(day.is_blocked) && day.is_blocked) {
                 messagesSvc.show('ERROR.BLOCKED_DAY', 'error');
                 return false;
@@ -137,10 +136,10 @@
                 messagesSvc.show('ERROR.NOT_CURRENT_MONTH', 'error');
                 return false;
             }
-            if(!isSimpleMode()){
-                if(vm.calendarModel.last_part_period === constSvc.PERIOD_CONST.START){
-                    if(dateExtSvc.isBeforeStartRedDay(vm.calendarModel, day)){
-                        messagesSvc.show('ERROR.BEFORE_START','error');
+            if (!isSimpleMode()) {
+                if (vm.calendarModel.last_part_period === constSvc.PERIOD_CONST.START) {
+                    if (dateExtSvc.isBeforeStartRedDay(vm.calendarModel, day)) {
+                        messagesSvc.show('ERROR.BEFORE_START', 'error');
                         return false;
                     }
                 }

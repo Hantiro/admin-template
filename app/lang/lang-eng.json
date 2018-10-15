@@ -153,7 +153,8 @@
     "EMAIL": "Enter your email",
     "PASS": "Passwords data are not right, please check",
     "PASS_EQUAL": "Passwords are not equal",
-    "NEED_SELECT_DATE": "Please select date"
+    "NEED_SELECT_DATE": "Please select date",
+    "ONLY_CURRENT_MONTH_AND_NOT_FUTURE": "You can select only current month and not future day"
   },
   "SUCCESS": {
     "EVENT_CREATE": "Event was created successfully",

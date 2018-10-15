@@ -27,8 +27,8 @@
             getPreloadedForSimple: getPreloadedForSimple,
             getCalendarModel: getCalendarModel,
             setCalendarModel: setCalendarModel,
-            setCurrentMonthModel: setCurrentMonthModel,
-            getCurrentMonthModel: getCurrentMonthModel,
+            setCurrentMonth: setCurrentMonth,
+            getCurrentMonth: getCurrentMonth,
             getDeleteText: getDeleteText,
             getCurrentDay: getCurrentDay,
             setCurrentDay: setCurrentDay,
@@ -89,18 +89,18 @@
 
         function setCalendarModel(model) {
             currentCalendarModel = model;
-            setSelectedMonth(getCurrentMonthModel()); //reset to current
+            setSelectedMonth(getCurrentMonth()); //reset to current
             setSelectedDay(getCurrentDay()); //reset to current
             $rootScope.$broadcast(constSvc.CALENDAR_EVENT.UPDATED_MODEL, model);
         }
 
         //current != selected when choise prev or next month, current means real current
-        function getCurrentMonthModel() {
+        function getCurrentMonth() {
             return currentMonthCalendarModel || {};
         }
 
         //current != selected when choise prev or next month, current means real current
-        function setCurrentMonthModel(model) {
+        function setCurrentMonth(model) {
             setCurrentDay(dateExtSvc.searchCurrentDayInMonth(model));
             currentMonthCalendarModel = angular.copy(model);
         }

@@ -14,8 +14,18 @@
             isFutureDay: isFutureDay,
             isDayPrediction: isDayPrediction,
             isBeforeStartRedDay: isBeforeStartRedDay,
-            isCurrentDay: isCurrentDay
+            isCurrentDay: isCurrentDay,
+            isCurrentMonth: isCurrentMonth,
+            isCurrentMonthAndNotFuture: isCurrentMonthAndNotFuture
         };
+
+        function isCurrentMonth(selectedDay, currentMonth) {
+            return selectedDay.jewish_month === currentMonth.jewish_month;
+        }
+
+        function isCurrentMonthAndNotFuture(selectedDay, currentDay, currentMonth) {
+            return isCurrentMonth(selectedDay, currentMonth) && !isFutureDay(selectedDay, currentDay);
+        }
 
         function isCurrentDay(calendarModel,day) {
             return calendarModel.jewish_current_day === day.jewish_day &&
