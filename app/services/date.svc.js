@@ -50,7 +50,7 @@
 
         function deleteLastEvent() {
             return http.delete(url.calendar.delete_last_event).then(function (res) {
-                $rootScope.$broadcast(CALENDAR_EVENT.DELETED_EVENT,{});
+                $rootScope.$broadcast(constSvc.CALENDAR_EVENT.DELETED_EVENT,{});
                 return res;
             });
         }
