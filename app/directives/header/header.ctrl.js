@@ -70,24 +70,24 @@
                     }
                 ],
                 simple: [
-                    {
-                        id: 0,
-                        view: 'app.main.contact-us',
-                        title: 'contact us',
-                        trans: 'CONTENT.CONTACT_US'
-                    },
-                    {
-                        id: 1,
-                        title: 'mikvahs',
-                        trans: 'CONTENT.MIKVAHS',
-                        link: config.mikvahs_link || ''
-                    },
-                    {
-                        id: 2,
-                        view: 'app.main.tradition',
-                        title: 'halacot',
-                        trans: 'CONTENT.HALACOT'
-                    }
+                    // {
+                    //     id: 0,
+                    //     view: 'app.main.contact-us',
+                    //     title: 'contact us',
+                    //     trans: 'CONTENT.CONTACT_US'
+                    // },
+                    // {
+                    //     id: 1,
+                    //     title: 'mikvahs',
+                    //     trans: 'CONTENT.MIKVAHS',
+                    //     link: config.mikvahs_link || ''
+                    // },
+                    // {
+                    //     id: 2,
+                    //     view: 'app.main.tradition',
+                    //     title: 'halacot',
+                    //     trans: 'CONTENT.HALACOT'
+                    // }
                 ]
             };
         }
