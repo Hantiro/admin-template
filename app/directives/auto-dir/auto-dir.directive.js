@@ -7,16 +7,15 @@
         return {
             restrict: 'A',
             link: function (scope, elem, attrs) {
-                var currentLang = $translate.use();
                 setDirection();
 
-                scope.on('lang_changed',function () {
+                scope.$on('lang_changed',function () {
                     setDirection();
                 });
                 
                 function setDirection(){
-                    var dir = currentLang === 'heb' ? 'rlt': 'ltr';
-                    elem.css('direction',);
+                    var dir = $translate.use() === 'heb' ? 'rtl': 'ltr';
+                    elem.css('direction',dir);
                 }
             }
         }
