@@ -1,10 +1,10 @@
-<div class="notification-item" ng-if="niItemModel.notification_id">
+<div class="notification-item" ng-if="niItemModel.notification_id" auto-dir>
     <div class="notification-item__header">
-        <md-switch ng-model="niItemModel.status"></md-switch>
         <div class="notification-item__info">
             <p class="notification-item__name">{{ niModelExt[+niItemModel.notification_id].title | translate }}</p>
             <p class="notification-item__desc">{{ niModelExt[+niItemModel.notification_id].descr | translate }}</p>
         </div>
+        <md-switch ng-model="niItemModel.status"></md-switch>
     </div>
     <div ng-if="niModelExt[+niItemModel.notification_id].setting"
          class="notification-item__settings"
@@ -17,7 +17,6 @@
                        name="time"
                        aria-label="time">
                 <p>{{ set.name | translate }}</p>
-
             </div>
         </md-input-container>
     </div>

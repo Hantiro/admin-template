@@ -1,15 +1,20 @@
 .list-item-custom {
-  font-family: ArimoRegular;
-  margin: 10px auto;
-  padding: 10px;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
-  background-color: #fff;
-  width: 85%;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
   &__result {
     font-size: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  &__body {
+    font-family: ArimoRegular;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
+    background-color: #fff;
+    width: 85%;
   }
   &__day-part {
 

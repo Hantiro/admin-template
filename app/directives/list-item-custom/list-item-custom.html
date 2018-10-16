@@ -1,16 +1,20 @@
-<div class="list-item-custom">
-    <div class="list-item-custom__result">
-        <div class="list-item-custom__prediction">
-            <div class="list-item-custom__day-part text-center">
-                <img ng-src="{{ vm.dayIcon(licIsDay) }}" alt="part of day">
+<div class="list-item-custom" auto-dir>
+    <div class="list-item-custom__body">
+        <div class="list-item-custom__result">
+            <div class="list-item-custom__prediction">
+                <div class="list-item-custom__day-part text-center">
+                    <img ng-src="{{ vm.dayIcon(licIsDay) }}" alt="part of day">
+                </div>
+                <div class="list-item-custom__day-part-text text-right">
+                    {{ licDayPartText }}
+                </div>
             </div>
-            <div class="list-item-custom__day-part-text text-right">
-                {{ licDayPartText }}
+            {{ licTypePrediction }}
+            <div class="list-item-custom__date text-right">
+                {{ licDateText }}
             </div>
         </div>
-        {{ licTypePrediction }}
-        <div class="list-item-custom__date text-right">
-            {{ licDateText }}
-        </div>
+
     </div>
+    <img src="content/img/icon/close-icon.png" ng-if="licShowDel">
 </div>

@@ -14,11 +14,9 @@
 
   &__write-settings {
     display: flex;
-    justify-content: flex-end;
     align-items: flex-end;
     p {
       margin: 0;
-      order: 2;
     }
     input {
       width: 80px;
@@ -36,11 +34,6 @@
   md-switch.md-default-theme.md-checked .md-thumb, md-switch.md-checked .md-thumb {
     background-color: #4b0049;
   }
-
-  md-input-container {
-    margin: 10px 0;
-  }
-
 }
 
 

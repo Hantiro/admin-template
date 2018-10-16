@@ -136,15 +136,17 @@
     "SEPHARDY_AUTHORITIES": "Ashkenazi according to Ashkenazic authorities",
     "CHOOSE_FROM_CALENDAR": "Choose from the calendar the date",
     "CHOOSE_FROM_CALENDAR2": "Choose from the calendar the date",
-    "TIME_FOR_ALARM": ":Time for alarm",
-    "HOUR_MORNING": ":An hour in the morning",
-    "HOUR_SUNSET": ":Two hours before sunset",
+    "TIME_FOR_ALARM": "Time for alarm:",
+    "HOUR_MORNING": "An hour in the morning:",
+    "HOUR_SUNSET": "Two hours before sunset:",
     "PREDICTION_MONTHLY": "Monthly",
     "PREDICTION_AVERAGE": "Middle",
     "PREDICTION_INTERVAL": "Interval",
     "MONTH_DAY": "Month day",
     "WELCOME_THEARAT": "Welcome to Thearat Habiet",
-    "ENTER_EMAIL_OLD_PASSWORD": "Enter your Email and we wil send you link to reset your old password"
+    "ENTER_EMAIL_OLD_PASSWORD": "Enter your Email and we wil send you link to reset your old password",
+    "ADD":"Add",
+    "HI":"Hi!"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",

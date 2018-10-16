@@ -12,25 +12,27 @@
                         lic-is-day="vm.isDay(item.isDay)"></list-item-custom>
             </div>
         </div>
-        <div class="history__top">
-            <button class="history__add" ng-click="vm.addDateTime()">
-                <div class="history__icon">+</div>
-            </button>
+        <div class="history__top" auto-dir>
+
             <div class="history__date">
                 <div layout="row" layout-align="flex-end space-between">
-                    <div class="">
-                        <span class="history__date-text">{{'CONTENT.CHOOSE_FROM_CALENDAR'|translate}}</span>
+                    <div>
                         <img src="content/img/icon/fa-calendar.png">
+                        <span class="history__date-text">{{'CONTENT.CHOOSE_FROM_CALENDAR'|translate}}</span>
                     </div>
                 </div>
             </div>
+            <button class="history__add" ng-click="vm.addDateTime()">
+                <div class="history__icon">+</div>
+            </button>
         </div>
         <list-item-custom
                 ng-if="vm.modelDays.data && vm.modelDays.data.length"
                 ng-repeat="item in vm.modelDays.data track by $index"
                 lic-date-text="{{ item.fullData }}"
                 lic-day-part-text="{{ vm.getDayNight(item.isDay) | translate }}"
-                lic-is-day="vm.isDay(item.isDay)"></list-item-custom>
+                lic-is-day="vm.isDay(item.isDay)"
+                lic-show-del="true"></list-item-custom>
     </div>
     <div dir="ltr" ng-if="vm.step === vm.STEPS.ADD_DATE_TIME">
         <div>{{'CONTENT.CHOOSE_FROM_CALENDAR'|translate}}</div>
@@ -45,7 +47,7 @@
              show-meridian="false">
         </div>
         <div>
-            <button class="button-default" ng-click="vm.add()">add</button>
+            <button class="button-default" ng-click="vm.add()">{{'CONTENT.ADD'|translate}}</button>
             <button class="button-not-default" ng-click="vm.cancel()">{{ 'CONTENT.CANCEL' | translate }}</button>
         </div>
     </div>
