@@ -1,27 +1,43 @@
 .list-item-custom {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 5px;
+  margin: 10px auto;
+
+  &--is-delete {
+    .list-item-custom__body {
+      width: 85%;
+    }
+  }
+
   &__result {
     font-size: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   &__body {
     font-family: ArimoRegular;
-    margin: 10px auto;
     padding: 10px;
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
     background-color: #fff;
-    width: 85%;
+    width: 90%;
   }
+
+  &__delete {
+    margin: 0 10px;
+  }
+
   &__day-part {
 
   }
+
   &__prediction {
     display: flex;
   }
+
   &__day-part-text {
     padding-right: 10px;
   }

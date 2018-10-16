@@ -1,4 +1,4 @@
-<div class="list-item-custom" auto-dir>
+<div class="list-item-custom" auto-dir ng-class="{'list-item-custom--is-delete':licShowDel}">
     <div class="list-item-custom__body">
         <div class="list-item-custom__result">
             <div class="list-item-custom__prediction">
@@ -16,5 +16,5 @@
         </div>
 
     </div>
-    <img src="content/img/icon/close-icon.png" ng-if="licShowDel">
+    <img src="content/img/icon/close-icon.png" ng-if="licShowDel" class="list-item-custom__delete">
 </div>
