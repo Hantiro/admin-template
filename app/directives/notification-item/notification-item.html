@@ -9,14 +9,15 @@
     <div ng-if="niModelExt[+niItemModel.notification_id].setting"
          class="notification-item__settings"
          ng-repeat="set in niModelExt[+niItemModel.notification_id].setting track by $index">
-        <md-input-container md-no-float class="md-block" flex auto-dir>
+        <md-input-container md-no-float class="md-block" flex>
             <div class="notification-item__write-settings">
-                <p>{{ set.name | translate }}</p>
                 <input type="number" id="time"
                        required
                        ng-model="set.model"
                        name="time"
                        aria-label="time">
+                <p>{{ set.name | translate }}</p>
+
             </div>
         </md-input-container>
     </div>
