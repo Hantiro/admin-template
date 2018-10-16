@@ -145,8 +145,9 @@
     "MONTH_DAY": "Month day",
     "WELCOME_THEARAT": "Welcome to Thearat Habiet",
     "ENTER_EMAIL_OLD_PASSWORD": "Enter your Email and we wil send you link to reset your old password",
-    "ADD":"Add",
-    "HI":"Hi!"
+    "ADD": "Add",
+    "HI": "Hi!",
+    "SEEING_DAYS": "Seeing days"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",
