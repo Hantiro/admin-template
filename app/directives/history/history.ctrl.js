@@ -17,6 +17,7 @@
             vm.add = add;
             vm.cancel = cancel;
             vm.getTypeTrans = getTypeTrans;
+
             vm.STEPS = {
                 SHOW_LIST: 1,
                 ADD_DATE_TIME: 2,

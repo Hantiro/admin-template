@@ -7,6 +7,7 @@
                 <list-item-custom
                         ng-repeat="item in vm.modelDays.predictionArray track by $index"
                         lic-date-text="{{ item.fullData }}"
+                        lic-model="item"
                         lic-day-part-text="{{ vm.getDayNight(item.isDay) | translate }}"
                         lic-type-prediction="{{ vm.getTypeTrans(item.type) | translate }}"
                         lic-is-day="vm.isDay(item.isDay)"></list-item-custom>
@@ -29,6 +30,7 @@
         <list-item-custom
                 ng-if="vm.modelDays.data && vm.modelDays.data.length"
                 ng-repeat="item in vm.modelDays.data track by $index"
+                lic-model="item"
                 lic-date-text="{{ item.fullData }}"
                 lic-day-part-text="{{ vm.getDayNight(item.isDay) | translate }}"
                 lic-is-day="vm.isDay(item.isDay)"
