@@ -6,7 +6,7 @@
         .controller('ListItemCustomCtrl', ListItemCustomCtrl);
 
     /* @ngInject */
-    function ListItemCustomCtrl($scope, constSvc, dateRequestSvc) {
+    function ListItemCustomCtrl($scope, constSvc, dateRequestSvc, messagesSvc) {
         var vm = this;
         vm.dayIcon = dayIcon;
         vm.deleteEvent = deleteEvent;
@@ -19,9 +19,10 @@
         function deleteEvent(model) {
             if(model.id){
                 dateRequestSvc.deleteEvent(model.id).then(function (res) {
-                    if (res) {
+                    if (res.success) {
                         if(angular.isFunction($scope.licUpdate)){
                             $scope.licUpdate();
+                            messagesSvc.show('SUCCESS.DELETED', 'success');
                         }
                     }
                 });

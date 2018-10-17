@@ -6,7 +6,7 @@
         .controller('DeleteEventCtrl', DeleteEventCtrl);
 
     /* @ngInject */
-    function DeleteEventCtrl($scope, dateSvc, constSvc) {
+    function DeleteEventCtrl($scope, dateSvc, dateRequestSvc, constSvc, messagesSvc) {
         var vm = this;
         vm.deleteLastEvent = deleteLastEvent;
         vm.textDelete = dateSvc.getDeleteText();
@@ -22,7 +22,10 @@
         }
 
         function deleteLastEvent() {
-            dateSvc.deleteLastEvent().then(function () {
+            dateRequestSvc.deleteLastEvent().then(function (res) {
+                if(res){
+                    messagesSvc.show('SUCCESS.DELETED', 'success');
+                }
                 dateSvc.updateCalendar();
             });
         }

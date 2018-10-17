@@ -168,6 +168,7 @@
   "SUCCESS": {
     "EVENT_CREATE": "Event was created successfully",
     "UPDATED": "Successfully updated",
+    "DELETED": "Successfully deleted",
     "SEND": "Successfully sent",
     "GESTATION_START_DATE_CHANGED": "Gestation start day was changed",
     "DONE_PILL": "Calculating pills was successfully",
