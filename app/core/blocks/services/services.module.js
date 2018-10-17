@@ -15,6 +15,7 @@
         'service.authDataSvc',
         'service.dateSvc',
         'service.dateExtSvc',
+        'service.dateRequestSvc',
         'service.pagesSvc',
         'service.pillsSvc',
         'service.notificationSvc',
