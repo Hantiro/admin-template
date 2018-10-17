@@ -14,7 +14,8 @@
                 licDayPartText: '@',
                 licDateText: '@',
                 licTypePrediction: '@',
-                licShowDel: '='
+                licShowDel: '=',
+                licUpdate: '='
             },
             controller: 'ListItemCustomCtrl',
             controllerAs: 'vm',

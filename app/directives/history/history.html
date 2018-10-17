@@ -34,6 +34,7 @@
                 lic-date-text="{{ item.fullData }}"
                 lic-day-part-text="{{ vm.getDayNight(item.isDay) | translate }}"
                 lic-is-day="vm.isDay(item.isDay)"
+                lic-update="vm.updateFunc"
                 lic-show-del="true"></list-item-custom>
     </div>
     <div dir="ltr" ng-if="vm.step === vm.STEPS.ADD_DATE_TIME">

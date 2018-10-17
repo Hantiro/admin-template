@@ -139,7 +139,7 @@
     "TIME_FOR_ALARM": "שעה להתראה:",
     "HOUR_MORNING": "שעה בבוקר:",
     "HOUR_SUNSET": "שעתיים לפני השקיעה:",
-    "PREDICTION_MONTHLY": "עונת פרישה",
+    "PREDICTION_MONTHLY": "עונת הפרישה של יום החודש",
     "PREDICTION_AVERAGE": "יום פרישה של עונה בינונית",
     "PREDICTION_INTERVAL": "יום פרישה של ההפלגה",
     "MONTH_DAY": "Month day",
