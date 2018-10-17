@@ -25,9 +25,9 @@
         <img class="start-page__wave" src="content/img/wave.png">
     </div>
     <div class="start-page__about">
-        <div class="text">
-            <h1 auto-dir>{{ 'CONTENT.ABOUT_SITE_TITLE' | translate}}</h1>
-            <p auto-dir>
+        <div class="text" auto-dir>
+            <h1>{{ 'CONTENT.ABOUT_SITE_TITLE' | translate}}</h1>
+            <p>
                 {{ 'CONTENT.ABOUT_SITE_DESCRIPTION' | translate }}
             </p>
             <p class="start-page__propose">
@@ -59,7 +59,7 @@
             <p>{{ 'CONTENT.BOOKS' | translate }}</p>
         </div>
         <div class="start-page__approvals-information">
-            <div class="start-page__book-content" ng-repeat="item in vm.books">
+            <div class="start-page__book-content" ng-repeat="item in vm.books" auto-dir>
                 <div class="start-page__images">
                     <img ng-src="{{item.image}}" alt="img">
                 </div>
