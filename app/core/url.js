@@ -6,6 +6,10 @@
                 var baseUrl = 'http://mahsevon.grassbusinesslabs.tk/api/';
 
                 return {
+                    event: {
+                        remove: baseUrl + 'event/'
+                    },
+
                     add_info: {
                         getByName: baseUrl + 'addition-information/by-name',
                     },

@@ -16,5 +16,8 @@
         </div>
 
     </div>
-    <img src="content/img/icon/close-icon.png" ng-if="licShowDel" class="list-item-custom__delete">
+    <img src="content/img/icon/close-icon.png"
+         ng-click="vm.deleteEvent(licModel)"
+         ng-if="licShowDel"
+         class="list-item-custom__delete">
 </div>

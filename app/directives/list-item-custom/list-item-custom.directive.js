@@ -9,6 +9,7 @@
             restrict: 'E',
             templateUrl: 'directives/list-item-custom/list-item-custom.html',
             scope: {
+                licModel: '=',
                 licIsDay: '=',
                 licDayPartText: '@',
                 licDateText: '@',

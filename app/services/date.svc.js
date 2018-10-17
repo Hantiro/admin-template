@@ -18,6 +18,7 @@
             loadMonth: loadMonth,
             createEvent: createEvent,
             deleteLastEvent: deleteLastEvent,
+            deleteEvent: deleteEvent,
             processSelectDay: processSelectDay,
             getListEvents: getListEvents,
             createRedDay: createRedDay,
@@ -39,6 +40,10 @@
         };
 
         //requests -------------------------------
+
+        function deleteEvent(id) {
+            return http.delete(url.event.remove + id);
+        }
 
         function createEventHistory(data) {
             return http.post(url.calendar.create_event_history, data);
