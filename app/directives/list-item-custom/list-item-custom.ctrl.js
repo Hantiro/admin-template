@@ -17,12 +17,15 @@
         }
 
         function deleteEvent(model) {
-            //fix model
-            // dateSvc.deleteEvent(id).then(function (res) {
-            //     if (res) {
-            //         init();
-            //     }
-            // });
+            if(model.id){
+                dateSvc.deleteEvent(model.id).then(function (res) {
+                    if (res) {
+                        if(angular.isFunction($scope.licUpdate)){
+                            $scope.licUpdate();
+                        }
+                    }
+                });
+            }
         }
     }
 

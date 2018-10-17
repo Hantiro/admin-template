@@ -17,6 +17,7 @@
             vm.add = add;
             vm.cancel = cancel;
             vm.getTypeTrans = getTypeTrans;
+            vm.updateFunc = updateFunc;
 
             vm.STEPS = {
                 SHOW_LIST: 1,
@@ -59,6 +60,10 @@
                     vm.modelDays = res;
                     vm.step = vm.STEPS.SHOW_LIST;
                 });
+            }
+
+            function updateFunc() {
+                init();
             }
 
             function updateModel() {

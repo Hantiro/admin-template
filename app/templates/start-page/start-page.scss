@@ -55,7 +55,7 @@
     border: 1px solid #fff;
     border-radius: 5px;
     padding: 0 10px;
-    margin-left: 63px;
+    margin-left: 50px;
   }
   &__propose {
     font-weight: bold;
@@ -96,7 +96,7 @@
     display: flex;
     position: absolute;
     left: 36%;
-    top: 28%;
+    top: 25%;
     align-items: flex-end;
     width: 62%;
     justify-content: space-between;
@@ -270,7 +270,7 @@
     }
   }
   &__book-description {
-    margin-left: 20px;
+    margin: 0 20px;
   }
   &__title-approvals {
     margin-top: 20px;
