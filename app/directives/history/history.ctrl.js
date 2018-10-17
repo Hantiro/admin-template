@@ -6,7 +6,7 @@
             .controller('HistoryCtrl', HistoryCtrl);
 
         /* @ngInject */
-        function HistoryCtrl($scope, dateSvc, $translate, messagesSvc, constSvc) {
+        function HistoryCtrl($scope, dateSvc, $translate, dateRequestSvc, messagesSvc, constSvc) {
             var vm = this;
             vm.addDateTime = addDateTime;
             vm.currentLang = currentLang;
@@ -55,7 +55,7 @@
             function init() {
                 dateSvc.setSelectedDay(dateSvc.getCurrentDay());
                 updateModel();
-                dateSvc.getListEvents().then(function (res) {
+                dateRequestSvc.getListEvents().then(function (res) {
                     vm.modelDays = res;
                     vm.step = vm.STEPS.SHOW_LIST;
                 });

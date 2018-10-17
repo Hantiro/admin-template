@@ -6,7 +6,7 @@
         .controller('CalendarCustomCtrl', CalendarCustomCtrl);
 
     /* @ngInject */
-    function CalendarCustomCtrl($scope, utilsSvc, dateSvc, dateExtSvc, messagesSvc, modalSvc, constSvc) {
+    function CalendarCustomCtrl($scope, utilsSvc, dateSvc, dateExtSvc, dateRequestSvc, messagesSvc, modalSvc, constSvc) {
         var vm = this;
 
         vm.nextMonth = nextMonth;
@@ -55,7 +55,7 @@
         }
 
         function processLoadingMonth(param) {
-            dateSvc.loadMonth(param).then(function (res) {
+            dateRequestSvc.loadMonth(param).then(function (res) {
                 setModelData(res);
                 //without params = current month in current year (not selected)
                 if (!isSimpleMode() && angular.isUndefined(param)) {

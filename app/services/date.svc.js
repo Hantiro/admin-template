@@ -4,7 +4,7 @@
     angular.module('service.dateSvc', []).factory('dateSvc', dateSvc);
 
     /* @ngInject */
-    function dateSvc(http, url,  $rootScope, utilsSvc, $q,  messagesSvc, dateExtSvc, constSvc) {
+    function dateSvc(http, url,  $rootScope, utilsSvc, $q,  messagesSvc, dateExtSvc, constSvc, dateRequestSvc) {
 
         var currentSelectModel;
         var preloadSimpleCalendarModel;
@@ -15,16 +15,10 @@
         var selectedMonth;
 
         var model = {
-            loadMonth: loadMonth,
-            createEvent: createEvent,
-            deleteLastEvent: deleteLastEvent,
-            deleteEvent: deleteEvent,
             processSelectDay: processSelectDay,
-            getListEvents: getListEvents,
             createRedDay: createRedDay,
             updateCalendar: updateCalendar,
             createFirstDay: createFirstDay,
-            createEventHistory: createEventHistory,
             getPreloadedForSimple: getPreloadedForSimple,
             getCalendarModel: getCalendarModel,
             setCalendarModel: setCalendarModel,
@@ -39,41 +33,7 @@
             getSelectedMonth: getSelectedMonth,
         };
 
-        //requests -------------------------------
 
-        function deleteEvent(id) {
-            return http.delete(url.event.remove + id);
-        }
-
-        function createEventHistory(data) {
-            return http.post(url.calendar.create_event_history, data);
-        }
-
-        function getListEvents() {
-            return http.get(url.calendar.getList);
-        }
-
-        function deleteLastEvent() {
-            return http.delete(url.calendar.delete_last_event).then(function (res) {
-                $rootScope.$broadcast(constSvc.CALENDAR_EVENT.DELETED_EVENT,{});
-                return res;
-            });
-        }
-
-        //without params - loading current month
-        function loadMonth(params) {
-            return http.get(url.calendar.month, params).then(function (res) {
-                return dateExtSvc.prepareMonthObj(res);
-            });
-        }
-
-        function createEvent(data) {
-            return http.post(url.calendar.create_event, data).then(function (res) {
-                $rootScope.$broadcast(constSvc.CALENDAR_EVENT.CREATED_EVENT,{});
-            });
-        }
-
-        //-----------------------------------------
         function getPreloadedForSimple() {
             return preloadSimpleCalendarModel;
         }
@@ -82,7 +42,7 @@
             if (preloadSimpleCalendarModel) {
                 return $q.when(preloadSimpleCalendarModel);
             }
-            return loadMonth({default: 1}).then(function (res) {
+            return dateRequestSvc.loadMonth({default: 1}).then(function (res) {
                 preloadSimpleCalendarModel = res;
                 return res;
             })
@@ -197,7 +157,7 @@
             var requestObj = selectedModel;
             requestObj.type_id = constSvc.TYPE_EVENT.PERIODS;
             requestObj.part_period = 1;
-            return createEventHistory(requestObj);
+            return dateRequestSvc.createEventHistory(requestObj);
         }
 
         function createRedDay(selectedModel, monthObj) {
@@ -213,7 +173,7 @@
                     selectedModel.part_period = constSvc.PERIOD_CONST.START;
                     break;
             }
-            return createEvent(selectedModel);
+            return dateRequestSvc.createEvent(selectedModel);
         }
 
         return model;
