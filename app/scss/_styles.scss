@@ -342,6 +342,10 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
   }
 }
 
+input[type=number] {
+  -moz-appearance: textfield !important;
+}
+
 .user-avatar {
   width: 80px;
   height: 80px;
