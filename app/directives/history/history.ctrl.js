@@ -63,6 +63,7 @@
             }
 
             function updateFunc() {
+                dateSvc.updateCalendar();
                 init();
             }
 
