@@ -1,4 +1,4 @@
-<div class="calendar-view">
+<div class="calendar-view" auto-dir>
     <div ng-if="!vm.showTime">
         <info-block
                 ib-type="default"
@@ -15,8 +15,9 @@
              minute-step="1"
              show-meridian="false">
         </div>
+        <button class="button-not-default" type="button" ng-click="vm.cancel()">{{'CONTENT.CANCEL' | translate}}
+        </button>
         <button class="button-default" ng-click="vm.save()">{{'CONTENT.SAVE' | translate}}</button>
-        <button class="button-not-default" type="button" ng-click="vm.cancel()">{{'CONTENT.CANCEL' | translate}}</button>
     </div>
 </div>
 
