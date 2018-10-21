@@ -1,39 +1,42 @@
-<div class="modal-header">
-    <h3 class="modal-title" id="modal-title">{{'CONTENT.SIGN_IN'|translate}}</h3>
-</div>
-<div class="modal-body" id="modal-body">
-    <div class="form" dir="ltr">
-        <form name="vm.loginForm" novalidate>
-            <md-input-container md-no-float class="md-block" flex>
-                <md-icon md-font-icon="fa fa-at " aria-hidden="true"></md-icon>
-                <input ng-model="vm.data.email"
-                       placeholder="{{'CONTENT.EMAIL'|translate}}"
-                       type="email" id="email"
-                       required
-                       name="email"
-                       aria-label="email">
-            </md-input-container>
-            <md-input-container md-no-float class="md-block" flex>
-                <md-icon md-font-icon="fa fa-eye" aria-hidden="true"
-                         ng-click="isHidden = !isHidden"></md-icon>
-                <input ng-init="isHidden = true"
-                       required
-                       placeholder="{{'CONTENT.PASSWORD'|translate}}"
-                       ng-model="vm.data.password"
-                       id="password"
-                       type="{{ isHidden ? 'password': 'text'}}">
-            </md-input-container>
-            <div class="remember">
-                <md-checkbox ng-model="vm.remember_me" aria-label="Checkbox 1"></md-checkbox>
-                <span>{{'CONTENT.REMEMBER_ME '|translate}}</span>
-            </div>
-        </form>
+<div class="login">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">{{'CONTENT.SIGN_IN'|translate}}</h3>
     </div>
-    <div class="forgot" ng-click="vm.resetPassword()">
-        {{'CONTENT.FORGOT_PASSWORD'|translate}}
+    <div class="modal-body" id="modal-body" auto-dir>
+        <div class="form" auto-dir>
+            <form name="vm.loginForm" novalidate>
+                <md-input-container md-no-float class="md-block" flex>
+                    <md-icon md-font-icon="fa fa-at " aria-hidden="true"></md-icon>
+                    <input ng-model="vm.data.email"
+                           placeholder="{{'CONTENT.EMAIL'|translate}}"
+                           type="email" id="email"
+                           required
+                           name="email"
+                           aria-label="email">
+                </md-input-container>
+                <md-input-container md-no-float class="md-block" flex>
+                    <md-icon md-font-icon="fa fa-eye" aria-hidden="true"
+                             ng-click="isHidden = !isHidden"></md-icon>
+                    <input ng-init="isHidden = true"
+                           required
+                           placeholder="{{'CONTENT.PASSWORD'|translate}}"
+                           ng-model="vm.data.password"
+                           id="password"
+                           type="{{ isHidden ? 'password': 'text'}}">
+                </md-input-container>
+                <div class="remember">
+                    <md-checkbox ng-model="vm.remember_me" aria-label="Checkbox 1"></md-checkbox>
+                    <span>{{'CONTENT.REMEMBER_ME '|translate}}</span>
+                </div>
+            </form>
+        </div>
+        <div class="forgot" ng-click="vm.resetPassword()">
+            {{'CONTENT.FORGOT_PASSWORD'|translate}}
+        </div>
     </div>
-</div>
-<div class="modal-footer">
-    <button class="button-default" type="button" ng-click="vm.login()">{{ 'CONTENT.SIGN_IN' | translate }}</button>
-    <button class="button-not-default" type="button" ng-click="vm.cancel()">{{ 'CONTENT.CANCEL' | translate }}</button>
+    <div class="modal-footer">
+        <button class="button-default" type="button" ng-click="vm.login()">{{ 'CONTENT.SIGN_IN' | translate }}</button>
+        <button class="button-not-default" type="button" ng-click="vm.cancel()">{{ 'CONTENT.CANCEL' | translate }}
+        </button>
+    </div>
 </div>

@@ -152,7 +152,7 @@
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",
-    "FIREBASE_SUBSCRIBE": "Error of subscribe recive notification, check internet connection and restart",
+    "FIREBASE_SUBSCRIBE": "Error of subscribe receive notification, check internet connection and restart",
     "NOT_CURRENT_MONTH": "For select date of previous or next month you need change current month",
     "BLOCKED_DAY": "This day is blocked by religious settings",
     "BEFORE_START": "This day is before start day!",

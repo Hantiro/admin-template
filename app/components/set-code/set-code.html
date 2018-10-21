@@ -1,29 +1,31 @@
-<div class="modal-header">
-    <p class="modal-title" id="modal-title">{{ 'CONTENT.ADD_CODE' | translate }}</p>
-</div>
-<div class="modal-body" id="modal-body">
-    <form name="vm.addCodeForm" novalidate>
-        <md-input-container md-no-float class="md-block" flex>
-            <input ng-model="vm.code"
-                   minlength="4"
-                   maxlength="4"
-                   type="number"
-                   id="code"
-                   name="code"
-                   placeholder="{{ 'CONTENT.CODE'|translate}}"
-                   aria-label="code">
-        </md-input-container>
-    </form>
-    <div class="modal-text">
-        <p class="modal-help">Didn't get?</p>
-        <div>
-            <span ng-click="vm.recentCode()">{{ 'CONTENT.SEND_AGAIN'|translate }}</span>
-            or
-            <span ng-click="vm.changePhone()">{{ 'CONTENT.REPLACE_NUMBER'|translate}}</span>
+<div class="set-code" auto-dir>
+    <div class="modal-header">
+        <p class="modal-title" id="modal-title">{{ 'CONTENT.ADD_CODE' | translate }}</p>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <form name="vm.addCodeForm" novalidate>
+            <md-input-container md-no-float class="md-block" flex>
+                <input ng-model="vm.code"
+                       minlength="4"
+                       maxlength="4"
+                       type="number"
+                       id="code"
+                       name="code"
+                       placeholder="{{ 'CONTENT.CODE'|translate}}"
+                       aria-label="code">
+            </md-input-container>
+        </form>
+        <div class="modal-text">
+            <p class="modal-help">{{ 'CONTENT.NOT_GET'|translate}}</p>
+            <div>
+                <span ng-click="vm.recentCode()">{{ 'CONTENT.SEND_AGAIN'|translate }}</span>
+                {{ 'CONTENT.OR'|translate}}
+                <span ng-click="vm.changePhone()">{{ 'CONTENT.REPLACE_NUMBER'|translate}}</span>
+            </div>
         </div>
     </div>
-</div>
-<div class="modal-footer">
-    <button class="button-default" ng-click="vm.next()">{{'CONTENT.NEXT' | translate}}</button>
-    <button class="button-not-default" ng-click="vm.cancel()">{{'CONTENT.CANCEL' | translate}}</button>
+    <div class="modal-footer">
+        <button class="button-default" ng-click="vm.next()">{{'CONTENT.NEXT' | translate}}</button>
+        <button class="button-not-default" ng-click="vm.cancel()">{{'CONTENT.CANCEL' | translate}}</button>
+    </div>
 </div>

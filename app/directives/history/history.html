@@ -39,7 +39,7 @@
     </div>
 
 
-    <div dir="ltr" ng-if="vm.step === vm.STEPS.ADD_DATE_TIME">
+    <div auto-dir ng-if="vm.step === vm.STEPS.ADD_DATE_TIME">
         <div>{{'CONTENT.CHOOSE_FROM_CALENDAR'|translate}}</div>
         <div class="history__info">
             <input class="history__input-calendar" type="text" ng-model="vm.dateText" readonly>
