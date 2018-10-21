@@ -53,10 +53,14 @@
                 g_month: dateSvc.getSelectedDay().gregorian_month,
                 g_year: dateSvc.getSelectedDay().gregorian_year,
                 dayCount: vm.model.count
-            }).then(function () {
-                messagesSvc.show('SUCCESS.DONE_PILL', 'success');
-                dateSvc.updateCalendar();
-                init();
+            }).then(function (res) {
+                if(res.success){
+                    messagesSvc.show('SUCCESS.DONE_PILL', 'success');
+                    dateSvc.updateCalendar();
+                    init();
+                } else if(res.messages){
+                    messagesSvc.toastr.error(res.messages);
+                }
             });
         }
 
