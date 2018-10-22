@@ -59,11 +59,11 @@
             <p>{{ 'CONTENT.BOOKS' | translate }}</p>
         </div>
         <div class="start-page__approvals-information">
-            <div class="start-page__book-content" ng-repeat="item in vm.books" dir="rtl">
+            <div class="start-page__book-content" ng-repeat="item in vm.books">
                 <div class="start-page__images">
                     <img ng-src="{{item.image}}" alt="img">
                 </div>
-                <div class="start-page__book-description">
+                <div class="start-page__book-description" auto-dir>
                     <div class="start-page__title-book">{{ vm.getTitle(item) }}</div>
                     <div class="start-page__subtitle-book">{{ vm.getSubtitle(item) }}</div>
                     <div class="start-page__description-approvals">

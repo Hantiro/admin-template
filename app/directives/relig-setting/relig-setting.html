@@ -1,4 +1,4 @@
-<div class="relig-setting">
+<div class="relig-setting" auto-dir>
         <p class="relig-setting__title"> {{'CONTENT.RELIGIOUS_SETTINGS_TITLE'|translate}} </p>
         <md-radio-group ng-model="vm.user_settings.religion_settings_id.id">
 
@@ -9,7 +9,7 @@
             </md-radio-button>
 
         </md-radio-group>
-        <div dir="rtl" class="profile__select-button"
+        <div auto-dir class="profile__select-button"
              ng-click="vm.showSettings = !vm.showSettings"
              layout="row"
              layout-align="space-between">
