@@ -1,25 +1,25 @@
 <!--<div class="notification-item" ng-if="niItemModel.notification_id" auto-dir>-->
-    <!--<div class="notification-item__header">-->
-        <!--<div class="notification-item__info">-->
-            <!--<p class="notification-item__name">{{ niModelExt[+niItemModel.notification_id].title | translate }}</p>-->
-            <!--<p class="notification-item__desc">{{ niModelExt[+niItemModel.notification_id].descr | translate }}</p>-->
-        <!--</div>-->
-        <!--<md-switch ng-model="niItemModel.status"></md-switch>-->
-    <!--</div>-->
-    <!--<div ng-if="niModelExt[+niItemModel.notification_id].setting"-->
-         <!--class="notification-item__settings"-->
-         <!--ng-repeat="set in niModelExt[+niItemModel.notification_id].setting track by $index">-->
-        <!--<md-input-container md-no-float class="md-block" flex>-->
-            <!--<div class="notification-item__write-settings">-->
-                <!--<input type="number" id="time"-->
-                       <!--required-->
-                       <!--ng-model="set.model"-->
-                       <!--name="time"-->
-                       <!--aria-label="time">-->
-                <!--<p>{{ set.name | translate }}</p>-->
-            <!--</div>-->
-        <!--</md-input-container>-->
-    <!--</div>-->
+<!--<div class="notification-item__header">-->
+<!--<div class="notification-item__info">-->
+<!--<p class="notification-item__name">{{ niModelExt[+niItemModel.notification_id].title | translate }}</p>-->
+<!--<p class="notification-item__desc">{{ niModelExt[+niItemModel.notification_id].descr | translate }}</p>-->
+<!--</div>-->
+<!--<md-switch ng-model="niItemModel.status"></md-switch>-->
+<!--</div>-->
+<!--<div ng-if="niModelExt[+niItemModel.notification_id].setting"-->
+<!--class="notification-item__settings"-->
+<!--ng-repeat="set in niModelExt[+niItemModel.notification_id].setting track by $index">-->
+<!--<md-input-container md-no-float class="md-block" flex>-->
+<!--<div class="notification-item__write-settings">-->
+<!--<input type="number" id="time"-->
+<!--required-->
+<!--ng-model="set.model"-->
+<!--name="time"-->
+<!--aria-label="time">-->
+<!--<p>{{ set.name | translate }}</p>-->
+<!--</div>-->
+<!--</md-input-container>-->
+<!--</div>-->
 <!--</div>-->
 
 
@@ -31,18 +31,42 @@
         </div>
         <md-switch ng-model="niItemModel.status"></md-switch>
     </div>
-    <div ng-if="niModelExt[+niItemModel.id].setting"
+    <div ng-if="niModelExt[niItemModel.name].setting"
          class="notification-item__settings"
-         ng-repeat="set in niModelExt[+niItemModel.id].setting track by $index">
-        <md-input-container md-no-float class="md-block" flex>
+         ng-repeat="setItem in niModelExt[niItemModel.name].setting track by $index">
+        <md-input-container md-no-float class="md-block" flex
+                            ng-if="!vm.showSetTime">
             <div class="notification-item__write-settings">
-                <input type="number" id="time"
-                       required
-                       ng-model="set.model"
+                <input type="text" id="time"
+                       ng-if="setItem.type === 'time'"
+                       ng-model="niItemModel.time"
                        name="time"
-                       aria-label="time">
-                <p>{{ set.name | translate }}</p>
+                       readonly
+                       ng-click="vm.setTime(set)"
+                       aria-label="sunset">
+                <input type="text" id="sunset"
+                       ng-if="setItem.type === 'sunset'"
+                       required
+                       ng-model="niItemModel.sunset"
+                       name="time"
+                       readonly
+                       aria-label="sunset">
+                <p>{{ setItem.name | translate }}</p>
             </div>
         </md-input-container>
+        <div ng-if="vm.showSetTime && setItem.type === 'time'">
+            <div uib-timepicker
+                 ng-model="vm.timeModel"
+                 hour-step="1"
+                 minute-step="1"
+                 show-meridian="false">
+            </div>
+            <button class="button-not-default" type="button" ng-click="vm.setTimeCancel()">
+                {{'CONTENT.CANCEL' | translate}}
+            </button>
+            <button class="button-default" ng-click="vm.setTimeOK()">
+                {{'CONTENT.OK' | translate}}</button>
+        </div>
     </div>
+
 </div>

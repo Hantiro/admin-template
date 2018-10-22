@@ -9,14 +9,15 @@
     function NotificationCtrl($scope, messagesSvc, notificationSvc) {
         var vm = this;
         vm.change = change;
+        vm.pushSettings = [];
         vm.notification = [];
-        vm.notificationMy = [];
         vm.model = {
             "Pills": {
                 title: 'CONTENT.PILLS',
                 descr: 'CONTENT.STOP_NOTIFICATION',
                 setting: [{
                     model: null,
+                    type: "time",
                     name: 'CONTENT.TIME_FOR_ALARM'
                 }]
             },
@@ -26,9 +27,11 @@
                 setting: [
                     {
                         model: null,
+                        type: 'time',
                         name: 'CONTENT.HOUR_MORNING'
                     },
                     {
+                        type: 'sunset',
                         model: null,
                         name: 'CONTENT.HOUR_SUNSET'
                     }
@@ -50,14 +53,6 @@
             getNotification();
         }
 
-
-        function getNotification() {
-            notificationSvc.my().then(function (res) {
-                vm.notification = res.data;
-                getMy();
-            });
-        }
-
         function getMy() {
             notificationSvc.my().then(function (res) {
                 vm.notificationMy = res.data;
@@ -66,12 +61,28 @@
         }
 
         function prepareObj() {
-
+            var request = {
+                notification_ids: []
+            };
+            vm.notification.forEach(function (v, i) {
+                var obj = {
+                    id: v.id,
+                    status: !!v.status
+                };
+                if(v.time){
+                    obj.time = v.time;
+                }
+                request.notification_ids.push(obj);
+            });
+            return request;
         }
 
-        function change() {
-            notificationSvc.change().then(function (res) {
 
+        function change() {
+            notificationSvc.change(prepareObj()).then(function (res) {
+                if(res.status){
+                    messagesSvc.show('SUCCESS.UPDATED', 'success');
+                }
             });
         }
 
@@ -79,18 +90,28 @@
             vm.notification.forEach(function (val, index) {
                 vm.notificationMy.forEach(function (v, i) {
                     if(val.name === v.name){
-                        angular.extend(vm.notification[index], vm.notificationMy[i]);
+                        vm.notification[index] = prepareNotification(vm.notificationMy[i]);
                     }
                 });
             });
         }
 
-        function save() {
-            notificationSvc.settingsUpdate(vm.pushSettings).then(function (res) {
-                if (res) {
-                    messagesSvc.show('SUCCESS.UPDATED', 'success');
+        function prepareNotification(notificationItem) {
+            if(notificationItem.time){
+                var timeArr = notificationItem.time.split(':');
+                if(timeArr.length > 2){
+                    notificationItem.time = timeArr[0]+':'+timeArr[1];
                 }
+            }
+            return notificationItem;
+        }
+
+        function getNotification() {
+            notificationSvc.all().then(function (res) {
+                vm.notification = res.data;
+                getMy();
             });
         }
+
     }
 })();

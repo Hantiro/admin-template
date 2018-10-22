@@ -10,12 +10,22 @@
             subscribe: subscribe,
             settingsView: settingsView,
             settingsUpdate: settingsUpdate,
-            all: all
+            all: all,
+            my: my,
+            change: change
         };
         return model;
 
+        function my() {
+            return http.get(url.notification.my);
+        }
+
         function all() {
             return http.get(url.notification.all);
+        }
+
+        function change(data) {
+            return http.post(url.notification.change, data);
         }
 
         function subscribe(credentials) {
