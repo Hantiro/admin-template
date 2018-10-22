@@ -71,6 +71,11 @@
                         update: baseUrl + 'user',
                         updatePassword: baseUrl + 'change-password',
                         userSettings: baseUrl + 'setting'
+                    },
+
+                    notification: {
+                        my: baseUrl + 'notification/my',
+                        all: baseUrl + 'notifications',
                     }
                 }
             }]);

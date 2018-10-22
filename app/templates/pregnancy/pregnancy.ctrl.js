@@ -43,6 +43,15 @@
         }
 
         function editStartDate() {
+            if (!!vm.dateBirthday.start) {
+                gestationSvc.remove().then(create);
+            } else {
+                create();
+            }
+
+        }
+
+        function create() {
             gestationSvc.create({
                 g_day: vm.model.gregorian_day,
                 g_month: vm.model.gregorian_month,
@@ -56,7 +65,7 @@
         function getDate() {
             gestationSvc.get().then(function (res) {
                 vm.dateBirthday = res;
-                if(res.start_ext){
+                if (res.start_ext) {
                     vm.date = res.start_ext.split('/');
                     vm.text.title = vm.date[0] + ' ' + vm.date[1];
                     vm.text.subtitle = vm.date[2];
@@ -64,7 +73,7 @@
             })
         }
 
-        $scope.$on('lang_changed',function (e,d) {
+        $scope.$on('lang_changed', function (e, d) {
             init();
         });
 

@@ -1,14 +1,39 @@
-<div class="notification-item" ng-if="niItemModel.notification_id" auto-dir>
+<!--<div class="notification-item" ng-if="niItemModel.notification_id" auto-dir>-->
+    <!--<div class="notification-item__header">-->
+        <!--<div class="notification-item__info">-->
+            <!--<p class="notification-item__name">{{ niModelExt[+niItemModel.notification_id].title | translate }}</p>-->
+            <!--<p class="notification-item__desc">{{ niModelExt[+niItemModel.notification_id].descr | translate }}</p>-->
+        <!--</div>-->
+        <!--<md-switch ng-model="niItemModel.status"></md-switch>-->
+    <!--</div>-->
+    <!--<div ng-if="niModelExt[+niItemModel.notification_id].setting"-->
+         <!--class="notification-item__settings"-->
+         <!--ng-repeat="set in niModelExt[+niItemModel.notification_id].setting track by $index">-->
+        <!--<md-input-container md-no-float class="md-block" flex>-->
+            <!--<div class="notification-item__write-settings">-->
+                <!--<input type="number" id="time"-->
+                       <!--required-->
+                       <!--ng-model="set.model"-->
+                       <!--name="time"-->
+                       <!--aria-label="time">-->
+                <!--<p>{{ set.name | translate }}</p>-->
+            <!--</div>-->
+        <!--</md-input-container>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+<div class="notification-item" ng-if="niItemModel.id" auto-dir>
     <div class="notification-item__header">
         <div class="notification-item__info">
-            <p class="notification-item__name">{{ niModelExt[+niItemModel.notification_id].title | translate }}</p>
-            <p class="notification-item__desc">{{ niModelExt[+niItemModel.notification_id].descr | translate }}</p>
+            <p class="notification-item__name">{{ vm.getTitle(niItemModel) }}</p>
+            <p class="notification-item__desc">{{ vm.getBody(niItemModel) }}</p>
         </div>
         <md-switch ng-model="niItemModel.status"></md-switch>
     </div>
-    <div ng-if="niModelExt[+niItemModel.notification_id].setting"
+    <div ng-if="niModelExt[+niItemModel.id].setting"
          class="notification-item__settings"
-         ng-repeat="set in niModelExt[+niItemModel.notification_id].setting track by $index">
+         ng-repeat="set in niModelExt[+niItemModel.id].setting track by $index">
         <md-input-container md-no-float class="md-block" flex>
             <div class="notification-item__write-settings">
                 <input type="number" id="time"

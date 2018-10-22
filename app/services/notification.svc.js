@@ -9,9 +9,14 @@
         var model = {
             subscribe: subscribe,
             settingsView: settingsView,
-            settingsUpdate: settingsUpdate
+            settingsUpdate: settingsUpdate,
+            all: all
         };
         return model;
+
+        function all() {
+            return http.get(url.notification.all);
+        }
 
         function subscribe(credentials) {
             return http.post(url.notificationSettings.setToken, credentials);
@@ -24,7 +29,6 @@
         function settingsUpdate(data) {
             return http.post(url.notificationSettings.settings, data)
         }
-
 
     }
 

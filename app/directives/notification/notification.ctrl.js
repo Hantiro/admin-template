@@ -10,6 +10,7 @@
         var vm = this;
         vm.save = save;
         vm.pushSettings = [];
+        vm.notification = [];
         vm.model = {
             1: {
                 title: 'CONTENT.PILLS',
@@ -46,13 +47,20 @@
         init();
 
         function init() {
-            getSettings();
+            // getSettings();
+            getNotification();
         }
 
         function getSettings() {
             notificationSvc.settingsView().then(function (res) {
                 vm.pushSettings = angular.copy(res.entity || []);
             })
+        }
+
+        function getNotification() {
+            notificationSvc.all().then(function (res) {
+                vm.notification = res.data;
+            });
         }
 
         function save() {

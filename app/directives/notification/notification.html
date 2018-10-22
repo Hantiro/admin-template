@@ -1,8 +1,8 @@
 <div class="notification">
     <div class="notification__content">
-        <notification-item ng-repeat="item in vm.pushSettings track by $index"
+        <notification-item ng-repeat="item in vm.notification track by $index"
                            ni-item-model="item"
-                           ni-model-ext="vm.model "></notification-item>
+                           ni-model-ext="vm.model"></notification-item>
     </div>
     <div class="text-center">
         <button class="notification__button button-default" ng-click="vm.save()">
@@ -11,4 +11,3 @@
     </div>
 
 </div>
-
