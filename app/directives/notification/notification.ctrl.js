@@ -8,11 +8,11 @@
     /* @ngInject */
     function NotificationCtrl($scope, messagesSvc, notificationSvc) {
         var vm = this;
-        vm.save = save;
-        vm.pushSettings = [];
+        vm.change = change;
         vm.notification = [];
+        vm.notificationMy = [];
         vm.model = {
-            1: {
+            "Pills": {
                 title: 'CONTENT.PILLS',
                 descr: 'CONTENT.STOP_NOTIFICATION',
                 setting: [{
@@ -20,25 +20,25 @@
                     name: 'CONTENT.TIME_FOR_ALARM'
                 }]
             },
-            2: {
+            "MenoPause": {
                 title: 'CONTENT.MENOPAUSE',
                 descr: 'CONTENT.THE_FIRST_SEVENTH_DAYS',
                 setting: [
                     {
-                    model: null,
-                    name: 'CONTENT.HOUR_MORNING'
-                },
-                {
-                    model: null,
-                    name: 'CONTENT.HOUR_SUNSET'
-                }
+                        model: null,
+                        name: 'CONTENT.HOUR_MORNING'
+                    },
+                    {
+                        model: null,
+                        name: 'CONTENT.HOUR_SUNSET'
+                    }
                 ]
             },
-            3: {
+            "Theara": {
                 title: 'CONTENT.STOP_THEARA',
                 descr: 'CONTENT.DAY_NIGHT'
             },
-            4: {
+            "Retirement": {
                 title: 'CONTENT.RETIREMENT_NOTIFICATION',
                 // descr: 'CONTENT.THE_FIRST_SEVENTH_DAYS'
             }
@@ -47,19 +47,41 @@
         init();
 
         function init() {
-            // getSettings();
             getNotification();
         }
 
-        function getSettings() {
-            notificationSvc.settingsView().then(function (res) {
-                vm.pushSettings = angular.copy(res.entity || []);
-            })
-        }
 
         function getNotification() {
-            notificationSvc.all().then(function (res) {
+            notificationSvc.my().then(function (res) {
                 vm.notification = res.data;
+                getMy();
+            });
+        }
+
+        function getMy() {
+            notificationSvc.my().then(function (res) {
+                vm.notificationMy = res.data;
+                mergeDefaultWithMy();
+            });
+        }
+
+        function prepareObj() {
+
+        }
+
+        function change() {
+            notificationSvc.change().then(function (res) {
+
+            });
+        }
+
+        function mergeDefaultWithMy() {
+            vm.notification.forEach(function (val, index) {
+                vm.notificationMy.forEach(function (v, i) {
+                    if(val.name === v.name){
+                        angular.extend(vm.notification[index], vm.notificationMy[i]);
+                    }
+                });
             });
         }
 
