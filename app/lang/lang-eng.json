@@ -32,6 +32,7 @@
     "OK": "Ok",
     "CANCEL": "Cancel",
     "THE_END_DATE": "Choose your \"Hefsek theara\"",
+    "THE_END_DATE_BOLD": "Enter",
     "DATE_OF_BIRTH": "Date of birth",
     "NOT_FOUND": "Not found",
     "LEGEND_NIGHT_SEASON": "Night",
@@ -148,7 +149,11 @@
     "ENTER_EMAIL_OLD_PASSWORD": "Enter your Email and we wil send you link to reset your old password",
     "ADD": "Add",
     "HI": "Hi!",
-    "SEEING_DAYS": "Seeing days"
+    "SEEING_DAYS": "Seeing days",
+    "WELCOME": "Welcome",
+    "WE_ARE_HAPPY": "We are happy to greet you!",
+    "YOU_CAN_TRY": "You can try the app for 7 days FREE.",
+    "TEST_SEVEN": "Test for 7 days"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",
