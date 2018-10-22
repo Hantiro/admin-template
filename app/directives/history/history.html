@@ -1,4 +1,4 @@
-<div class="history" dir="rtl">
+<div class="history">
     <div class="history__scroll" ng-if="vm.step === vm.STEPS.SHOW_LIST">
         <div>
             <div ng-if="vm.modelDays.predictionArray && vm.modelDays.predictionArray.length">
@@ -39,7 +39,7 @@
     </div>
 
 
-    <div auto-dir ng-if="vm.step === vm.STEPS.ADD_DATE_TIME">
+    <div ng-if="vm.step === vm.STEPS.ADD_DATE_TIME">
         <div>{{'CONTENT.CHOOSE_FROM_CALENDAR'|translate}}</div>
         <div class="history__info">
             <input class="history__input-calendar" type="text" ng-model="vm.dateText" readonly>
