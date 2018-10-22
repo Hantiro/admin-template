@@ -10,7 +10,7 @@
             subscribe: subscribe,
             settingsView: settingsView,
             settingsUpdate: settingsUpdate,
-            all:all
+            all: all
         };
         return model;
 
