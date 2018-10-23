@@ -1,6 +1,6 @@
 <div class="start-page">
     <div class="start-page__main-block">
-        <header h-is-auth="true"></header>
+        <header></header>
         <div class="start-page__content">
             <div class="start-page__title">
                 <span class="start-page__quote">(</span>{{ "CONTENT.SECOND_TITLE_LANDING" | translate }} <span
@@ -17,9 +17,7 @@
                     </div>
                     <div class="start-page__register" ng-click="vm.signUp()">{{ 'CONTENT.REGISTER' | translate }}</div>
                 </div>
-                <div class="start-page__promo">
-                    <li>{{ 'CONTENT.WELCOME_THEARAT' | translate }}</li>
-                </div>
+                <cycle-scroll-block></cycle-scroll-block>
             </div>
         </div>
         <img class="start-page__wave" src="content/img/wave.png">
