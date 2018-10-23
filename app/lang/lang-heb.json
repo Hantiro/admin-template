@@ -143,9 +143,10 @@
     "PREDICTION_MONTHLY": "עונת הפרישה של יום החודש",
     "PREDICTION_AVERAGE": "עונת הרפישה של עונה בינונית",
     "PREDICTION_INTERVAL": "עונת פרישה של עונת ההפלגה",
-    "REGULAR_MONTHLY_PERIOD": "וסת קבועה של יום החודש",
-    "REGULAR_SAILING_PERIOD": "וסת קבוע של עונת ההפלגה",
-    "REGULAR_MIDDLE_SEASON": "וסת קבוע של עונה בינונית",
+
+    "PREDICTION_ADDITIONAL_MONTHLY": "וסת קבועה של יום החודש",
+    "PREDICTION_ADDITIONAL_INTERVAL": "וסת קבוע של עונת ההפלגה",
+    "PREDICTION_ADDITIONAL_AVERAGE": "וסת קבוע של עונה בינונית",
     "MONTH_DAY": "Month day",
     "WELCOME_THEARAT": " ברוכים הבאים לטהרת הבית",
     "ENTER_EMAIL_OLD_PASSWORD": "הזן את האימייל שלך ואנו נשלח לך קישור לאיפוס הסיסמה הישנה שלך",

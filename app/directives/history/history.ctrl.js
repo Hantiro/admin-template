@@ -128,7 +128,7 @@
                 if( !vm.modelDays.isRegular){
                    return  'CONTENT.IRREGULAR';
                 }  else if(vm.modelDays.predictionArray[0] && vm.modelDays.predictionArray[0].type) {
-                   return  'CONTENT.PREDICTION_' + vm.modelDays.predictionArray[0].type.toUpperCase();
+                   return  'CONTENT.PREDICTION_ADDITIONAL_' + vm.modelDays.predictionArray[0].type.toUpperCase();
                 }
             }
 
