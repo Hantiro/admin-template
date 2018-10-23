@@ -55,6 +55,7 @@
             isNumber: isNumber,
             isMSIE: isMSIE,
             showDatePicker: showDatePicker,
+            getStringTime:getStringTime,
             NUMBER_HE: NUMBER_HE,
             DAYS_ORDER: DAYS_ORDER,
             EMAIL_REG: EMAIL_REG
@@ -185,6 +186,15 @@
                 });
             }
             return tempData;
+        }
+
+        function getStringTime(dateTimeObj) {
+            if (!dateTimeObj instanceof Date) return '';
+            var hour = dateTimeObj.getHours();
+            var minute = dateTimeObj.getMinutes();
+            var hourS = hour < 10 ? '0' + hour : '' + hour;
+            var minuteS = minute < 10 ? '0' + minute : '' + minute;
+            return hourS + ':' + minuteS;
         }
     }
 })();

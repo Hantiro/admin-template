@@ -21,6 +21,7 @@
         'directives.religSetting',
         'directives.includeTemplate',
         'directives.autoDir',
-        'directives.notificationItem'
+        'directives.notificationItem',
+        'directives.cycleScrollBlock',
     ]);
 })();
