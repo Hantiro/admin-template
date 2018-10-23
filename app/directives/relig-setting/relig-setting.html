@@ -1,53 +1,53 @@
 <div class="relig-setting" auto-dir>
-        <p class="relig-setting__title"> {{'CONTENT.RELIGIOUS_SETTINGS_TITLE'|translate}} </p>
-        <md-radio-group ng-model="vm.user_settings.religion_settings_id.id">
+    <p class="relig-setting__title"> {{'CONTENT.RELIGIOUS_SETTINGS_TITLE'|translate}} </p>
+    <md-radio-group ng-model="vm.user_settings.religion_settings_id.id">
 
-            <md-radio-button ng-repeat="setting in vm.religious_settings"
-                             ng-value="setting.id"
-                             ng-click="vm.checkSettings(setting.id)">
-                {{ vm.RELIG_SETTING[setting.name] | translate }}
-            </md-radio-button>
+        <md-radio-button ng-repeat="setting in vm.religious_settings"
+                         ng-value="setting.id"
+                         ng-click="vm.checkSettings(setting.id)">
+            {{ vm.RELIG_SETTING[setting.name] | translate }}
+        </md-radio-button>
 
-        </md-radio-group>
-        <div auto-dir class="profile__select-button"
-             ng-click="vm.showSettings = !vm.showSettings"
-             layout="row"
-             layout-align="space-between">
-            <div>
-                <md-icon md-font-icon="fa"
-                         ng-class="{ 'fa-chevron-down': vm.showSettings,
+    </md-radio-group>
+    <div auto-dir class="profile__select-button"
+         ng-click="vm.showSettings = !vm.showSettings"
+         layout="row"
+         layout-align="space-between">
+        <div>
+            <md-icon md-font-icon="fa"
+                     ng-class="{ 'fa-chevron-down': vm.showSettings,
                                      'fa-chevron-right': !vm.showSettings }"
-                         aria-hidden="true"></md-icon>
-            </div>
-            <div class="profile__select">
-                <span>{{'CONTENT.CHOOSE_LIGHT'|translate}}</span>
-            </div>
+                     aria-hidden="true"></md-icon>
         </div>
-        <div layout="column" layout-align="center" class="profile__mark-content">
-            <div ng-if="vm.showSettings"
-                 class="profile__only-check-mark">
-                <md-checkbox ng-model="vm.user_settings.monthly_cycle" aria-label="Checkbox 1">
-                    <span>{{'CONTENT.MONTH_PERIOD'|translate}}</span>
-                </md-checkbox>
-            </div>
-            <div class="profile__only-check-mark"
-                 ng-if="vm.showSettings">
-                <md-checkbox ng-model="vm.user_settings.interval_cycle" aria-label="Checkbox 1">
-                    <span>{{'CONTENT.SAILING_PERIOD'|translate}}</span>
-                </md-checkbox>
-            </div>
-            <div ng-if="vm.showSettings"
-                 class="profile__only-check-mark">
-                <md-checkbox ng-model="vm.user_settings.average_cycle" aria-label="Checkbox 1">
-                    <span>{{'CONTENT.MIDDLE_SEASON'|translate}}</span>
-                </md-checkbox>
-            </div>
-            <div class="profile__checked"
-                 ng-if="vm.user_settings.religion_settings_id.id === vm.SETTING_CONST.MORDECAI">
-                <md-checkbox ng-model="vm.user_settings.le_horma" aria-label="Checkbox 1">
-                    <p>{{'CONTENT.24HOURS'|translate}}</p>
-                </md-checkbox>
-            </div>
+        <div class="profile__select">
+            <span>{{'CONTENT.CHOOSE_LIGHT'|translate}}</span>
         </div>
+    </div>
+    <div layout="column" layout-align="center" class="profile__mark-content">
+        <div ng-if="vm.showSettings"
+             class="profile__only-check-mark">
+            <md-checkbox ng-model="vm.user_settings.monthly_cycle" aria-label="Checkbox 1">
+                <span>{{'CONTENT.MONTH_PERIOD'|translate}}</span>
+            </md-checkbox>
+        </div>
+        <div class="profile__only-check-mark"
+             ng-if="vm.showSettings">
+            <md-checkbox ng-model="vm.user_settings.interval_cycle" aria-label="Checkbox 1">
+                <span>{{'CONTENT.SAILING_PERIOD'|translate}}</span>
+            </md-checkbox>
+        </div>
+        <div ng-if="vm.showSettings"
+             class="profile__only-check-mark">
+            <md-checkbox ng-model="vm.user_settings.average_cycle" aria-label="Checkbox 1">
+                <span>{{'CONTENT.MIDDLE_SEASON'|translate}}</span>
+            </md-checkbox>
+        </div>
+        <div class="profile__checked"
+             ng-if="vm.user_settings.religion_settings_id.id === vm.SETTING_CONST.MORDECAI">
+            <md-checkbox ng-model="vm.user_settings.le_horma" aria-label="Checkbox 1">
+                <p>{{'CONTENT.24HOURS'|translate}}</p>
+            </md-checkbox>
+        </div>
+    </div>
 </div>
 
