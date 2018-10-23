@@ -1,3 +1,10 @@
-<div class="cycle-scroll-block">
-    <p>{{ 'CONTENT.WELCOME_THEARAT' | translate }}</p>
+<div id="cycleBlock" class="cycle-scroll">
+    <div id="cycleContent"
+             behavior="scroll"
+             direction="down"
+             scrollamount="2"
+             height="{{ bHeight }}"
+             width="{{ bWidth}}">
+        <div id="cycleItem"  class="cycle-scroll__item" ng-bind-html="csbModel | trusted"></div>
+    </div>
 </div>

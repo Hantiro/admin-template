@@ -4,7 +4,7 @@
         .controller('StartPageCtrl', StartPageCtrl);
 
     /* @ngInject */
-    function StartPageCtrl(authExtSvc, $translate, books, modalSvc) {
+    function StartPageCtrl(authExtSvc, $translate, books, modalSvc, textSvc) {
         var vm = this;
         vm.getTitle = getTitle;
         vm.getDescription = getDescription;
@@ -12,6 +12,7 @@
         vm.signUp = authExtSvc.signUpProcess;
         vm.books = books;
         vm.viewImg = modalSvc.viewImg;
+        vm.promoModel;
 
         vm.imgs = [
             'content/img/6.jpg',
@@ -24,6 +25,9 @@
         init();
 
         function init() {
+            textSvc.getByNameArr(['promo']).then(function (res) {
+                vm.promoModel = res.data && res.data.promo &&  res.data.promo.value;
+            });
 
         }
 

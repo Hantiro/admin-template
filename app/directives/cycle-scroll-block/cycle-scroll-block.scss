@@ -1,4 +1,4 @@
-.cycle-scroll-block {
+.cycle-scroll {
   text-align: center;
   height: 315px;
   font-family: AssistantRegular;
@@ -6,4 +6,11 @@
   padding: 5px;
   border-radius: 10px;
   width: 215px;
+  overflow: hidden;
+  &__item {
+    width: 200px;
+    white-space: normal;
+    word-break: break-word;
+    word-wrap: break-word;
+  }
 }

@@ -77,6 +77,7 @@
       "./app/content/img/**/*"
     ],
     "vendorjs": [
+      "./app/lib/marquee.js",
       "./app/bower_components/jquery/dist/jquery.js",
       "./app/bower_components/bootstrap/dist/js/bootstrap.min.js",
       "./app/bower_components/angular/angular.js",
