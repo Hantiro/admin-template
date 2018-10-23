@@ -1,14 +1,23 @@
 .notification-item {
-
+  margin-bottom: 10px;
+  &__settings {
+    margin-bottom: 18px;
+  }
   &__header {
     display: flex;
     justify-content: space-between;
+  }
+
+  md-input-container {
+    margin: 0;
+    padding: 0;
   }
 
   &__desc {
     color: #9e9592;
   }
   &__name {
+    margin: 0;
     color: #2f2d2c;
   }
 
@@ -19,6 +28,7 @@
       margin: 0;
     }
     input {
+      text-align: center;
       width: 80px;
     }
   }

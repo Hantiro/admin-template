@@ -2,6 +2,7 @@
   position: relative;
   z-index: 11;
   .col-flex {
+    font-weight: bold;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -moz-box-flex: 1;
@@ -124,6 +125,7 @@
   }
 
   &__title {
+    font-weight: bold;
     font-family: ArimoRegular;
     color: #401157;
     display: flex;
@@ -143,6 +145,9 @@
     justify-content: space-between;
     &-content {
       position: relative;
+    }
+    &:focus{
+        outline: 3px solid #4b0049;
     }
     &:after {
       display: block;
