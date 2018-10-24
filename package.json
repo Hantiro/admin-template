@@ -77,7 +77,6 @@
       "./app/content/img/**/*"
     ],
     "vendorjs": [
-      "./app/lib/marquee.js",
       "./app/bower_components/jquery/dist/jquery.js",
       "./app/bower_components/bootstrap/dist/js/bootstrap.min.js",
       "./app/bower_components/angular/angular.js",
@@ -93,7 +92,8 @@
       "./app/bower_components/angular-messages/angular-messages.min.js",
       "./app/bower_components/angular-translate/angular-translate.min.js",
       "./app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js",
-      "./app/bower_components/angular-sanitize/angular-sanitize.min.js"
+      "./app/bower_components/angular-sanitize/angular-sanitize.min.js",
+      "./app/lib/marquee.js"
     ],
     "vendorcss": [
       "./app/bower_components/bootstrap/dist/css/bootstrap.min.css",
