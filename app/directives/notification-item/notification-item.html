@@ -26,8 +26,8 @@
 <div class="notification-item" ng-if="niItemModel.id" auto-dir>
     <div class="notification-item__header">
         <div class="notification-item__info">
-            <p class="notification-item__name">{{ vm.getTitle(niItemModel) }}</p>
-            <p class="notification-item__desc">{{ vm.getBody(niItemModel) }}</p>
+            <p class="notification-item__name">{{ vm.getTitle(niItemModel) | translate }}</p>
+            <p class="notification-item__desc">{{ vm.getBody(niItemModel) | translate }}</p>
         </div>
         <md-switch ng-model="niItemModel.status"></md-switch>
     </div>

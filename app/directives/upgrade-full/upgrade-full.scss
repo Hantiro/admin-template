@@ -1,8 +1,10 @@
 .upgrade-full {
   &__propose {
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto 20px;
     p {
       margin-right: 10px;
     }

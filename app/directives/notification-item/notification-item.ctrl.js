@@ -35,12 +35,13 @@
             vm.timeModel = null;
         }
 
+
         function getTitle(item) {
-            return  $translate.use() === 'heb'? item.title_heb : item.title_eng;
+            return $scope.niModelExt[item.name].title;
         }
 
         function getBody(item) {
-            return  $translate.use() === 'heb'? item.body_heb : item.body_eng;
+            return  $scope.niModelExt[item.name].descr;
         }
     }
 

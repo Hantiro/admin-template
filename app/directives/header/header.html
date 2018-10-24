@@ -16,7 +16,7 @@
                 </ul>
             </div>
             <div class="main-header__authorization" ng-show="vm.isAuth()">
-                <p class="main-header__authorization--user cursor-pointer" ui-sref="app.main.profile">
+                <p class="main-header__authorization--user cursor-pointer" ui-sref="app.main.profile" auto-dir>
                     {{ 'CONTENT.HI' | translate }} {{ vm.user().first_name + ' ' + vm.user().last_name }}
                 </p>
                 <i class="fa fa-user"></i>

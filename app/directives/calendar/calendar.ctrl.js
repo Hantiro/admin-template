@@ -15,6 +15,7 @@
         vm.calendarModel = dateSvc.getCalendarModel();
         vm.showTime = false;
         vm.textHeader = 'CONTENT.THE_START_DATE';
+        vm.textSubHeader = 'CONTENT.THE_END_DATE_BOLD';
 
         $scope.$on(constSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
             vm.calendarModel = dateSvc.getCalendarModel();
@@ -29,6 +30,7 @@
 
         function init() {
             vm.textHeader = isStart() ? 'CONTENT.THE_START_DATE' : 'CONTENT.THE_END_DATE';
+            vm.textSubHeader = isStart() ? 'CONTENT.THE_START_DATE_BOLD' : 'CONTENT.THE_END_DATE_BOLD';
         }
 
         function checkCorrectDate() {
