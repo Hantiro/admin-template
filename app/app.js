@@ -30,7 +30,7 @@
 
         $rootScope.$on('$translateChangeEnd', function (e,d) {
             userSvc.setLang($translate.use());
-            $rootScope.$broadcast('lang_changed');
+            $rootScope.$broadcast('lang_changed', $translate.use());
         });
         $rootScope.$on('$translateLoadingEnd', function (e,d) {
             userSvc.setLang($translate.use());

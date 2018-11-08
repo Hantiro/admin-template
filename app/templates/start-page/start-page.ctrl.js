@@ -4,7 +4,7 @@
         .controller('StartPageCtrl', StartPageCtrl);
 
     /* @ngInject */
-    function StartPageCtrl(authExtSvc, $translate, books, modalSvc, textSvc) {
+    function StartPageCtrl($rootScope, authExtSvc, $translate, books, modalSvc, textSvc, $timeout) {
         var vm = this;
         vm.getTitle = getTitle;
         vm.getDescription = getDescription;
@@ -13,6 +13,7 @@
         vm.books = books;
         vm.viewImg = modalSvc.viewImg;
         vm.promoModel;
+        vm.showScrollBlock = true;
 
         vm.imgs = [
             'content/img/6.jpg',
@@ -25,10 +26,17 @@
         init();
 
         function init() {
-            textSvc.getByNameArr(['promo']).then(function (res) {
-                vm.promoModel = res.data && res.data.promo &&  res.data.promo.value;
+            var sufix = '';
+            if($translate.use() === 'heb'){
+                sufix = '_heb';
+            }
+            vm.showScrollBlock = false;
+            textSvc.getByNameArr(['promo'+sufix]).then(function (res) {
+                $timeout(function(){
+                    vm.promoModel = res.data && res.data['promo'+sufix] &&  res.data['promo'+sufix].value;
+                    vm.showScrollBlock = true;
+                }, 1000);
             });
-
         }
 
         function getTitle(item) {
@@ -42,5 +50,9 @@
         function getSubtitle(item) {
             return $translate.use() === 'heb' ? item.subtitleHeb : item.subtitle;
         }
+
+        $rootScope.$on('lang_changed', function(data){
+            init();
+        });
     }
 })();
