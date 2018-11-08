@@ -25,6 +25,12 @@
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .legend {
+    width: 70%;
+  }
+}
+
 @media screen and(max-width: 992px) {
   .legend {
     width: 100%;
