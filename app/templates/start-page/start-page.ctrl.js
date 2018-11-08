@@ -35,7 +35,7 @@
                 $timeout(function(){
                     vm.promoModel = res.data && res.data['promo'+sufix] &&  res.data['promo'+sufix].value;
                     vm.showScrollBlock = true;
-                }, 1000);
+                }, 250);
             });
         }
 
