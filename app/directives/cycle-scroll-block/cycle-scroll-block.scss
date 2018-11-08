@@ -14,3 +14,17 @@
     word-wrap: break-word;
   }
 }
+
+@media screen and (max-width: 780px) {
+  .cycle-scroll {
+    height: 35vmin;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .cycle-scroll {
+    height: 25vmin;
+    width: 200px;
+  }
+}
