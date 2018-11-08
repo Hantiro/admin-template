@@ -97,6 +97,7 @@
     position: absolute;
     left: 36%;
     top: 25%;
+    height: 315px;
     align-items: flex-end;
     width: 62%;
     justify-content: space-between;
@@ -354,6 +355,9 @@
   }
   @media screen and (max-width: 780px) {
     .start-page {
+      &__buttons-promo {
+        height: 35vmin;
+      }
       &__htc {
         left: 30px;
       }
@@ -430,6 +434,7 @@
   @media screen and (max-width: 480px) {
     .start-page {
       &__buttons-promo {
+        height: 25vmin;
         top: 43%;
       }
 

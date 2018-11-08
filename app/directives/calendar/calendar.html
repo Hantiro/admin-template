@@ -8,7 +8,8 @@
         <delete-event></delete-event>
     </div>
     <div ng-if="vm.showTime" class="calendar-view__time">
-        <div uib-timepicker
+        <div ng-if="vm.setTime"
+             uib-timepicker
              ng-model="vm.timeModel"
              ng-change="vm.changedTime()"
              hour-step="1"
