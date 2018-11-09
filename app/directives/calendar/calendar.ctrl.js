@@ -35,8 +35,21 @@
             vm.setTime = isStart();
         }
 
+        function updateModel() {
+            vm.dateModel = dateSvc.getSelectedDay();
+            vm.dateText = generateDateFormat(vm.dateModel);
+        }
+
+        function generateDateFormat(day) {
+            return [day.gregorian_day, day.gregorian_month, day.gregorian_year].join('/');
+        }
+
+        $scope.$on(constSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function () {
+            updateModel();
+        });
+
         function checkCorrectDate() {
-            if(dateExtSvc.isCurrentMonthAndNotFuture(dateSvc.getSelectedDay(), dateSvc.getCurrentDay(), dateSvc.getCurrentMonth())) {
+            if (dateExtSvc.isCurrentMonthAndNotFuture(dateSvc.getSelectedDay(), dateSvc.getCurrentDay(), dateSvc.getCurrentMonth())) {
                 vm.showTime = true;
             } else {
                 vm.showTime = false;
@@ -75,7 +88,7 @@
         }
 
         function changedTime() {
-            
+
         }
     }
 })();
