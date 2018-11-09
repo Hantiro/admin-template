@@ -21,6 +21,7 @@
         $scope.$on(constSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
             vm.calendarModel = dateSvc.getCalendarModel();
             init();
+
         });
 
         $scope.$on(constSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
