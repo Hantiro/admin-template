@@ -5,7 +5,7 @@
     </div>
 </div>
 <div class="modal-body" id="modal-body">
- {{ ('CONTENT.PREDICTION_' + vm.day.events.prediction_type) | translate }}
+ {{ vm.getTypeTrans(vm.day.events) | translate }}
 </div>
 <div class="modal-footer" >
     <!--<button class="button-default" type="button" ng-click="vm.ok()">{{'CONTENT.OK'|translate}}</button>-->
