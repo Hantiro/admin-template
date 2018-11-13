@@ -138,7 +138,7 @@
             }
 
             function getTypeTrans(item){
-               return  'CONTENT.PREDICTION_' + item.type.toUpperCase() + ((item.skip > 0 &&'_SKIP') || (item.skip < 0 && '_SKIP_BACKWARDS') || '');
+               return  'CONTENT.PREDICTION_' + item.type.toUpperCase() + ((item.skip > 0 && '_SKIP') || (item.skip < 0 && '_SKIP_BACKWARDS') || '');
             }
 
         }
