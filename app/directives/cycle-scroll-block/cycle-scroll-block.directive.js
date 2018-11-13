@@ -36,7 +36,7 @@
                     processBlock();
                     processContent();
                     processItem();
-                    checkContent();
+                    // checkContent();
                     addEvent();
                     startCycle();
                 }
