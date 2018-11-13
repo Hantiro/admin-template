@@ -16,11 +16,21 @@
             isBeforeStartRedDay: isBeforeStartRedDay,
             isCurrentDay: isCurrentDay,
             isCurrentMonth: isCurrentMonth,
-            isCurrentMonthAndNotFuture: isCurrentMonthAndNotFuture
+            isCurrentMonthAndNotFuture: isCurrentMonthAndNotFuture,
+            isCurrentYear: isCurrentYear,
+            isDayInCurrentMonth: isDayInCurrentMonth
         };
 
+        function isDayInCurrentMonth(selectedDay, currentMonth) {
+            return isCurrentMonth(selectedDay, currentMonth) && isCurrentYear(selectedDay, currentMonth);
+        }
+
         function isCurrentMonth(selectedDay, currentMonth) {
-            return selectedDay.jewish_month === currentMonth.jewish_month;
+            return +selectedDay.jewish_month === +currentMonth.jewish_current_month;
+        }
+
+        function isCurrentYear(selectedDay, currentMonth) {
+            return +selectedDay.jewish_year === +currentMonth.jewish_year;
         }
 
         function isCurrentMonthAndNotFuture(selectedDay, currentDay, currentMonth) {
@@ -28,8 +38,8 @@
         }
 
         function isCurrentDay(calendarModel,day) {
-            return calendarModel.jewish_current_day === day.jewish_day &&
-                calendarModel.jewish_current_month === day.jewish_month;
+            return +calendarModel.jewish_current_day === +day.jewish_day &&
+                +calendarModel.jewish_current_month === +day.jewish_month;
         }
 
         function isBeforeStartRedDay(calendarModel, sDay) {
