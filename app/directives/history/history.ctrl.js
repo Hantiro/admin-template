@@ -137,8 +137,8 @@
                 return vm.currentLang() === 'eng' ? item.data2 : item.data1;
             }
 
-            function getTypeTrans(type){
-               return  'CONTENT.PREDICTION_' + type.toUpperCase();
+            function getTypeTrans(item){
+               return  'CONTENT.PREDICTION_' + item.type.toUpperCase() + ((item.skip > 0 &&'_SKIP') || (item.skip < 0 && '_SKIP_BACKWARDS') || '');
             }
 
         }

@@ -9,7 +9,7 @@
                         lic-date-text="{{ item.fullData }}"
                         lic-model="item"
                         lic-day-part-text="{{ vm.getDayNight(item.isDay) | translate }}"
-                        lic-type-prediction="{{ vm.getTypeTrans(item.type) | translate }}"
+                        lic-type-prediction="{{ vm.getTypeTrans(item) | translate }}"
                         lic-is-day="vm.isDay(item.isDay)"></list-item-custom>
             </div>
         </div>
