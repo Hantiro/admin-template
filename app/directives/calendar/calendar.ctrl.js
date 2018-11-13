@@ -21,6 +21,7 @@
         $scope.$on(constSvc.CALENDAR_EVENT.UPDATED_MODEL, function (event, data) {
             vm.calendarModel = dateSvc.getCalendarModel();
             init();
+
         });
 
         $scope.$on(constSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function (event, data) {
@@ -36,8 +37,21 @@
             vm.calendarModel = dateSvc.getCalendarModel();
         }
 
+        function updateModel() {
+            vm.dateModel = dateSvc.getSelectedDay();
+            vm.dateText = generateDateFormat(vm.dateModel);
+        }
+
+        function generateDateFormat(day) {
+            return [day.gregorian_day, day.gregorian_month, day.gregorian_year].join('/');
+        }
+
+        $scope.$on(constSvc.CALENDAR_EVENT.SELECTED_CALENDAR, function () {
+            updateModel();
+        });
+
         function checkCorrectDate() {
-            if(dateExtSvc.isCurrentMonthAndNotFuture(dateSvc.getSelectedDay(), dateSvc.getCurrentDay(), dateSvc.getCurrentMonth())) {
+            if (dateExtSvc.isCurrentMonthAndNotFuture(dateSvc.getSelectedDay(), dateSvc.getCurrentDay(), dateSvc.getCurrentMonth())) {
                 vm.showTime = true;
             } else {
                 vm.showTime = false;
@@ -76,7 +90,7 @@
         }
 
         function changedTime() {
-            
+
         }
     }
 })();

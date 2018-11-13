@@ -8,13 +8,18 @@
         <delete-event></delete-event>
     </div>
     <div ng-if="vm.showTime" class="calendar-view__time">
+        <div>{{'CONTENT.SELECTED_CALENDAR_DATE'|translate}}:</div>
+        <div class="calendar-view__info">
+            <input class="calendar-view__input-calendar" type="text" ng-model="vm.dateText" readonly>
+        </div>
         <div ng-if="vm.setTime"
              uib-timepicker
              ng-model="vm.timeModel"
              ng-change="vm.changedTime()"
              hour-step="1"
              minute-step="1"
-             show-meridian="false">
+             show-meridian="false"
+             dir="ltr">
         </div>
         <button class="button-not-default" type="button" ng-click="vm.cancel()">{{'CONTENT.CANCEL' | translate}}
         </button>

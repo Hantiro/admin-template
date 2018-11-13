@@ -34,6 +34,7 @@
             vm.dateModel = dateSvc.getSelectedDay();
             vm.dateText = generateDateFormat(vm.dateModel);
 
+
             $scope.$on(constSvc.CALENDAR_EVENT.CREATED_EVENT, function () {
                 init();
             });

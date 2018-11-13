@@ -1,12 +1,33 @@
 .calendar-view {
   position: relative;
   z-index: 1;
-  table{
-    margin-top: 80px;
+  table {
+    //margin-top: 80px;
     display: flex;
     justify-content: center;
   }
-  &__time{
+  &__time {
+    padding-top: 80px;
     text-align: center;
+  }
+  &__input-calendar {
+    border: 0;
+    border-top: 10px solid #856894;
+    height: 70px;
+    width: 200px;
+    text-align: center;
+    background: url(../../content/img/icon/fa-calendar.png) no-repeat 150px center #ffffff;
+  }
+  &__info {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 18px;
+      text-align: left;
+      width: 35%;
+      margin: 0 10px 0 0;
+    }
   }
 }
