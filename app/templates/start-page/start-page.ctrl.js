@@ -14,6 +14,7 @@
         vm.viewImg = modalSvc.viewImg;
         vm.promoModel;
         vm.showScrollBlock = true;
+        vm.application_link;
 
         vm.imgs = [
             'content/img/6.jpg',
@@ -31,10 +32,11 @@
                 sufix = '_heb';
             }
             vm.showScrollBlock = false;
-            textSvc.getByNameArr(['promo'+sufix]).then(function (res) {
+            textSvc.getByNameArr(['promo'+sufix, 'application_link'] ).then(function (res) {
                 $timeout(function(){
                     vm.promoModel = res.data && res.data['promo'+sufix] &&  res.data['promo'+sufix].value;
                     vm.showScrollBlock = true;
+                    vm.application_link = res.data['application_link'];
                 }, 250);
             });
         }
