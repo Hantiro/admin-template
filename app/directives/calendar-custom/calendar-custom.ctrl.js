@@ -15,6 +15,7 @@
         vm.isCurrentDay = isCurrentDay;
         vm.isDayInCurrentMonth = isDayInCurrentMonth;
         vm.isDaySelected = isDaySelected;
+        vm.getGregMonth = getGregMonth;
         vm.dayEventImgSrc = constSvc.eventIconPath;
 
         vm.EVENT_CONST = constSvc.EVENT_CONST;
@@ -66,6 +67,15 @@
                     dateSvc.setSelectedDay(dateSvc.getCurrentDay());
                 }
             });
+        }
+
+        function getGregMonth() {
+            if(vm.calendarModel && vm.calendarModel.gregorian_months) {
+                return vm.calendarModel.gregorian_months.map(function (val, index) {
+                    return 'MONTH_GREG.'+val.toUpperCase();
+                });
+            }
+            return [];
         }
 
         function isSimpleMode() {

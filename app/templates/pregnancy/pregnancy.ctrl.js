@@ -48,7 +48,6 @@
             } else {
                 create();
             }
-
         }
 
         function create() {

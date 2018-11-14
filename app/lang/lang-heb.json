@@ -210,7 +210,20 @@
     "AV": "אב",
     "ELUL": "אלול"
   },
-
+  "MONTH_GREG": {
+    "JANUARY":       "January",
+    "FEBRUARY": "February",
+    "MARCH": "March",
+    "APRIL": "April",
+    "MAY": "May",
+    "JUNE": "June",
+    "JULY": "July",
+    "AUGUST": "August",
+    "SEPTEMBER": "September",
+    "OCTOBER": "October",
+    "NOVEMBER": "November",
+    "DECEMBER": "December"
+  },
   "LANG": {
     "ENG": "ENG",
     "HEB": "עבר"
