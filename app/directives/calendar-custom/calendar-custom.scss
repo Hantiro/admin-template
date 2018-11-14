@@ -188,3 +188,11 @@
     }
   }
 }
+@media screen and(max-width: 1300px){
+  .calendar-custom {
+    &__title{
+      display: block;
+      text-align: center;
+    }
+  }
+}

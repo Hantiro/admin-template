@@ -5,12 +5,16 @@
             <span class="calendar-custom__prev col-10-flex" ng-click="vm.nextMonth()">
                 <i class="fas fa-arrow-left"></i>
             </span>
-            <span class="calendar-custom__title col-80-flex">
-                      <span ng-repeat="item in vm.getGregMonth() track by $index">{{ $index <= vm.getGregMonth().length-1 && $index > 0 ? '&nbsp; -&nbsp; ': '&nbsp;'}} {{ item | translate }}  </span>
-                      <span>&nbsp; {{vm.calendarModel.gregorian_year}}</span> &nbsp; / &nbsp;
-                      <span>{{vm.calendarModel.jewish_year_heb}}</span>
-                      <span> &nbsp; - &nbsp;{{('MONTH.'+vm.calendarModel.jewish_month_name | translate)}}</span>
-            </span>
+            <div class="calendar-custom__title col-80-flex">
+                <div class="calendar-custom__gregorian">
+                    <span ng-repeat="item in vm.getGregMonth() track by $index">{{ $index <= vm.getGregMonth().length-1 && $index > 0 ? '&nbsp; -&nbsp; ': '&nbsp;'}} {{ item | translate }}  </span>
+                </div>
+                <div class="calendar-custom__jewish">
+                    <span>&nbsp; {{vm.calendarModel.gregorian_year}}</span> &nbsp; / &nbsp;
+                    <span>{{vm.calendarModel.jewish_year_heb}}</span>
+                    <span> &nbsp; - &nbsp;{{('MONTH.'+vm.calendarModel.jewish_month_name | translate)}}</span>
+                </div>
+            </div>
             <span class="calendar-custom__next col-10-flex" ng-click="vm.prevMonth()">
                 <i class="fas fa-arrow-right"></i>
             </span>
