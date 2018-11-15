@@ -179,7 +179,7 @@
     "PASS": "נתוני הסיסמאות אינם נכונים, אנא בדוק",
     "PASS_EQUAL": "סיסמאות אינן שוות",
     "NEED_SELECT_DATE": "בחר תאריך",
-    "ONLY_CURRENT_MONTH_AND_NOT_FUTURE": "ניתן לבחור רק את החודש הנוכחי ולא את היום העתידי"
+    "ONLY_CURRENT_MONTH_AND_NOT_FUTURE": "לא ניתן לסמן ביום עתידי. נא להחור את היום"
   },
   "SUCCESS": {
     "EVENT_CREATE": "Event was created successfully",
