@@ -43,16 +43,17 @@ $keywords = $addInfos->where('name', 'site_keywords')->isNotEmpty() ? $addInfos-
     <meta name="description" content="<?php echo $description ?>">
     <meta name="keywords" content="<?php echo $keywords ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!--<link rel="shortcut icon" href="./content/images/cropped-dot-32x32.png" type="image/x-icon">-->
     <!--<link rel="icon" href="./content/images/cropped-dot-32x32.png" type="image/x-icon">-->
 
     <!-- inject-vendor:css -->
-    <link rel="stylesheet" href="content/css/vendor.min.css?v=1541701506109">
+    <link rel="stylesheet" href="content/css/vendor.min.css?v=1542224097088">
     <!-- endinject -->
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="content/css/all.min.css?v=1541701506115">
+    <link rel="stylesheet" href="content/css/all.min.css?v=1542224097088">
     <!-- endinject -->
 
     <!--<link rel="manifest" href="/manifest.json">-->
@@ -69,15 +70,15 @@ $keywords = $addInfos->where('name', 'site_keywords')->isNotEmpty() ? $addInfos-
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD6o8M_KOerds2uacnudjI62elbLTMyBaY"></script>
 <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
 <!-- inject-vendor:js -->
-<script src="vendor.min.js?v=1541701506119"></script>
+<script src="vendor.min.js?v=1542224097104"></script>
 <!-- endinject -->
 
 <!-- inject:js -->
-<script src="all.min.js?v=1541701506122"></script>
+<script src="all.min.js?v=1542224097104"></script>
 <!-- endinject -->
 
 <!-- inject-templates:js -->
-<script src="templates.js?v=1541701506125"></script>
+<script src="templates.js?v=1542224097104"></script>
 <!-- endinject -->
 </body>
 </html>
