@@ -21,15 +21,16 @@
         return model;
 
         function signUpProcess() {
-            if (authDataSvc.getCode() && authDataSvc.getPhone()) { //FIXME temporary for quick work
-                createUser();
-                return;
-            }
-            modalSvc.setPhone().result.then(function (res) {
-                processCode();
-            }).catch(function () {
-                authDataSvc.clearAuthData();
-            });
+            // if (authDataSvc.getCode() && authDataSvc.getPhone()) { //FIXME temporary for quick work
+            //             //     createUser();
+            //             //     return;
+            //             // }
+            //             // modalSvc.setPhone().result.then(function (res) {
+            //             //     processCode();
+            //             // }).catch(function () {
+            //             //     authDataSvc.clearAuthData();
+            //             // });
+            createUser();
         }
 
         function processCode() {

@@ -22,8 +22,8 @@
             } else {
                 vm.data.address = 'Temp address';
             }
-            vm.data.code = vm.tmp_credentials.code;
-            vm.data.phone = vm.tmp_credentials.phone;
+            // vm.data.code = vm.tmp_credentials.code;
+            // vm.data.phone = vm.tmp_credentials.phone;
             authSvc.signUp(vm.data)
                 .then(function (res) {
                     if (res.success) {
