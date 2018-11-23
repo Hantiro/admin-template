@@ -165,7 +165,8 @@
     "WELCOME": "Welcome",
     "WE_ARE_HAPPY": "We are happy to greet you!",
     "YOU_CAN_TRY": "You can try the app for 7 days FREE.",
-    "TEST_SEVEN": "Test for 7 days"
+    "TEST_SEVEN": "Test for 7 days",
+    "DELETE_PREGNATION": "Delete pregnancy"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",

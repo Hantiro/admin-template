@@ -17,9 +17,9 @@
                                 ib-type="default"
                                 ib-is-edit="!!vm.dateBirthday.start"
                                 ib-date=""></info-block>
-                    <button class="delete-button" ng-if="!!vm.dateBirthday.start"
+                    <button auto-dir class="delete-button" ng-if="!!vm.dateBirthday.start"
                             ng-click="vm.remove()">
-                            Delete gestation
+                        {{ 'CONTENT.DELETE_PREGNATION' | translate }}
                         <img src="content/img/icon/close-icon.png" alt="delete last event"/>
                     </button>
                 </div>

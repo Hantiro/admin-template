@@ -18,8 +18,10 @@
             getDate: getDate,
             religPopup: religPopup,
             viewImg: viewImg,
-            dayInfo: dayInfo
+            dayInfo: dayInfo,
+            payment: payment
         };
+        payment();
         return service;
 
         function setPhone() {
@@ -36,6 +38,19 @@
             });
         }
 
+        function payment() {
+            return $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'components/payment/payment.html',
+                controller: 'PaymentCtrl',
+                controllerAs: 'vm',
+                backdropClass: 'custom-backdrop',
+                windowTopClass: 'payment',
+                size: 'lg',
+                resolve: {}
+            });
+        }
         /**
          *
          * @param config

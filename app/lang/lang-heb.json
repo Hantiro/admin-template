@@ -22,7 +22,7 @@
     "CODE": "הזינו את הקוד שקיבלתם ב SMS",
     "REMEMBER_ME": "זכור על מחשב זה",
     "STATE_CITY": "עיר ומדינה",
-    "PILLS_DELETE": "Delete last pills",
+    "PILLS_DELETE": "ביטול גלולה אחרונה",
     "REGULAR": "וסת קבוע",
     "IRREGULAR": "וסת לא קבוע",
     "START_PREGNANCY": "בחרי את יום",
@@ -161,10 +161,11 @@
     "HI": "שלום!",
     "SEEING_DAYS": "ימי ראיה",
     "OR": "או",
-    "WELCOME": "ברוך הבא",
-    "WE_ARE_HAPPY": "אנו שמחים לברך אתכם!",
+    "WELCOME": "ברוכה הבאה",
+    "WE_ARE_HAPPY": "אנו שמחים לברך אותך על הורדת האפליקציה.",
     "YOU_CAN_TRY": "תוכל לנסות את האפליקציה למשך שבעה ימים בחינם.",
-    "TEST_SEVEN": "מבחן במשך 7 ימים"
+    "TEST_SEVEN": "תוכלי להתנסות בה במשך 7 ימים בחינם.",
+    "DELETE_PREGNATION": "בטלי חישוב הריון"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase עבור ההודעה לא נטען, לבדוק חיבור לאינטרנט ולהפעיל מחדש",
