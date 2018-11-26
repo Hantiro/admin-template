@@ -166,7 +166,16 @@
     "WE_ARE_HAPPY": "We are happy to greet you!",
     "YOU_CAN_TRY": "You can try the app for 7 days FREE.",
     "TEST_SEVEN": "Test for 7 days",
-    "DELETE_PREGNATION": "Delete pregnancy"
+    "DELETE_PREGNATION": "Delete pregnancy",
+    "PAYMENT_TITLE": "Payment",
+    "PAYMENT_SUBTITLE": "The payment automatically renews each year *",
+    "PAYMENT_PROPOSE": "You can purchase computer software and application",
+    "PAYMENT_NOTICE": "Now on sale for a limited time",
+    "PAYMENT_PRICE": "per year",
+    "PAYMENT_CONFIRM": "I confirm",
+    "PAYMENT_SECOND_CONFIRM": "Terms of Use and Privacy Policy",
+    "PAYMENT_BUTTON": "Buy now",
+    "PAYMENT_SUBSCRIPTION": "annual subscription"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",

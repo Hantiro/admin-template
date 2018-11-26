@@ -165,7 +165,16 @@
     "WE_ARE_HAPPY": "אנו שמחים לברך אותך על הורדת האפליקציה.",
     "YOU_CAN_TRY": "תוכל לנסות את האפליקציה למשך שבעה ימים בחינם.",
     "TEST_SEVEN": "תוכלי להתנסות בה במשך 7 ימים בחינם.",
-    "DELETE_PREGNATION": "בטלי חישוב הריון"
+    "DELETE_PREGNATION": "בטלי חישוב הריון",
+    "PAYMENT_TITLE": "תשלום",
+    "PAYMENT_SUBTITLE": "* התשלום מתחדש אוטומטית בכל שנה",
+    "PAYMENT_PROPOSE": "ניתן לרכוש תוכנת מחשב ואפליקציה",
+    "PAYMENT_NOTICE": "עכשיו במבצע לזמן מוגבל",
+    "PAYMENT_PRICE": "לשנה",
+    "PAYMENT_CONFIRM": "אני מאשר/ת את",
+    "PAYMENT_SECOND_CONFIRM": "תנאי השימוש ומדניות הפרטיות",
+    "PAYMENT_BUTTON": "קני עכשיו",
+    "PAYMENT_SUBSCRIPTION": "מנוי שנתי"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase עבור ההודעה לא נטען, לבדוק חיבור לאינטרנט ולהפעיל מחדש",
