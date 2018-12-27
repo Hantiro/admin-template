@@ -222,21 +222,29 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 }
 
 .button-default {
+  cursor: pointer;
   background-color: #4b0049;
   text-transform: uppercase;
   color: #ffffff;
   padding: 0 15px;
-  border: 0;
   height: 30px;
+  border: 1px solid #4b0049;
+  &:hover{
+    color: #ffffff;
+  }
 }
 
 .button-not-default {
+  cursor: pointer;
   text-transform: uppercase;
   background-color: #fff;
   color: #4b0049;
   padding: 0 15px;
   height: 30px;
   border: 1px solid #4b0049;
+  &:hover{
+    color: #4b0049;
+  }
 }
 
 .button-primary {

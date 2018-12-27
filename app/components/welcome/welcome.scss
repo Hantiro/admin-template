@@ -1,24 +1,16 @@
 .welcome-modal {
-  .btn-default {
-    background-color: #4b0049;
-    color: #ffffff;
-    padding: 5px 15px;
-    border: 0;
-  }
-  p{
+  p {
     text-align: center;
     font-size: 16px;
     font-family: AssistantRegular;
   }
-  a {
+  .default-text-underline {
     color: #4b0049;
     text-decoration: underline;
     font-family: AssistantSemiBold;
     font-size: 18px;
   }
-  
-  .btn-buy {
-    text-decoration: none;
-    cursor: pointer;
+  .default-button-popup {
+    padding: 5px 15px;
   }
 }
