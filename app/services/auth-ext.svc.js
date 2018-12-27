@@ -4,7 +4,7 @@
     angular.module('service.authExtSvc', []).service('authExtSvc', authExtSvc);
 
     /* @ngInject */
-    function authExtSvc($rootScope, modalSvc, authSvc, authDataSvc, $state, userSvc, $timeout) {
+    function authExtSvc($rootScope, modalSvc, authSvc, authDataSvc, $state, userSvc, $timeout, paymentSvc) {
         var model = {
             signUpProcess: signUpProcess,
             loginProcess: loginProcess,
@@ -56,7 +56,9 @@
 
         function religSettings() {
             modalSvc.religPopup().result.then(function (res) {
-                welcomeProcess();
+                prepareBuy({
+                    isTrial: true
+                });
             }).catch(function (res){
                 authDataSvc.clearAuthData();
             });
@@ -68,19 +70,50 @@
             modalSvc.login().result.then(function (res) {
                 if (res && res === 'reset-pass') {
                     resetPassProcess();
-                } else {
-                    $state.go('app.my-main');
+                } else if(res && res.data && res.data.user) {
+                    checkPayment(res.data.user);
                 }
             });
         }
 
-        function welcomeProcess() {
-            modalSvc.welcome().result.then(function (res) {
+        function checkPayment(user) {
+            if(user.is_payed){
+                authDataSvc.setUser(user);
+                $state.go('app.my-main');
+            } else {
+                prepareBuy({
+                    isTrial: false
+                });
+            }
+        }
+
+        function prepareBuy(param){
+            paymentSvc.getUrl().then(
+                function(res){
+                    if(res && res.data ){
+                        return welcomeProcess({
+                            payLink: res.data,
+                            isTrial: param.isTrial || false
+                        });
+                    }
+                },
+                function(){
+                    authDataSvc.clearAuthData();
+                }
+            )
+        }
+
+        function welcomeProcess(param) {
+            modalSvc.welcome({
+                data: param || {}
+            }).result.then(function (res) {
                if(res = 'test_date'){
                    $state.go('app.my-main');
                }
             }).catch(function () {
-                authDataSvc.clearAuthData();
+                logout({
+                    needReload: true
+                });
             });
         }
 
@@ -90,14 +123,19 @@
         }
 
         function autoLogin() {
-            if (authDataSvc.isLogined() && !authDataSvc.getUser()) {
+            // if (authDataSvc.isLogined() && !authDataSvc.getUser()) {
+            //     return userSvc.getUser().then(function (res) {
+            //         authDataSvc.setUser(res.entity || {});
+            //         $state.go('app.my-main');
+            //     });
+            // } else if (authDataSvc.isLogined() && authDataSvc.getUser()) {
+            //     $state.go('app.my-main');
+            //     return true;
+            // }
+            if (authDataSvc.isLogined()) {
                 return userSvc.getUser().then(function (res) {
-                    authDataSvc.setUser(res.entity || {});
-                    $state.go('app.my-main');
+                   checkPayment(res.entity);
                 });
-            } else if (authDataSvc.isLogined() && authDataSvc.getUser()) {
-                $state.go('app.my-main');
-                return true;
             }
         }
 
@@ -112,7 +150,7 @@
                 logout({
                     needReload: true
                 });
-            })
+            });
         }
 
         function logout(conf) {

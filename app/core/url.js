@@ -77,6 +77,10 @@
                         my: baseUrl + 'notification/my',
                         all: baseUrl + 'notifications',
                         change: baseUrl + 'notification/change'
+                    },
+
+                    payment: {
+                        getUrl: baseUrl + 'payment-get-url'
                     }
                 }
             }]);

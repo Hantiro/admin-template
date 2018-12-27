@@ -4,11 +4,12 @@
     </h3>
 </div>
 <p>{{'CONTENT.WE_ARE_HAPPY' | translate}}</p>
-<p>{{'CONTENT.YOU_CAN_TRY' | translate}}</p>
-<div class="modal-body text-center" id="modal-body">
+<p ng-hide="!vm.data.isTrial">{{'CONTENT.YOU_CAN_TRY' | translate}}</p>
+<div class="modal-body text-center" id="modal-body"
+     ng-hide="!vm.data.isTrial">
     <a ng-click="vm.test()">{{'CONTENT.TEST_SEVEN' | translate}}</a>
 </div>
 <div class="modal-footer">
-    <button class="btn-default" type="button" ng-click="vm.buy()">{{'CONTENT.UPGRADE_ACCOUNT' | translate}}</button>
+    <a ng-href="{{ vm.data.payLink }}" class="btn-default btn-buy" type="button">{{'CONTENT.UPGRADE_ACCOUNT' | translate}}</a>
     <button class="button-not-default" type="button" ng-click="vm.cancel()">{{'CONTENT.CANCEL' | translate}}</button>
 </div>
