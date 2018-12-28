@@ -49,11 +49,11 @@ $keywords = $addInfos->where('name', 'site_keywords')->isNotEmpty() ? $addInfos-
     <!--<link rel="icon" href="./content/images/cropped-dot-32x32.png" type="image/x-icon">-->
 
     <!-- inject-vendor:css -->
-    <link rel="stylesheet" href="content/css/vendor.min.css?v=1542224097088">
+    <link rel="stylesheet" href="content/css/vendor.min.css?v=1542366584041">
     <!-- endinject -->
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="content/css/all.min.css?v=1542224097088">
+    <link rel="stylesheet" href="content/css/all.min.css?v=1542366584046">
     <!-- endinject -->
 
     <!--<link rel="manifest" href="/manifest.json">-->
@@ -70,15 +70,15 @@ $keywords = $addInfos->where('name', 'site_keywords')->isNotEmpty() ? $addInfos-
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD6o8M_KOerds2uacnudjI62elbLTMyBaY"></script>
 <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
 <!-- inject-vendor:js -->
-<script src="vendor.min.js?v=1542224097104"></script>
+<script src="vendor.min.js?v=1542366584049"></script>
 <!-- endinject -->
 
 <!-- inject:js -->
-<script src="all.min.js?v=1542224097104"></script>
+<script src="all.min.js?v=1542366584053"></script>
 <!-- endinject -->
 
 <!-- inject-templates:js -->
-<script src="templates.js?v=1542224097104"></script>
+<script src="templates.js?v=1542366584056"></script>
 <!-- endinject -->
 </body>
 </html>

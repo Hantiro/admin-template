@@ -6,15 +6,6 @@ var cleanCss = require('gulp-clean-css');
 var browserSync = require('browser-sync').create();
 var log = require('fancy-log');
 var del = require('del');
-var once = require('async-once');
-
-/**
- * @desc Watch files
- */
-gulp.task('watch', function () {
-    gulp.watch(pkg.paths.js.concat(pkg.paths.html)).on('change', browserSync.reload);
-    gulp.watch(pkg.paths.scss, gulp.series('sass'));
-});
 
 /**
  * @desc Create $templateCache from the html templates
@@ -37,7 +28,7 @@ gulp.task('templatecache', function () {
 /**
  * @desc Minify and bundle the app's JavaScript
  */
-gulp.task('js', gulp.series('templatecache', function () {
+gulp.task('js', ['templatecache'], function () {
     log('Bundling, minifying, and copying the app\'s JavaScript');
     var source = [].concat(pkg.paths.js);
     return gulp
@@ -49,7 +40,7 @@ gulp.task('js', gulp.series('templatecache', function () {
         .pipe(plug.concat('all.min.js'))
         // .pipe(plug.sourcemaps.write('./'))
         .pipe(gulp.dest(pkg.paths.build));
-}));
+});
 
 /**
  * @desc Copy the Vendor JavaScript
@@ -62,18 +53,10 @@ gulp.task('vendorjs', function () {
         .pipe(gulp.dest(pkg.paths.build)); // + 'vendor'));
 });
 
-
-gulp.task('sass', function () {
-    return gulp.src(pkg.paths.app + 'app.scss')
-        .pipe(plug.sass().on('error', plug.sass.logError))
-        .pipe(gulp.dest(pkg.paths.app + 'content/css'))
-        .pipe(reload({stream: true}));
-});
-
 /**
  * @desc Minify and bundle the CSS
  */
-gulp.task('css', gulp.series('sass', function () {
+gulp.task('css', ['sass'], function () {
     log('Bundling, minifying, and copying the app\'s CSS');
     return gulp.src(pkg.paths.css)
         .pipe(plug.concat('all.min.css'))
@@ -83,7 +66,7 @@ gulp.task('css', gulp.series('sass', function () {
             grid: true }))
         .pipe(cleanCss({ compatibility: '*' }))
         .pipe(gulp.dest(pkg.paths.build + 'content/css'));
-}));
+});
 
 /**
  * @desc Minify and bundle the Vendor CSS
@@ -100,8 +83,7 @@ gulp.task('vendorcss', function () {
  * @desc Create, connect to the server
  */
 var reload = browserSync.reload;
-gulp.task('connect', gulp.parallel('watch', function () {
-    console.log('TESSSSSST');
+gulp.task('connect', ['watch'], function () {
     browserSync.init({
         notify: false,
         port: 1340,
@@ -111,7 +93,22 @@ gulp.task('connect', gulp.parallel('watch', function () {
             ]
         }
     });
-}));
+});
+
+gulp.task('sass', function () {
+    return gulp.src(pkg.paths.app + 'app.scss')
+        .pipe(plug.sass().on('error', plug.sass.logError))
+        .pipe(gulp.dest(pkg.paths.app + 'content/css'))
+        .pipe(reload({stream: true}));
+});
+
+/**
+ * @desc Watch files
+ */
+gulp.task('watch', function () {
+    gulp.watch([pkg.paths.js, pkg.paths.html]).on('change', browserSync.reload);
+    gulp.watch(pkg.paths.scss, ['sass']);
+});
 
 /**
  * @desc Copy fonts
@@ -119,7 +116,7 @@ gulp.task('connect', gulp.parallel('watch', function () {
 gulp.task('fonts', function () {
     var dest = pkg.paths.build + 'content/fonts';
     log('Copying fonts');
-    return gulp.src(pkg.paths.fonts, { allowEmpty: true})
+    return gulp.src(pkg.paths.fonts)
         .pipe(gulp.dest(dest));
 });
 
@@ -166,7 +163,7 @@ gulp.task('images', function () {
  * rev, but no map
  * @return {Stream}
  */
-gulp.task('rev-and-inject', gulp.series('locale','js', 'vendorjs', 'css', 'vendorcss', 'fonts','webfonts', 'images', function () {
+gulp.task('rev-and-inject', ['locale','js', 'vendorjs', 'css', 'vendorcss', 'fonts','webfonts', 'images'], function () {
     log('Rev\'ing files and building index.html');
     var minified = pkg.paths.build + '**/*.min.*';
     var index = pkg.paths.app + 'index.html';
@@ -205,8 +202,25 @@ gulp.task('rev-and-inject', gulp.series('locale','js', 'vendorjs', 'css', 'vendo
         }
         return plug.inject(gulp.src(glob), options);
     }
-}));
+});
 
+/**
+ * Build the optimized app
+ * @return {Stream}
+ */
+gulp.task('build', ['clean','rev-and-inject'], function () {
+    log('Building the optimized app');
+    return gulp.src('').pipe(plug.notify({
+        onLast: true,
+        message: 'Deployed code!'
+    }));
+});
+
+/**
+ * Backwards compatible call to make stage and build equivalent
+ */
+gulp.task('stage', ['build'], function () {
+});
 
 /**
  * Remove all files from the build folder
@@ -216,27 +230,7 @@ gulp.task('rev-and-inject', gulp.series('locale','js', 'vendorjs', 'css', 'vendo
  */
 gulp.task('clean', function () {
     log('Cleaning: ' + pkg.paths.build);
-    return del(pkg.paths.build,{force:true});
+    del.sync(pkg.paths.build,{force:true});
 });
 
-/**
- * Build the optimized app
- * @return {Stream}
- */
-gulp.task('build', gulp.series('clean','rev-and-inject', function () {
-    log('Building the optimized app');
-    return gulp.src('./').pipe(plug.notify({
-        onLast: true,
-        message: 'Deployed code!'
-    }));
-}));
-
-/**
- * Backwards compatible call to make stage and build equivalent
- */
-gulp.task('stage', gulp.series('build', function () {
-}));
-
-
-
-gulp.task('default', gulp.series('sass', 'connect'));
+gulp.task('default', ['sass', 'connect']);

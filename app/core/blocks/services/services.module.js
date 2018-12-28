@@ -23,6 +23,7 @@
         'service.gestationSvc',
         'service.booksSvc',
         'service.constSvc',
+        'service.paymentSvc'
     ]);
 
 })();

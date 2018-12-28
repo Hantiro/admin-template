@@ -103,8 +103,6 @@
             }
         }
 
-
-
         var eventTranslateEnd = $rootScope.$on('$translateChangeEnd',function(e,d){
             vm.currentLang =  $translate.use().toUpperCase();
         });
