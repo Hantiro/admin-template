@@ -15,10 +15,11 @@
     </div>
     <div class="payment-right">
         <div class="payment-price">
-            <div class="payment-circle">
+            <div class="payment-circle" auto-dir>
                 <p>{{'CONTENT.PAYMENT_SUBSCRIPTION'|translate}}</p>
-                <h1>{{'CONTENT.CURRENCY'|translate}}<span dir="ltr">{{'CONTENT.FIRST_PRICE'|translate}}</span></h1>
-                <h3>{{'CONTENT.CURRENCY'|translate}}<span dir="ltr">{{'CONTENT.SECOND_PRICE'|translate}}</span></h3>
+                <h1 ng-bind-html="( 'CONTENT.FIRST_PRICE'|translate )"></h1>
+                <h1 ng-bind-html="( ('CONTENT.SECOND_PRICE' | translate) + ' ' + ('CONTENT.CURRENCY' | translate) )"></h1>
+                <h3 ng-bind-html="( ('CONTENT.THIRD_PRICE'|translate) + ' ' + ('CONTENT.CURRENCY'|translate) )"></h3>
                 <p>{{'CONTENT.PAYMENT_PRICE'|translate}}</p>
             </div>
             <div class="payment-down">

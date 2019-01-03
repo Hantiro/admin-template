@@ -21,6 +21,7 @@
             dayInfo: dayInfo,
             payment: payment
         };
+        payment();
         return service;
 
         function setPhone() {

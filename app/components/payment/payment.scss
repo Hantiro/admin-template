@@ -53,27 +53,27 @@
     margin: 10px 0 0;
     color: #e4587f;
     font-family: AssistantRegular;
-    font-size: 24px;
-    letter-spacing: -2.15px;
+    font-size: 20px;
   }
+
   .payment-right h1 {
     margin: 0;
     color: #e4587f;
     font-family: AssistantRegular;
-    font-size: 42px;
+    font-size: 28px;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: -1.91px;
   }
+
   .payment-right h3 {
     position: relative;
     margin: 0;
     color: #4b0049;
     font-family: AssistantRegular;
-    font-size: 28px;
+    font-size: 20px;
     text-decoration: line-through;
-    text-transform: uppercase;
-    letter-spacing: -1.91px;
+  }
+  .small-text {
+    font-size: 14px;
   }
   .payment-right h3:after {
     position: absolute;

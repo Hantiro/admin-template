@@ -177,9 +177,10 @@
     "PAYMENT_SECOND_CONFIRM": "Terms of Use and Privacy Policy",
     "PAYMENT_BUTTON": "Buy now",
     "PAYMENT_SUBSCRIPTION": "annual subscription",
-    "FIRST_PRICE": "8 X 12 = 96",
-    "SECOND_PRICE": "120",
-    "CURRENCY": "שקל"
+    "FIRST_PRICE": "8  <span class=\"small-text\">Nis</span> × 12 <span class=\"small-text\">Months</span> =",
+    "SECOND_PRICE": "96",
+    "THIRD_PRICE": "120",
+    "CURRENCY": "<span class=\"small-text\">Nis</span>"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",
