@@ -62,7 +62,7 @@ $keywords = $addInfos->where('name', 'site_keywords')->isNotEmpty() ? $addInfos-
 <body>
 <!--<div ui-view></div>-->
 
-<div ng-include="'layout/shell/shell.html'"
+<div ng-include="'./layout/shell/shell.html'"
      style="height: 100%; min-height: 100%; max-width: 100%;">
 </div>
 

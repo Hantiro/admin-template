@@ -6,7 +6,7 @@
     function history($document, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'directives/history/history.html',
+            templateUrl: './directives/history/history.html',
             replace: true,
             controller: 'HistoryCtrl',
             controllerAs: 'vm',

@@ -6,7 +6,7 @@
     function deleteEvent($document, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'directives/delete-event/delete-event.html',
+            templateUrl: './directives/delete-event/delete-event.html',
             replace: true,
             controller: 'DeleteEventCtrl',
             controllerAs: 'vm',

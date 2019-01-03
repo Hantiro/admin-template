@@ -6,7 +6,7 @@
     function legend() {
         return {
             restrict: 'E',
-            templateUrl: 'directives/legend/legend.html',
+            templateUrl: './directives/legend/legend.html',
             controller: 'LegendCtrl',
             controllerAs: 'vm',
             scope: {}

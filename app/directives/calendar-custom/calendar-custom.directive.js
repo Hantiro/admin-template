@@ -6,7 +6,7 @@
     function calendarCustom($document, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'directives/calendar-custom/calendar-custom.html',
+            templateUrl: './directives/calendar-custom/calendar-custom.html',
             scope: {
                 ccType: '@', //type of calendar 'simple' for only select date,
                 ccSelected: '=', //selected date obj { selected: obj, month: obj}

@@ -6,7 +6,7 @@
     function religSetting($document, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'directives/relig-setting/relig-setting.html',
+            templateUrl: './directives/relig-setting/relig-setting.html',
             replace: true,
             scope: {
                 rsMode: '@', //reg or update

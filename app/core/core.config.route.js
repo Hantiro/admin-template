@@ -13,7 +13,7 @@
             .state('app', {
                 url: '/',
                 abstract: true,
-                templateUrl: 'templates/app/app.html',
+                templateUrl: './templates/app/app.html',
                 controller: 'AppCtrl',
                 controllerAs: 'vm',
                 resolve: {
@@ -29,7 +29,7 @@
             })
             .state('app.start-page', {
                 url: 'start-page',
-                templateUrl: 'templates/start-page/start-page.html',
+                templateUrl: './templates/start-page/start-page.html',
                 controller: 'StartPageCtrl',
                 controllerAs: 'vm',
                 resolve: {
@@ -43,7 +43,7 @@
             })
             .state('app.main', {
                 url: 'main',
-                templateUrl: 'templates/main/main.html',
+                templateUrl: './templates/main/main.html',
                 controller: 'MainCtrl',
                 controllerAs: 'vm'
             })
@@ -52,7 +52,7 @@
                 data: {
                     auth: true
                 },
-                templateUrl: 'templates/my-main/my-main.html',
+                templateUrl: './templates/my-main/my-main.html',
                 controller: 'MyMainCtrl',
                 controllerAs: 'vm'
             })
@@ -61,7 +61,7 @@
                 data: {
                     auth: true
                 },
-                templateUrl: 'templates/pregnancy/pregnancy.html',
+                templateUrl: './templates/pregnancy/pregnancy.html',
                 controller: 'PregnancyCtrl',
                 controllerAs: 'vm'
             })
@@ -70,7 +70,7 @@
                 data: {
                     trans_name: 'CONTENT.ABOUT'
                 },
-                templateUrl: 'templates/about/about.html',
+                templateUrl: './templates/about/about.html',
                 controller: 'AboutCtrl',
                 controllerAs: 'vm',
                 resolve: {
@@ -88,7 +88,7 @@
                 data: {
                     trans_name: 'CONTENT.CONTACT_US'
                 },
-                templateUrl: 'templates/contact-us/contact-us.html',
+                templateUrl: './templates/contact-us/contact-us.html',
                 controller: 'ContactUsCtrl',
                 controllerAs: 'vm'
             })
@@ -97,7 +97,7 @@
                 data: {
                     trans_name: 'CONTENT.MIKVAHS'
                 },
-                templateUrl: 'templates/mikvahs/mikvahs.html',
+                templateUrl: './templates/mikvahs/mikvahs.html',
                 controller: 'MikvahsCtrl',
                 controllerAs: 'vm'
             })
@@ -106,7 +106,7 @@
                 data: {
                     trans_name: 'CONTENT.FAQ'
                 },
-                templateUrl: 'templates/faq/faq.html',
+                templateUrl: './templates/faq/faq.html',
                 controller: 'FaqCtrl',
                 controllerAs: 'vm',
                 resolve: {
@@ -124,13 +124,13 @@
                 data: {
                     trans_name: 'CONTENT.ASK_RABBI'
                 },
-                templateUrl: 'templates/rabbi/rabbi.html',
+                templateUrl: './templates/rabbi/rabbi.html',
                 controller: 'RabbiCtrl',
                 controllerAs: 'vm'
             })
             .state('app.main.profile', {
                     url: '/profile',
-                    templateUrl: 'templates/profile/profile.html',
+                    templateUrl: './templates/profile/profile.html',
                     controller: 'ProfileCtrl',
                     controllerAs: 'vm',
                     resolve: {
@@ -149,7 +149,7 @@
                 data: {
                     trans_name: 'CONTENT.TERMS_CONDITIONS'
                 },
-                templateUrl: 'templates/terms/terms.html',
+                templateUrl: './templates/terms/terms.html',
                 controller: 'TermsCtrl',
                 controllerAs: 'vm',
                 resolve: {
@@ -167,7 +167,7 @@
                 data: {
                     trans_name: 'CONTENT.PRIVACY_POLICY'
                 },
-                templateUrl: 'templates/privacy/privacy.html',
+                templateUrl: './templates/privacy/privacy.html',
                 controller: 'PrivacyCtrl',
                 controllerAs: 'vm',
                 resolve: {
@@ -185,7 +185,7 @@
                 data: {
                     trans_name: 'CONTENT.HALACOT'
                 },
-                templateUrl: 'templates/tradition/tradition.html',
+                templateUrl: './templates/tradition/tradition.html',
                 controller: 'TraditionCtrl',
                 controllerAs: 'vm',
                 resolve: {

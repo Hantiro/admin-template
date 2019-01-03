@@ -6,7 +6,7 @@
     function traditionItem($document, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'directives/tradition-item/tradition-item.html',
+            templateUrl: './directives/tradition-item/tradition-item.html',
             replace: true,
             scope: {
                 tiTitle: '@',
