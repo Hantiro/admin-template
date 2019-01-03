@@ -6,7 +6,7 @@
     "del": "^3.0.0",
     "fancy-log": "^1.3.2",
     "gulp": "^4.0.0",
-    "gulp-angular-templatecache": "^2.2.0",
+    "gulp-angular-templatecache": "^2.2.6",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-cache": "^0.4.5",
     "gulp-clean-css": "^3.9.3",
@@ -79,6 +79,7 @@
     ],
     "vendorjs": [
       "./app/bower_components/jquery/dist/jquery.js",
+      "./app/lib/marquee.js",
       "./app/bower_components/bootstrap/dist/js/bootstrap.min.js",
       "./app/bower_components/angular/angular.js",
       "./app/bower_components/angular-ui-router/release/angular-ui-router.js",
@@ -93,8 +94,7 @@
       "./app/bower_components/angular-messages/angular-messages.min.js",
       "./app/bower_components/angular-translate/angular-translate.min.js",
       "./app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js",
-      "./app/bower_components/angular-sanitize/angular-sanitize.min.js",
-      "./app/lib/marquee.js"
+      "./app/bower_components/angular-sanitize/angular-sanitize.min.js"
     ],
     "vendorcss": [
       "./app/bower_components/bootstrap/dist/css/bootstrap.min.css",

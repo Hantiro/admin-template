@@ -6,7 +6,7 @@
     function upgradeFull($document, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'directives/upgrade-full/upgrade-full.html',
+            templateUrl: './directives/upgrade-full/upgrade-full.html',
             replace: true,
             controller: 'UpgradeFullCtrl',
             controllerAs: 'vm',

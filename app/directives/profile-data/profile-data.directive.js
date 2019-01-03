@@ -6,7 +6,7 @@
     function profileData($document, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'directives/profile-data/profile-data.html',
+            templateUrl: './directives/profile-data/profile-data.html',
             replace: true,
             scope: {
                 pdMode: '@', //reg or update,

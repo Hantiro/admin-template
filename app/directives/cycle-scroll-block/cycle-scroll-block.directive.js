@@ -6,7 +6,7 @@
     function cycleScrollBlock($document, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'directives/cycle-scroll-block/cycle-scroll-block.html',
+            templateUrl: './directives/cycle-scroll-block/cycle-scroll-block.html',
             replace: true,
             controller: 'CycleScrollBlockCtrl',
             controllerAs: 'vm',

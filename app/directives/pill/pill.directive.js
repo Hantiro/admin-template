@@ -6,7 +6,7 @@
     function pill($document, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'directives/pill/pill.html',
+            templateUrl: './directives/pill/pill.html',
             replace: true,
             controller: 'PillCtrl',
             controllerAs: 'vm',

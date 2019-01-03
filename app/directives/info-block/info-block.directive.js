@@ -6,7 +6,7 @@
     function infoBlock($document, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'directives/info-block/info-block.html',
+            templateUrl: './directives/info-block/info-block.html',
             replace: true,
             scope: {
                 ibType: '@', //'default' - only with text, 'pregnancy' - with pregnancy image and date

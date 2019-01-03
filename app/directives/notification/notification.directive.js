@@ -6,7 +6,7 @@
     function notification($document, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'directives/notification/notification.html',
+            templateUrl: './directives/notification/notification.html',
             replace: true,
             controller: 'NotificationCtrl',
             controllerAs: 'vm',

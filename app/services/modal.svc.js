@@ -27,7 +27,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/set-phone/set-phone.html',
+                templateUrl: './components/set-phone/set-phone.html',
                 controller: 'SetPhoneCtrl',
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
@@ -41,7 +41,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/payment/payment.html',
+                templateUrl: './components/payment/payment.html',
                 controller: 'PaymentCtrl',
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
@@ -65,7 +65,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/confirm/confirm.html',
+                templateUrl: './components/confirm/confirm.html',
                 controller: 'ConfirmModalCtrl',
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
@@ -91,7 +91,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/select-date-popup/select-date-popup.html',
+                templateUrl: './components/select-date-popup/select-date-popup.html',
                 controller: 'SelectDatePopupCtrl',
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
@@ -105,7 +105,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/set-code/set-code.html',
+                templateUrl: './components/set-code/set-code.html',
                 controller: 'SetCodeCtrl',
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
@@ -119,7 +119,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/welcome/welcome.html',
+                templateUrl: './components/welcome/welcome.html',
                 controller: 'WelcomeCtrl',
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
@@ -133,7 +133,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/signup/signup.html',
+                templateUrl: './components/signup/signup.html',
                 controller: 'SignupCtrl',
                 backdrop: 'static',
                 controllerAs: 'vm',
@@ -148,7 +148,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/new-pass/new-pass.html',
+                templateUrl: './components/new-pass/new-pass.html',
                 controller: 'SignupCtrl',
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
@@ -162,7 +162,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/login/login.html',
+                templateUrl: './components/login/login.html',
                 controller: 'LoginCtrl',
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
@@ -176,7 +176,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/forgot-pass/forgot-pass.html',
+                templateUrl: './components/forgot-pass/forgot-pass.html',
                 controller: 'ForgotPassCtrl',
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
@@ -190,7 +190,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/relig-popup/relig-popup.html',
+                templateUrl: './components/relig-popup/relig-popup.html',
                 controller: 'ReligPopupCtrl',
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
@@ -204,7 +204,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/view-img/view-img.html',
+                templateUrl: './components/view-img/view-img.html',
                 controller: 'ViewImgCtrl',
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',
@@ -222,7 +222,7 @@
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'components/day-info/day-info.html',
+                templateUrl: './components/day-info/day-info.html',
                 controller: 'DayInfoCtrl',
                 controllerAs: 'vm',
                 backdropClass: 'custom-backdrop',

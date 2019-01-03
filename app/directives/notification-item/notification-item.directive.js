@@ -7,7 +7,7 @@
     function notificationItem($document, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'directives/notification-item/notification-item.html',
+            templateUrl: './directives/notification-item/notification-item.html',
             scope: {
                 niItemModel: '=', //item from array with data from backend
                 niModelExt: '=' //additional model with settings translation and notification translations
