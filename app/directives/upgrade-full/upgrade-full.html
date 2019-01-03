@@ -1,8 +1,6 @@
-<div class="upgrade-full">
+<div class="upgrade-full" ng-show="vm.isShow">
     <div class="upgrade-full__propose" auto-dir>
         <p>{{ 'CONTENT.UPGRADE_ACCOUNT' | translate }}</p>
-        <div class="upgrade-full__button">
-            {{ 'CONTENT.NOW' | translate }}
-        </div>
+        <a ng-href="{{ vm.link }}" class="upgrade-full__button">{{ 'CONTENT.NOW' | translate }}</a>
     </div>
 </div>

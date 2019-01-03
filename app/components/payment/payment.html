@@ -2,7 +2,7 @@
     <h3 class="modal-title" id="modal-title">
         {{'CONTENT.PAYMENT_TITLE'|translate}}
     </h3>
-    <p class="payment-notice">{{'CONTENT.PAYMENT_SUBTITLE'|translate}}</p>
+    <!--<p class="payment-notice">{{'CONTENT.PAYMENT_SUBTITLE'|translate}}</p>-->
     <h1 class="payment-subtitle">{{'CONTENT.PAYMENT_NOTICE'|translate}}</h1>
 </div>
 
@@ -17,8 +17,8 @@
         <div class="payment-price">
             <div class="payment-circle">
                 <p>{{'CONTENT.PAYMENT_SUBSCRIPTION'|translate}}</p>
-                <h1>&#8362;8 X 12 = 96</h1>
-                <h3>&#8362;120</h3>
+                <h1>{{'CONTENT.CURRENCY'|translate}}<span dir="ltr">{{'CONTENT.FIRST_PRICE'|translate}}</span></h1>
+                <h3>{{'CONTENT.CURRENCY'|translate}}<span dir="ltr">{{'CONTENT.SECOND_PRICE'|translate}}</span></h3>
                 <p>{{'CONTENT.PAYMENT_PRICE'|translate}}</p>
             </div>
             <div class="payment-down">
@@ -28,14 +28,14 @@
                     <a ui-sref="app.main.terms" target="_blank">{{'CONTENT.TERMS_AND_POLICY'|translate}}</a>
                 </div>
                 <div class="payment-button">
-                    <a ng-href="{{ vm.data.license_agreement ? vm.data.payLink: '' }}" class="button-default">{{'CONTENT.PAYMENT_BUTTON'|translate}}</a>
+                    <a ng-href="{{ vm.data.license_agreement ? vm.data.payLink: '' }}"
+                       class="button-default default-button-popup">{{'CONTENT.PAYMENT_BUTTON'|translate}}</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-</div>
 <div class="modal-footer">
 
 </div>

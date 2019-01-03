@@ -176,7 +176,10 @@
     "PAYMENT_CONFIRM": "I confirm",
     "PAYMENT_SECOND_CONFIRM": "Terms of Use and Privacy Policy",
     "PAYMENT_BUTTON": "Buy now",
-    "PAYMENT_SUBSCRIPTION": "annual subscription"
+    "PAYMENT_SUBSCRIPTION": "annual subscription",
+    "FIRST_PRICE": "8 X 12 = 96",
+    "SECOND_PRICE": "120",
+    "CURRENCY": "שקל"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",

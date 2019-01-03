@@ -98,7 +98,7 @@
     "NEW_PASSWORD": "סיסמה חדשה",
     "REPEAT_THE_PASSWORD": "חזור על הסיסמה",
     "RESET_THE_PASSWORD": "לאפס את הסיסמה",
-    "TERMS_AND_POLICY": "תנאי השימוש ומדניות הפרטיות",
+    "TERMS_AND_POLICY": "תנאי השימוש מדיניות הפרטיות",
     "RECORD_YOUR_WORDS": "רשמי את דברייך",
     "PHONE_ENTER_PHONE": "אנא הזינו את מספר הטלפון שלכם",
     "PHONE_SIGNED": "משתמשת רשומה? לחצי כאן",
@@ -174,8 +174,11 @@
     "PAYMENT_PRICE": "לשנה",
     "PAYMENT_CONFIRM": "אני מאשר/ת את",
     "PAYMENT_SECOND_CONFIRM": "תנאי השימוש ומדניות הפרטיות",
-    "PAYMENT_BUTTON": "קני עכשיו",
-    "PAYMENT_SUBSCRIPTION": "מנוי שנתי"
+    "PAYMENT_BUTTON": "לרכישה",
+    "PAYMENT_SUBSCRIPTION": "מנוי שנתי",
+    "FIRST_PRICE": "8 X 12 = 96",
+    "SECOND_PRICE": "120",
+    "CURRENCY": "שקל"
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase עבור ההודעה לא נטען, לבדוק חיבור לאינטרנט ולהפעיל מחדש",

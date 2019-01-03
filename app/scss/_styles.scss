@@ -229,7 +229,7 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
   padding: 0 15px;
   height: 30px;
   border: 1px solid #4b0049;
-  &:hover{
+  &:hover {
     color: #ffffff;
   }
 }
@@ -242,9 +242,13 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
   padding: 0 15px;
   height: 30px;
   border: 1px solid #4b0049;
-  &:hover{
+  &:hover {
     color: #4b0049;
   }
+}
+
+.default-button-popup {
+  padding: 5px 15px;
 }
 
 .button-primary {

@@ -10,7 +10,10 @@
     font-family: AssistantSemiBold;
     font-size: 18px;
   }
-  .default-button-popup {
-    padding: 5px 15px;
+
+  .modal-footer {
+    a {
+      margin: 0 5px;
+    }
   }
 }
