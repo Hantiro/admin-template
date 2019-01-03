@@ -11,3 +11,5 @@ build/
 build
 app/content/css/app.css
 package-lock.json
+backup/
+frontend

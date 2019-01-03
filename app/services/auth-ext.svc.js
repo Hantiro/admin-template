@@ -59,7 +59,7 @@
                 prepareBuy({
                     isTrial: true
                 });
-            }).catch(function (res){
+            }).catch(function (res) {
                 authDataSvc.clearAuthData();
             });
         }
@@ -70,14 +70,14 @@
             modalSvc.login().result.then(function (res) {
                 if (res && res === 'reset-pass') {
                     resetPassProcess();
-                } else if(res && res.data && res.data.user) {
+                } else if (res && res.data && res.data.user) {
                     checkPayment(res.data.user);
                 }
             });
         }
 
         function checkPayment(user) {
-            if(user.is_payed){
+            if (user.is_payed) {
                 authDataSvc.setUser(user);
                 $state.go('app.my-main');
             } else {
@@ -87,29 +87,36 @@
             }
         }
 
-        function prepareBuy(param){
+        function prepareBuy(param) {
             paymentSvc.getUrl().then(
-                function(res){
-                    if(res && res.data ){
+                function (res) {
+                    if (res && res.data) {
                         return welcomeProcess({
                             payLink: res.data,
                             isTrial: param.isTrial || false
                         });
                     }
                 },
-                function(){
+                function () {
                     authDataSvc.clearAuthData();
                 }
             )
         }
 
         function welcomeProcess(param) {
-            modalSvc.welcome({
+            return modalSvc.welcome({
                 data: param || {}
             }).result.then(function (res) {
-               if(res = 'test_date'){
-                   $state.go('app.my-main');
-               }
+                if (res === 'test_date') {
+                    $state.go('app.my-main');
+                } else {
+                    return modalSvc.payment(param).result.then(
+                        function () {
+                        }
+                    ).catch(function () {
+                        authDataSvc.clearAuthData();
+                    });
+                }
             }).catch(function () {
                 logout({
                     needReload: true
@@ -123,18 +130,9 @@
         }
 
         function autoLogin() {
-            // if (authDataSvc.isLogined() && !authDataSvc.getUser()) {
-            //     return userSvc.getUser().then(function (res) {
-            //         authDataSvc.setUser(res.entity || {});
-            //         $state.go('app.my-main');
-            //     });
-            // } else if (authDataSvc.isLogined() && authDataSvc.getUser()) {
-            //     $state.go('app.my-main');
-            //     return true;
-            // }
             if (authDataSvc.isLogined()) {
                 return userSvc.getUser().then(function (res) {
-                   checkPayment(res.entity);
+                    checkPayment(res.entity);
                 });
             }
         }

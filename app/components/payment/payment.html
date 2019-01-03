@@ -17,18 +17,18 @@
         <div class="payment-price">
             <div class="payment-circle">
                 <p>{{'CONTENT.PAYMENT_SUBSCRIPTION'|translate}}</p>
-                <h1>96 NIS</h1>
-                <h3>120 NIS</h3>
+                <h1>&#8362;8 X 12 = 96</h1>
+                <h3>&#8362;120</h3>
                 <p>{{'CONTENT.PAYMENT_PRICE'|translate}}</p>
             </div>
             <div class="payment-down">
-                <div class="payment-policy">
+                <div class="payment-policy" auto-dir>
                     <md-checkbox ng-model="vm.data.license_agreement" required></md-checkbox>
                     <p>{{'CONTENT.I_CONFIRM'|translate}} </p>
                     <a ui-sref="app.main.terms" target="_blank">{{'CONTENT.TERMS_AND_POLICY'|translate}}</a>
                 </div>
                 <div class="payment-button">
-                    <button>{{'CONTENT.PAYMENT_BUTTON'|translate}}</button>
+                    <a ng-href="{{ vm.data.license_agreement ? vm.data.payLink: '' }}" class="button-default">{{'CONTENT.PAYMENT_BUTTON'|translate}}</a>
                 </div>
             </div>
         </div>

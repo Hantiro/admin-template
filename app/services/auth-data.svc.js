@@ -22,6 +22,10 @@
         return model;
 
 
+        function isPayed() {
+            return getUser() && getUser().is_payed;
+        }
+
         function isLogined() {
             return !!getToken();
         }
@@ -42,7 +46,8 @@
             if (isRemember) {
                 $localStorage.token = token;
             } else {
-                $sessionStorage.token = token;
+               // $sessionStorage.token = token;
+                $localStorage.token = token; //fixme for future
             }
         }
 

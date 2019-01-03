@@ -56,6 +56,7 @@
     "FIRST_NAME": "שם",
     "ADDRESS": "כתובת",
     "EMAIL": "מייל",
+	"PHONE": "מספר טלפון",
     "REPEAT_PASSWORD": "חזור על הסיסמה",
     "PASSWORD": "סיסמה",
     "I_CONFIRM": "אני מאשר/ת את ",

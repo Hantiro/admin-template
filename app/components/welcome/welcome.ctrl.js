@@ -11,7 +11,7 @@
         vm.data = data || {};
 
         function buy() {
-            // $uibModalInstance.close(vm.model);
+            $uibModalInstance.close();
         }
 
         vm.test = function (res) {

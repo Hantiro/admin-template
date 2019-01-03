@@ -37,7 +37,7 @@
             });
         }
 
-        function payment() {
+        function payment(param) {
             return $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
@@ -47,7 +47,9 @@
                 backdropClass: 'custom-backdrop',
                 windowTopClass: 'payment',
                 size: 'lg',
-                resolve: {}
+                resolve: {
+                    data: param || {}
+                }
             });
         }
         /**

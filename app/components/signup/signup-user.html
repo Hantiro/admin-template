@@ -55,6 +55,16 @@
                required>
     </md-input-container>
 
+    <md-input-container  class="md-block" flex>
+        <input placeholder="{{'CONTENT.PHONE'|translate}}"
+               id="phone"
+               ng-model="vm.data.phone"
+               name="phone"
+               aria-label="phone"
+               type="text"
+               pattern="\d{10}"
+               required>
+    </md-input-container>
 
     <md-input-container  class="md-block" flex>
         <input placeholder="{{'CONTENT.PASSWORD'|translate}}"
