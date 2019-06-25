@@ -44,7 +44,7 @@ gulp.task('js', gulp.series('templatecache', function () {
         .src(source)
         // .pipe(plug.sourcemaps.init()) // get screwed up in the file rev process
         .pipe(plug.ngAnnotate({add: true, single_quotes: true}))
-        // .pipe(plug.uglify({mangle: true, compress:{drop_debugger:true}}))
+        .pipe(plug.uglify({mangle: true, compress:{drop_debugger:true}}))
         .on('error', function (err) { console.log(err.toString()); })
         .pipe(plug.concat('all.min.js'))
         // .pipe(plug.sourcemaps.write('./'))
@@ -58,7 +58,7 @@ gulp.task('vendorjs', function () {
     log('Bundling, minifying, and copying the Vendor JavaScript');
     return gulp.src(pkg.paths.vendorjs)
         .pipe(plug.concat('vendor.min.js'))
-        // .pipe(plug.uglify())
+        .pipe(plug.uglify())
         .pipe(gulp.dest(pkg.paths.build)); // + 'vendor'));
 });
 
