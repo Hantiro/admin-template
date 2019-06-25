@@ -5,6 +5,6 @@
     {{vm.config.content | translate}}
 </div>
 <div class="modal-footer">
-    <button class="button-default" type="button" ng-click="vm.ok()">{{'CONTENT.ANSWER_YES'|translate}}</button>
-    <button class="button-not-default" type="button" ng-click="vm.cancel()">{{'CONTENT.ANSWER_NO'|translate}}</button>
+    <button ng-if="vm.config.ok" class="button-default" type="button" ng-click="vm.ok()">{{'CONTENT.ANSWER_YES'|translate}}</button>
+    <button ng-if="vm.config.cancel" class="button-not-default" type="button" ng-click="vm.cancel()">{{'CONTENT.ANSWER_NO'|translate}}</button>
 </div>

@@ -180,7 +180,8 @@
     "FIRST_PRICE": "8  <span class=\"small-text\">Nis</span> × 12 <span class=\"small-text\">Months</span> =",
     "SECOND_PRICE": "96",
     "THIRD_PRICE": "120",
-    "CURRENCY": "<span class=\"small-text\">Nis</span>"
+    "CURRENCY": "<span class=\"small-text\">Nis</span>",
+    "ADD_SECOND_DATE": "First date selected. Please add second date."
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase for notification not loaded, check internet connection and restart",

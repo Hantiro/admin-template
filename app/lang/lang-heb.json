@@ -179,7 +179,8 @@
     "FIRST_PRICE": "= 8 <span class=\"small-text\">שקל</span> × 12  <span class=\"small-text\">חודשים</span>",
     "SECOND_PRICE": "96",
     "THIRD_PRICE": "120",
-    "CURRENCY": "<span class=\"small-text\">שקל</span>"
+    "CURRENCY": "<span class=\"small-text\">שקל</span>",
+    "ADD_SECOND_DATE": "נבחר תאריך ראשון. נא להוסיף תאריך שני."
   },
   "ERROR": {
     "FIREBASE_NOT_LOADED": "Firebase עבור ההודעה לא נטען, לבדוק חיבור לאינטרנט ולהפעיל מחדש",

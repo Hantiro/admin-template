@@ -19,9 +19,19 @@
             religPopup: religPopup,
             viewImg: viewImg,
             dayInfo: dayInfo,
-            payment: payment
+            payment: payment,
+            addSecondDate: addSecondDate
         };
         return service;
+
+        function addSecondDate(){
+            return confirm({
+                title: 'CONTENT.INFO',
+                content: 'CONTENT.ADD_SECOND_DATE',
+                ok: 'CONTENT.OK',
+                size: 'sm'
+            });
+        }
 
         function setPhone() {
             return $uibModal.open({

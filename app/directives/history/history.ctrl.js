@@ -6,8 +6,10 @@
             .controller('HistoryCtrl', HistoryCtrl);
 
         /* @ngInject */
-        function HistoryCtrl($scope, dateSvc, $translate, dateRequestSvc, messagesSvc, constSvc) {
+        function HistoryCtrl($scope, dateSvc, $translate, dateRequestSvc, messagesSvc, constSvc, modalSvc) {
             var vm = this;
+            var firstDay;
+            var secondDay;
             vm.addDateTime = addDateTime;
             vm.currentLang = currentLang;
             vm.getDayNight = getDayNight;
@@ -79,6 +81,8 @@
 
             function cancel() {
                 vm.step = vm.STEPS.SHOW_LIST;
+                firstDay = null;
+                secondDay = null;
             }
 
             function add() {
@@ -86,18 +90,53 @@
                     messagesSvc.show('ERROR.NEED_SELECT_DATE', 'error');
                     return;
                 }
-                dateSvc.createFirstDay({
-                    g_day: dateSvc.getSelectedDay().gregorian_day,
-                    g_month: dateSvc.getSelectedDay().gregorian_month,
-                    g_year: dateSvc.getSelectedDay().gregorian_year,
-                    minute: vm.timeModel.getMinutes(),
-                    hour: vm.timeModel.getHours()
-                }).then(function (res) {
-                    if (res) {
+                if (!firstDay) {
+                    firstDay = {
+                        g_day: dateSvc.getSelectedDay().gregorian_day,
+                        g_month: dateSvc.getSelectedDay().gregorian_month,
+                        g_year: dateSvc.getSelectedDay().gregorian_year,
+                        minute: vm.timeModel.getMinutes(),
+                        hour: vm.timeModel.getHours()
+                    };
+                    modalSvc.addSecondDate();
+                } else if (firstDay && !secondDay) {
+                    secondDay = {
+                            g_day: dateSvc.getSelectedDay().gregorian_day,
+                            g_month: dateSvc.getSelectedDay().gregorian_month,
+                            g_year: dateSvc.getSelectedDay().gregorian_year,
+                            minute: vm.timeModel.getMinutes(),
+                            hour: vm.timeModel.getHours()
+                        };
+                    dateRequestSvc.createEventHistory({
+                        g_day: firstDay.g_day,
+                        g_month: firstDay.g_month,
+                        g_year: firstDay.g_year,
+                        minute: firstDay.minute,
+                        hour: firstDay.hour,
+                        g_day_2: secondDay.g_day,
+                        g_month_2: secondDay.g_month,
+                        g_year_2: secondDay.g_year,
+                        minute_2: secondDay.minute,
+                        hour_2: secondDay.hour,
+                    }).then( function(res) {
+                        firstDay = null;
+                        secondDay = null;
                         init();
                         dateSvc.updateCalendar();
-                    }
-                });
+                    });
+                }
+                // dateSvc.createFirstDay({
+                //     g_day: dateSvc.getSelectedDay().gregorian_day,
+                //     g_month: dateSvc.getSelectedDay().gregorian_month,
+                //     g_year: dateSvc.getSelectedDay().gregorian_year,
+                //     minute: vm.timeModel.getMinutes(),
+                //     hour: vm.timeModel.getHours()
+                // }).then(function (res) {
+                //     if (res) {
+                //         init();
+                //         dateSvc.updateCalendar();
+                //     }
+                // });
             }
 
             function verify() {
@@ -126,10 +165,10 @@
             }
 
             function isRegularText() {
-                if( !vm.modelDays.isRegular){
-                   return  'CONTENT.IRREGULAR';
-                }  else if(vm.modelDays.predictionArray[0] && vm.modelDays.predictionArray[0].type) {
-                   return  'CONTENT.PREDICTION_ADDITIONAL_' + vm.modelDays.predictionArray[0].type.toUpperCase();
+                if (!vm.modelDays.isRegular) {
+                    return 'CONTENT.IRREGULAR';
+                } else if (vm.modelDays.predictionArray[0] && vm.modelDays.predictionArray[0].type) {
+                    return 'CONTENT.PREDICTION_ADDITIONAL_' + vm.modelDays.predictionArray[0].type.toUpperCase();
                 }
             }
 
@@ -137,8 +176,8 @@
                 return vm.currentLang() === 'eng' ? item.data2 : item.data1;
             }
 
-            function getTypeTrans(item){
-               return  'CONTENT.PREDICTION_' + item.type.toUpperCase() + ((item.skip > 0 && '_SKIP') || (item.skip < 0 && '_SKIP_BACKWARDS') || '');
+            function getTypeTrans(item) {
+                return 'CONTENT.PREDICTION_' + item.type.toUpperCase() + ((item.skip > 0 && '_SKIP') || (item.skip < 0 && '_SKIP_BACKWARDS') || '');
             }
 
         }
